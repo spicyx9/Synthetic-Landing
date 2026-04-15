@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#fcfbf8">
+  <meta name="description" content="Build something Lovable - Create apps and websites by chatting with AI">
+  <meta property="og:title" content="Lovable - Build something Lovable">
+  <meta property="og:description" content="Create apps and websites by chatting with AI">
+  <title>Lovable - Build something Lovable</title>
+  <!-- Favicon as inline SVG data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='32' y2='32'%3E%3Cstop offset='0%25' stop-color='%23ff6b35'/%3E%3Cstop offset='50%25' stop-color='%23ff4081'/%3E%3Cstop offset='100%25' stop-color='%237c4dff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 28C16 28 4 20 4 12C4 8 7 4 11 4C13.5 4 15.5 5.5 16 7C16.5 5.5 18.5 4 21 4C25 4 28 8 28 12C28 20 16 28 16 28Z' fill='url(%23g)'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="demo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img src="assets/logo.png" alt="Synthetic Swarm" class="logo-icon" width="20" height="20">
+        Synthetic Swarm
+      </a>
+
+      <nav class="nav-links">
+        <div class="nav-dropdown-wrap">
+          <a href="#" class="nav-link-dropdown">
+            Solutions
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 4.5L6 7.5L9 4.5"/>
+            </svg>
+          </a>
+          <div class="nav-mega nav-mega--solutions">
+            <div class="mega-section mega-section--main">
+              <span class="mega-label">Who is it for?</span>
+              <a href="#" class="mega-item">
+                <strong>Founders</strong>
+                <span>Scale outreach from day one.</span>
+              </a>
+              <a href="#" class="mega-item">
+                <strong>Marketers</strong>
+                <span>Turn content into pipeline.</span>
+              </a>
+              <a href="#" class="mega-item">
+                <strong>Sales teams</strong>
+                <span>Warm leads, less manual work.</span>
+              </a>
+            </div>
+            <div class="mega-section mega-section--aside">
+              <span class="mega-label">Use cases</span>
+              <a href="#" class="mega-item">
+                <strong>Lead magnets</strong>
+                <span>Auto-deliver resources to commenters.</span>
+              </a>
+              <a href="#" class="mega-item">
+                <strong>Keyword targeting</strong>
+                <span>Find prospects by what they post.</span>
+              </a>
+              <a href="#" class="mega-item">
+                <strong>Multichannel outreach</strong>
+                <span>Reach high-intent leads everywhere.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown-wrap">
+          <a href="#" class="nav-link-dropdown">
+            Resources
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 4.5L6 7.5L9 4.5"/>
+            </svg>
+          </a>
+          <div class="nav-mega">
+            <div class="mega-col">
+              <span class="mega-label">Resources</span>
+              <a href="#" class="mega-item">
+                <strong>Blog</strong>
+                <span>Tips, updates, and strategies.</span>
+              </a>
+              <a href="#" class="mega-item">
+                <strong>Docs</strong>
+                <span>Everything under the hood.</span>
+              </a>
+              <a href="#" class="mega-item">
+                <strong>Guides</strong>
+                <span>Learn as you build.</span>
+              </a>
+            </div>
+            <div class="mega-col mega-announcement">
+              <span class="mega-label">Announcement</span>
+              <a href="https://hyperstack.studio" class="mega-card" target="_blank">
+                <div class="mega-card-img">
+                  <span class="mega-brand-text">Hyperstack</span>
+                  <span class="mega-x">×</span>
+                  <span class="mega-brand-text">Synthetic Swarm</span>
+                </div>
+                <strong>Partnership with Hyperstack</strong>
+                <span class="mega-link">Learn more ›</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://app.syntheticswarm.ai/ui/" class="btn-login">Log in</a>
+        <a href="https://app.syntheticswarm.ai/ui/" class="btn-get-started">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO WITH DEMO ===== -->
+  <div class="demo-wrapper">
+
+    <section class="hero">
+      <div class="aurora">
+        <div class="aurora__blob aurora__blob--1"></div>
+        <div class="aurora__blob aurora__blob--2"></div>
+        <div class="aurora__blob aurora__blob--3"></div>
+        <div class="aurora__blob aurora__blob--4"></div>
+      </div>
+      <div class="hero-content">
+
+        <!-- DEMO HERO -->
+        <div class="demo-hero">
+          <div class="demo-hero__inner">
+
+            <!-- Headline -->
+            <h1 class="demo-hero__headline">Your next clients just commented.</h1>
+            <p class="demo-hero__subtitle">Drop your post link. We extract, deliver, and follow up.</p>
+
+            <!-- URL Input -->
+            <form class="demo-hero__form" id="demoUrlForm" action="https://app.syntheticswarm.ai/ui/" method="get">
+              <div class="demo-hero__input-wrapper">
+                <svg class="demo-hero__input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input
+                  type="url"
+                  class="demo-hero__input"
+                  id="demoPostUrl"
+                  name="url"
+                  placeholder="https://www.linkedin.com/posts/..."
+                  autocomplete="off"
+                  required
+                >
+                <button type="submit" class="demo-hero__submit">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                </button>
+              </div>
+            </form>
+
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social proof inside hero -->
+      <div class="hero-social-proof">
+        <p>Trusted by growing teams</p>
+        <div class="logos-row">
+
+          <!-- LiteSoft -->
+          <div class="logo-item">
+            <svg height="28" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(0, 1) scale(0.9)">
+                <path d="M51.943,51.588c-6.454,0-10.431-2.928-10.431-8.558V24.156H24V42.212c0,7.87,7.662,11.847,16.457,11.847H71.123v-2.47Z" transform="translate(-24 -24.156)" fill="#009aff"/>
+                <path d="M110.793,33.7V24.156H97.477a5.525,5.525,0,0,0-5.523,5.519v9.558H105.27a5.523,5.523,0,0,0,5.523-5.529Z" transform="translate(-63.671 -24.156)" fill="#009aff"/>
+              </g>
+              <text x="48" y="21" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#1a1a1a" letter-spacing="-0.3">LiteSoft</text>
+            </svg>
+          </div>
+
+          <!-- Hyperstack Studio -->
+          <div class="logo-item">
+            <img src="assets/hyperstack-logo.png" alt="Hyperstack" height="26" style="display:block;">
+          </div>
+
+          <!-- ITEC -->
+          <div class="logo-item">
+            <img src="assets/itec-logo.png" alt="ITEC" height="44" style="display:block;">
+          </div>
+
+          <!-- Lutecienne -->
+          <div class="logo-item">
+            <img src="assets/lutecienne-logo.png" alt="Lutecienne" height="62" style="display:block;">
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <!-- ═══ END DEMO ═══ -->
+
+  <!-- ===== MEET SYNTHETIC SWARM ===== -->
+  <section class="meet-section">
+    <h2 class="reveal">Meet Synthetic Swarm</h2>
+    <div class="meet-grid">
+      <div class="meet-visual reveal">
+        <div class="meet-visual-inner">
+          <div class="meet-visual-header">
+            <span></span><span></span><span></span>
+          </div>
+          <!-- LinkedIn post URL bar -->
+          <div class="meet-visual-urlbar">
+            <svg class="meet-visual-urlbar-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <div class="meet-visual-urlbar-text"></div>
+          </div>
+          <!-- Prospect list rows -->
+          <div class="meet-visual-prospects">
+            <div class="meet-visual-prospect">
+              <div class="meet-visual-avatar" style="background:#0A66C2;">in</div>
+              <div class="meet-visual-prospect-lines">
+                <div class="meet-visual-prospect-name" style="width:65%;"></div>
+                <div class="meet-visual-prospect-meta" style="width:45%;"></div>
+              </div>
+              <div class="meet-visual-prospect-tag delivered">Delivered</div>
+            </div>
+            <div class="meet-visual-prospect">
+              <div class="meet-visual-avatar" style="background:#0A66C2;">in</div>
+              <div class="meet-visual-prospect-lines">
+                <div class="meet-visual-prospect-name" style="width:55%;"></div>
+                <div class="meet-visual-prospect-meta" style="width:50%;"></div>
+              </div>
+              <div class="meet-visual-prospect-tag replied">Replied</div>
+            </div>
+            <div class="meet-visual-prospect">
+              <div class="meet-visual-avatar" style="background:#0A66C2;">in</div>
+              <div class="meet-visual-prospect-lines">
+                <div class="meet-visual-prospect-name" style="width:70%;"></div>
+                <div class="meet-visual-prospect-meta" style="width:38%;"></div>
+              </div>
+              <div class="meet-visual-prospect-tag opened">Followed up</div>
+            </div>
+          </div>
+          <!-- Stats mini dashboard -->
+          <div class="meet-visual-dashboard">
+            <div class="meet-visual-widget">
+              <div class="meet-visual-widget-label">Delivered</div>
+              <div class="meet-visual-widget-number">92%</div>
+              <div class="widget-bars">
+                <div class="bar-col highlight" style="height:60%;"></div>
+                <div class="bar-col highlight" style="height:80%;"></div>
+                <div class="bar-col" style="height:45%;"></div>
+                <div class="bar-col highlight" style="height:85%;"></div>
+                <div class="bar-col highlight" style="height:70%;"></div>
+              </div>
+            </div>
+            <div class="meet-visual-widget">
+              <div class="meet-visual-widget-label">Replied</div>
+              <div class="meet-visual-widget-number">68%</div>
+              <div class="widget-bars">
+                <div class="bar-col highlight" style="height:60%;"></div>
+                <div class="bar-col highlight" style="height:80%;"></div>
+                <div class="bar-col" style="height:45%;"></div>
+                <div class="bar-col highlight" style="height:85%;"></div>
+                <div class="bar-col highlight" style="height:70%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="meet-steps">
+        <div class="meet-step reveal">
+          <h3>Paste your LinkedIn post</h3>
+          <p>Drop any post URL and we instantly extract every commenter with their full profile data</p>
+        </div>
+        <div class="meet-step reveal reveal-delay-1">
+          <h3>Deliver your resource</h3>
+          <p>Each commenter automatically receives your lead magnet via a personalized message</p>
+        </div>
+        <div class="meet-step active reveal reveal-delay-2">
+          <h3>Filter &amp; follow up</h3>
+          <p>Persona filters segment your audience automatically, then smart follow-ups start real conversations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEMPLATES ===== -->
+  <section class="templates-section">
+    <div class="templates-header reveal">
+      <div>
+        <h2>Ready-made workflows</h2>
+      </div>
+      <button class="btn-view-all">Explore all</button>
+    </div>
+    <p class="templates-subtitle reveal">Launch in minutes with pre-built automations</p>
+
+    <div class="templates-grid templates-grid--3">
+
+      <!-- Template 1: Resource Delivery -->
+      <div class="template-card reveal">
+        <div class="template-card-image">
+          <div class="tmpl-resource">
+            <div class="res-header">
+              <div class="res-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="12" y1="18" x2="12" y2="12"/>
+                  <polyline points="9 15 12 12 15 15"/>
+                </svg>
+              </div>
+              <span class="res-label">Free Guide</span>
+            </div>
+            <div class="res-row">
+              <div class="res-avatar"></div>
+              <div class="res-line"></div>
+              <span class="res-badge delivered">DELIVERED</span>
+            </div>
+            <div class="res-row">
+              <div class="res-avatar"></div>
+              <div class="res-line"></div>
+              <span class="res-badge delivered">DELIVERED</span>
+            </div>
+            <div class="res-row">
+              <div class="res-avatar"></div>
+              <div class="res-line"></div>
+              <span class="res-badge pending">PENDING</span>
+            </div>
+          </div>
+        </div>
+        <h3>Resource Delivery</h3>
+        <p>Auto-send guides &amp; resources</p>
+      </div>
+
+      <!-- Template 2: Keyword Targeting -->
+      <div class="template-card reveal reveal-delay-1">
+        <div class="template-card-image">
+          <div class="tmpl-keyword">
+            <div class="kw-search">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" stroke-linecap="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <span>Filter by keywords...</span>
+            </div>
+            <div class="kw-tags">
+              <span class="kw-tag purple">AI</span>
+              <span class="kw-tag blue">automation</span>
+              <span class="kw-tag teal">no-code</span>
+            </div>
+            <div class="kw-result">
+              <div class="kw-avatar"></div>
+              <div class="kw-content">
+                <div class="kw-line"></div>
+                <div class="kw-line short"></div>
+              </div>
+              <span class="kw-match">MATCH</span>
+            </div>
+            <div class="kw-result">
+              <div class="kw-avatar"></div>
+              <div class="kw-content">
+                <div class="kw-line"></div>
+                <div class="kw-line short"></div>
+              </div>
+              <span class="kw-match">MATCH</span>
+            </div>
+          </div>
+        </div>
+        <h3>Keyword Targeting</h3>
+        <p>Target posts by topic &amp; keywords</p>
+      </div>
+
+      <!-- Template 3: High-Intent Outreach -->
+      <div class="template-card reveal reveal-delay-2">
+        <div class="template-card-image">
+          <div class="tmpl-outreach">
+            <div class="out-label">HIGH INTENT</div>
+            <div class="out-channels">
+              <div class="out-channel linkedin">in</div>
+              <div class="out-connector"></div>
+              <div class="out-channel email">@</div>
+              <div class="out-connector"></div>
+              <div class="out-channel dm">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="out-targets">
+              <div class="out-row">
+                <div class="out-avatar"></div>
+                <div class="out-bar"><div class="out-fill high"></div></div>
+              </div>
+              <div class="out-row">
+                <div class="out-avatar"></div>
+                <div class="out-bar"><div class="out-fill med"></div></div>
+              </div>
+              <div class="out-row">
+                <div class="out-avatar"></div>
+                <div class="out-bar"><div class="out-fill low"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>High-Intent Outreach</h3>
+        <p>Multichannel targeting on engaged leads</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===== CTA + FOOTER (unified gradient) ===== -->
+  <div class="bottom-gradient">
+    <div class="aurora aurora--bottom">
+      <div class="aurora__blob aurora__blob--5"></div>
+      <div class="aurora__blob aurora__blob--6"></div>
+      <div class="aurora__blob aurora__blob--7"></div>
+    </div>
+
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2 class="reveal reveal-delay-1">Ready to convert your audience?</h2>
+        <p class="cta-subtitle reveal reveal-delay-1">Start turning every interaction into a conversation.</p>
+        <a href="https://app.syntheticswarm.ai/ui/" class="cta-main-btn reveal reveal-delay-2">
+          Get started
+        </a>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-minimal">
+        <div class="footer-minimal-brand">
+          <img src="assets/logo.png" alt="Synthetic Swarm" width="22" height="22">
+          <span>Synthetic Swarm</span>
+        </div>
+        <div class="footer-minimal-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Support</a>
+          <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-minimal-copy">&copy; 2025 Synthetic Swarm. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ===== Scroll reveal animations =====
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ===== Meet Lovable step highlighting =====
+    const meetSteps = document.querySelectorAll('.meet-step');
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          meetSteps.forEach(s => s.classList.remove('active'));
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.6,
+      rootMargin: '-15% 0px -15% 0px'
+    });
+    meetSteps.forEach(step => stepObserver.observe(step));
+
+    // ===== Animated stat counters =====
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const suffix = el.dataset.suffix;
+          const duration = 1800;
+          const startTime = performance.now();
+
+          function animate(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target) + suffix;
+            if (progress < 1) requestAnimationFrame(animate);
+          }
+
+          requestAnimationFrame(animate);
+          statsObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    statNumbers.forEach(num => statsObserver.observe(num));
+  </script>
+  <script src="demo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lovable-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/ilansainte-agathe/Desktop/Synthetic-Landing"],
+      "port": 3457,
+      "autoPort": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.lite-soft.com)",
+      "WebFetch(domain:www.hyperstack.cloud)",
+      "WebFetch(domain:devels.litesoft.agency)",
+      "WebFetch(domain:litesoft.fr)",
+      "WebFetch(domain:www.itecj.com)",
+      "WebFetch(domain:www.itecequipment.com)",
+      "Bash(curl -sL \"https://litesoft.fr/img/logo.svg\" -o /tmp/litesoft_logo.svg)",
+      "Bash(curl -sL \"https://www.hyperstack.cloud/hubfs/hyperstack_2023/home/Hyperstack.svg\" -o /tmp/hyperstack_logo.svg)",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:hyperstack.studio)",
+      "WebFetch(domain:www.hyperstack.studio)",
+      "Bash(curl -sL \"https://www.hyperstack.studio/favicon.ico\" -o /tmp/hyperstack_favicon.ico -w \"%{http_code} %{content_type} %{size_download}\")",
+      "Bash(curl -sL \"https://www.hyperstack.studio/favicon.png\" -o /tmp/hyperstack_favicon.png -w \"%{http_code} %{content_type} %{size_download}\")",
+      "Bash(curl -sI \"https://cdn.prod.website-files.com/6557415b71d072e432985c52/655742aa6562aa5d07c543ed_Hyperstack%20-%20Logo%20blanc.webp\")",
+      "Bash(curl -sL \"https://cdn.prod.website-files.com/6557415b71d072e432985c52/655742aa6562aa5d07c543ed_Hyperstack%20-%20Logo%20blanc.webp\" -o /tmp/hyperstack_white.webp)",
+      "Bash(curl -sL \"https://cdn.prod.website-files.com/6557415b71d072e432985c52/favicon.ico\" -o /tmp/hs_fav.ico -w \"\\\\n%{http_code}\")",
+      "Bash(curl -sL \"https://cdn.prod.website-files.com/6557415b71d072e432985c52/favicon.png\" -o /tmp/hs_fav.png -w \"\\\\n%{http_code}\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(curl -sL \"https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fwww.hyperstack.studio%2F&ved=0CBYQjRxqFwoTCPi1ioqr8JMDFQAAAAAdAAAAABAI&opi=89978449\" -o /dev/null -w \"%{redirect_url}\\\\n%{http_code}\")",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL ok'\\)\")",
+      "Bash(python3)",
+      "WebFetch(domain:itec.fr)",
+      "Bash(curl -sL \"https://itec.fr/wp-content/uploads/2023/02/ITEC_logo_HD_RVB-noir-transp-300x158.png\" -o /Users/ilansainte-agathe/Desktop/Synthetic-Landing/assets/itec-logo.png -w \"%{http_code} %{size_download}\")",
+      "WebFetch(domain:www.lutecienne.fr)",
+      "Bash(curl -sL \"https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=382,fit=crop,q=95/YD0B1QZ6QJHxX8qR/capture-daeicran-2025-02-27-ai-13.40.17-mnlq1g0EL5ux0np1.png\" -o /Users/ilansainte-agathe/Desktop/Synthetic-Landing/assets/lutecienne-logo.png -w \"%{http_code} %{size_download}\")"
+    ]
+  }
+}
