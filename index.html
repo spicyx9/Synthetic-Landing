@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#fcfbf8">
-  <meta name="description" content="Build something Lovable - Create apps and websites by chatting with AI">
-  <meta property="og:title" content="Lovable - Build something Lovable">
-  <meta property="og:description" content="Create apps and websites by chatting with AI">
-  <title>Lovable - Build something Lovable</title>
-  <!-- Favicon as inline SVG data URI -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='32' y2='32'%3E%3Cstop offset='0%25' stop-color='%23ff6b35'/%3E%3Cstop offset='50%25' stop-color='%23ff4081'/%3E%3Cstop offset='100%25' stop-color='%237c4dff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 28C16 28 4 20 4 12C4 8 7 4 11 4C13.5 4 15.5 5.5 16 7C16.5 5.5 18.5 4 21 4C25 4 28 8 28 12C28 20 16 28 16 28Z' fill='url(%23g)'/%3E%3C/svg%3E">
+  <meta name="description" content="Synthetic Swarm - Turn LinkedIn comments into leads automatically.">
+  <meta property="og:title" content="Synthetic Swarm">
+  <meta property="og:description" content="Your next clients just commented. Extract, deliver, and follow up automatically.">
+  <title>Synthetic Swarm</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="demo.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +21,7 @@
   <header class="header">
     <div class="header-inner">
       <a href="#" class="logo">
-        <img src="assets/logo.png" alt="Synthetic Swarm" class="logo-icon" width="20" height="20">
+        <img src="assets/logo-black-narrow.png" alt="Synthetic Swarm" class="logo-icon" width="20" height="20">
         Synthetic Swarm
       </a>
 
@@ -104,7 +103,7 @@
             </div>
           </div>
         </div>
-        <a href="#">Pricing</a>
+        <a href="pricing.html">Pricing</a>
       </nav>
 
       <div class="nav-actions">
@@ -132,7 +131,7 @@
 
             <!-- Headline -->
             <h1 class="demo-hero__headline">Your next clients just commented.</h1>
-            <p class="demo-hero__subtitle">Drop your post link. We extract, deliver, and follow up.</p>
+            <p class="demo-hero__subtitle">Paste your LinkedIn post link. We extract contacts, deliver your free resources, and follow up automatically.</p>
 
             <!-- URL Input -->
             <form class="demo-hero__form" id="demoUrlForm" action="https://app.syntheticswarm.ai/ui/" method="get">
@@ -290,14 +289,14 @@
       <div>
         <h2>Ready-made workflows</h2>
       </div>
-      <button class="btn-view-all">Explore all</button>
+      <a href="https://app.syntheticswarm.ai/ui/" class="btn-view-all">Explore all</a>
     </div>
     <p class="templates-subtitle reveal">Launch in minutes with pre-built automations</p>
 
     <div class="templates-grid templates-grid--3">
 
       <!-- Template 1: Resource Delivery -->
-      <div class="template-card reveal">
+      <a href="https://app.syntheticswarm.ai/ui/" class="template-card reveal">
         <div class="template-card-image">
           <div class="tmpl-resource">
             <div class="res-header">
@@ -330,10 +329,10 @@
         </div>
         <h3>Resource Delivery</h3>
         <p>Auto-send guides &amp; resources</p>
-      </div>
+      </a>
 
       <!-- Template 2: Keyword Targeting -->
-      <div class="template-card reveal reveal-delay-1">
+      <a href="https://app.syntheticswarm.ai/ui/" class="template-card reveal reveal-delay-1">
         <div class="template-card-image">
           <div class="tmpl-keyword">
             <div class="kw-search">
@@ -367,10 +366,10 @@
         </div>
         <h3>Keyword Targeting</h3>
         <p>Target posts by topic &amp; keywords</p>
-      </div>
+      </a>
 
       <!-- Template 3: High-Intent Outreach -->
-      <div class="template-card reveal reveal-delay-2">
+      <a href="https://app.syntheticswarm.ai/ui/" class="template-card reveal reveal-delay-2">
         <div class="template-card-image">
           <div class="tmpl-outreach">
             <div class="out-label">HIGH INTENT</div>
@@ -403,7 +402,7 @@
         </div>
         <h3>High-Intent Outreach</h3>
         <p>Multichannel targeting on engaged leads</p>
-      </div>
+      </a>
 
     </div>
   </section>
@@ -429,7 +428,7 @@
     <footer class="footer">
       <div class="footer-minimal">
         <div class="footer-minimal-brand">
-          <img src="assets/logo.png" alt="Synthetic Swarm" width="22" height="22">
+          <img src="assets/logo-black-narrow.png" alt="Synthetic Swarm" width="16" height="16">
           <span>Synthetic Swarm</span>
         </div>
         <div class="footer-minimal-links">
@@ -469,8 +468,8 @@
         }
       });
     }, {
-      threshold: 0.6,
-      rootMargin: '-15% 0px -15% 0px'
+      threshold: 0.8,
+      rootMargin: '-30% 0px -30% 0px'
     });
     meetSteps.forEach(step => stepObserver.observe(step));
 
