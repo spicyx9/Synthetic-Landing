@@ -348,41 +348,53 @@
       </div>
 
       <div class="cost-stat reveal">
+        <!-- Floating red sticker badge -->
+        <div class="cost-sticker cost-sticker--minus80" aria-hidden="true">
+          <span class="cost-sticker-big">−80%</span>
+          <span class="cost-sticker-sub">audience gone</span>
+        </div>
+
+        <!-- Disappointed memoji floats outside card to the right -->
+        <img src="assets/femme-pouce-rouge.png" class="cost-decor cost-decor--disappointed" alt="" aria-hidden="true" />
+
         <div class="cost-stat-label">Open rate by delivery time</div>
 
         <div class="cost-chart">
           <svg viewBox="0 0 520 230" class="cost-chart-svg" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="costCurveGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#0A66C2" stop-opacity="0.24"/>
-                <stop offset="100%" stop-color="#0A66C2" stop-opacity="0"/>
+                <stop offset="0%" stop-color="#DC2626" stop-opacity="0.32"/>
+                <stop offset="100%" stop-color="#DC2626" stop-opacity="0"/>
               </linearGradient>
             </defs>
 
             <!-- baseline -->
             <line x1="20" y1="185" x2="500" y2="185" stroke="#ece6dc" stroke-width="1"/>
 
+            <!-- danger zone (dashed) -->
+            <line class="cost-chart-danger" x1="20" y1="110" x2="500" y2="110" stroke="#DC2626" stroke-width="1" stroke-dasharray="4 6" stroke-opacity="0.4"/>
+
             <!-- area under curve -->
             <path class="cost-chart-area"
-                  d="M 50 47 C 110 56, 160 64, 200 73 C 250 80, 290 100, 340 118 C 380 140, 420 157, 470 167 L 470 185 L 50 185 Z"
+                  d="M 50 47 C 120 50, 160 60, 200 70 C 250 78, 280 108, 340 122 C 380 138, 420 173, 470 178 L 470 185 L 50 185 Z"
                   fill="url(#costCurveGrad)"/>
 
             <!-- the curve line -->
             <path class="cost-chart-line"
-                  d="M 50 47 C 110 56, 160 64, 200 73 C 250 80, 290 100, 340 118 C 380 140, 420 157, 470 167"
-                  fill="none" stroke="#0A66C2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  d="M 50 47 C 120 50, 160 60, 200 70 C 250 78, 280 108, 340 122 C 380 138, 420 173, 470 178"
+                  fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 
             <!-- data points -->
-            <circle class="cost-chart-pt cost-chart-pt--1" cx="50" cy="47" r="5.5" fill="#fff" stroke="#0A66C2" stroke-width="2.5"/>
-            <circle class="cost-chart-pt cost-chart-pt--2" cx="200" cy="73" r="5.5" fill="#fff" stroke="#0A66C2" stroke-width="2.5"/>
-            <circle class="cost-chart-pt cost-chart-pt--3" cx="340" cy="118" r="5.5" fill="#fff" stroke="#0A66C2" stroke-width="2.5"/>
-            <circle class="cost-chart-pt cost-chart-pt--4" cx="470" cy="167" r="5.5" fill="#fff" stroke="#0A66C2" stroke-width="2.5"/>
+            <circle class="cost-chart-pt cost-chart-pt--1" cx="50" cy="47" r="5.5" fill="#fff" stroke="#DC2626" stroke-width="2.5"/>
+            <circle class="cost-chart-pt cost-chart-pt--2" cx="200" cy="70" r="5.5" fill="#fff" stroke="#DC2626" stroke-width="2.5"/>
+            <circle class="cost-chart-pt cost-chart-pt--3" cx="340" cy="122" r="5.5" fill="#fff" stroke="#DC2626" stroke-width="2.5"/>
+            <circle class="cost-chart-pt cost-chart-pt--4" cx="470" cy="178" r="5.5" fill="#fff" stroke="#DC2626" stroke-width="2.5"/>
 
             <!-- percentage labels above each point -->
             <text class="cost-chart-pct cost-chart-pct--1" x="50" y="32" text-anchor="middle">92%</text>
-            <text class="cost-chart-pct cost-chart-pct--2" x="200" y="58" text-anchor="middle">75%</text>
-            <text class="cost-chart-pct cost-chart-pct--3" x="340" y="103" text-anchor="middle">45%</text>
-            <text class="cost-chart-pct cost-chart-pct--4" x="470" y="152" text-anchor="middle">12%</text>
+            <text class="cost-chart-pct cost-chart-pct--2" x="200" y="55" text-anchor="middle">75%</text>
+            <text class="cost-chart-pct cost-chart-pct--3 cost-chart-pct--danger" x="340" y="107" text-anchor="middle">45%</text>
+            <text class="cost-chart-pct cost-chart-pct--4 cost-chart-pct--danger" x="470" y="163" text-anchor="middle">12%</text>
 
             <!-- time labels below baseline -->
             <text class="cost-chart-time" x="50" y="208" text-anchor="middle">Under 1 min</text>
@@ -395,7 +407,7 @@
 
       <div class="cost-closer-wrap">
         <img src="assets/decor-6.png" alt="" class="section-decor section-decor--cost-hourglass" aria-hidden="true" />
-        <p class="cost-closer reveal">Every minute kills your conversion.</p>
+        <p class="cost-closer reveal">Every minute <span class="cost-closer-accent">kills</span> your conversion.</p>
       </div>
     </div>
   </section>
