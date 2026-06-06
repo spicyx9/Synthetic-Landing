@@ -1266,10 +1266,10 @@ button {
   max-width: 700px;
   margin: 0 auto;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.4;
   color: #1a1a1a;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.008em;
   font-weight: 400;
 }
 
@@ -1328,7 +1328,7 @@ button {
     padding: 64px 24px 56px;
   }
   .letter-container {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.5;
   }
   .letter-greeting {
@@ -1846,11 +1846,11 @@ button {
 
 .cost-beats p {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.4;
   color: #1a1a1a;
   margin: 0 0 0.3em 0;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.008em;
 }
 
 .cost-beats p:has(strong) {
@@ -2081,7 +2081,7 @@ button {
     margin-bottom: 24px;
   }
   .cost-beats p {
-    font-size: 17px;
+    font-size: 18px;
   }
   .cost-stat {
     margin-top: 80px;
@@ -2131,10 +2131,10 @@ button {
   max-width: 700px;
   margin: 0 auto;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.4;
   color: #1a1a1a;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.008em;
   font-weight: 400;
 }
 
@@ -2165,7 +2165,7 @@ button {
     padding: 48px 24px 56px;
   }
   .fix-container {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 
@@ -2768,10 +2768,10 @@ button {
 .angle-body {
   text-align: left;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 1.4;
   color: #1a1a1a;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.008em;
   max-width: 640px;
   margin: 0 auto;
 }
@@ -2800,8 +2800,8 @@ button {
   .angle-emojis { margin-bottom: 24px; }
   .angle-emoji { width: 140px; height: 140px; }
   .angle-headline { font-size: 26px; margin-bottom: 28px; }
-  .angle-body { font-size: 17px; }
-  .angle-pivot { font-size: 19px !important; }
+  .angle-body { font-size: 18px; }
+  .angle-pivot { font-size: 20px !important; }
 }
 
 /* ===== GUARANTEE : 7-day trial promise ===== */
@@ -4548,4 +4548,58 @@ button {
   .header-inner .nav-actions {
     display: none;
   }
+}
+
+/* ───────────────────────────────────────────────
+   Fix section: iridescent checklist
+   ─────────────────────────────────────────────── */
+.fix-checks {
+  list-style: none;
+  padding: 0;
+  margin: 28px auto 32px;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fix-checks li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 0;
+}
+
+.fix-check-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  animation: fix-check-shimmer 6s ease-in-out infinite;
+}
+
+.fix-checks li:nth-child(2) .fix-check-icon { animation-delay: 1.2s; }
+.fix-checks li:nth-child(3) .fix-check-icon { animation-delay: 2.4s; }
+
+.fix-checks li strong {
+  font-size: inherit;
+  font-weight: 700;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+@keyframes fix-check-shimmer {
+  0%, 100% {
+    filter: hue-rotate(0deg) drop-shadow(0 2px 8px rgba(255, 110, 212, 0.20));
+  }
+  50% {
+    filter: hue-rotate(28deg) drop-shadow(0 2px 10px rgba(110, 124, 255, 0.24));
+  }
+}
+
+@media (max-width: 600px) {
+  .fix-checks {
+    margin: 22px auto 26px;
+    gap: 10px;
+  }
+  .fix-check-icon { width: 22px; height: 22px; }
 }
