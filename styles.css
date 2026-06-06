@@ -4603,3 +4603,46 @@ button {
   }
   .fix-check-icon { width: 22px; height: 22px; }
 }
+
+/* ───────────────────────────────────────────────
+   Letter section: simple bullet list (not iridescent)
+   Used for the "Les lead magnets, c'est le levier..." enumeration.
+   Kept understated so the fix section's iridescent checks stay unique.
+   ─────────────────────────────────────────────── */
+.letter-container .letter-list-intro {
+  margin-bottom: 0.25em !important;
+}
+
+.letter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.3em 0.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.letter-list li {
+  position: relative;
+  padding-left: 1.2em;
+  line-height: 1.4;
+}
+
+.letter-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(135deg, #6e7cff 0%, #ff6ed4 33%, #ffb86b 66%, #7afff0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .letter-list { margin-left: 0.2em; }
+  .letter-list li { padding-left: 1em; }
+}
