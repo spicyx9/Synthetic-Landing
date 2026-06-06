@@ -2,11 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Browser-language auto-redirect (FR → /pricing-fr). Runs before paint. -->
+  <script>
+  (function(){
+    try {
+      var pref = localStorage.getItem('lang');
+      if (pref === 'en') return;
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (pref === 'fr' || lang.startsWith('fr')) {
+        window.location.replace('/pricing-fr' + window.location.search + window.location.hash);
+      }
+    } catch(e) {}
+  })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#fcfbf8">
   <meta name="description" content="Synthetic Swarm pricing - Start free, upgrade when you're ready.">
   <meta property="og:title" content="Pricing - Synthetic Swarm">
   <title>Pricing - Synthetic Swarm</title>
+  <link rel="alternate" hreflang="en" href="/pricing" />
+  <link rel="alternate" hreflang="fr" href="/pricing-fr" />
+  <link rel="alternate" hreflang="x-default" href="/pricing" />
   <link rel="icon" type="image/png" href="assets/logo-black-narrow.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +64,7 @@
             </div>
             <div class="mega-section mega-section--aside">
               <span class="mega-label">Use cases</span>
-              <a href="/lead-magnets" class="mega-item">
+              <a href="/" class="mega-item">
                 <strong>Lead magnets</strong>
                 <span>Auto-deliver resources to commenters.</span>
               </a>
@@ -104,6 +120,11 @@
       </nav>
 
       <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <a href="/pricing" data-lang="en" class="lang-toggle-link lang-toggle-link--active">EN</a>
+          <span class="lang-toggle-sep" aria-hidden="true">|</span>
+          <a href="/pricing-fr" data-lang="fr" class="lang-toggle-link">FR</a>
+        </div>
         <a href="https://app.syntheticswarm.ai/ui/" class="btn-login">Log in</a>
         <a href="https://app.syntheticswarm.ai/ui/" class="btn-get-started">Get started</a>
       </div>
@@ -153,9 +174,8 @@
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited messages</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited follow-ups</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority support</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>7-day free trial</li>
         </ul>
-        <a href="https://app.syntheticswarm.ai/ui/" class="pricing-btn pricing-btn--outline">Start 7-day trial</a>
+        <a href="https://app.syntheticswarm.ai/ui/" class="pricing-btn pricing-btn--outline">Get started</a>
       </div>
 
     </div>
@@ -180,6 +200,13 @@
   </footer>
 
   <script>
+    // ===== Language toggle : persist choice =====
+    document.querySelectorAll('.lang-toggle-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        try { localStorage.setItem('lang', link.getAttribute('data-lang')); } catch(e) {}
+      });
+    });
+
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

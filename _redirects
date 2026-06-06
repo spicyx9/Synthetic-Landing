@@ -1,0 +1,12 @@
+# Netlify redirects — backlinks de l'ancienne URL /lead-magnets vers la home
+# La home (/ et /index-fr) sert désormais le contenu lead-magnets
+
+# Anciennes URLs lead-magnets → home (301 permanent)
+/lead-magnets         /            301
+/lead-magnets.html    /            301
+/lead-magnets/        /            301
+
+# Anciennes URLs lead-magnets-fr → home FR (301 permanent)
+/lead-magnets-fr      /index-fr    301
+/lead-magnets-fr.html /index-fr    301
+/lead-magnets-fr/     /index-fr    301

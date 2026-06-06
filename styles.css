@@ -4175,3 +4175,55 @@ button {
     flex-direction: column;
   }
 }
+
+/* ===== LANGUAGE TOGGLE (EN | FR) ===== */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 14px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.lang-toggle-link {
+  text-decoration: none;
+  color: #888;
+  padding: 4px 7px;
+  border-radius: 5px;
+  transition: color 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+
+.lang-toggle-link:hover {
+  color: #1a1a1a;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.lang-toggle-link--active {
+  color: #1a1a1a;
+  font-weight: 700;
+  cursor: default;
+}
+
+.lang-toggle-link--active:hover {
+  background: transparent;
+}
+
+.lang-toggle-sep {
+  color: #d4d4d4;
+  font-weight: 400;
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  .lang-toggle {
+    margin-right: 8px;
+    font-size: 12px;
+  }
+  .lang-toggle-link {
+    padding: 3px 5px;
+  }
+}
