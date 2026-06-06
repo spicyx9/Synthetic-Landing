@@ -1,4 +1,26 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/lead-magnets",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lead-magnets.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lead-magnets-fr",
+      "destination": "/index-fr",
+      "permanent": true
+    },
+    {
+      "source": "/lead-magnets-fr.html",
+      "destination": "/index-fr",
+      "permanent": true
+    }
+  ]
 }

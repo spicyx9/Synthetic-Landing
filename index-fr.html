@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <!-- Auto-redirect navigateur (non-FR → / EN). Runs before paint. -->
+  <script>
+  (function(){
+    try {
+      var pref = localStorage.getItem('lang');
+      if (pref === 'fr') return;
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (pref === 'en' || !lang.startsWith('fr')) {
+        window.location.replace('/' + window.location.search + window.location.hash);
+      }
+    } catch(e) {}
+  })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#fcfbf8">
-  <meta name="description" content="Synthetic Swarm - Lead magnets: auto-deliver resources to every commenter.">
-  <meta property="og:title" content="Synthetic Swarm - Lead Magnets">
-  <meta property="og:description" content="Auto-deliver your free resources to every LinkedIn commenter and turn them into leads.">
-  <title>Lead Magnets - Synthetic Swarm</title>
+  <meta name="description" content="Synthetic Swarm — Ton lead magnet envoyé à chaque prospect, sans exception.">
+  <meta property="og:title" content="Synthetic Swarm — Lead Magnets">
+  <meta property="og:description" content="Envoie ton lead magnet à chaque prospect qui commente. Colle le lien de ton post, on gère le reste.">
+  <title>Lead Magnets — Synthetic Swarm</title>
+  <link rel="alternate" hreflang="en" href="/" />
+  <link rel="alternate" hreflang="fr" href="/index-fr" />
+  <link rel="alternate" hreflang="x-default" href="/" />
+  <link rel="canonical" href="/index-fr" />
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="demo.css">
@@ -20,7 +37,7 @@
   <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="header-inner">
-      <a href="/" class="logo">
+      <a href="/index-fr" class="logo">
         <img src="assets/logo-black-narrow.png" alt="Synthetic Swarm" class="logo-icon" width="20" height="20">
         Synthetic Swarm
       </a>
@@ -35,80 +52,85 @@
           </a>
           <div class="nav-mega nav-mega--solutions">
             <div class="mega-section mega-section--main">
-              <span class="mega-label">Who is it for?</span>
+              <span class="mega-label">Pour qui ?</span>
               <a href="#" class="mega-item">
-                <strong>Founders</strong>
-                <span>Scale outreach from day one.</span>
+                <strong>Fondateurs</strong>
+                <span>Démultiplie ton outreach dès le jour un.</span>
               </a>
               <a href="#" class="mega-item">
-                <strong>Marketers</strong>
-                <span>Turn content into pipeline.</span>
+                <strong>Marketeurs</strong>
+                <span>Transforme ton contenu en pipeline.</span>
               </a>
               <a href="#" class="mega-item">
-                <strong>Sales teams</strong>
-                <span>Warm leads, less manual work.</span>
+                <strong>Équipes commerciales</strong>
+                <span>Des leads chauds, moins de manuel.</span>
               </a>
             </div>
             <div class="mega-section mega-section--aside">
-              <span class="mega-label">Use cases</span>
-              <a href="/lead-magnets" class="mega-item">
+              <span class="mega-label">Cas d'usage</span>
+              <a href="/index-fr" class="mega-item">
                 <strong>Lead magnets</strong>
-                <span>Auto-deliver resources to commenters.</span>
+                <span>Envoie tes ressources à chaque commentaire.</span>
               </a>
               <a href="#" class="mega-item">
-                <strong>Keyword targeting</strong>
-                <span>Find prospects by what they post.</span>
+                <strong>Ciblage par mot-clé</strong>
+                <span>Trouve tes prospects via ce qu'ils postent.</span>
               </a>
               <a href="#" class="mega-item">
-                <strong>Multichannel outreach</strong>
-                <span>Reach high-intent leads everywhere.</span>
+                <strong>Outreach multicanal</strong>
+                <span>Touche les leads à fort intent, partout.</span>
               </a>
             </div>
           </div>
         </div>
         <div class="nav-dropdown-wrap">
           <a href="#" class="nav-link-dropdown">
-            Resources
+            Ressources
             <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 4.5L6 7.5L9 4.5"/>
             </svg>
           </a>
           <div class="nav-mega">
             <div class="mega-col">
-              <span class="mega-label">Resources</span>
+              <span class="mega-label">Ressources</span>
               <a href="#" class="mega-item">
                 <strong>Blog</strong>
-                <span>Tips, updates, and strategies.</span>
+                <span>Tips, news et stratégies.</span>
               </a>
               <a href="#" class="mega-item">
                 <strong>Docs</strong>
-                <span>Everything under the hood.</span>
+                <span>Tout ce qu'il y a sous le capot.</span>
               </a>
               <a href="#" class="mega-item">
                 <strong>Guides</strong>
-                <span>Learn as you build.</span>
+                <span>Apprends en construisant.</span>
               </a>
             </div>
             <div class="mega-col mega-announcement">
-              <span class="mega-label">Announcement</span>
+              <span class="mega-label">Annonce</span>
               <a href="https://hyperstack.studio" class="mega-card" target="_blank">
                 <div class="mega-card-img">
                   <span class="mega-brand-text">Hyperstack</span>
                   <span class="mega-x">×</span>
                   <span class="mega-brand-text">Synthetic Swarm</span>
                 </div>
-                <strong>Partnership with Hyperstack</strong>
-                <span class="mega-link">Learn more ›</span>
+                <strong>Partenariat avec Hyperstack</strong>
+                <span class="mega-link">En savoir plus ›</span>
               </a>
             </div>
           </div>
         </div>
-        <a href="/pricing">Pricing</a>
+        <a href="/pricing-fr">Tarifs</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://app.syntheticswarm.ai/ui/" class="btn-login">Log in</a>
-        <a href="https://app.syntheticswarm.ai/ui/" class="btn-get-started">Get started</a>
+        <div class="lang-toggle" role="group" aria-label="Langue">
+          <a href="/" data-lang="en" class="lang-toggle-link">EN</a>
+          <span class="lang-toggle-sep" aria-hidden="true">|</span>
+          <a href="/index-fr" data-lang="fr" class="lang-toggle-link lang-toggle-link--active">FR</a>
+        </div>
+        <a href="https://app.syntheticswarm.ai/ui/" class="btn-login">Se connecter</a>
+        <a href="https://app.syntheticswarm.ai/ui/" class="btn-get-started">Commencer gratuitement</a>
       </div>
     </div>
   </header>
@@ -137,13 +159,13 @@
             <!-- Eyebrow : Breaking news ticker -->
             <div class="demo-hero__eyebrow">
               <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-              <span class="hero-eyebrow-badge">BREAKING NEWS</span>
-              <span class="hero-eyebrow-date" id="heroEyebrowDate">2ND OF JUNE, 2026</span>
+              <span class="hero-eyebrow-badge">BREAKING</span>
+              <span class="hero-eyebrow-date" id="heroEyebrowDate">2 JUIN 2026</span>
             </div>
 
             <!-- Headline -->
-            <h1 class="demo-hero__headline">Brand new guaranteed way to deliver your lead magnet to every commenter.</h1>
-            <p class="demo-hero__subtitle">Paste the post. We do the rest.</p>
+            <h1 class="demo-hero__headline">Ton lead magnet envoyé à chaque prospect sans exception.</h1>
+            <p class="demo-hero__subtitle">Colle le lien de ton post, on gère le reste.</p>
 
             <!-- URL Input -->
             <form class="demo-hero__form" id="demoUrlForm" action="https://app.syntheticswarm.ai/ui/" method="get">
@@ -172,7 +194,7 @@
 
       <!-- Social proof inside hero -->
       <div class="hero-social-proof">
-        <p>Trusted by growing teams</p>
+        <p>Ils nous font confiance</p>
         <div class="logos-row">
 
           <!-- LiteSoft -->
@@ -214,29 +236,29 @@
     <div class="letter-container">
       <img src="assets/femme-letter-2.png" alt="" class="section-decor section-decor--letter-femme" aria-hidden="true" />
 
-      <p class="letter-updated reveal"><span class="letter-updated-hl">Updated: <span id="letterUpdatedDate">31st of May, 2026</span></span></p>
+      <p class="letter-updated reveal"><span class="letter-updated-hl">Mis à jour : <span id="letterUpdatedDate">31 mai 2026</span></span></p>
 
-      <p class="letter-greeting reveal">Dear LinkedIn poster,</p>
+      <p class="letter-greeting reveal">Cher créateur de contenu LinkedIn,</p>
 
-      <p class="reveal">Lemme guess. You wrote a banger last week.</p>
+      <p class="reveal">Je parie. T'as cartonné la semaine dernière.</p>
 
-      <p class="reveal">Hundreds of "interested" comments rolled in.</p>
+      <p class="reveal">T'as récolté des centaines de « intéressé » en commentaire.</p>
 
-      <p class="reveal">You DM'd what you could at 11pm. Moved on by Tuesday.</p>
+      <p class="reveal">T'en as DM quelques-uns le soir même. Mardi, t'avais la tête ailleurs.</p>
 
-      <p class="reveal">You're in the rare 1% who cracked it.</p>
+      <p class="reveal">Bravo, t'es déjà dans le 1 % qui a craqué le code de triche.</p>
 
-      <p class="reveal"><strong>Lead magnets are the fastest way to compound followers, warm leads, and authority.</strong></p>
+      <p class="reveal"><strong>Les lead magnets, c'est le levier le plus rapide pour agrandir ton audience, créer des leads chauds et construire ton autorité dans ton marché.</strong></p>
 
-      <p class="reveal">But here's what nobody told you.</p>
+      <p class="reveal">Mais personne ne t'a prévenu que…</p>
 
-      <p class="reveal"><strong>70% of the lead magnets you promised will never get opened.</strong></p>
+      <p class="reveal"><strong>70 % des lead magnets que tu envoies ne seront jamais ouverts.</strong></p>
 
-      <p class="reveal">Their interest peaked the second they commented. By the time you sent yours, it was gone.</p>
+      <p class="reveal">Leur intérêt était au maximum quand ils ont commenté, mais le temps que tu envoies, ils étaient passés à autre chose, ou ils l'ont déjà oublié.</p>
 
-      <p class="letter-question reveal">So what's actually going on?</p>
+      <p class="letter-question reveal">Alors, qu'est-ce qui cloche ?</p>
 
-      <p class="letter-closer reveal">Simple, <strong>you have a speed problem.</strong></p>
+      <p class="letter-closer reveal">C'est simple, <strong>tu es trop lent.</strong></p>
     </div>
   </section>
 
@@ -258,20 +280,20 @@
                   <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
                 </svg>
               </span>
-              <span class="delay-card-degree">· 2nd</span>
+              <span class="delay-card-degree">· 2e</span>
             </div>
-            <div class="delay-card-sub">Just keep swimming</div>
+            <div class="delay-card-sub">Continue à nager</div>
           </div>
           <div class="delay-card-aside">
-            <span class="delay-card-follow">Follow</span>
-            <span class="delay-card-time">2m</span>
+            <span class="delay-card-follow">Suivre</span>
+            <span class="delay-card-time">2 min</span>
             <span class="delay-card-menu" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>
             </span>
           </div>
         </div>
 
-        <div class="delay-card-body">I NEED this! Drop it NOW before I forget 🐠</div>
+        <div class="delay-card-body">J'EN AI BESOIN ! Envoie-moi ça MAINTENANT avant que j'oublie 🐠</div>
 
         <div class="delay-card-footer">
           <span class="delay-card-stat delay-card-stat--liked">
@@ -297,7 +319,7 @@
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
           </svg>
-          <span>14 hours later</span>
+          <span>14 heures plus tard</span>
         </div>
         <div class="delay-connector-line"></div>
       </div>
@@ -313,23 +335,23 @@
               <div class="delay-card-name">Dory</div>
               <div class="delay-card-sub delay-card-sub--status">
                 <span class="delay-dm-dot" aria-hidden="true"></span>
-                Last seen swimming away
+                Partie nager ailleurs
               </div>
             </div>
           </div>
 
           <div class="delay-dm-bubble-wrap">
-            <div class="delay-dm-bubble">Hey Dory! Here's the playbook you asked for. Hope it helps 🚀</div>
+            <div class="delay-dm-bubble">Salut Dory ! Voici le playbook que tu as demandé. J'espère que ça aide 🚀</div>
             <div class="delay-dm-meta">
               <svg width="14" height="9" viewBox="0 0 16 10" fill="none" aria-hidden="true">
                 <path d="M1 5l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M6.5 5l3 3 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              Delivered · 14h later
+              Délivré · 14 h plus tard
             </div>
           </div>
         </div>
-        <div class="delay-card-badge">Never opened</div>
+        <div class="delay-card-badge">Jamais ouvert</div>
       </div>
 
     </div>
@@ -338,26 +360,26 @@
   <!-- ===== COST OF SLOW ===== -->
   <section class="cost-section">
     <div class="cost-container">
-      <h2 class="cost-headline reveal">Late lead magnets aren't lead magnets.</h2>
+      <h2 class="cost-headline reveal">Trop tard, c'est trop tard.</h2>
 
       <div class="cost-beats">
-        <p class="reveal"><strong>They're files nobody opens.</strong></p>
-        <p class="reveal"><strong>CTAs nobody clicks.</strong></p>
-        <p class="reveal">Warm leads that went cold while you slept.</p>
-        <p class="reveal">And the hours you spent writing the guide, designing the template, recording the Loom? <strong>Burned.</strong></p>
+        <p class="reveal"><strong>Un lead magnet en retard est un fichier que personne n'ouvre.</strong></p>
+        <p class="reveal"><strong>Un CTA sur lequel personne ne clique.</strong></p>
+        <p class="reveal">Des leads chauds qui ont refroidi pendant que tu dormais.</p>
+        <p class="reveal">Et les heures que t'as passées à écrire un guide, designer un template ou enregistrer un Loom, tout ça, <strong>ça part à la poubelle.</strong></p>
       </div>
 
       <div class="cost-stat reveal">
         <!-- Floating red sticker badge -->
         <div class="cost-sticker cost-sticker--minus80" aria-hidden="true">
           <span class="cost-sticker-big">−80%</span>
-          <span class="cost-sticker-sub">audience gone</span>
+          <span class="cost-sticker-sub">audience envolée</span>
         </div>
 
         <!-- Disappointed memoji floats outside card to the right -->
         <img src="assets/femme-pouce-rouge.png" class="cost-decor cost-decor--disappointed" alt="" aria-hidden="true" />
 
-        <div class="cost-stat-label">Open rate by delivery time</div>
+        <div class="cost-stat-label">Taux d'ouverture selon le délai</div>
 
         <div class="cost-chart">
           <svg viewBox="0 0 520 230" class="cost-chart-svg" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -397,17 +419,17 @@
             <text class="cost-chart-pct cost-chart-pct--4 cost-chart-pct--danger" x="470" y="163" text-anchor="middle">12%</text>
 
             <!-- time labels below baseline -->
-            <text class="cost-chart-time" x="50" y="208" text-anchor="middle">Under 1 min</text>
-            <text class="cost-chart-time" x="200" y="208" text-anchor="middle">Under 10 min</text>
-            <text class="cost-chart-time" x="340" y="208" text-anchor="middle">Under 1 hour</text>
-            <text class="cost-chart-time" x="470" y="208" text-anchor="middle">Over 1 hour</text>
+            <text class="cost-chart-time" x="50" y="208" text-anchor="middle">&lt; 1 min</text>
+            <text class="cost-chart-time" x="200" y="208" text-anchor="middle">&lt; 10 min</text>
+            <text class="cost-chart-time" x="340" y="208" text-anchor="middle">&lt; 1 h</text>
+            <text class="cost-chart-time" x="470" y="208" text-anchor="middle">&gt; 1 h</text>
           </svg>
         </div>
       </div>
 
       <div class="cost-closer-wrap">
         <img src="assets/decor-6.png" alt="" class="section-decor section-decor--cost-hourglass" aria-hidden="true" />
-        <p class="cost-closer reveal">Every minute <span class="cost-closer-accent">kills</span> your conversion.</p>
+        <p class="cost-closer reveal">À chaque minute qui passe, ta conversion <span class="cost-closer-accent">s'effondre</span>.</p>
       </div>
     </div>
   </section>
@@ -420,37 +442,37 @@
   <!-- ===== THE FIX / SOLUTION REVEAL ===== -->
   <section class="fix-section">
     <div class="fix-container">
-      <p class="reveal">So what's the fix?</p>
+      <p class="reveal">Alors, quelle est la solution ?</p>
 
-      <p class="reveal">Type faster? Hire an intern? Set 17 alarms?</p>
+      <p class="reveal">Taper plus vite ? Embaucher un stagiaire ? Mettre 17 alarmes ?</p>
 
-      <p class="reveal">Yeah, no.</p>
+      <p class="reveal">Hmm, non.</p>
 
-      <p class="reveal">What you actually need is something that.</p>
+      <p class="reveal">Ce qu'il te faut, vraiment. C'est un truc qui…</p>
 
-      <p class="reveal"><strong>Never sleeps.</strong></p>
+      <p class="reveal"><strong>Ne dort jamais.</strong></p>
 
-      <p class="reveal"><strong>Never forgets a follow-up.</strong></p>
+      <p class="reveal"><strong>N'oublie aucune relance.</strong></p>
 
-      <p class="reveal"><strong>Starts the second they comment.</strong></p>
+      <p class="reveal"><strong>Réagit à la seconde où il commente.</strong></p>
 
-      <p class="reveal">That something has a name. It's called <strong>Synthetic Swarm</strong>.</p>
+      <p class="reveal">Cette solution s'appelle <strong>Synthetic Swarm.</strong></p>
     </div>
 
     <div class="fix-cta reveal">
       <a href="https://app.syntheticswarm.ai/ui/" class="fix-cta-button">
-        <span class="fix-cta-button-title">OK, show me how it works</span>
-        <span class="fix-cta-button-sub">What you see in 30 seconds will change how you post forever.</span>
+        <span class="fix-cta-button-title">OK, montre-moi comment ça marche</span>
+        <span class="fix-cta-button-sub">Ta façon de poster va changer en 30 secondes.</span>
       </a>
-      <p class="fix-cta-question">How many commenters did you miss this week?</p>
+      <p class="fix-cta-question">Combien de prospects t'as loupés cette semaine ?</p>
     </div>
   </section>
 
   <!-- ===== PROOF GALLERY ===== -->
   <section class="proof-section">
     <div class="proof-header reveal">
-      <h2 class="proof-headline">Posts we've turned into pipeline.</h2>
-      <p class="proof-sub">Real posts. Real commenters. Real leads delivered.</p>
+      <h2 class="proof-headline">Des posts qu'on a transformés en pipeline.</h2>
+      <p class="proof-sub">Vrais posts. Vrais commentaires. Vrais leads livrés.</p>
     </div>
 
     <div class="proof-scroller">
@@ -459,20 +481,20 @@
         <!-- Card 1: REAL -->
         <article class="proof-card reveal">
           <div class="proof-card-image">
-            <img src="assets/proof-post-1.png" alt="LinkedIn post — Lovable guide by Louis Adam" />
+            <img src="assets/proof-post-1.png" alt="Post LinkedIn — guide Lovable par Louis Adam" />
           </div>
           <div class="proof-card-metrics">
             <div class="proof-metric">
               <span class="proof-metric-value">+450</span>
-              <span class="proof-metric-label">New followers</span>
+              <span class="proof-metric-label">Nouveaux followers</span>
             </div>
             <div class="proof-metric">
               <span class="proof-metric-value">750</span>
-              <span class="proof-metric-label">Resources delivered</span>
+              <span class="proof-metric-label">Ressources livrées</span>
             </div>
             <div class="proof-metric proof-metric--highlight">
               <span class="proof-metric-value">21</span>
-              <span class="proof-metric-label">Calls booked</span>
+              <span class="proof-metric-label">Calls bookés</span>
             </div>
           </div>
         </article>
@@ -480,20 +502,20 @@
         <!-- Card 2: REAL -->
         <article class="proof-card reveal reveal-delay-1">
           <div class="proof-card-image">
-            <img src="assets/proof-post-2.png" alt="LinkedIn post — n8n Guide by Louis Adam" />
+            <img src="assets/proof-post-2.png" alt="Post LinkedIn — guide n8n par Louis Adam" />
           </div>
           <div class="proof-card-metrics">
             <div class="proof-metric">
               <span class="proof-metric-value">+180</span>
-              <span class="proof-metric-label">New followers</span>
+              <span class="proof-metric-label">Nouveaux followers</span>
             </div>
             <div class="proof-metric">
               <span class="proof-metric-value">297</span>
-              <span class="proof-metric-label">Resources delivered</span>
+              <span class="proof-metric-label">Ressources livrées</span>
             </div>
             <div class="proof-metric proof-metric--highlight">
               <span class="proof-metric-value">8</span>
-              <span class="proof-metric-label">Calls booked</span>
+              <span class="proof-metric-label">Calls bookés</span>
             </div>
           </div>
         </article>
@@ -501,20 +523,20 @@
         <!-- Card 3: REAL -->
         <article class="proof-card reveal reveal-delay-2">
           <div class="proof-card-image">
-            <img src="assets/proof-post-3.png" alt="LinkedIn post — LLM prompting by Louis Adam" />
+            <img src="assets/proof-post-3.png" alt="Post LinkedIn — prompting LLM par Louis Adam" />
           </div>
           <div class="proof-card-metrics">
             <div class="proof-metric">
               <span class="proof-metric-value">+130</span>
-              <span class="proof-metric-label">New followers</span>
+              <span class="proof-metric-label">Nouveaux followers</span>
             </div>
             <div class="proof-metric">
               <span class="proof-metric-value">214</span>
-              <span class="proof-metric-label">Resources delivered</span>
+              <span class="proof-metric-label">Ressources livrées</span>
             </div>
             <div class="proof-metric proof-metric--highlight">
               <span class="proof-metric-value">6</span>
-              <span class="proof-metric-label">Calls booked</span>
+              <span class="proof-metric-label">Calls bookés</span>
             </div>
           </div>
         </article>
@@ -530,24 +552,24 @@
 
       <!-- Text column -->
       <div class="feature-text reveal">
-        <h2 class="feature-headline">Meet Louis.</h2>
+        <h2 class="feature-headline">Voici Louis.</h2>
 
         <blockquote class="feature-quote">
-          "This single channel now drives <span class="feature-highlight">10% of my annual revenue</span>. I just write the posts. Synthetic Swarm handles every single delivery."
+          « Rien que ce canal me rapporte <span class="feature-highlight">10 % de mon CA annuel</span>. Moi, j'écris juste les posts. Synthetic Swarm gère le reste. »
         </blockquote>
 
         <div class="feature-author">
           <span class="feature-name">Louis Adam</span>
-          <span class="feature-role">Founder of Hyperstack</span>
+          <span class="feature-role">Fondateur d'Hyperstack</span>
         </div>
 
-        <a href="https://app.syntheticswarm.ai/ui/" class="feature-cta">Try it on your next post →</a>
+        <a href="https://app.syntheticswarm.ai/ui/" class="feature-cta">Essaie-le sur ton prochain post →</a>
       </div>
 
       <!-- Photo + floating badges column -->
       <div class="feature-visual reveal reveal-delay-1">
         <div class="feature-photo-wrap">
-          <img src="assets/louis-content.png" alt="Louis Adam, Founder of Hyperstack" class="feature-photo" />
+          <img src="assets/louis-content.png" alt="Louis Adam, fondateur de Hyperstack" class="feature-photo" />
 
           <!-- Floating: LinkedIn followers gained -->
           <div class="float-badge float-badge--linkedin">
@@ -555,15 +577,15 @@
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
             <div class="float-badge-text">
-              <span class="float-badge-value">+2,000 followers</span>
-              <span class="float-badge-label">in 12 months</span>
+              <span class="float-badge-value">+2 000 followers</span>
+              <span class="float-badge-label">en 12 mois</span>
             </div>
           </div>
 
           <!-- Floating: Revenue impact -->
           <div class="float-badge float-badge--revenue">
-            <span class="float-badge-num">10%</span>
-            <span class="float-badge-sub">of annual revenue</span>
+            <span class="float-badge-num">10 %</span>
+            <span class="float-badge-sub">du CA annuel</span>
           </div>
 
           <!-- Floating: Hyperstack -->
@@ -588,21 +610,21 @@
         <img src="assets/memoji-reflecting.png" alt="" class="angle-emoji" aria-hidden="true" />
       </div>
 
-      <h2 class="angle-headline reveal">Wishing your posts performed like Louis's?</h2>
+      <h2 class="angle-headline reveal">Et si tes posts cartonnaient comme ceux de Louis ?</h2>
 
       <div class="angle-body">
-        <p class="reveal">They might.</p>
-        <p class="reveal">But here's what nobody tells you about Louis's posts.</p>
-        <p class="reveal angle-pivot"><strong>They're not exceptional.</strong></p>
-        <p class="reveal">Most people write a banger.</p>
-        <p class="reveal">200 commenters say "interested".</p>
-        <p class="reveal">They DM a few. Get tired.</p>
-        <p class="reveal angle-pivot"><strong>Most stop. Louis doesn't.</strong></p>
-        <p class="reveal">Every commenter receives the resource.</p>
-        <p class="reveal">Every reply gets followed up.</p>
-        <p class="reveal">Every qualified conversation gets booked.</p>
-        <p class="reveal angle-pivot"><strong>That's mechanical follow-through.</strong></p>
-        <p class="reveal">And that's exactly what Synthetic Swarm allows.</p>
+        <p class="reveal">C'est possible.</p>
+        <p class="reveal">Mais voilà ce qu'on te dit pas sur ses posts.</p>
+        <p class="reveal angle-pivot"><strong>Ils n'ont rien d'exceptionnel.</strong></p>
+        <p class="reveal">La plupart des gens cartonnent avec un post.</p>
+        <p class="reveal">200 personnes commentent « intéressé ».</p>
+        <p class="reveal">Ils en DM quelques-uns. Puis ils lâchent.</p>
+        <p class="reveal angle-pivot"><strong>La plupart arrêtent. Pas Louis.</strong></p>
+        <p class="reveal">Chaque commentaire reçoit la ressource.</p>
+        <p class="reveal">Chaque réponse déclenche une relance.</p>
+        <p class="reveal">Chaque conversation qualifiée finit en RDV.</p>
+        <p class="reveal angle-pivot"><strong>Tout ça, c'est un système qui tourne tout seul.</strong></p>
+        <p class="reveal">Et ce système, c'est exactement ce que Synthetic Swarm te permet.</p>
       </div>
     </div>
   </section>
@@ -611,9 +633,9 @@
   <section class="guarantee-section">
     <div class="guarantee-container">
 
-      <h2 class="guarantee-headline reveal">Don't pay until it works for you.</h2>
+      <h2 class="guarantee-headline reveal">Tu paies seulement si ça marche pour toi.</h2>
 
-      <p class="guarantee-sub reveal">Try it for 7 days. On us.</p>
+      <p class="guarantee-sub reveal">Essaie 7 jours. C'est cadeau.</p>
 
       <div class="magic-stage reveal">
         <!-- Floating decorations -->
@@ -623,150 +645,149 @@
         <img src="assets/licorne-explosion.png" class="magic-decor magic-decor--unicorn-bl" alt="" aria-hidden="true" />
 
         <!-- Floating chips -->
-        <span class="magic-chip magic-chip--tl">Full access</span>
-        <span class="magic-chip magic-chip--tr">All gift, no catch</span>
-        <span class="magic-chip magic-chip--ml">7 days on us</span>
-        <span class="magic-chip magic-chip--bl">Cancel anytime</span>
-        <span class="magic-chip magic-chip--br">Yours to keep</span>
+        <span class="magic-chip magic-chip--tl">Accès complet</span>
+        <span class="magic-chip magic-chip--tr">100% cadeau</span>
+        <span class="magic-chip magic-chip--ml">7 jours offerts</span>
+        <span class="magic-chip magic-chip--bl">Annule quand tu veux</span>
+        <span class="magic-chip magic-chip--br">Tu gardes tout</span>
 
         <!-- Iridescent CTA -->
         <a href="https://app.syntheticswarm.ai/ui/" class="magic-cta">
-          <span class="magic-cta-title">Try it free</span>
-          <span class="magic-cta-sub">Free for 7 days</span>
+          <span class="magic-cta-title">Essaie gratuitement</span>
+          <span class="magic-cta-sub">Gratuit pendant 7 jours</span>
         </a>
       </div>
 
-      <p class="guarantee-reason reveal">You worked too hard for them to forget you.</p>
+      <p class="guarantee-reason reveal">T'as bossé trop dur pour qu'ils t'oublient.</p>
     </div>
   </section>
 
   <!-- ===== PRICING SECTION (inline on landing) ===== -->
   <section class="pricing-section">
-    <h2 class="reveal">Pay nothing for 7 days.</h2>
-    <p class="pricing-subtitle reveal">Pick a plan. Test it. Cancel before day 7 if it doesn't pay for itself.</p>
+    <h2 class="reveal">Ne paie rien pendant 7 jours.</h2>
+    <p class="pricing-subtitle reveal">Choisis un plan. Teste-le. Annule avant le 7ème jour s'il te rapporte rien.</p>
 
     <div class="pricing-grid">
 
       <!-- Pro Solo -->
       <div class="pricing-card pricing-card--pro reveal reveal-delay-1">
-        <div class="pricing-badge">Most popular</div>
+        <div class="pricing-badge">Le plus populaire</div>
         <div class="pricing-card-header">
           <h3>Pro Solo</h3>
           <div class="pricing-price">
             <span class="pricing-amount">29€</span>
-            <span class="pricing-period">/month</span>
+            <span class="pricing-period">/mois</span>
           </div>
-          <p class="pricing-desc">For founders and content creators.</p>
+          <p class="pricing-desc">Pour les fondateurs et créateurs de contenu.</p>
         </div>
         <ul class="pricing-features">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 connected account</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited messages</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited follow-ups</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Persona filters</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>7-day free trial</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 compte connecté</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Messages illimités</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Relances illimitées</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Filtres par persona</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>7 jours d'essai gratuit</li>
         </ul>
-        <a href="https://app.syntheticswarm.ai/ui/" class="pricing-btn pricing-btn--primary">Start 7-day trial</a>
+        <a href="https://app.syntheticswarm.ai/ui/" class="pricing-btn pricing-btn--primary">Démarrer l'essai 7 jours</a>
       </div>
 
       <!-- Pro Studio -->
       <div class="pricing-card pricing-card--studio reveal reveal-delay-2">
-        <div class="pricing-badge pricing-badge--studio">Best for agencies</div>
+        <div class="pricing-badge pricing-badge--studio">Idéal pour les agences</div>
         <div class="pricing-card-header">
           <h3>Pro Studio</h3>
           <div class="pricing-price">
             <span class="pricing-amount">99€</span>
-            <span class="pricing-period">/month</span>
+            <span class="pricing-period">/mois</span>
           </div>
-          <p class="pricing-desc">For agencies running multiple accounts.</p>
+          <p class="pricing-desc">Pour les agences qui gèrent plusieurs comptes.</p>
         </div>
         <ul class="pricing-features">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 connected accounts</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited messages</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited follow-ups</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority support</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>7-day free trial</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 comptes connectés</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Messages illimités</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Relances illimitées</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Support prioritaire</li>
         </ul>
-        <a href="https://app.syntheticswarm.ai/ui/" class="pricing-btn pricing-btn--outline">Start 7-day trial</a>
+        <a href="https://app.syntheticswarm.ai/ui/" class="pricing-btn pricing-btn--outline">Commencer</a>
       </div>
 
     </div>
 
-    <p class="pricing-footnote reveal">Need more accounts? Add +19€/month per additional connected account.</p>
+    <p class="pricing-footnote reveal">Besoin de plus de comptes ? +19€/mois par compte connecté supplémentaire.</p>
   </section>
 
   <!-- ===== FAQ SECTION ===== -->
   <section class="faq-section">
     <div class="faq-container">
-      <h2 class="faq-headline reveal">Frequently asked questions</h2>
+      <h2 class="faq-headline reveal">Questions fréquentes</h2>
 
       <div class="faq-list">
           <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>Will my account stay safe?</span>
+              <span>Mon compte reste-t-il en sécurité ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="faq-answer">
-              <p>Synthetic Swarm is built with account safety in mind. We respect daily activity limits, cap actions based on your account age, and pace them naturally across the day. We only act on people who already engaged with you. You can pause or stop anytime. As with any third-party tool, your account remains yours.</p>
+              <p>Synthetic Swarm est conçu en pensant à la sécurité de ton compte. On respecte les limites d'activité quotidiennes, on plafonne les actions selon l'âge de ton compte, et on les espace naturellement dans la journée. On agit uniquement sur des gens qui ont déjà interagi avec toi. Tu peux mettre en pause ou stopper à tout moment. Comme avec n'importe quel outil tiers, ton compte reste le tien.</p>
             </div>
           </details>
 
           <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>How is this different from cold outreach tools?</span>
+              <span>En quoi c'est différent des outils de cold outreach ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="faq-answer">
-              <p>Most tools in this category are built for cold outreach. DMing strangers at scale. Synthetic Swarm only acts on people who already engaged with you. They commented. They opted in. That's the difference between starting a conversation and interrupting one.</p>
+              <p>La plupart des outils de cette catégorie sont conçus pour du cold outreach. DM des inconnus à grande échelle. Synthetic Swarm n'agit que sur des gens qui ont déjà interagi avec toi. Ils ont commenté. Ils ont opt-in. C'est la différence entre démarrer une conversation et en interrompre une.</p>
             </div>
           </details>
 
           <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>What if my post only has 5 comments? Or 500?</span>
+              <span>Et si mon post a seulement 5 commentaires ? Ou 500 ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="faq-answer">
-              <p>Both work. No minimum, no maximum. We iterate through everyone who commented, whether that's 5 people or 5,000. High-volume posts get spread across multiple days to stay within your account's daily activity limits.</p>
+              <p>Les deux marchent. Pas de minimum, pas de maximum. On itère sur tous ceux qui ont commenté, que ce soit 5 personnes ou 5 000. Les posts à fort volume sont étalés sur plusieurs jours pour rester dans les limites quotidiennes de ton compte.</p>
             </div>
           </details>
 
           <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>How long does setup take?</span>
+              <span>Combien de temps pour setup ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="faq-answer">
-              <p>About 3 minutes. Connect your account, paste your post URL, write your DM, ship it. No tracking pixels, no CRM integration, no Zapier hell.</p>
+              <p>Environ 3 minutes. Connecte ton compte, colle l'URL de ton post, écris ton DM, c'est parti. Pas de pixel de tracking, pas d'intégration CRM, pas d'enfer Zapier.</p>
             </div>
           </details>
 
           <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>What if someone doesn't reply to my first DM?</span>
+              <span>Et si quelqu'un ne répond pas à mon premier DM ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="faq-answer">
-              <p>Synthetic Swarm automatically sends 2-3 follow-ups spaced over several days. You write them once, they trigger only on no-reply, and they stop the moment someone responds.</p>
+              <p>Synthetic Swarm envoie automatiquement 2 à 3 relances espacées sur plusieurs jours. Tu les écris une fois, elles se déclenchent uniquement en l'absence de réponse, et s'arrêtent dès que quelqu'un répond.</p>
             </div>
           </details>
 
           <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>Does this work for multiple accounts?</span>
+              <span>Ça marche pour plusieurs comptes ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="faq-answer">
-              <p>Yes. You can connect multiple accounts under one workspace. Useful if you run a personal brand and a company page, or if you're a team coordinating multiple senders.</p>
+              <p>Oui. Tu peux connecter plusieurs comptes sous un même workspace. Pratique si tu gères une marque perso et une page entreprise, ou si tu es une équipe qui coordonne plusieurs émetteurs.</p>
             </div>
           </details>
 
           <details class="faq-item reveal">
             <summary class="faq-question">
-              <span>What happens after the 7-day trial?</span>
+              <span>Que se passe-t-il après les 7 jours d'essai ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </summary>
             <div class="faq-answer">
-              <p>If you don't cancel before day 7, your card gets charged for the plan you picked. Cancel anytime in the dashboard. One click, no questions, no support call. Cancel before day 7 and you pay nothing.</p>
+              <p>Si tu n'annules pas avant le 7ème jour, ta carte est débitée pour le plan choisi. Annule à tout moment dans le dashboard. Un clic, pas de questions, pas d'appel au support. Annule avant le 7ème jour et tu paies rien.</p>
             </div>
           </details>
         </div>
@@ -784,10 +805,10 @@
     <section class="cta-section">
       <img src="assets/decor-3.png" alt="" class="section-decor section-decor--cta-rocket" aria-hidden="true" />
       <div class="cta-content">
-        <h2 class="reveal reveal-delay-1">Ready to convert your audience?</h2>
-        <p class="cta-subtitle reveal reveal-delay-1">Start turning every interaction into a conversation.</p>
+        <h2 class="reveal reveal-delay-1">Prêt à convertir ton audience ?</h2>
+        <p class="cta-subtitle reveal reveal-delay-1">Transforme chaque interaction en conversation.</p>
         <a href="https://app.syntheticswarm.ai/ui/" class="cta-main-btn reveal reveal-delay-2">
-          Get started
+          Commencer gratuitement
         </a>
       </div>
     </section>
@@ -798,17 +819,24 @@
           <span>Synthetic Swarm</span>
         </div>
         <div class="footer-minimal-links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Conditions</a>
           <a href="#">Support</a>
           <a href="#">LinkedIn</a>
         </div>
-        <div class="footer-minimal-copy">&copy; 2025 Synthetic Swarm. All rights reserved.</div>
+        <div class="footer-minimal-copy">&copy; 2025 Synthetic Swarm. Tous droits réservés.</div>
       </div>
     </footer>
   </div>
 
   <script>
+    // ===== Language toggle : persist choice =====
+    document.querySelectorAll('.lang-toggle-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        try { localStorage.setItem('lang', link.getAttribute('data-lang')); } catch(e) {}
+      });
+    });
+
     // ===== Scroll reveal animations =====
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -866,24 +894,16 @@
     }, { threshold: 0.4 });
     statNumbers.forEach(num => statsObserver.observe(num));
 
-    // ===== Dynamic date in hero eyebrow =====
+    // ===== Dynamic date in hero eyebrow (FR format) =====
     (function() {
       const dateEl = document.getElementById('heroEyebrowDate');
       if (!dateEl) return;
       const now = new Date();
       const day = now.getDate();
-      const month = now.toLocaleString('en-US', { month: 'long' }).toUpperCase();
+      const month = now.toLocaleString('fr-FR', { month: 'long' }).toUpperCase();
       const year = now.getFullYear();
-      const suffix = (d) => {
-        if (d >= 11 && d <= 13) return 'TH';
-        switch (d % 10) {
-          case 1: return 'ST';
-          case 2: return 'ND';
-          case 3: return 'RD';
-          default: return 'TH';
-        }
-      };
-      dateEl.textContent = `${day}${suffix(day)} OF ${month}, ${year}`;
+      const dayStr = day === 1 ? '1ER' : String(day);
+      dateEl.textContent = `${dayStr} ${month} ${year}`;
     })();
 
     // ===== Delay visual : staggered narrative animation =====
@@ -916,25 +936,17 @@
       observer.observe(fixSection);
     })();
 
-    // ===== Dynamic "Updated:" date (today - 2 days) =====
+    // ===== Dynamic "Mis à jour :" date (today - 2 days, FR format) =====
     (function() {
       const dateEl = document.getElementById('letterUpdatedDate');
       if (!dateEl) return;
       const d = new Date();
       d.setDate(d.getDate() - 2);
       const day = d.getDate();
-      const month = d.toLocaleString('en-US', { month: 'long' });
+      const month = d.toLocaleString('fr-FR', { month: 'long' });
       const year = d.getFullYear();
-      const suffix = (n) => {
-        if (n >= 11 && n <= 13) return 'th';
-        switch (n % 10) {
-          case 1: return 'st';
-          case 2: return 'nd';
-          case 3: return 'rd';
-          default: return 'th';
-        }
-      };
-      dateEl.textContent = `${day}${suffix(day)} of ${month}, ${year}`;
+      const dayStr = day === 1 ? '1er' : String(day);
+      dateEl.textContent = `${dayStr} ${month} ${year}`;
     })();
   </script>
   <script src="demo.js"></script>
