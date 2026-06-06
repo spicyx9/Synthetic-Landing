@@ -289,4 +289,34 @@
   .demo-wrapper .demo-hero__proof { gap: 8px; }
   .demo-wrapper .demo-hero__proof-item { font-size: 12px; }
 
+  /* Eyebrow pill: force single-line on mobile */
+  .demo-wrapper .demo-hero__eyebrow {
+    gap: 8px;
+    padding: 5px 14px 5px 10px;
+    margin-bottom: 20px;
+  }
+  .hero-eyebrow-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+  .hero-eyebrow-date {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .hero-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Headline: smaller on mobile to avoid 6-line wrap */
+  .demo-wrapper .demo-hero__headline {
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
+  }
+  .demo-wrapper .demo-hero__subtitle {
+    font-size: 15px;
+  }
 }
