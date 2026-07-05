@@ -1,12 +1,6 @@
-# Netlify redirects — backlinks de l'ancienne URL /lead-magnets vers la home
-# La home (/ et /index-fr) sert désormais le contenu lead-magnets
-
-# Anciennes URLs lead-magnets → home (301 permanent)
-/lead-magnets         /            301
-/lead-magnets.html    /            301
-/lead-magnets/        /            301
-
-# Anciennes URLs lead-magnets-fr → home FR (301 permanent)
-/lead-magnets-fr      /index-fr    301
-/lead-magnets-fr.html /index-fr    301
-/lead-magnets-fr/     /index-fr    301
+# Netlify redirects
+# La home (/ et /index-fr) présente désormais Synthetic Swarm (page société).
+# Le cas d'usage lead magnets vit sur ses propres URLs, atteignables via la nav « Cas d'usage » :
+#   /lead-magnets      (EN)
+#   /lead-magnets-fr   (FR)
+# Ces pages sont servies directement (cleanUrls) — aucune redirection nécessaire.

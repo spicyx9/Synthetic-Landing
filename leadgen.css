@@ -1,0 +1,102 @@
+/* =========================================================================
+   LEAD-GEN WIDGET — extrait fidèle de l'app Synthetic Swarm
+   (composer "chat" + barre de ciblage ICP, état d'accueil).
+   Scopé sous .lg-scope. Tokens repris tels quels de l'app (ss-tokens).
+   ========================================================================= */
+.lg-scope {
+  --ss-surface:         #fcfbf8;
+  --ss-surface-raised:  #f5f3ef;
+  --ss-surface-sunken:  #f0ede8;
+  --ss-surface-data:    #ffffff;
+  --ss-text-primary:    #1a1a1a;
+  --ss-text-secondary:  #555;
+  --ss-text-tertiary:   #777;
+  --ss-text-metadata:   #888;
+  --ss-text-placeholder:#aaa;
+  --ss-ink:             #1a1a1a;
+  --ss-ink-hover:       #303030;
+  --ss-border:          #d0ccc7;
+  --ss-border-soft:     #dfdbd6;
+  --ss-border-hover:    #bfbab4;
+  --ss-border-hairline: rgba(0,0,0,0.06);
+  --ss-blue:            #0A66C2;
+  --ss-blue-soft:       rgba(10,102,194,0.10);
+  --ss-green-ink:       rgb(30,142,62);
+  --ss-amber-ink:       rgb(180,100,0);
+  --ss-radius-btn:      8px;
+  --ss-radius-xl:       14px;
+  --ss-shadow-hairline: 0 1px 3px rgba(0,0,0,0.04);
+  --ss-ease:            cubic-bezier(0.16,1,0.3,1);
+  --ss-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--ss-font);
+  text-align: left;
+  letter-spacing: -0.011em;
+}
+
+/* Embed compact dans le hero (l'app le rendrait pleine hauteur) */
+.lg-scope.hs-leadgen-widget { max-width: 600px; width: 100%; margin: 36px auto 0; }
+.lg-scope .aui-thread { display: flex; flex-direction: column; border: none; background: transparent; }
+.lg-scope .thread-split { display: flex; align-items: stretch; }
+.lg-scope .aui-main { display: flex; flex-direction: column; flex: 1 1 auto; min-width: 0; }
+.lg-scope .aui-footer { width: 100%; }
+
+@keyframes auiIn { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── Composer (là où on écrit) ── */
+.lg-scope .aui-composer {
+  border: 1px solid var(--ss-border);
+  border-radius: 22px;
+  background: var(--ss-surface-data);
+  box-shadow: var(--ss-shadow-hairline);
+  padding: 12px 12px 12px 18px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.lg-scope .aui-composer:focus-within {
+  border-color: var(--ss-blue);
+  box-shadow: 0 0 0 3px var(--ss-blue-soft), var(--ss-shadow-hairline);
+}
+.lg-scope .aui-composer textarea {
+  width: 100%; border: none; background: transparent; resize: none;
+  font-family: inherit; font-size: 15.5px; line-height: 1.55;
+  color: var(--ss-text-primary);
+  min-height: 3.1em; max-height: 160px; outline: none; padding: 3px 0;
+}
+.lg-scope .aui-composer textarea::placeholder { color: var(--ss-text-placeholder); }
+.lg-scope .aui-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 6px; }
+/* Ciblage inline dans le composer (façon Lovable) — une seule ligne */
+.lg-scope .aui-actions-left {
+  flex: 1 1 auto; min-width: 0;
+  display: flex; align-items: center; gap: 1px; flex-wrap: nowrap;
+  overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+}
+.lg-scope .aui-actions-left::-webkit-scrollbar { display: none; }
+.lg-scope .aui-send {
+  width: 38px; height: 38px; border-radius: 50%; border: none;
+  background: var(--ss-ink); color: #fff; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s, transform .1s;
+}
+.lg-scope .aui-send:hover { background: var(--ss-ink-hover); }
+.lg-scope .aui-send:active { transform: scale(0.94); }
+.lg-scope .aui-send svg { width: 18px; height: 18px; }
+
+/* ── Ciblage ICP (chips) ── */
+.lg-scope .flt { position: relative; flex-shrink: 0; }
+.lg-scope .flt-trig {
+  display: inline-flex; align-items: center; gap: 6px; max-width: 240px;
+  background: none; border: 1px solid transparent; border-radius: 8px;
+  padding: 5px 7px; font-family: inherit; font-size: 12.5px;
+  color: var(--ss-text-primary); cursor: pointer;
+  transition: background .12s, border-color .12s; white-space: nowrap;
+}
+.lg-scope .flt-trig:hover { background: var(--ss-surface-sunken); }
+.lg-scope .flt-trig .ph { color: var(--ss-text-tertiary); }
+.lg-scope .flt-trig svg { width: 11px; height: 11px; color: var(--ss-text-tertiary); flex-shrink: 0; }
+.lg-scope .flt-sep { width: 1px; height: 16px; background: var(--ss-border-hairline); margin: 0 2px; }
+.lg-scope .flt-head {
+  display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+  font-size: 12px; font-weight: 600; color: var(--ss-text-tertiary);
+  padding: 0 6px 0 2px; white-space: nowrap;
+}
+.lg-scope .flt-status { display: inline-flex; align-items: center; justify-content: center; color: var(--ss-text-tertiary); }
+.lg-scope .flt-status svg { width: 15px; height: 15px; display: block; }
