@@ -27,14 +27,14 @@
    ========================================================================= */
 /* titre : plus petit + plus tranchant que le défaut demo.css */
 .home .demo-wrapper .demo-hero__headline {
-  font-size: clamp(30px, 4.8vw, 52px);
-  line-height: 1.1;
+  font-size: clamp(29px, 4.3vw, 46px);
+  line-height: 1.12;
   letter-spacing: -0.035em;
-  max-width: 760px;
+  max-width: 780px;
 }
 .home .demo-wrapper .demo-hero__headline .hl { color: var(--hs-blue); }
-/* sous-titre : élargi pour tenir sur 2 lignes (au lieu de 3) */
-.home .demo-wrapper .demo-hero__subtitle { max-width: 740px; }
+/* sous-titre : largeur calée pour 2 lignes équilibrées (pas de mot orphelin) */
+.home .demo-wrapper .demo-hero__subtitle { max-width: 600px; }
 
 /* eyebrow : identique à la page lead magnet (BREAKING rouge + date) — rien à surcharger */
 
