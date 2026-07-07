@@ -146,12 +146,12 @@
             <!-- Eyebrow -->
             <div class="demo-hero__eyebrow">
               <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-              <span class="hero-eyebrow-badge">BREAKING</span>
-              <span class="hero-eyebrow-date" id="heroEyebrowDate">JULY 5, 2026</span>
+              <span class="hero-eyebrow-badge">BREAKING NEWS</span>
+              <span class="hero-eyebrow-date" id="heroEyebrowDate">7TH OF JULY, 2026</span>
             </div>
 
             <!-- Headline -->
-            <h1 class="demo-hero__headline">The agent that finds prospects<br><span class="hl">ready to buy</span>.</h1>
+            <h1 class="demo-hero__headline">Meet the AI agent that finds the prospects<br><span class="hl">ready to buy</span>.</h1>
             <p class="demo-hero__subtitle">It learns your offer, turns it into specific buying signals, finds the accounts sending them, and reaches out for you.</p>
 
             <!-- Lead-gen: faithful extract of the app (composer + ICP bar) — opt-in to sign in -->
@@ -301,7 +301,7 @@
       })();
     })();
 
-    // Dynamic date in the eyebrow (EN format)
+    // Dynamic date in the eyebrow (EN format — matches the lead-magnet pill)
     (function() {
       const dateEl = document.getElementById('heroEyebrowDate');
       if (!dateEl) return;
@@ -309,7 +309,8 @@
       const day = now.getDate();
       const month = now.toLocaleString('en-US', { month: 'long' }).toUpperCase();
       const year = now.getFullYear();
-      dateEl.textContent = `${month} ${day}, ${year}`;
+      const suffix = (d) => (d > 3 && d < 21) ? 'TH' : (['TH','ST','ND','RD'][d % 10] || 'TH');
+      dateEl.textContent = `${day}${suffix(day)} OF ${month}, ${year}`;
     })();
   </script>
   <script src="mobile-menu.js"></script>
