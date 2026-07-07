@@ -27,10 +27,10 @@
    ========================================================================= */
 /* titre : plus petit + plus tranchant que le défaut demo.css */
 .home .demo-wrapper .demo-hero__headline {
-  font-size: clamp(28px, 3.9vw, 44px);
-  line-height: 1.12;
+  font-size: clamp(30px, 4.8vw, 52px);
+  line-height: 1.1;
   letter-spacing: -0.035em;
-  max-width: 720px;
+  max-width: 760px;
 }
 .home .demo-wrapper .demo-hero__headline .hl { color: var(--hs-blue); }
 /* sous-titre : élargi pour tenir sur 2 lignes (au lieu de 3) */
