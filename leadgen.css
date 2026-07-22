@@ -100,3 +100,36 @@
 }
 .lg-scope .flt-status { display: inline-flex; align-items: center; justify-content: center; color: var(--ss-text-tertiary); }
 .lg-scope .flt-status svg { width: 15px; height: 15px; display: block; }
+
+/* Short chip labels — desktop shows the full wording */
+.lg-scope .ph-short { display: none; }
+
+/* ── Mobile: compact composer, short chip labels (Perplexity-style) ── */
+@media (max-width: 560px) {
+  .lg-scope.hs-leadgen-widget { margin-top: 24px; }
+  .lg-scope .aui-composer {
+    padding: 9px 9px 9px 14px;
+    border-radius: 18px;
+  }
+  .lg-scope .aui-composer textarea {
+    font-size: 15px; line-height: 1.45;
+    min-height: 2.4em; padding: 2px 0;
+  }
+  .lg-scope .aui-actions { gap: 6px; margin-top: 4px; }
+  .lg-scope .aui-actions-left { gap: 0; justify-content: flex-start; }
+  /* Swap to single-word labels so all four filters fit on one line */
+  .lg-scope .ph-full { display: none; }
+  .lg-scope .ph-short { display: inline; }
+  .lg-scope .flt-trig {
+    font-size: 12px; gap: 4px; padding: 4px 6px;
+  }
+  .lg-scope .flt-trig svg { width: 10px; height: 10px; }
+  .lg-scope .aui-send { width: 34px; height: 34px; }
+  .lg-scope .aui-send svg { width: 16px; height: 16px; }
+}
+
+/* Very small phones: drop the decorative chevrons so all four filters still fit */
+@media (max-width: 360px) {
+  .lg-scope .flt-trig svg { display: none; }
+  .lg-scope .flt-trig { padding: 4px 5px; }
+}
