@@ -38,7 +38,10 @@ for (const name of pages) {
       if (!path.extname(local)) local += '.html';
       assert.ok(fs.existsSync(path.join(root, local)), `missing target ${url}`);
     }
-    for (const [, script] of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) new vm.Script(script);
+    for (const [, attrs, script] of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
+      if (/type="application\/ld\+json"/.test(attrs)) JSON.parse(script);
+      else new vm.Script(script);
+    }
   });
 }
 
