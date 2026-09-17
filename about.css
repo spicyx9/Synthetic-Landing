@@ -1,7 +1,7 @@
 /* About storytelling: existing public-site colors, radii and typography. */
 .about-page { padding-top: 48px; }
 .about-intro { margin-bottom: 40px; }
-.about-founders, .about-origin-grid, .about-move-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
+.about-founders { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
 .founder-card { display: flex; flex-direction: column; gap: 24px; }
 .founder-portrait { width: 160px; height: 160px; object-fit: cover; object-position: center; border-radius: 18px; }
 .founder-card h2 { font-size: 24px; letter-spacing: -.025em; margin-bottom: 12px; }
@@ -16,15 +16,7 @@
 .about-origin p { color: #666; font-size: 15px; line-height: 1.7; margin-top: 16px; }
 .about-text-link { color: #0a66c2; font-size: 14px; font-weight: 600; }
 .about-text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-.about-timeline { list-style: none; margin: 0; padding: 0; }
-.about-timeline li { padding: 20px 0; border-top: 1px solid #e8e5e0; }
-.about-timeline time { font-size: 12px; font-weight: 700; color: #666; letter-spacing: .07em; }
-.about-timeline h3 { font-size: 18px; font-weight: 600; line-height: 1.4; margin-top: 8px; }
-.about-photo-placeholder { display: flex; flex-direction: column; justify-content: center; padding: 28px; min-height: 240px; background: #f7f5f1; border: 1px dashed #d6d2ca; border-radius: 18px; }
-.about-photo-placeholder h3 { font-size: 22px; letter-spacing: -.025em; margin-bottom: 12px; }
-.about-photo-placeholder p { font-size: 15px; color: #666; line-height: 1.7; }
-.about-sf .about-reassurance { margin-top: 28px; padding-left: 20px; border-left: 2px solid #0a66c2; color: #254b70; }
-@media (max-width:700px) { .about-founders, .about-origin-grid, .about-move-grid { grid-template-columns: 1fr; } .founder-portrait { width: 128px; height: 128px; } .about-intro { margin-bottom: 32px; } .about-photo-placeholder { min-height: 200px; } }
+@media (max-width:700px) { .about-founders { grid-template-columns: 1fr; } .founder-portrait { width: 128px; height: 128px; } .about-intro { margin-bottom: 32px; } }
 .founder-link { display:inline-flex; align-items:center; gap:8px; margin-top:20px; font-size:14px; font-weight:600; color:#0a66c2; }
 
 .founder-identity { display:flex; align-items:center; gap:20px; }
@@ -36,7 +28,32 @@
 @media(max-width:380px) { .founder-identity { gap:16px; } .founder-identity .founder-portrait { width:80px; height:80px; } }
 .founder-card p + p:not(.founder-background) { margin-top:12px; }
 
-.about-first-customers { max-width:780px; }
-.about-first-customers p { margin:12px 0 0; }
-.about-first-customers .about-first-customers-proof { color:#1a1a1a; }
-.about-first-customers .about-first-customers-meta { margin-top:20px; padding-top:16px; border-top:1px solid #e8e5e0; font-size:13px; color:#666; }
+
+/* One connected story; no empty photo column when no verified photos exist. */
+.about-journey { margin-top:40px; }
+.about-launch { padding:28px 0; border-top:1px solid #e8e5e0; border-bottom:1px solid #e8e5e0; }
+.about-launch h2 { margin:0 0 24px; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#0a66c2; }
+.about-milestones { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; list-style:none; padding:0; margin:0; }
+.about-milestones li { position:relative; padding-top:16px; border-top:1px solid #dfdbd6; }
+.about-milestones li::before { content:''; position:absolute; top:-4px; left:0; width:7px; height:7px; border-radius:50%; background:#0a66c2; }
+.about-milestones time { font-size:13px; color:#555; }
+.about-milestones h3 { margin:8px 0 0; font-size:19px; line-height:1.35; letter-spacing:-.02em; color:#1a1a1a; }
+.about-launch-proof { margin:24px 0 0; font-size:15px; line-height:1.65; color:#1a1a1a; }
+.about-sf { padding-top:32px; }
+.about-sf .page-kicker { margin-bottom:12px; }
+.about-sf h2 { margin:0 0 16px; font-size:clamp(32px,4.5vw,48px); line-height:1.12; letter-spacing:-.04em; color:#1a1a1a; }
+.about-sf-copy { margin:0; font-size:18px; line-height:1.65; color:#1a1a1a; }
+.about-reassurance { display:inline-block; margin:20px 0 0; padding:12px 16px; border-left:2px solid #0a66c2; background:#f0f5fa; color:#254b70; font-size:14px; line-height:1.5; }
+@media(max-width:700px) {
+ .about-journey { margin-top:32px; }
+ .about-launch { display:flex; flex-direction:column; padding:24px 0; }
+ .about-launch h2 { margin-bottom:12px; }
+ .about-launch-proof { order:1; margin:0 0 24px; }
+ .about-milestones { order:2; grid-template-columns:1fr; gap:0; }
+ .about-milestones li { padding:0 0 20px 20px; border-top:0; border-left:1px solid #dfdbd6; }
+ .about-milestones li:last-child { padding-bottom:0; }
+ .about-milestones li::before { left:-4px; top:6px; }
+ .about-milestones h3 { margin-top:4px; font-size:18px; }
+ .about-sf { padding-top:28px; }
+ .about-sf-copy { font-size:16px; }
+}
