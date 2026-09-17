@@ -213,3 +213,18 @@
   .home .demo-wrapper .hero { padding-left: 18px; padding-right: 18px; }
   .home .demo-wrapper .demo-hero__inner { max-width: 100%; }
 }
+
+/* Focused insurance homepage, retaining the existing aurora and typography. */
+.home .home-focused-hero { padding-bottom: 56px; }
+.home .home-actions { justify-content: center; }
+.home .home-product-example { position: relative; z-index: 2; margin: 44px auto 0; width: min(680px,100%); }
+.home-product-example h2 { font-size: 24px; letter-spacing: -.025em; }
+.home-product-example > p:not(.signal-reason) { color: #777; }
+.home .home-difference { padding-top: 64px; padding-bottom: 76px; }
+.home-difference > h2 { font-size: clamp(28px,4vw,38px); letter-spacing: -.03em; margin-bottom: 28px; }
+@media (max-width:700px) {
+  .home .home-actions { flex-direction: column; align-items: stretch; }
+  .home-actions > a, .home-actions .btn-get-started { width: 100%; }
+  .home .home-product-example { margin-top: 32px; }
+  .home .home-difference { padding-top: 44px; }
+}
