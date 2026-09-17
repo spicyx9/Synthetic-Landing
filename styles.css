@@ -3767,7 +3767,8 @@ button {
   margin: 0 auto;
   text-align: center;
 }
-.pricing-section > h2 {
+.pricing-section > h2,
+.pricing-section > h1 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 38px;
   font-weight: 800;
@@ -4201,7 +4202,8 @@ button {
     max-width: 400px;
     margin: 0 auto;
   }
-  .pricing-section > h2 {
+  .pricing-section > h2,
+.pricing-section > h1 {
     font-size: 28px;
   }
   .logos-row {

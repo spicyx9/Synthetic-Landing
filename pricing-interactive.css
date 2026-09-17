@@ -88,7 +88,7 @@
 }
 
 .pricing-range {
-  --progress: 50%;
+  --progress: 40%;
   display: block;
   padding: 0;
   border: 0;
@@ -156,10 +156,11 @@
   cursor: pointer;
 }
 .pricing-range-steps button:nth-child(1) { left: 0%; }
-.pricing-range-steps button:nth-child(2) { left: 25%; }
-.pricing-range-steps button:nth-child(3) { left: 50%; }
-.pricing-range-steps button:nth-child(4) { left: 75%; }
-.pricing-range-steps button:nth-child(5) { left: 100%; }
+.pricing-range-steps button:nth-child(2) { left: 20%; }
+.pricing-range-steps button:nth-child(3) { left: 40%; }
+.pricing-range-steps button:nth-child(4) { left: 60%; }
+.pricing-range-steps button:nth-child(5) { left: 80%; }
+.pricing-range-steps button:nth-child(6) { left: 100%; }
 .pricing-range-steps .is-active { color: #1a1a1a; font-weight: 800; }
 .pricing-range:focus-visible,
 .pricing-range-steps button:focus-visible {
@@ -279,3 +280,12 @@
   .pricing-objections { margin-top: 42px; }
   .pricing-objections h3 { font-size: 21px; }
 }
+
+.pricing-config-btn[hidden], .pricing-custom-booking[hidden],
+.pricing-custom-copy[hidden], .pricing-config-summary[hidden],
+.pricing-config-period[hidden] { display: none; }
+.pricing-custom-copy { margin: 14px 0 30px; }
+.pricing-custom-copy h2 { font-size: 19px; line-height: 1.4; margin-bottom: 8px; }
+.pricing-custom-copy p { color: #666; font-size: 15px; line-height: 1.6; }
+.pricing-custom-booking .demo-booking-popover { top: auto; bottom: calc(100% + 10px); }
+.pricing-custom-booking .pricing-config-btn { text-align: center; }
