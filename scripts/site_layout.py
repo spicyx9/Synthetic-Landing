@@ -101,4 +101,21 @@ def sync(headers=True,footers=True):
    if footers:s=re.sub(r'<footer class="footer[^\"]*">.*?</footer>',lambda _:footer(lang),s,flags=re.S)
    if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css">\n</head>')
    p.write_text(s)
-if __name__=='__main__':sync()
+def sync_conversion():
+ # Dedicated pricing HTML is the source for homepage pricing and purchase FAQ.
+ for lang in ['en', 'fr']:
+  pricing=(ROOT/('pricing-fr.html' if lang=='fr' else 'pricing.html')).read_text()
+  home=ROOT/('index-fr.html' if lang=='fr' else 'index.html')
+  html=home.read_text()
+  if '<!-- SHARED PRICING START -->' not in html: continue
+  body=re.search(r'<section class="pricing-section"[^>]*>(.*?)</section>',pricing,re.S)[1]
+  faq=re.search(r'<div class="pricing-objections reveal">(.*?)</div>',body,re.S)
+  pricing_body=body[:faq.start()].strip().replace('<h1 ', '<h2 ').replace('</h1>', '</h2>')
+  pricing_section='<section id="pricing" class="pricing-section">'+pricing_body+'</section>'
+  faq_section='<section id="faq" class="pricing-objections home-purchase-faq">'+faq[1].replace('<h3>', '<h2>').replace('</h3>', '</h2>')+'</section>'
+  html=re.sub(r'<!-- SHARED PRICING START -->.*?<!-- SHARED PRICING END -->',lambda _: '<!-- SHARED PRICING START -->'+pricing_section+'<!-- SHARED PRICING END -->',html,flags=re.S)
+  html=re.sub(r'<!-- SHARED FAQ START -->.*?<!-- SHARED FAQ END -->',lambda _: '<!-- SHARED FAQ START -->'+faq_section+'<!-- SHARED FAQ END -->',html,flags=re.S)
+  home.write_text(html)
+if __name__=='__main__':
+ sync()
+ sync_conversion()
