@@ -5,8 +5,8 @@
 .jobs-layout { align-items:start; }
 .jobs-nav button { width:100%; border:0; border-radius:8px; padding:16px; background:transparent; color:#555; font-family:inherit; font-size:15px; font-weight:500; line-height:1.5; text-align:left; display:flex; justify-content:space-between; gap:12px; cursor:pointer; }
 .jobs-nav button[aria-selected="true"] { background:#f0f5fa; color:#254b70; font-weight:600; }
-.jobs-nav button span { visibility:hidden; }
-.jobs-nav button[aria-selected="true"] span { visibility:visible; }
+.jobs-nav button > span:last-child { visibility:hidden; }
+.jobs-nav button[aria-selected="true"] > span:last-child { visibility:visible; }
 .job-item { border-bottom:1px solid #e3dfd9; }
 .job-item summary { list-style:none; display:flex; justify-content:space-between; gap:12px; padding:20px 0; cursor:pointer; font-weight:600; }
 .job-item summary h3 { font:inherit; margin:0; }
@@ -36,3 +36,6 @@
  .job-content h3 { display:none; }
  .job-content .page-button { max-width:100%; }
 }
+
+.job-title { display:inline-flex; align-items:center; flex-wrap:wrap; gap:8px; }
+.job-flags { display:inline-block; white-space:nowrap; flex-shrink:0; font-size:14px; line-height:1; letter-spacing:2px; }
