@@ -3,6 +3,37 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "destination": "/index-fr",
+      "permanent": false,
+      "has": [
+        {
+          "type": "cookie",
+          "key": "ss-language",
+          "value": "fr"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/index-fr",
+      "permanent": false,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "FR"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "ss-language",
+          "value": "en"
+        }
+      ]
+    },
+    {
       "source": "/lead-magnets",
       "destination": "/our-solution",
       "permanent": true
