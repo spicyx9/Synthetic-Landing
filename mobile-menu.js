@@ -30,19 +30,6 @@
     if (item) item.remove();
   });
 
-  // Pricing FAQ must start closed so every item shows a + until clicked.
-  document.querySelectorAll('.pricing-faq-item').forEach(function(item) {
-    item.open = false;
-    item.removeAttribute('open');
-  });
-
-  // Pricing copy: contact data is part of the delivered profile, no qualifier.
-  document.querySelectorAll('.pricing-config-features li span:last-child').forEach(function(label) {
-    label.textContent = label.textContent
-      .replace(' quand disponibles', '')
-      .replace(' when available', '');
-  });
-
   // Homepage breaking-news strip: keep date and announcement as separate aligned items.
   if (document.body.classList.contains('home')) {
     const eyebrow = document.querySelector('.demo-hero__eyebrow');

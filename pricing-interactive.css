@@ -29,6 +29,8 @@
   letter-spacing: 0.01em;
 }
 
+.pricing-config-badge[hidden] { display: none; }
+
 .pricing-config-kicker {
   margin: 0 0 10px;
   color: #777;
@@ -87,6 +89,9 @@
 
 .pricing-range {
   --progress: 50%;
+  display: block;
+  padding: 0;
+  border: 0;
   width: 100%;
   height: 8px;
   margin: 0;
@@ -101,6 +106,7 @@
 .pricing-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
+  box-sizing: border-box;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -111,8 +117,9 @@
 }
 
 .pricing-range::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: #fff;
   border: 7px solid #1a1a1a;
@@ -123,19 +130,43 @@
 .pricing-range:active::-webkit-slider-thumb { cursor: grabbing; }
 .pricing-range:active::-moz-range-thumb { cursor: grabbing; }
 
+/* Native thumb centers travel from 12px to width - 12px. The label rail
+   shares those exact endpoints; every stop uses the same centered anchor. */
 .pricing-range-steps {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin-top: 12px;
-  color: #999;
+  position: relative;
+  height: 36px;
+  margin: 8px 12px 0;
+  color: #777;
   font-size: 12px;
   font-weight: 600;
 }
 
-.pricing-range-steps span { text-align: center; }
-.pricing-range-steps span:first-child { text-align: left; }
-.pricing-range-steps span:last-child { text-align: right; }
+.pricing-range-steps button {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  min-width: 32px;
+  min-height: 36px;
+  padding: 6px 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+.pricing-range-steps button:nth-child(1) { left: 0%; }
+.pricing-range-steps button:nth-child(2) { left: 25%; }
+.pricing-range-steps button:nth-child(3) { left: 50%; }
+.pricing-range-steps button:nth-child(4) { left: 75%; }
+.pricing-range-steps button:nth-child(5) { left: 100%; }
 .pricing-range-steps .is-active { color: #1a1a1a; font-weight: 800; }
+.pricing-range:focus-visible,
+.pricing-range-steps button:focus-visible {
+  outline: 2px solid #0a66c2;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
 
 .pricing-config-divider {
   height: 1px;

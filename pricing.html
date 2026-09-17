@@ -97,19 +97,19 @@
           <span class="pricing-volume-current"><span data-pricing-leads>50</span> leads</span>
         </div>
         <input class="pricing-range" data-pricing-range type="range" min="0" max="4" step="1" value="2" aria-label="Leads per week">
-        <div class="pricing-range-steps" aria-hidden="true">
-          <span data-pricing-step>10</span>
-          <span data-pricing-step>20</span>
-          <span data-pricing-step class="is-active">50</span>
-          <span data-pricing-step>100</span>
-          <span data-pricing-step>200</span>
+        <div class="pricing-range-steps" role="group" aria-label="Leads per week">
+          <button type="button" data-pricing-step>10</button>
+          <button type="button" data-pricing-step>20</button>
+          <button type="button" data-pricing-step class="is-active">50</button>
+          <button type="button" data-pricing-step>100</button>
+          <button type="button" data-pricing-step>200</button>
         </div>
 
         <div class="pricing-config-divider"></div>
         <ul class="pricing-config-features">
           <li><span class="pricing-config-check">✓</span><span>Verified prospect profiles delivered every week</span></li>
           <li><span class="pricing-config-check">✓</span><span>A dated signal explaining why to call now</span></li>
-          <li><span class="pricing-config-check">✓</span><span>Phone, email and LinkedIn profile when available</span></li>
+          <li><span class="pricing-config-check">✓</span><span>Phone, email and LinkedIn profile</span></li>
           <li><span class="pricing-config-check">✓</span><span>Targeting based on your criteria: profession, company size and location</span></li>
         </ul>
         <a href="https://app.syntheticswarm.ai/ui/" class="pricing-config-btn" data-pricing-checkout data-leads="50" data-price="399">Choose this plan</a>
@@ -118,17 +118,17 @@
 
     <div class="pricing-objections reveal">
       <h3>Questions before you start</h3>
-      <details class="pricing-faq-item" open>
+      <details class="pricing-faq-item">
         <summary>How does it work in practice?</summary>
         <p>You give us your targeting criteria: profession, company size and geographic area. We continuously monitor for executives whose situation creates a new insurance need. Every week, you receive verified prospect profiles with the dated signal explaining why now is the right time to call.</p>
       </details>
       <details class="pricing-faq-item">
         <summary>What information do I get?</summary>
-        <p>The executive's first and last name, mobile number (and landline when available), email and LinkedIn profile. You also get the reason for the call: the change in situation we detected, with its date.</p>
+        <p>The executive's first and last name, mobile number (and landline if provided), email and LinkedIn profile. You also get the reason for the call: the change in situation we detected, with its date.</p>
       </details>
       <details class="pricing-faq-item">
         <summary>Am I allowed to call these people?</summary>
-        <p>Yes, for B2B prospecting in France when the solicitation is related to the person's profession. Professionals must be informed and able to opt out easily and free of charge. The prior-consent rule introduced on August 11, 2026 concerns consumer telemarketing.</p>
+        <p>Yes. Telephone prospecting between professionals in France remains permitted when the offer relates to the activity of the person being called. The prior-consent requirement introduced on August 11, 2026 applies to consumer telemarketing, not B2B.</p>
       </details>
     </div>
   </section>
