@@ -28,8 +28,8 @@ def booking(lang, prefix):
   </div>
 </div>'''
 def header(lang,key):
- t=LABELS[lang];links='\n'.join(f'<a href="{url(k,lang)}"'+(' aria-current="page"' if key==k else '')+f'>{t[k]}</a>' for k in ['solution','pricing','faq'])
- about='\n'.join(f'<a href="{url(k,lang)}">{t["who"] if k=="about" else t[k]}</a>' for k in ['about','customers','careers','media'])
+ t=LABELS[lang];links='\n'.join(f'<a href="{url(k,lang)}"'+(' aria-current="page"' if key==k else '')+f'>{t[k]}</a>' for k in ['solution','pricing','faq','customers'])
+ about='\n'.join(f'<a href="{url(k,lang)}">{t["who"] if k=="about" else t[k]}</a>' for k in ['about','careers','media'])
  return f'''<header class="header">
   <div class="header-inner">
     <a href="{url('home',lang)}" class="logo"><img src="/assets/logo-black-narrow.png" alt="" class="logo-icon" width="20" height="20">Synthetic Swarm</a>
