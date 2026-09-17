@@ -30,3 +30,4 @@
 .about-photo-placeholder p { font-size: 15px; color: #666; line-height: 1.7; }
 .about-sf .about-reassurance { margin-top: 28px; padding-left: 20px; border-left: 2px solid #0a66c2; color: #254b70; }
 @media (max-width:700px) { .about-founders, .about-origin-grid, .about-move-grid, .about-proof { grid-template-columns: 1fr; } .founder-portrait { width: 128px; height: 128px; } .about-intro { margin-bottom: 32px; } .about-photo-placeholder { min-height: 200px; } }
+.founder-link { display:inline-flex; align-items:center; gap:8px; margin-top:20px; font-size:14px; font-weight:600; color:#0a66c2; }
