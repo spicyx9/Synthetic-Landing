@@ -57,3 +57,6 @@
  .about-sf { padding-top:28px; }
  .about-sf-copy { font-size:16px; }
 }
+/* Pin each founder action to the same padded bottom-right corner. */
+.founder-card > div:last-child { display:flex; flex-direction:column; flex:1; }
+.founder-card .founder-link { align-self:flex-end; margin-top:auto; padding-top:24px; }
