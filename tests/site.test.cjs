@@ -17,7 +17,7 @@ for (const name of pages) {
     for (const calendar of ['91k1Mpontca7NGea6', 'AWQX2bxp8cnqtsaJ9']) {
       assert.match(html, new RegExp(`<a[^>]*href="https://calendar.app.google/${calendar}"[^>]*target="_blank"[^>]*rel="noopener noreferrer"`));
     }
-    assert.match(html, />AC<\/span>/);
+    assert.match(html, /src="\/assets\/team\/axel-ceo.png"/);
     assert.match(html, /src="\/assets\/team\/ilan-cto.jpg"/);
     assert.doesNotMatch(html, />IS<\/span>/);
     assert.doesNotMatch(html, /avatars\.githubusercontent|heroEyebrowDate/);

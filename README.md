@@ -36,4 +36,4 @@ Privacy and Terms have document placeholders, not fabricated policies. Publish a
 
 Signal scenarios and prospect examples are clearly illustrative. Confirm supported signal coverage before publishing a supported-signals catalog. Do not substitute real personal contact data in illustrative examples.
 
-The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CSS controls its circular crop. Axel uses initials until a verified portrait is supplied.
+The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CSS controls its circular crop. The supplied Axel portrait is stored unchanged at `assets/team/axel-ceo.png` and uses the same CSS dimensions.
