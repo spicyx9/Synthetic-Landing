@@ -21,15 +21,6 @@
     if (!full && !short) link.textContent = isFr ? 'Réserver une démo' : 'Book a demo';
   });
 
-  // Remove the Hyperstack partnership announcement everywhere, including mobile clones.
-  document.querySelectorAll('.mega-announcement').forEach(function(node) {
-    node.remove();
-  });
-  document.querySelectorAll('.logo-item img[alt="Hyperstack"]').forEach(function(img) {
-    const item = img.closest('.logo-item');
-    if (item) item.remove();
-  });
-
   // Homepage breaking-news strip: keep date and announcement as separate aligned items.
   if (document.body.classList.contains('home')) {
     const eyebrow = document.querySelector('.demo-hero__eyebrow');
@@ -50,8 +41,6 @@
 
   const polishStyle = document.createElement('style');
   polishStyle.textContent = [
-    '.nav-mega:not(.nav-mega--solutions){min-width:270px}',
-    '.nav-mega:not(.nav-mega--solutions) .mega-col:first-child{width:100%;min-width:270px}',
     '.demo-wrapper .demo-hero__eyebrow{display:inline-grid;grid-template-columns:auto auto auto minmax(0,1fr);align-items:center;gap:8px 10px;max-width:min(980px,calc(100vw - 40px));padding:7px 14px;margin-left:auto;margin-right:auto}',
     '.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{white-space:nowrap;text-align:left;line-height:1.2;letter-spacing:.03em}',
     '.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-news{color:rgba(255,255,255,.95);font-size:12.5px;font-weight:600;letter-spacing:.01em;text-transform:none;white-space:nowrap;text-align:left;line-height:1.25}',
