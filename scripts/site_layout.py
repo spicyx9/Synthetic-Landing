@@ -29,7 +29,7 @@ def booking(lang, prefix):
 </div>'''
 def header(lang,key):
  t=LABELS[lang];links='\n'.join(f'<a href="{url(k,lang)}"'+(' aria-current="page"' if key==k else '')+f'>{t[k]}</a>' for k in ['solution','pricing','faq'])
- about='\n'.join(f'<a href="{url(k,lang)}">{t["who"] if k=="about" else t[k]}</a>' for k in ['about','careers','media'])
+ about='\n'.join(f'<a href="{url(k,lang)}">{t["who"] if k=="about" else t[k]}</a>' for k in ['about','customers','careers','media'])
  return f'''<header class="header">
   <div class="header-inner">
     <a href="{url('home',lang)}" class="logo"><img src="/assets/logo-black-narrow.png" alt="" class="logo-icon" width="20" height="20">Synthetic Swarm</a>
@@ -51,7 +51,7 @@ def header(lang,key):
 </header>'''
 def footer(lang):
  t=LABELS[lang]
- groups=[('Produit' if lang=='fr' else 'Product',['solution','pricing','faq']),('Entreprise' if lang=='fr' else 'Company',['about','careers','media','contact']),('Informations légales' if lang=='fr' else 'Legal',['privacy','terms'])]
+ groups=[('Produit' if lang=='fr' else 'Product',['solution','pricing','faq']),('Entreprise' if lang=='fr' else 'Company',['about','customers','careers','media','contact']),('Informations légales' if lang=='fr' else 'Legal',['privacy','terms'])]
  columns=''.join('<div><h2>'+title+'</h2><ul>'+''.join(f'<li><a href="{url(k,lang)}">{t[k]}</a></li>' for k in keys)+'</ul></div>' for title,keys in groups)
  return f'''<footer class="footer site-footer">
   <div class="site-footer-top"><a href="{url('home',lang)}" class="logo">Synthetic Swarm</a><p>{'La bonne personne. Le bon signal. Le bon moment.' if lang=='fr' else 'The right person. The right signal. The right time.'}</p></div>
