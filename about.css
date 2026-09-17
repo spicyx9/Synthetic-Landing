@@ -1,33 +1,32 @@
-/* About storytelling: existing public-site colors, radii and typography. */
-.about-page { padding-top: 48px; }
-.about-intro { margin-bottom: 40px; }
-.about-founders { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
-.founder-card { display: flex; flex-direction: column; gap: 24px; }
-.founder-portrait { width: 160px; height: 160px; object-fit: cover; object-position: center; border-radius: 18px; }
-.founder-card h2 { font-size: 24px; letter-spacing: -.025em; margin-bottom: 12px; }
-.founder-role { margin-left: 8px; font-size: 14px; font-weight: 600; color: #0a66c2; letter-spacing: 0; }
-.founder-card .founder-background, .about-origin .founder-background { font-size: 13px; color: #666; margin-top: 16px; }
-.founder-link-disabled { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 20px; font-size: 14px; font-weight: 600; color: #666; cursor: default; }
-.founder-link-note { font-size: 12px; font-weight: 400; }
-.about-origin-grid article { padding-top: 24px; border-top: 1px solid #e8e5e0; }
-.about-origin-grid article:last-child { border-top-color: #dfdbd6; }
-.about-person-label { font-size: 14px; font-weight: 600; color: #0a66c2; }
-.about-origin h3 { font-size: 22px; line-height: 1.3; letter-spacing: -.025em; margin-top: 12px; }
-.about-origin p { color: #666; font-size: 15px; line-height: 1.7; margin-top: 16px; }
-.about-text-link { color: #0a66c2; font-size: 14px; font-weight: 600; }
-.about-text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-@media (max-width:700px) { .about-founders { grid-template-columns: 1fr; } .founder-portrait { width: 128px; height: 128px; } .about-intro { margin-bottom: 32px; } }
-.founder-link { display:inline-flex; align-items:center; gap:8px; margin-top:20px; font-size:14px; font-weight:600; color:#0a66c2; }
-
-.founder-identity { display:flex; align-items:center; gap:20px; }
-.founder-identity h2 { margin:0; }
-.founder-identity .founder-role { display:block; margin:8px 0 0; }
-.founder-identity .founder-portrait { width:112px; height:112px; flex-shrink:0; }
-.founder-card .founder-background { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:0 0 20px; padding-bottom:16px; border-bottom:1px solid #e8e5e0; }
-.founder-school-logo { width:64px; height:24px; object-fit:contain; }
-@media(max-width:380px) { .founder-identity { gap:16px; } .founder-identity .founder-portrait { width:80px; height:80px; } }
-.founder-card p + p:not(.founder-background) { margin-top:12px; }
-
+/* About profiles: wide desktop composition, shared by FR and EN. */
+.about-page { max-width:1344px; padding-top:32px; }
+.about-intro { max-width:none; margin-bottom:28px; }
+.about-intro .page-kicker { margin-bottom:12px; }
+.about-intro h1 { max-width:none; margin-bottom:16px; }
+.about-intro p { max-width:1000px; }
+.about-founders { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+.founder-card { display:flex; flex-direction:column; gap:20px; padding:32px; }
+.founder-identity { display:flex; align-items:center; gap:20px; padding-bottom:20px; border-bottom:1px solid #e8e5e0; }
+.founder-portrait { width:128px; height:128px; flex-shrink:0; object-fit:cover; object-position:center; border-radius:18px; }
+.founder-heading { min-width:0; }
+.founder-card h2 { margin:0; font-size:24px; letter-spacing:-.025em; }
+.founder-role { display:block; margin-top:8px; font-size:14px; font-weight:600; color:#0a66c2; letter-spacing:0; }
+.founder-card .founder-background { margin:12px 0 0; font-size:13px; line-height:1.5; color:#666; }
+.founder-bio { display:flex; flex-direction:column; flex:1; }
+.founder-bio p + p { margin-top:12px; }
+.founder-link { display:inline-flex; align-items:center; align-self:flex-end; gap:8px; margin-top:auto; padding-top:20px; font-size:14px; font-weight:600; color:#0a66c2; }
+@media(max-width:700px) {
+ .about-page { padding-top:28px; }
+ .about-intro { margin-bottom:24px; }
+ .about-founders { grid-template-columns:1fr; gap:20px; }
+ .founder-card { padding:24px; }
+ .founder-portrait { width:96px; height:96px; }
+ .founder-identity { gap:16px; }
+}
+@media(max-width:380px) {
+ .founder-card { padding:20px; }
+ .founder-portrait { width:80px; height:80px; }
+}
 
 /* One connected story; no empty photo column when no verified photos exist. */
 .about-journey { margin-top:40px; }
@@ -57,6 +56,3 @@
  .about-sf { padding-top:28px; }
  .about-sf-copy { font-size:16px; }
 }
-/* Pin each founder action to the same padded bottom-right corner. */
-.founder-card > div:last-child { display:flex; flex-direction:column; flex:1; }
-.founder-card .founder-link { align-self:flex-end; margin-top:auto; padding-top:24px; }
