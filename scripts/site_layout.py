@@ -11,11 +11,12 @@ ROUTES = {
  'about': ('/about', '/a-propos'), 'careers': ('/careers', '/recrutement'),
  'media': ('/media', '/medias'), 'contact': ('/contact', '/contact-fr'),
  'privacy': ('/privacy', '/confidentialite'), 'terms': ('/terms', '/conditions'),
+ 'customers': ('/customers', '/clients'),
  'legacy': ('/lead-magnets', '/lead-magnets-fr')
 }
 LABELS = {
- 'en': dict(solution='Our solution',pricing='Pricing',faq='FAQ',about='About',careers='Careers',media='Media',contact='Contact',privacy='Privacy',terms='Terms',login='Log in',demo='Book a demo',who='Who we are'),
- 'fr': dict(solution='Notre solution',pricing='Tarifs',faq='FAQ',about='À propos',careers='Recrutement',media='Médias',contact='Contact',privacy='Confidentialité',terms='Conditions',login='Se connecter',demo='Réserver une démo',who='Qui sommes-nous')
+ 'en': dict(customers='Customers',solution='Our solution',pricing='Pricing',faq='FAQ',about='About',careers='Careers',media='Media',contact='Contact',privacy='Privacy',terms='Terms',login='Log in',demo='Book a demo',who='Who we are'),
+ 'fr': dict(customers='Nos clients',solution='Notre solution',pricing='Tarifs',faq='FAQ',about='À propos',careers='Recrutement',media='Médias',contact='Contact',privacy='Confidentialité',terms='Conditions',login='Se connecter',demo='Réserver une démo',who='Qui sommes-nous')
 }
 def url(key, lang): return ROUTES[key][lang == 'fr']
 def booking(lang, prefix):
