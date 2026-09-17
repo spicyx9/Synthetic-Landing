@@ -36,7 +36,41 @@
 /* sous-titre : largeur calée pour 2 lignes équilibrées (pas de mot orphelin) */
 .home .demo-wrapper .demo-hero__subtitle { max-width: 600px; }
 
-/* eyebrow : identique à la page lead magnet (BREAKING rouge + date) — rien à surcharger */
+/* The announcement has three distinct pieces and a fixed publication date. */
+.home .demo-wrapper .demo-hero__eyebrow {
+  display: inline-grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 10px 14px;
+  align-items: center;
+  max-width: 100%;
+  padding: 9px 16px;
+  text-align: left;
+}
+.home .hero-eyebrow-badge,
+.home .hero-eyebrow-date { white-space: nowrap; }
+.home .hero-eyebrow-date { font-size: 12px; letter-spacing: .02em; }
+.home .hero-eyebrow-news {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0;
+}
+@media (max-width: 1000px) {
+  .home .demo-wrapper .demo-hero__eyebrow {
+    grid-template-columns: auto auto;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 12px 16px;
+    gap: 9px 12px;
+  }
+  .home .hero-eyebrow-news { grid-column: 1 / -1; text-align: center; }
+}
+@media (max-width: 360px) {
+  .home .demo-wrapper .demo-hero__eyebrow { padding: 10px; gap: 9px 8px; }
+  .home .hero-eyebrow-badge { padding: 5px 7px; letter-spacing: .02em; }
+}
 
 .home .home-hero-cta {
   display: flex;

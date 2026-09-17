@@ -133,9 +133,9 @@
 
             <!-- Eyebrow -->
             <div class="demo-hero__eyebrow">
-              <span class="hero-eyebrow-dot" aria-hidden="true"></span>
               <span class="hero-eyebrow-badge">BREAKING NEWS</span>
-              <span class="hero-eyebrow-date" id="heroEyebrowDate">7TH OF JULY, 2026</span>
+              <time class="hero-eyebrow-date" datetime="2026-09-17">SEPTEMBER 17, 2026</time>
+              <span class="hero-eyebrow-news">Synthetic Swarm moves its offices to San Francisco, California</span>
             </div>
 
             <!-- Headline -->
@@ -286,17 +286,6 @@
       })();
     })();
 
-    // Dynamic date in the eyebrow (EN format — matches the lead-magnet pill)
-    (function() {
-      const dateEl = document.getElementById('heroEyebrowDate');
-      if (!dateEl) return;
-      const now = new Date();
-      const day = now.getDate();
-      const month = now.toLocaleString('en-US', { month: 'long' }).toUpperCase();
-      const year = now.getFullYear();
-      const suffix = (d) => (d > 3 && d < 21) ? 'TH' : (['TH','ST','ND','RD'][d % 10] || 'TH');
-      dateEl.textContent = `${day}${suffix(day)} OF ${month}, ${year}`;
-    })();
   </script>
   <script src="mobile-menu.js"></script>
 </body>

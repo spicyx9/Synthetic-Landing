@@ -135,7 +135,7 @@
             <div class="demo-hero__eyebrow">
               <span class="hero-eyebrow-dot" aria-hidden="true"></span>
               <span class="hero-eyebrow-badge">BREAKING NEWS</span>
-              <span class="hero-eyebrow-date" id="heroEyebrowDate">2ND OF JUNE, 2026</span>
+              <time class="hero-eyebrow-date" datetime="2026-09-17">SEPTEMBER 17, 2026</time>
             </div>
 
             <!-- Headline -->
@@ -858,25 +858,6 @@
     }, { threshold: 0.4 });
     statNumbers.forEach(num => statsObserver.observe(num));
 
-    // ===== Dynamic date in hero eyebrow =====
-    (function() {
-      const dateEl = document.getElementById('heroEyebrowDate');
-      if (!dateEl) return;
-      const now = new Date();
-      const day = now.getDate();
-      const month = now.toLocaleString('en-US', { month: 'long' }).toUpperCase();
-      const year = now.getFullYear();
-      const suffix = (d) => {
-        if (d >= 11 && d <= 13) return 'TH';
-        switch (d % 10) {
-          case 1: return 'ST';
-          case 2: return 'ND';
-          case 3: return 'RD';
-          default: return 'TH';
-        }
-      };
-      dateEl.textContent = `${day}${suffix(day)} OF ${month}, ${year}`;
-    })();
 
     // ===== Delay visual : staggered narrative animation =====
     (function() {
