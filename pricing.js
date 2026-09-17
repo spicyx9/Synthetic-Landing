@@ -1,62 +1,59 @@
 (function () {
   const range = document.querySelector('[data-pricing-range]');
   if (!range) return;
-
+  const isFr = document.documentElement.lang === 'fr';
   const plans = [
     { leads: 10, price: 89 },
     { leads: 20, price: 169 },
     { leads: 50, price: 399 },
     { leads: 100, price: 789 },
-    { leads: 200, price: 1499 }
+    { leads: 200, price: 1499 },
+    { leads: '200+', price: null }
   ];
-
   const amount = document.querySelector('[data-pricing-amount]');
+  const period = document.querySelector('[data-pricing-period]');
+  const summary = document.querySelector('[data-pricing-summary]');
+  const customCopy = document.querySelector('[data-pricing-custom-copy]');
+  const customBooking = document.querySelector('[data-pricing-custom-booking]');
   const leadCounters = Array.from(document.querySelectorAll('[data-pricing-leads]'));
   const steps = Array.from(document.querySelectorAll('[data-pricing-step]'));
   const checkout = document.querySelector('[data-pricing-checkout]');
   const preferredBadge = document.querySelector('.pricing-config-badge');
 
-  function formatPrice(value) {
-    return new Intl.NumberFormat(document.documentElement.lang === 'fr' ? 'fr-FR' : 'en-US').format(value);
-  }
-
   function updatePricing() {
     const index = Number(range.value);
     const plan = plans[index];
-    const progress = (index / (plans.length - 1)) * 100;
-
-    range.style.setProperty('--progress', progress + '%');
-    range.setAttribute('aria-valuetext', plan.leads + (document.documentElement.lang === 'fr' ? ' leads par semaine' : ' leads per week'));
-    if (amount) amount.textContent = formatPrice(plan.price) + ' €';
-    leadCounters.forEach(function (counter) {
-      counter.textContent = String(plan.leads);
+    const custom = plan.price === null;
+    range.style.setProperty('--progress', (index / (plans.length - 1)) * 100 + '%');
+    range.setAttribute('aria-valuetext', plan.leads + (isFr ? ' leads par semaine' : ' leads per week') + (custom ? (isFr ? ', sur mesure' : ', custom') : ''));
+    amount.textContent = custom ? (isFr ? 'Sur mesure' : 'Custom') : new Intl.NumberFormat(isFr ? 'fr-FR' : 'en-US').format(plan.price) + ' €';
+    period.hidden = custom;
+    summary.hidden = custom;
+    customCopy.hidden = !custom;
+    customBooking.hidden = !custom;
+    leadCounters.forEach(counter => { counter.textContent = String(plan.leads); });
+    steps.forEach((step, i) => {
+      step.classList.toggle('is-active', i === index);
+      step.setAttribute('aria-pressed', i === index ? 'true' : 'false');
     });
-
-    steps.forEach(function (step, stepIndex) {
-      step.classList.toggle('is-active', stepIndex === index);
-      step.setAttribute('aria-pressed', stepIndex === index ? 'true' : 'false');
-    });
-
-    // Only 50 leads / 399 € is the preferred plan.
-    if (preferredBadge) {
-      preferredBadge.hidden = index !== 2;
-    }
-
-    if (checkout) {
+    preferredBadge.hidden = index !== 2;
+    checkout.hidden = custom;
+    if (custom) {
+      delete checkout.dataset.leads;
+      delete checkout.dataset.price;
+    } else {
       checkout.dataset.leads = String(plan.leads);
       checkout.dataset.price = String(plan.price);
+      // Closing the custom selector also prevents stale focusable calendar links.
+      customBooking.querySelector('[data-disclosure-panel]').hidden = true;
+      customBooking.querySelector('[data-book-demo]').setAttribute('aria-expanded', 'false');
     }
   }
-
-  // Clicking a number is equivalent to moving the slider to that step.
-  steps.forEach(function (step, index) {
-    step.addEventListener('click', function () {
-      range.value = String(index);
-      updatePricing();
-    });
-  });
-
-  // Reset restored form state so every fresh page load starts at the preferred tier.
+  steps.forEach((step, index) => step.addEventListener('click', () => {
+    range.value = String(index);
+    updatePricing();
+  }));
+  // Every fresh load starts at 50, including browsers that restore form state.
   range.value = '2';
   range.addEventListener('input', updatePricing);
   range.addEventListener('change', updatePricing);
