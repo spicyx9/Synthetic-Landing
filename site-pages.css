@@ -75,3 +75,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 .demo-booking-avatar, .team-avatar { object-fit: cover; object-position: center; }
 .team-avatar { width: 56px; height: 56px; border-radius: 50%; }
+
+.nav-disabled { cursor: default; color: #777; }
+.about-menu-panel .nav-disabled { display: block; padding: 11px 12px; border-radius: 8px; font-size: inherit; }

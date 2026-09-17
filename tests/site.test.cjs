@@ -27,7 +27,7 @@ for (const name of pages) {
     assert.match(header, /href="\/faq(?:-fr)?"/);
     assert.doesNotMatch(header.match(/<nav[\s\S]*?<\/nav>/)[0], /href="\/contact(?:-fr)?"/);
     assert.match(footer, /href="\/contact(?:-fr)?"/);
-    assert.match(footer, /href="\/(?:media|medias)"/);
+    assert.match(footer, /aria-disabled="true">(?:Media|Médias)<\/span>/);
     assert.match(footer, /href="\/(?:careers|recrutement)"/);
     assert.equal([...html.matchAll(/<h1\b/g)].length, 1);
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
