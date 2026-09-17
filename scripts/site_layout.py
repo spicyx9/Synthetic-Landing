@@ -23,7 +23,7 @@ def booking(lang, prefix):
   <button type="button" class="btn-get-started" data-book-demo data-disclosure-trigger aria-expanded="false" aria-controls="{prefix}-demo-options">{LABELS[lang]['demo']}</button>
   <div class="demo-booking-popover" id="{prefix}-demo-options" data-disclosure-panel hidden>
     <a class="demo-booking-person" href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer"><span class="demo-booking-avatar" aria-hidden="true">AC</span><span class="demo-booking-person-copy"><strong>Axel</strong><span>CEO</span></span><span aria-hidden="true">↗</span></a>
-    <a class="demo-booking-person" href="https://calendar.app.google/AWQX2bxp8cnqtsaJ9" target="_blank" rel="noopener noreferrer"><span class="demo-booking-avatar" aria-hidden="true">IS</span><span class="demo-booking-person-copy"><strong>Ilan</strong><span>CTO</span></span><span aria-hidden="true">↗</span></a>
+    <a class="demo-booking-person" href="https://calendar.app.google/AWQX2bxp8cnqtsaJ9" target="_blank" rel="noopener noreferrer"><img class="demo-booking-avatar" src="/assets/team/ilan-cto.jpg" alt="" width="38" height="38"><span class="demo-booking-person-copy"><strong>Ilan</strong><span>CTO</span></span><span aria-hidden="true">↗</span></a>
   </div>
 </div>'''
 def header(lang,key):

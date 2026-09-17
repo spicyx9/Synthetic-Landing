@@ -18,7 +18,8 @@ for (const name of pages) {
       assert.match(html, new RegExp(`<a[^>]*href="https://calendar.app.google/${calendar}"[^>]*target="_blank"[^>]*rel="noopener noreferrer"`));
     }
     assert.match(html, />AC<\/span>/);
-    assert.match(html, />IS<\/span>/);
+    assert.match(html, /src="\/assets\/team\/ilan-cto.jpg"/);
+    assert.doesNotMatch(html, />IS<\/span>/);
     assert.doesNotMatch(html, /avatars\.githubusercontent|heroEyebrowDate/);
     const header = html.match(/<header[\s\S]*?<\/header>/)[0];
     const footer = html.match(/<footer[\s\S]*?<\/footer>/)[0];
