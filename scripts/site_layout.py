@@ -32,7 +32,7 @@ def company_link(key,lang,label=None):
  if key=='media': return f'<span class="nav-disabled" role="link" aria-disabled="true">{label}</span>'
  return f'<a href="{url(key,lang)}">{label}</a>'
 def header(lang,key):
- t=LABELS[lang];links='\n'.join(f'<a href="{url(k,lang)}"'+(' aria-current="page"' if key==k else '')+f'>{t[k]}</a>' for k in ['solution','pricing','faq','customers'])
+ t=LABELS[lang];links='\n'.join(f'<a href="{url(k,lang)}"'+(' aria-current="page"' if key==k else '')+f'>{t[k]}</a>' for k in ['solution','pricing'])
  about='\n'.join(company_link(k,lang,t["who"] if k=="about" else t[k]) for k in ['about','careers','media'])
  return f'''<header class="header">
   <div class="header-inner">
