@@ -31,3 +31,11 @@
 .about-sf .about-reassurance { margin-top: 28px; padding-left: 20px; border-left: 2px solid #0a66c2; color: #254b70; }
 @media (max-width:700px) { .about-founders, .about-origin-grid, .about-move-grid, .about-proof { grid-template-columns: 1fr; } .founder-portrait { width: 128px; height: 128px; } .about-intro { margin-bottom: 32px; } .about-photo-placeholder { min-height: 200px; } }
 .founder-link { display:inline-flex; align-items:center; gap:8px; margin-top:20px; font-size:14px; font-weight:600; color:#0a66c2; }
+
+.founder-identity { display:flex; align-items:center; gap:20px; }
+.founder-identity h2 { margin:0; }
+.founder-identity .founder-role { display:block; margin:8px 0 0; }
+.founder-identity .founder-portrait { width:112px; height:112px; flex-shrink:0; }
+.founder-card .founder-background { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:0 0 20px; padding-bottom:16px; border-bottom:1px solid #e8e5e0; }
+.founder-school-logo { width:64px; height:24px; object-fit:contain; }
+@media(max-width:380px) { .founder-identity { gap:16px; } .founder-identity .founder-portrait { width:80px; height:80px; } }
