@@ -72,3 +72,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 @media (prefers-reduced-motion: reduce) { .mobile-menu-overlay, .mobile-menu-panel, .reveal { transition: none; } .aurora__blob, .hero-decor { animation: none; } }
 
 .faq-list { max-width: 840px; }
+
+.demo-booking-avatar, .team-avatar { object-fit: cover; object-position: center; }
+.team-avatar { width: 56px; height: 56px; border-radius: 50%; }
