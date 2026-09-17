@@ -166,7 +166,8 @@ button {
   overflow: hidden;
   min-width: 560px;
 }
-.nav-dropdown-wrap:hover > .nav-mega {
+.nav-dropdown-wrap:hover > .nav-mega,
+.nav-dropdown-wrap:focus-within > .nav-mega {
   display: flex;
 }
 .nav-dropdown-wrap:hover .nav-link-dropdown svg {
@@ -4311,10 +4312,12 @@ button {
   z-index: 9999;
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
   transition: opacity 0.25s ease;
 }
 
 .mobile-menu-overlay.open {
+  visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
@@ -4571,3 +4574,46 @@ button {
   .letter-list { margin-left: 0.2em; }
   .letter-list li { padding-left: 1em; }
 }
+
+/* Shared header booking dropdown. Native buttons and links keep keyboard behavior. */
+.demo-booking { position: relative; }
+.demo-booking > button { border: 0; cursor: pointer; font-family: inherit; }
+.demo-booking-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 268px;
+  max-width: calc(100vw - 40px);
+  padding: 8px;
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(0,0,0,.14);
+  z-index: 210;
+}
+.demo-booking-popover[hidden] { display: none; }
+.demo-booking-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 9px;
+  color: #1a1a1a;
+}
+.demo-booking-person:hover { background: #f5f4f1; }
+.demo-booking-avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f0eeea;
+  font-size: 12px;
+  font-weight: 700;
+}
+.demo-booking-person-copy { display: flex; flex: 1; flex-direction: column; gap: 3px; }
+.demo-booking-person-copy strong { font-size: 14px; }
+.demo-booking-person-copy > span { font-size: 12px; color: #777; }
+.demo-booking button:focus-visible,
+.demo-booking a:focus-visible { outline: 2px solid #0a66c2; outline-offset: 3px; }
+.mobile-menu-footer .demo-booking-popover { top: auto; bottom: calc(100% + 10px); }
