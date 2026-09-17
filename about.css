@@ -39,3 +39,4 @@
 .founder-card .founder-background { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:0 0 20px; padding-bottom:16px; border-bottom:1px solid #e8e5e0; }
 .founder-school-logo { width:64px; height:24px; object-fit:contain; }
 @media(max-width:380px) { .founder-identity { gap:16px; } .founder-identity .founder-portrait { width:80px; height:80px; } }
+.founder-card p + p:not(.founder-background) { margin-top:12px; }
