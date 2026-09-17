@@ -3,12 +3,13 @@
 .careers-page .page-intro { margin-bottom:40px; }
 .jobs-heading { font-size:12px; text-transform:uppercase; letter-spacing:.1em; margin-bottom:16px; color:#666; }
 .jobs-layout { align-items:start; }
-.jobs-nav button { width:100%; border:0; border-radius:8px; padding:16px; background:transparent; color:#555; font:500 15px/1.5 inherit; font-family:inherit; text-align:left; display:flex; justify-content:space-between; gap:12px; cursor:pointer; }
+.jobs-nav button { width:100%; border:0; border-radius:8px; padding:16px; background:transparent; color:#555; font-family:inherit; font-size:15px; font-weight:500; line-height:1.5; text-align:left; display:flex; justify-content:space-between; gap:12px; cursor:pointer; }
 .jobs-nav button[aria-selected="true"] { background:#f0f5fa; color:#254b70; font-weight:600; }
 .jobs-nav button span { visibility:hidden; }
 .jobs-nav button[aria-selected="true"] span { visibility:visible; }
 .job-item { border-bottom:1px solid #e3dfd9; }
 .job-item summary { list-style:none; display:flex; justify-content:space-between; gap:12px; padding:20px 0; cursor:pointer; font-weight:600; }
+.job-item summary h3 { font:inherit; margin:0; }
 .job-item summary::-webkit-details-marker { display:none; }
 .job-toggle::after { content:'+'; }
 .job-item[open] .job-toggle::after { content:'−'; }
@@ -19,7 +20,7 @@
 .job-content .job-mission { color:#1a1a1a; font-weight:500; }
 .job-content .job-areas { font-size:13px; color:#254b70; }
 .job-content h4 { font-size:14px; font-weight:600; margin:20px 0 8px; }
-.job-content ul { padding-left:20px; margin:0 0 24px; }
+.job-content ul { padding-left:20px; margin:0 0 24px; list-style:disc; }
 .job-content .page-button { gap:8px; }
 .jobs-layout button:focus-visible,.job-item summary:focus-visible,.job-content a:focus-visible { outline:2px solid #0a66c2; outline-offset:4px; }
 @media(min-width:701px) {
