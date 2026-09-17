@@ -14,6 +14,7 @@
   const leadCounters = Array.from(document.querySelectorAll('[data-pricing-leads]'));
   const steps = Array.from(document.querySelectorAll('[data-pricing-step]'));
   const checkout = document.querySelector('[data-pricing-checkout]');
+  const preferredBadge = document.querySelector('.pricing-config-badge');
 
   function formatPrice(value) {
     return new Intl.NumberFormat(document.documentElement.lang === 'fr' ? 'fr-FR' : 'en-US').format(value);
@@ -33,6 +34,10 @@
     steps.forEach(function (step, stepIndex) {
       step.classList.toggle('is-active', stepIndex === index);
     });
+
+    if (preferredBadge) {
+      preferredBadge.hidden = index !== 2;
+    }
 
     if (checkout) {
       checkout.dataset.leads = String(plan.leads);
