@@ -1,0 +1,37 @@
+/* Shared recruitment layout, scoped to the two careers pages. */
+.careers-page { padding-top:48px; }
+.careers-page .page-intro { margin-bottom:40px; }
+.jobs-heading { font-size:12px; text-transform:uppercase; letter-spacing:.1em; margin-bottom:16px; color:#666; }
+.jobs-layout { align-items:start; }
+.jobs-nav button { width:100%; border:0; border-radius:8px; padding:16px; background:transparent; color:#555; font:500 15px/1.5 inherit; font-family:inherit; text-align:left; display:flex; justify-content:space-between; gap:12px; cursor:pointer; }
+.jobs-nav button[aria-selected="true"] { background:#f0f5fa; color:#254b70; font-weight:600; }
+.jobs-nav button span { visibility:hidden; }
+.jobs-nav button[aria-selected="true"] span { visibility:visible; }
+.job-item { border-bottom:1px solid #e3dfd9; }
+.job-item summary { list-style:none; display:flex; justify-content:space-between; gap:12px; padding:20px 0; cursor:pointer; font-weight:600; }
+.job-item summary::-webkit-details-marker { display:none; }
+.job-toggle::after { content:'+'; }
+.job-item[open] .job-toggle::after { content:'−'; }
+.job-content { padding:0 0 24px; }
+.job-content h3 { font-size:clamp(24px,3vw,32px); line-height:1.2; letter-spacing:-.025em; margin:0 0 20px; }
+.job-content p,.job-content li { font-size:15px; line-height:1.65; color:#666; }
+.job-content p { margin-bottom:16px; }
+.job-content .job-mission { color:#1a1a1a; font-weight:500; }
+.job-content .job-areas { font-size:13px; color:#254b70; }
+.job-content h4 { font-size:14px; font-weight:600; margin:20px 0 8px; }
+.job-content ul { padding-left:20px; margin:0 0 24px; }
+.job-content .page-button { gap:8px; }
+.jobs-layout button:focus-visible,.job-item summary:focus-visible,.job-content a:focus-visible { outline:2px solid #0a66c2; outline-offset:4px; }
+@media(min-width:701px) {
+ .jobs-layout.is-enhanced { display:grid; grid-template-columns:32% minmax(0,1fr); gap:28px; }
+ .is-enhanced .jobs-panels { display:grid; }
+ .is-enhanced .job-item { grid-area:1/1; min-width:0; visibility:hidden; border:1px solid #e8e5e0; border-radius:18px; background:#fff; padding:28px; }
+ .is-enhanced .job-item.is-active { visibility:visible; }
+ .is-enhanced .job-item summary { display:none; }
+ .is-enhanced .job-content { padding:0; }
+}
+@media(max-width:700px) {
+ .careers-page .page-intro { margin-bottom:28px; }
+ .job-content h3 { display:none; }
+ .job-content .page-button { max-width:100%; }
+}
