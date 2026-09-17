@@ -1,4 +1,60 @@
 /**
+ * Shared site polish applied before the mobile menu is cloned.
+ */
+(function() {
+  const isFr = document.documentElement.lang.toLowerCase().startsWith('fr');
+
+  // Keep the landing page open when users sign in.
+  document.querySelectorAll('.btn-login').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+
+  // Remove the Hyperstack partnership announcement everywhere, including mobile clones.
+  document.querySelectorAll('.mega-announcement').forEach(function(node) {
+    node.remove();
+  });
+  document.querySelectorAll('.logo-item img[alt="Hyperstack"]').forEach(function(img) {
+    const item = img.closest('.logo-item');
+    if (item) item.remove();
+  });
+
+  // Pricing FAQ must start closed so every item shows a + until clicked.
+  document.querySelectorAll('.pricing-faq-item').forEach(function(item) {
+    item.open = false;
+  });
+
+  // Pricing copy: contact data is part of the delivered profile, no qualifier.
+  document.querySelectorAll('.pricing-config-features li span:last-child').forEach(function(label) {
+    label.textContent = label.textContent
+      .replace(' quand disponibles', '')
+      .replace(' when available', '');
+  });
+
+  // Homepage breaking-news strip.
+  if (document.body.classList.contains('home')) {
+    const news = document.getElementById('heroEyebrowDate');
+    if (news) {
+      news.textContent = isFr
+        ? '17 SEPTEMBRE 2026 · SYNTHETIC SWARM BOUGE SES BUREAUX À SAN FRANCISCO (CALIFORNIE)'
+        : 'SEPTEMBER 17, 2026 · SYNTHETIC SWARM MOVES ITS OFFICES TO SAN FRANCISCO, CALIFORNIA';
+    }
+  }
+
+  // Tighten the Resources dropdown now that the announcement column is gone,
+  // and make the longer breaking-news strip distribute cleanly.
+  const polishStyle = document.createElement('style');
+  polishStyle.textContent = [
+    '.nav-mega:not(.nav-mega--solutions){min-width:270px}',
+    '.nav-mega:not(.nav-mega--solutions) .mega-col:first-child{width:100%;min-width:270px}',
+    '.demo-wrapper .demo-hero__eyebrow{max-width:min(920px,calc(100vw - 40px));justify-content:center}',
+    '.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{white-space:normal;text-align:left;line-height:1.25;letter-spacing:.025em}',
+    '@media(max-width:640px){.demo-wrapper .demo-hero__eyebrow{display:grid;grid-template-columns:auto 1fr;gap:7px 8px;padding:7px 12px;width:min(100%,560px)}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-dot{display:none}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-badge{grid-column:1}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{grid-column:2;font-size:10px;white-space:normal;text-align:left;line-height:1.3}}'
+  ].join('');
+  document.head.appendChild(polishStyle);
+})();
+
+/**
  * Mobile hamburger menu — injects a hamburger button + overlay into the existing nav.
  * Auto-clones nav-links + nav-actions into a properly-nested mobile overlay:
  *   - Top-level links (e.g. Tarifs) are surfaced FIRST as primary nav rows.
@@ -200,9 +256,8 @@
   title.textContent = copy.title;
   section.appendChild(title);
 
-  copy.items.forEach(function(item, index) {
+  copy.items.forEach(function(item) {
     const details = document.createElement('details');
-    if (index === 0) details.open = true;
     const summary = document.createElement('summary');
     summary.textContent = item[0];
     const paragraph = document.createElement('p');
