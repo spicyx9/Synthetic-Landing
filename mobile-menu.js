@@ -21,32 +21,7 @@
     if (!full && !short) link.textContent = isFr ? 'Réserver une démo' : 'Book a demo';
   });
 
-  // Homepage breaking-news strip: keep date and announcement as separate aligned items.
-  if (document.body.classList.contains('home')) {
-    const eyebrow = document.querySelector('.demo-hero__eyebrow');
-    const date = document.getElementById('heroEyebrowDate');
-    if (eyebrow && date) {
-      date.textContent = isFr ? '17 SEPTEMBRE 2026' : 'SEPTEMBER 17, 2026';
-      let news = eyebrow.querySelector('.hero-eyebrow-news');
-      if (!news) {
-        news = document.createElement('span');
-        news.className = 'hero-eyebrow-news';
-        eyebrow.appendChild(news);
-      }
-      news.textContent = isFr
-        ? 'Synthetic Swarm bouge ses bureaux à San Francisco (Californie)'
-        : 'Synthetic Swarm moves its offices to San Francisco, California';
-    }
-  }
 
-  const polishStyle = document.createElement('style');
-  polishStyle.textContent = [
-    '.demo-wrapper .demo-hero__eyebrow{display:inline-grid;grid-template-columns:auto auto auto minmax(0,1fr);align-items:center;gap:8px 10px;max-width:min(980px,calc(100vw - 40px));padding:7px 14px;margin-left:auto;margin-right:auto}',
-    '.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{white-space:nowrap;text-align:left;line-height:1.2;letter-spacing:.03em}',
-    '.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-news{color:rgba(255,255,255,.95);font-size:12.5px;font-weight:600;letter-spacing:.01em;text-transform:none;white-space:nowrap;text-align:left;line-height:1.25}',
-    '@media(max-width:760px){.demo-wrapper .demo-hero__eyebrow{grid-template-columns:auto 1fr;width:min(100%,560px);gap:7px 8px;padding:8px 12px}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-dot{display:none}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-badge{grid-column:1}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{grid-column:2;font-size:10.5px;white-space:nowrap}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-news{grid-column:1/-1;font-size:10.5px;white-space:normal;text-align:center;line-height:1.3;padding-top:1px}}'
-  ].join('');
-  document.head.appendChild(polishStyle);
 })();
 
 /**
