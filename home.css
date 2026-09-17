@@ -263,3 +263,7 @@
 .comparison-disclaimer { margin-top: 18px; color: #626262; font-size: 12px; line-height: 1.7; }
 @media (max-width: 800px) { .comparison-columns { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .comparison-side { padding: 22px; } .comparison-example { padding: 20px; } .comparison-example dl { grid-template-columns: 1fr; gap: 4px; } .comparison-example dd { margin-bottom: 10px; } }
+
+/* Keep the transition close to the hero and align the paired examples. */
+.home .home-focused-hero { min-height: auto; }
+.comparison-example { margin-top: 0; flex: 1; }
