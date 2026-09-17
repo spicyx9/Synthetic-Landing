@@ -37,3 +37,7 @@ Privacy and Terms have document placeholders, not fabricated policies. Publish a
 Signal scenarios and prospect examples are clearly illustrative. Confirm supported signal coverage before publishing a supported-signals catalog. Do not substitute real personal contact data in illustrative examples.
 
 The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CSS controls its circular crop. The supplied Axel portrait is stored unchanged at `assets/team/axel-ceo.png` and uses the same CSS dimensions.
+
+## Customer stories
+
+`/clients` and `/customers` read `assets/data/customers.json` through the shared `customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `assets/data/README.md`. No build is required. The homepage preview stays hidden until three verified testimonials exist for its language. Statistic cards require an enabled flag and a real value.
