@@ -203,7 +203,12 @@ button {
 
 /* Columns (for Resources) */
 .nav-mega:not(.nav-mega--solutions) {
-  background: #f5f4f1;
+  background: #fff;
+  min-width: 270px;
+  width: 290px;
+}
+.nav-mega:not(.nav-mega--solutions) .mega-col {
+  width: 100%;
 }
 .mega-col {
   display: flex;
@@ -215,10 +220,6 @@ button {
 .mega-col:first-child {
   background: white;
   border-radius: 14px;
-}
-.mega-announcement {
-  background: transparent;
-  min-width: 310px;
 }
 .mega-label {
   font-size: 11px;
@@ -253,83 +254,6 @@ button {
   color: #888;
   font-weight: 400;
   line-height: 1.3;
-}
-
-/* Announcement column */
-.mega-announcement {
-  min-width: 220px;
-}
-.mega-card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-decoration: none;
-}
-.mega-card-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
-  border-radius: 12px;
-  padding: 32px 24px;
-  position: relative;
-  overflow: hidden;
-}
-.mega-card-img::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -30%;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.mega-card-img::after {
-  content: '';
-  position: absolute;
-  bottom: -40%;
-  left: -20%;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.mega-card-img .mega-x {
-  color: white;
-  font-size: 11px;
-  font-weight: 300;
-  position: relative;
-  z-index: 1;
-}
-.mega-brand-text {
-  color: white;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  position: relative;
-  z-index: 1;
-}
-.mega-card strong {
-  font-size: 14px;
-  font-weight: 600;
-  color: #1a1a1a;
-  line-height: 1.3;
-  margin-top: 4px;
-}
-.mega-card .mega-link {
-  font-size: 13px;
-  font-weight: 500;
-  color: #555;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: color 0.15s;
-}
-.mega-card:hover .mega-link {
-  color: #1a1a1a;
 }
 
 .nav-actions {
@@ -4507,7 +4431,7 @@ button {
   letter-spacing: 0.1em;
 }
 
-/* Sub-section label inside a dropdown (Pour qui ?, Cas d'usage, Annonce) — smaller, lighter */
+/* Sub-section label inside a dropdown (Pour qui ?, Cas d'usage) — smaller, lighter */
 .mobile-menu-section-label--sub {
   font-size: 10.5px;
   font-weight: 600;
