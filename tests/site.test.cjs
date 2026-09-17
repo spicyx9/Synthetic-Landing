@@ -103,7 +103,7 @@ test('fixed homepage news and static deployment configuration', () => {
   const config = JSON.parse(read('vercel.json'));
   assert.equal(config.cleanUrls, true);
   assert.equal(config.trailingSlash, false);
-  assert.deepEqual(config.redirects, [{ source: '/lead-magnets', destination: '/our-solution', permanent: true }, { source: '/lead-magnets-fr', destination: '/notre-solution', permanent: true }]);
+  assert.deepEqual(config.redirects.filter(rule => rule.source.startsWith('/lead-magnets')), [{ source: '/lead-magnets', destination: '/our-solution', permanent: true }, { source: '/lead-magnets-fr', destination: '/notre-solution', permanent: true }]);
 });
 
 test('all shared JavaScript parses', () => {

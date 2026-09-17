@@ -100,7 +100,11 @@
   });
 
   document.querySelectorAll('[data-lang]').forEach(link => link.addEventListener('click', () => {
-    try { localStorage.setItem('lang', link.dataset.lang); } catch (_) {}
+    const language = link.dataset.lang;
+    if (language !== 'en' && language !== 'fr') return;
+    // Let an explicit language choice override IP detection on later visits.
+    document.cookie = `ss-language=${language}; Path=/; Max-Age=31536000; SameSite=Lax; Secure`;
+    try { localStorage.setItem('lang', language); } catch (_) {}
   }));
 })();
 

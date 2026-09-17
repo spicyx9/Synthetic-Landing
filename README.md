@@ -41,3 +41,7 @@ The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CS
 ## Customer stories
 
 `/clients` and `/customers` read `assets/data/customers.json` through the shared `customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `assets/data/README.md`. No build is required. The homepage preview stays hidden until three verified testimonials exist for its language. Statistic cards require an enabled flag and a real value.
+
+## Automatic language
+
+On `/`, Vercel's trusted `x-vercel-ip-country` header selects French for `FR`; all other or unknown countries keep English. Temporary redirects avoid permanently caching a visitor's location. Explicit language URLs remain accessible worldwide. The EN/FR switch sets a first-party `ss-language` cookie for one year, so manual choice overrides automatic detection. No external geolocation service or browser-language heuristic is used.
