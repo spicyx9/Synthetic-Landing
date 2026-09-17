@@ -24,6 +24,7 @@ for (const name of pages) {
     const footer = html.match(/<footer[\s\S]*?<\/footer>/)[0];
     assert.doesNotMatch(header + footer, /href="#"|Lead magnets|Keyword targeting|Multichannel outreach|Resources|Ressources/i);
     assert.match(header, /href="\/faq(?:-fr)?"/);
+    assert.doesNotMatch(header.match(/<nav[\s\S]*?<\/nav>/)[0], /href="\/contact(?:-fr)?"/);
     assert.match(footer, /href="\/contact(?:-fr)?"/);
     assert.match(footer, /href="\/(?:media|medias)"/);
     assert.match(footer, /href="\/(?:careers|recrutement)"/);
