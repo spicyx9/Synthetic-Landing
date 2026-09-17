@@ -33,6 +33,7 @@ test('provided profile link and image render safely with lazy loading', () => {
 test('statistics need enabled boolean and a nonempty value; optional fields stay optional', () => {
   assert.equal(render({statistics:[{value:'',labelEn:'Test label',enabled:true},{value:'123',labelEn:'Test label',enabled:false}]},'en'),'');
   assert.match(render({statistics:[{value:'123',labelEn:'Test label',enabled:true}]},'en'),/customer-stat/);
+  assert.match(render({statistics:[{value:0,labelEn:'Test label',enabled:true}]},'en'),/>0<\/p>/);
   const html=render({customers:[record({kind:'identity',date:'2026-02-31',metric:null})]},'en');
   assert.match(html,/customer-card--identity/);assert.doesNotMatch(html,/<time|customer-result|<blockquote/);
 });

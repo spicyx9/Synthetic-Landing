@@ -36,7 +36,7 @@
   }
   function statCards(data, lang) {
     return (Array.isArray(data.statistics) ? data.statistics : []).filter(s => s && s.enabled === true &&
-      (typeof s.value === 'string' ? text(s.value) : typeof s.value === 'number' && Number.isFinite(s.value)) && text(s[lang === 'fr' ? 'labelFr' : 'labelEn']))
+      (typeof s.value === 'string' ? text(s.value).length > 0 : typeof s.value === 'number' && Number.isFinite(s.value)) && text(s[lang === 'fr' ? 'labelFr' : 'labelEn']))
       .map(s => `<article class="customer-card customer-stat"><p class="customer-stat-value">${escape(s.value)}</p><p>${escape(s[lang === 'fr' ? 'labelFr' : 'labelEn'])}</p></article>`);
   }
   function render(data, lang, preview = false) {
