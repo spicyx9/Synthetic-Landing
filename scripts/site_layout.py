@@ -11,12 +11,13 @@ ROUTES = {
  'about': ('/about', '/a-propos'), 'careers': ('/careers', '/recrutement'),
  'media': ('/media', '/medias'), 'contact': ('/contact', '/contact-fr'),
  'privacy': ('/privacy', '/confidentialite'), 'terms': ('/terms', '/conditions'),
+ 'notice': ('/legal-notice', '/mentions-legales'), 'opposition': ('/opt-out', '/opposition'),
  'customers': ('/customers', '/clients'),
  'legacy': ('/lead-magnets', '/lead-magnets-fr')
 }
 LABELS = {
- 'en': dict(customers='Customers',solution='Our solution',pricing='Pricing',faq='FAQ',about='About',careers='Careers',media='Media',contact='Contact',privacy='Privacy',terms='Terms',login='Log in',demo='Book a demo',who='Who we are'),
- 'fr': dict(customers='Nos clients',solution='Notre solution',pricing='Tarifs',faq='FAQ',about='À propos',careers='Recrutement',media='Médias',contact='Contact',privacy='Confidentialité',terms='Conditions',login='Se connecter',demo='Réserver une démo',who='Qui sommes-nous')
+ 'en': dict(notice='Legal notice',opposition='Opt out',customers='Customers',solution='Our solution',pricing='Pricing',faq='FAQ',about='About',careers='Careers',media='Media',contact='Contact',privacy='Privacy',terms='Terms',login='Log in',demo='Book a demo',who='Who we are'),
+ 'fr': dict(notice='Mentions légales',opposition='Opposition',customers='Nos clients',solution='Notre solution',pricing='Tarifs',faq='FAQ',about='À propos',careers='Recrutement',media='Médias',contact='Contact',privacy='Confidentialité',terms='Conditions',login='Se connecter',demo='Réserver une démo',who='Qui sommes-nous')
 }
 def url(key, lang): return ROUTES[key][lang == 'fr']
 def booking(lang, prefix, label=None):
@@ -59,7 +60,7 @@ def header(lang,key):
 </header>'''
 def footer(lang):
  t=LABELS[lang]
- groups=[('Produit' if lang=='fr' else 'Product',['solution','pricing','faq']),('Entreprise' if lang=='fr' else 'Company',['about','customers','careers','media','contact']),('Informations légales' if lang=='fr' else 'Legal',['privacy','terms'])]
+ groups=[('Produit' if lang=='fr' else 'Product',['solution','pricing','faq']),('Entreprise' if lang=='fr' else 'Company',['about','customers','careers','media','contact']),('Informations légales' if lang=='fr' else 'Legal',['notice','privacy','terms','opposition'])]
  columns=''.join('<div><h2>'+title+'</h2><ul>'+''.join('<li>'+company_link(k,lang)+'</li>' for k in keys)+'</ul></div>' for title,keys in groups)
  return f'''<footer class="footer site-footer">
   <div class="site-footer-top"><a href="{url('home',lang)}" class="logo">Synthetic Swarm</a><p>{'La bonne personne. Le bon signal. Le bon moment.' if lang=='fr' else 'The right person. The right signal. The right time.'}</p></div>
