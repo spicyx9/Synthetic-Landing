@@ -10,7 +10,12 @@ const pages = fs.readdirSync(root).filter(name => name.endsWith('.html'));
 for (const name of pages) {
   test(`${name}: source content, shared header and local assets`, () => {
     const html = read(name);
-    assert.doesNotMatch(html, /hyperstack|Pro Solo|Pro Studio|\b(?:49|149)\s*€/i);
+    assert.doesNotMatch(html, /Pro Solo|Pro Studio|\b(?:49|149)\s*€/i);
+    if (!["about.html", "a-propos.html"].includes(name)) assert.doesNotMatch(html, /hyperstack/i);
+    else {
+      assert.equal((html.match(/Hyperstack/g) || []).length, 1);
+      assert.doesNotMatch(html, /hyperstack\.studio/i);
+    }
     const login = html.match(/<a\b[^>]*class="btn-login"[^>]*>/)[0];
     for (const attr of ['href="https://app.syntheticswarm.ai/ui/"', 'target="_blank"', 'rel="noopener noreferrer"']) assert.ok(login.includes(attr));
     assert.match(html, /<button[^>]*data-book-demo[^>]*aria-expanded="false"/);
