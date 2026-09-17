@@ -31,6 +31,8 @@
   document.body.appendChild(overlay);
 
   let previousOverflow = '';
+  const background = [...document.body.children].filter(node => node !== overlay && !['SCRIPT', 'STYLE'].includes(node.tagName));
+  const previousInert = new Map();
   function closeMenu(restoreFocus = true) {
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
@@ -39,10 +41,12 @@
     document.body.style.overflow = previousOverflow;
     overlay.querySelectorAll('[data-disclosure-trigger]').forEach(button => button.setAttribute('aria-expanded', 'false'));
     overlay.querySelectorAll('[data-disclosure-panel]').forEach(panel => { panel.hidden = true; });
+    background.forEach(node => { node.inert = previousInert.get(node) || false; });
     if (restoreFocus) toggle.focus();
   }
   toggle.addEventListener('click', function () {
     previousOverflow = document.body.style.overflow;
+    background.forEach(node => { previousInert.set(node, node.inert); node.inert = true; });
     overlay.inert = false;
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
