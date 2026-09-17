@@ -228,3 +228,13 @@
   .home .home-product-example { margin-top: 32px; }
   .home .home-difference { padding-top: 44px; }
 }
+
+.home-solution-preview > h2, .home-comparison > h2, .home-final-cta > h2 { font-size: clamp(28px,3.5vw,38px); line-height: 1.2; letter-spacing: -.03em; margin-bottom: 28px; }
+.home-solution-preview .page-section > h3 { margin-bottom: 14px; font-size: 22px; }
+.home-solution-preview .prospect-card { max-width: 780px; }
+.home .home-comparison { padding-top: 16px; padding-bottom: 24px; }
+.home-purchase-faq { max-width: 720px; padding: 0 24px; margin: 16px auto 0; }
+.home-purchase-faq > h2 { text-align: center; font-size: 26px; letter-spacing: -.025em; margin-bottom: 20px; }
+.home-final-cta { text-align: center; }
+.home-final-cta .page-actions { justify-content: center; }
+.home-final-cta > p { color: #666; }
