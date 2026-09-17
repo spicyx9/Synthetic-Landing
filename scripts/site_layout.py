@@ -45,8 +45,12 @@ def header(lang,key):
       </div>
     </nav>
     <div class="nav-actions">
-      <div class="lang-toggle" role="group" aria-label="{'Langue' if lang=='fr' else 'Language'}">
-        <a href="{url(key,'en')}" data-lang="en" class="lang-toggle-link{' lang-toggle-link--active' if lang=='en' else ''}" lang="en">EN</a><span class="lang-toggle-sep" aria-hidden="true">|</span><a href="{url(key,'fr')}" data-lang="fr" class="lang-toggle-link{' lang-toggle-link--active' if lang=='fr' else ''}" lang="fr">FR</a>
+      <div class="language-menu">
+        <button type="button" class="language-trigger" data-disclosure-trigger aria-expanded="false" aria-controls="header-language-options" aria-label="{'Choisir la langue' if lang=='fr' else 'Choose language'}">{lang.upper()} <span aria-hidden="true">▾</span></button>
+        <div class="language-panel" id="header-language-options" data-disclosure-panel hidden>
+          <a href="{url(key,lang)}" data-lang="{lang}" lang="{lang}" aria-current="true">{lang.upper()}</a>
+          <a href="{url(key,'en' if lang=='fr' else 'fr')}" data-lang="{'en' if lang=='fr' else 'fr'}" lang="{'en' if lang=='fr' else 'fr'}">{'EN' if lang=='fr' else 'FR'}</a>
+        </div>
       </div>
       <a href="https://app.syntheticswarm.ai/ui/" class="btn-login" target="_blank" rel="noopener noreferrer">{'Connexion' if lang=='fr' else 'Log in'}</a>
       {booking(lang,'header','Démo' if lang=='fr' else 'Demo')}

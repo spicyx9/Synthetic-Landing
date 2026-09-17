@@ -35,8 +35,12 @@
       </div>
     </nav>
     <div class="nav-actions">
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <a href="/pricing" data-lang="en" class="lang-toggle-link lang-toggle-link--active" lang="en">EN</a><span class="lang-toggle-sep" aria-hidden="true">|</span><a href="/pricing-fr" data-lang="fr" class="lang-toggle-link" lang="fr">FR</a>
+      <div class="language-menu">
+        <button type="button" class="language-trigger" data-disclosure-trigger aria-expanded="false" aria-controls="header-language-options" aria-label="Choose language">EN <span aria-hidden="true">▾</span></button>
+        <div class="language-panel" id="header-language-options" data-disclosure-panel hidden>
+          <a href="/pricing" data-lang="en" lang="en" aria-current="true">EN</a>
+          <a href="/pricing-fr" data-lang="fr" lang="fr">FR</a>
+        </div>
       </div>
       <a href="https://app.syntheticswarm.ai/ui/" class="btn-login" target="_blank" rel="noopener noreferrer">Log in</a>
       <div class="demo-booking">
