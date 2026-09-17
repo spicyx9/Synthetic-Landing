@@ -2,18 +2,6 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <script>
-  (function(){
-    try {
-      var pref = localStorage.getItem('lang');
-      if (pref === 'fr') return;
-      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-      if (pref === 'en' || !lang.startsWith('fr')) {
-        window.location.replace('/pricing' + window.location.search + window.location.hash);
-      }
-    } catch(e) {}
-  })();
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#fcfbf8">
   <meta name="description" content="Tarifs Synthetic Swarm — choisissez le nombre de leads qualifiés reçus chaque semaine.">
