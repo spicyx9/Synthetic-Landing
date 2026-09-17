@@ -5,7 +5,7 @@ Static HTML, CSS and JavaScript. Vercel serves the repository root with clean UR
 ## Editing and validation
 
 - Page content lives in the root HTML files.
-- Shared header/footer markup lives in `scripts/site_layout.py`. Run `python3 scripts/site_layout.py` after changing it to synchronize every public page.
+- Shared header/footer markup lives in `scripts/site_layout.py`. Run `python3 scripts/site_layout.py` after changing it to synchronize every public page. It also copies pricing and the purchase FAQ from the dedicated pricing pages into the homepage, so the conversion sections stay consistent.
 - `mobile-menu.js` provides About/demo disclosures and the mobile menu; it does not replace page content.
 - `pricing.js` owns the five fixed prices and the sixth custom state. Default: index 2, 50 leads/week, 399 €/month. The custom state removes checkout pricing data and exposes calendar booking.
 - Run `node --test tests/site.test.cjs` for content, links, syntax, route configuration and pricing interaction checks. No dependencies are required.
@@ -35,3 +35,5 @@ Careers and Media intentionally have empty states. The media pages include an in
 Privacy and Terms have document placeholders, not fabricated policies. Publish approved legal text when supplied. No recruiting/support email or company social URL was verified, so the site uses the supplied team calendars and Contact page.
 
 Signal scenarios and prospect examples are clearly illustrative. Confirm supported signal coverage before publishing a supported-signals catalog. Do not substitute real personal contact data in illustrative examples.
+
+The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CSS controls its circular crop. Axel uses initials until a verified portrait is supplied.
