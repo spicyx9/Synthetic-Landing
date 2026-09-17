@@ -1,0 +1,32 @@
+/* About storytelling: existing public-site colors, radii and typography. */
+.about-page { padding-top: 48px; }
+.about-intro { margin-bottom: 40px; }
+.about-founders, .about-origin-grid, .about-move-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
+.founder-card { display: flex; flex-direction: column; gap: 24px; }
+.founder-portrait { width: 160px; height: 160px; object-fit: cover; object-position: center; border-radius: 18px; }
+.founder-card h2 { font-size: 24px; letter-spacing: -.025em; margin-bottom: 12px; }
+.founder-role { margin-left: 8px; font-size: 14px; font-weight: 600; color: #0a66c2; letter-spacing: 0; }
+.founder-card .founder-background, .about-origin .founder-background { font-size: 13px; color: #666; margin-top: 16px; }
+.founder-link-disabled { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 20px; font-size: 14px; font-weight: 600; color: #666; cursor: default; }
+.founder-link-note { font-size: 12px; font-weight: 400; }
+.about-origin-grid article { padding-top: 24px; border-top: 1px solid #e8e5e0; }
+.about-origin-grid article:last-child { border-top-color: #dfdbd6; }
+.about-person-label { font-size: 14px; font-weight: 600; color: #0a66c2; }
+.about-origin h3 { font-size: 22px; line-height: 1.3; letter-spacing: -.025em; margin-top: 12px; }
+.about-origin p { color: #666; font-size: 15px; line-height: 1.7; margin-top: 16px; }
+.about-creation { max-width: 780px; }
+.about-text-link { color: #0a66c2; font-size: 14px; font-weight: 600; }
+.about-text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.about-proof { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+.about-proof article { padding: 24px; border: 1px solid #e8e5e0; border-radius: 18px; background: #fff; }
+.about-proof h3 { font-size: 12px; letter-spacing: .07em; color: #0a66c2; margin-bottom: 12px; }
+.about-proof p { font-size: 16px; line-height: 1.5; }
+.about-timeline { list-style: none; margin: 0; padding: 0; }
+.about-timeline li { padding: 20px 0; border-top: 1px solid #e8e5e0; }
+.about-timeline time { font-size: 12px; font-weight: 700; color: #666; letter-spacing: .07em; }
+.about-timeline h3 { font-size: 18px; font-weight: 600; line-height: 1.4; margin-top: 8px; }
+.about-photo-placeholder { display: flex; flex-direction: column; justify-content: center; padding: 28px; min-height: 240px; background: #f7f5f1; border: 1px dashed #d6d2ca; border-radius: 18px; }
+.about-photo-placeholder h3 { font-size: 22px; letter-spacing: -.025em; margin-bottom: 12px; }
+.about-photo-placeholder p { font-size: 15px; color: #666; line-height: 1.7; }
+.about-sf .about-reassurance { margin-top: 28px; padding-left: 20px; border-left: 2px solid #0a66c2; color: #254b70; }
+@media (max-width:700px) { .about-founders, .about-origin-grid, .about-move-grid, .about-proof { grid-template-columns: 1fr; } .founder-portrait { width: 128px; height: 128px; } .about-intro { margin-bottom: 32px; } .about-photo-placeholder { min-height: 200px; } }
