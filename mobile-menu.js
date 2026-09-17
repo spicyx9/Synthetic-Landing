@@ -163,3 +163,54 @@
     if (e.key === 'Escape' && overlay.classList.contains('open')) close();
   });
 })();
+
+/**
+ * Homepage FAQ — the same three buying objections are repeated near the bottom
+ * of the main site, while the pricing page keeps them directly below checkout.
+ */
+(function() {
+  if (!document.body.classList.contains('home')) return;
+  const footer = document.querySelector('.footer');
+  if (!footer || document.querySelector('.home-faq')) return;
+
+  const isFr = document.documentElement.lang.toLowerCase().startsWith('fr');
+  const copy = isFr ? {
+    title: 'Questions fréquentes',
+    items: [
+      ['Comment ça marche concrètement ?', "Vous nous donnez vos critères de ciblage : métier, taille d'entreprise, secteur géographique. Nous surveillons en continu pour détecter les dirigeants dont un besoin en assurance apparaît. Chaque semaine, vous recevez des fiches vérifiées, avec le signal daté qui explique pourquoi appeler maintenant."],
+      ["Quelles informations j'obtiens ?", "Nom et prénom du dirigeant, téléphone portable (et ligne fixe si disponible), email et profil LinkedIn. Plus la raison de l'appel : le changement de situation que nous avons détecté, avec sa date."],
+      ["Est-ce que j'ai le droit d'appeler ces personnes ?", "Oui. La prospection téléphonique entre professionnels peut être fondée sur l'intérêt légitime lorsque l'offre est en rapport avec la profession de la personne appelée. La personne doit être informée et pouvoir s'opposer simplement et gratuitement. Le consentement préalable instauré le 11 août 2026 concerne le démarchage des consommateurs."]
+    ]
+  } : {
+    title: 'Frequently asked questions',
+    items: [
+      ['How does it work in practice?', 'You give us your targeting criteria: profession, company size and geographic area. We continuously monitor for executives whose situation creates a new insurance need. Every week, you receive verified prospect profiles with the dated signal explaining why now is the right time to call.'],
+      ['What information do I get?', "The executive's first and last name, mobile number (and landline when available), email and LinkedIn profile. You also get the reason for the call: the change in situation we detected, with its date."],
+      ['Am I allowed to call these people?', "Yes, for B2B prospecting in France when the solicitation is related to the person's profession. The person must be informed and able to opt out easily and free of charge. The prior-consent rule introduced on August 11, 2026 concerns consumer telemarketing."]
+    ]
+  };
+
+  const style = document.createElement('style');
+  style.textContent = '.home-faq{max-width:760px;margin:0 auto;padding:72px 24px 88px}.home-faq h2{text-align:center;font-size:34px;font-weight:800;letter-spacing:-.03em;margin:0 0 30px;color:#1a1a1a}.home-faq details{border-top:1px solid rgba(0,0,0,.09)}.home-faq details:last-child{border-bottom:1px solid rgba(0,0,0,.09)}.home-faq summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 2px;cursor:pointer;list-style:none;font-size:15px;font-weight:700;color:#1a1a1a}.home-faq summary::-webkit-details-marker{display:none}.home-faq summary:after{content:"+";font-size:21px;font-weight:400;color:#777}.home-faq details[open] summary:after{content:"−"}.home-faq p{margin:-4px 0 21px;color:#5f5f5f;font-size:14px;line-height:1.65}@media(max-width:600px){.home-faq{padding:52px 20px 64px}.home-faq h2{font-size:27px}.home-faq summary{font-size:14px}}';
+  document.head.appendChild(style);
+
+  const section = document.createElement('section');
+  section.className = 'home-faq';
+  const title = document.createElement('h2');
+  title.textContent = copy.title;
+  section.appendChild(title);
+
+  copy.items.forEach(function(item, index) {
+    const details = document.createElement('details');
+    if (index === 0) details.open = true;
+    const summary = document.createElement('summary');
+    summary.textContent = item[0];
+    const paragraph = document.createElement('p');
+    paragraph.textContent = item[1];
+    details.appendChild(summary);
+    details.appendChild(paragraph);
+    section.appendChild(details);
+  });
+
+  footer.parentNode.insertBefore(section, footer);
+})();
