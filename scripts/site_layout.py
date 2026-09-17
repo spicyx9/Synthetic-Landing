@@ -27,9 +27,13 @@ def booking(lang, prefix):
     <a class="demo-booking-person" href="https://calendar.app.google/AWQX2bxp8cnqtsaJ9" target="_blank" rel="noopener noreferrer"><img class="demo-booking-avatar" src="/assets/team/ilan-cto.jpg" alt="" width="38" height="38"><span class="demo-booking-person-copy"><strong>Ilan</strong><span>CTO</span></span><span aria-hidden="true">↗</span></a>
   </div>
 </div>'''
+def company_link(key,lang,label=None):
+ label=label or LABELS[lang][key]
+ if key=='media': return f'<span class="nav-disabled" role="link" aria-disabled="true">{label}</span>'
+ return f'<a href="{url(key,lang)}">{label}</a>'
 def header(lang,key):
  t=LABELS[lang];links='\n'.join(f'<a href="{url(k,lang)}"'+(' aria-current="page"' if key==k else '')+f'>{t[k]}</a>' for k in ['solution','pricing','faq','customers'])
- about='\n'.join(f'<a href="{url(k,lang)}">{t["who"] if k=="about" else t[k]}</a>' for k in ['about','careers','media'])
+ about='\n'.join(company_link(k,lang,t["who"] if k=="about" else t[k]) for k in ['about','careers','media'])
  return f'''<header class="header">
   <div class="header-inner">
     <a href="{url('home',lang)}" class="logo"><img src="/assets/logo-black-narrow.png" alt="" class="logo-icon" width="20" height="20">Synthetic Swarm</a>
@@ -52,7 +56,7 @@ def header(lang,key):
 def footer(lang):
  t=LABELS[lang]
  groups=[('Produit' if lang=='fr' else 'Product',['solution','pricing','faq']),('Entreprise' if lang=='fr' else 'Company',['about','customers','careers','media','contact']),('Informations légales' if lang=='fr' else 'Legal',['privacy','terms'])]
- columns=''.join('<div><h2>'+title+'</h2><ul>'+''.join(f'<li><a href="{url(k,lang)}">{t[k]}</a></li>' for k in keys)+'</ul></div>' for title,keys in groups)
+ columns=''.join('<div><h2>'+title+'</h2><ul>'+''.join('<li>'+company_link(k,lang)+'</li>' for k in keys)+'</ul></div>' for title,keys in groups)
  return f'''<footer class="footer site-footer">
   <div class="site-footer-top"><a href="{url('home',lang)}" class="logo">Synthetic Swarm</a><p>{'La bonne personne. Le bon signal. Le bon moment.' if lang=='fr' else 'The right person. The right signal. The right time.'}</p></div>
   <nav class="site-footer-columns" aria-label="{'Pied de page' if lang=='fr' else 'Footer'}">
