@@ -1,0 +1,8 @@
+{
+  "customers": [],
+  "statistics": [
+    {"value": null, "labelFr": "de nos clients nous recommanderaient", "labelEn": "of our customers would recommend us", "enabled": false},
+    {"value": null, "labelFr": "clients accompagnés", "labelEn": "customers supported", "enabled": false},
+    {"value": null, "labelFr": "de prospects jugés pertinents", "labelEn": "of leads considered relevant", "enabled": false}
+  ]
+}
