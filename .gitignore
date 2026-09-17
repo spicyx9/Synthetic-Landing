@@ -7,3 +7,7 @@
 
 # gstack local artifacts
 .gstack/
+
+# Python layout tooling
+__pycache__/
+*.pyc

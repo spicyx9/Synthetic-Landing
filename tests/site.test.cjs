@@ -20,6 +20,14 @@ for (const name of pages) {
     assert.match(html, />AC<\/span>/);
     assert.match(html, />IS<\/span>/);
     assert.doesNotMatch(html, /avatars\.githubusercontent|heroEyebrowDate/);
+    const header = html.match(/<header[\s\S]*?<\/header>/)[0];
+    const footer = html.match(/<footer[\s\S]*?<\/footer>/)[0];
+    assert.doesNotMatch(header + footer, /href="#"|Lead magnets|Keyword targeting|Multichannel outreach|Resources|Ressources/i);
+    assert.match(header, /href="\/faq(?:-fr)?"/);
+    assert.match(footer, /href="\/contact(?:-fr)?"/);
+    assert.match(footer, /href="\/(?:media|medias)"/);
+    assert.match(footer, /href="\/(?:careers|recrutement)"/);
+    assert.equal([...html.matchAll(/<h1\b/g)].length, 1);
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
     assert.equal(new Set(ids).size, ids.length, 'duplicate IDs');
     for (const [, url] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
@@ -43,8 +51,11 @@ for (const lang of ['en', 'fr']) {
     const element = () => ({ textContent: '', dataset: {}, attrs: {}, events: {}, style: { setProperty() {} }, classList: { toggle() {} }, setAttribute(k, v) { this.attrs[k] = v; }, addEventListener(k, v) { this.events[k] = v; } });
     const range = element(), amount = element(), checkout = element(), badge = element();
     range.value = '4'; // Simulate a browser restoring an old selection.
-    const counters = [element(), element()], steps = Array.from({ length: 5 }, element);
-    const selectors = { '[data-pricing-range]': range, '[data-pricing-amount]': amount, '[data-pricing-checkout]': checkout, '.pricing-config-badge': badge };
+    const counters = [element(), element()], steps = Array.from({ length: 6 }, element);
+    const period = element(), summary = element(), customCopy = element(), customBooking = element();
+    const panel = element(), trigger = element();
+    customBooking.querySelector = selector => selector === '[data-disclosure-panel]' ? panel : trigger;
+    const selectors = { '[data-pricing-range]': range, '[data-pricing-amount]': amount, '[data-pricing-checkout]': checkout, '.pricing-config-badge': badge, '[data-pricing-period]': period, '[data-pricing-summary]': summary, '[data-pricing-custom-copy]': customCopy, '[data-pricing-custom-booking]': customBooking };
     vm.runInNewContext(read('pricing.js'), { Intl, document: { documentElement: { lang }, querySelector: s => selectors[s], querySelectorAll: s => s === '[data-pricing-leads]' ? counters : steps } });
     assert.equal(range.value, '2');
     assert.equal(amount.textContent, '399 €');
@@ -59,7 +70,20 @@ for (const lang of ['en', 'fr']) {
       assert.equal(checkout.dataset.price, String(prices[i]));
       assert.equal(steps[i].attrs['aria-pressed'], 'true');
     }
+    steps[5].events.click();
+    assert.equal(amount.textContent, lang === 'fr' ? 'Sur mesure' : 'Custom');
+    assert.equal(period.hidden, true);
+    assert.equal(summary.hidden, true);
+    assert.equal(customCopy.hidden, false);
+    assert.equal(customBooking.hidden, false);
+    assert.equal(checkout.hidden, true);
+    assert.equal(badge.hidden, true);
+    assert.deepEqual(checkout.dataset, {});
+    assert.equal(counters[0].textContent, '200+');
     range.value = '0'; range.events.input();
+    assert.equal(customBooking.hidden, true);
+    assert.equal(checkout.hidden, false);
+    assert.equal(period.hidden, false);
     assert.equal(amount.textContent, '89 €');
   });
 }
@@ -71,7 +95,10 @@ test('fixed homepage news and static deployment configuration', () => {
     assert.match(html, /class="hero-eyebrow-news">[^<]*San Francisco/);
     assert.doesNotMatch(html, /new Date\(|heroEyebrowDate/);
   }
-  assert.deepEqual(JSON.parse(read('vercel.json')), { cleanUrls: true, trailingSlash: false });
+  const config = JSON.parse(read('vercel.json'));
+  assert.equal(config.cleanUrls, true);
+  assert.equal(config.trailingSlash, false);
+  assert.deepEqual(config.redirects, [{ source: '/lead-magnets', destination: '/our-solution', permanent: true }, { source: '/lead-magnets-fr', destination: '/notre-solution', permanent: true }]);
 });
 
 test('all shared JavaScript parses', () => {
