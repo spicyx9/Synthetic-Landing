@@ -10,6 +10,17 @@
     link.setAttribute('rel', 'noopener noreferrer');
   });
 
+  // Replace the generic CTA with the demo booking action.
+  document.querySelectorAll('.btn-get-started').forEach(function(link) {
+    link.href = '#book-demo';
+    link.setAttribute('data-book-demo', 'true');
+    const full = link.querySelector('.btn-label-full');
+    const short = link.querySelector('.btn-label-short');
+    if (full) full.textContent = isFr ? 'Réserver une démo' : 'Book a demo';
+    if (short) short.textContent = isFr ? 'Démo' : 'Demo';
+    if (!full && !short) link.textContent = isFr ? 'Réserver une démo' : 'Book a demo';
+  });
+
   // Remove the Hyperstack partnership announcement everywhere, including mobile clones.
   document.querySelectorAll('.mega-announcement').forEach(function(node) {
     node.remove();
@@ -22,6 +33,7 @@
   // Pricing FAQ must start closed so every item shows a + until clicked.
   document.querySelectorAll('.pricing-faq-item').forEach(function(item) {
     item.open = false;
+    item.removeAttribute('open');
   });
 
   // Pricing copy: contact data is part of the delivered profile, no qualifier.
@@ -31,49 +43,49 @@
       .replace(' when available', '');
   });
 
-  // Homepage breaking-news strip.
+  // Homepage breaking-news strip: keep date and announcement as separate aligned items.
   if (document.body.classList.contains('home')) {
-    const news = document.getElementById('heroEyebrowDate');
-    if (news) {
+    const eyebrow = document.querySelector('.demo-hero__eyebrow');
+    const date = document.getElementById('heroEyebrowDate');
+    if (eyebrow && date) {
+      date.textContent = isFr ? '17 SEPTEMBRE 2026' : 'SEPTEMBER 17, 2026';
+      let news = eyebrow.querySelector('.hero-eyebrow-news');
+      if (!news) {
+        news = document.createElement('span');
+        news.className = 'hero-eyebrow-news';
+        eyebrow.appendChild(news);
+      }
       news.textContent = isFr
-        ? '17 SEPTEMBRE 2026 · SYNTHETIC SWARM BOUGE SES BUREAUX À SAN FRANCISCO (CALIFORNIE)'
-        : 'SEPTEMBER 17, 2026 · SYNTHETIC SWARM MOVES ITS OFFICES TO SAN FRANCISCO, CALIFORNIA';
+        ? 'Synthetic Swarm bouge ses bureaux à San Francisco (Californie)'
+        : 'Synthetic Swarm moves its offices to San Francisco, California';
     }
   }
 
-  // Tighten the Resources dropdown now that the announcement column is gone,
-  // and make the longer breaking-news strip distribute cleanly.
   const polishStyle = document.createElement('style');
   polishStyle.textContent = [
     '.nav-mega:not(.nav-mega--solutions){min-width:270px}',
     '.nav-mega:not(.nav-mega--solutions) .mega-col:first-child{width:100%;min-width:270px}',
-    '.demo-wrapper .demo-hero__eyebrow{max-width:min(920px,calc(100vw - 40px));justify-content:center}',
-    '.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{white-space:normal;text-align:left;line-height:1.25;letter-spacing:.025em}',
-    '@media(max-width:640px){.demo-wrapper .demo-hero__eyebrow{display:grid;grid-template-columns:auto 1fr;gap:7px 8px;padding:7px 12px;width:min(100%,560px)}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-dot{display:none}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-badge{grid-column:1}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{grid-column:2;font-size:10px;white-space:normal;text-align:left;line-height:1.3}}'
+    '.demo-wrapper .demo-hero__eyebrow{display:inline-grid;grid-template-columns:auto auto auto minmax(0,1fr);align-items:center;gap:8px 10px;max-width:min(980px,calc(100vw - 40px));padding:7px 14px;margin-left:auto;margin-right:auto}',
+    '.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{white-space:nowrap;text-align:left;line-height:1.2;letter-spacing:.03em}',
+    '.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-news{color:rgba(255,255,255,.95);font-size:12.5px;font-weight:600;letter-spacing:.01em;text-transform:none;white-space:nowrap;text-align:left;line-height:1.25}',
+    '@media(max-width:760px){.demo-wrapper .demo-hero__eyebrow{grid-template-columns:auto 1fr;width:min(100%,560px);gap:7px 8px;padding:8px 12px}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-dot{display:none}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-badge{grid-column:1}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date{grid-column:2;font-size:10.5px;white-space:nowrap}.demo-wrapper .demo-hero__eyebrow .hero-eyebrow-news{grid-column:1/-1;font-size:10.5px;white-space:normal;text-align:center;line-height:1.3;padding-top:1px}}'
   ].join('');
   document.head.appendChild(polishStyle);
 })();
 
 /**
  * Mobile hamburger menu — injects a hamburger button + overlay into the existing nav.
- * Auto-clones nav-links + nav-actions into a properly-nested mobile overlay:
- *   - Top-level links (e.g. Tarifs) are surfaced FIRST as primary nav rows.
- *   - Dropdowns become labelled sections with their internal sub-section headers
- *     (e.g. SOLUTIONS > Pour qui / Cas d'usage).
- * No HTML changes needed per-page; just include this script before </body>.
  */
 (function() {
   const headerInner = document.querySelector('.header-inner');
   if (!headerInner) return;
 
-  // 1. Build hamburger button
   const hamburger = document.createElement('button');
   hamburger.className = 'mobile-menu-toggle';
   hamburger.setAttribute('aria-label', 'Open menu');
   hamburger.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
   headerInner.appendChild(hamburger);
 
-  // 2. Build overlay shell
   const overlay = document.createElement('div');
   overlay.className = 'mobile-menu-overlay';
   overlay.setAttribute('aria-hidden', 'true');
@@ -92,13 +104,11 @@
   const menuBody = overlay.querySelector('.mobile-menu-body');
   const menuFooter = overlay.querySelector('.mobile-menu-footer');
 
-  // 3. Clone nav-links into the body with proper hierarchy
   const navLinks = document.querySelector('.nav-links');
   if (navLinks) {
     const topLevelLinks = [];
     const dropdowns = [];
 
-    // Separate top-level <a> from dropdowns
     [...navLinks.children].forEach(node => {
       if (node.tagName === 'A') {
         topLevelLinks.push(node);
@@ -107,7 +117,6 @@
       }
     });
 
-    // 3a. Surface top-level links FIRST (as primary nav, e.g. Tarifs)
     if (topLevelLinks.length) {
       const primarySection = document.createElement('div');
       primarySection.className = 'mobile-menu-section mobile-menu-section--primary';
@@ -121,7 +130,6 @@
       menuBody.appendChild(primarySection);
     }
 
-    // 3b. Then expand each dropdown with proper sub-sections
     dropdowns.forEach(node => {
       const trigger = node.querySelector('.nav-link-dropdown');
       if (!trigger) return;
@@ -132,7 +140,6 @@
       topLabel.textContent = triggerText;
       menuBody.appendChild(topLabel);
 
-      // Look for `.mega-section` (Solutions style) or `.mega-col` (Resources style)
       const subSections = node.querySelectorAll('.mega-section, .mega-col');
 
       if (subSections.length) {
@@ -145,7 +152,6 @@
             menuBody.appendChild(subLabelEl);
           }
 
-          // Items can be .mega-item (regular link) or .mega-card (announcement)
           sub.querySelectorAll('.mega-item, .mega-card').forEach(item => {
             const href = item.getAttribute('href') || '#';
             const strong = item.querySelector('strong');
@@ -154,13 +160,11 @@
             a.href = href;
             a.className = 'mobile-menu-link mobile-menu-link--sub';
             a.textContent = label;
-            // External links should keep their target
             if (item.getAttribute('target')) a.setAttribute('target', item.getAttribute('target'));
             menuBody.appendChild(a);
           });
         });
       } else {
-        // Fallback: no sub-sections found, list all .mega-item flat
         node.querySelectorAll('.mega-item').forEach(item => {
           const href = item.getAttribute('href') || '#';
           const strong = item.querySelector('strong');
@@ -175,7 +179,6 @@
     });
   }
 
-  // 4. Clone lang-toggle + buttons into footer
   const navActions = document.querySelector('.nav-actions');
   if (navActions) {
     const toggle = navActions.querySelector('.lang-toggle');
@@ -196,7 +199,6 @@
 
   document.body.appendChild(overlay);
 
-  // 5. Open / close behaviour
   function open() {
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
@@ -217,6 +219,76 @@
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+})();
+
+/**
+ * Booking modal shared by desktop and mobile header CTAs.
+ */
+(function() {
+  const isFr = document.documentElement.lang.toLowerCase().startsWith('fr');
+  const modal = document.createElement('div');
+  modal.className = 'demo-booking-modal';
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML = ''
+    + '<div class="demo-booking-backdrop" data-demo-close></div>'
+    + '<div class="demo-booking-card" role="dialog" aria-modal="true" aria-label="' + (isFr ? 'Réserver une démo' : 'Book a demo') + '">'
+    + '<button class="demo-booking-close" type="button" data-demo-close aria-label="Close">×</button>'
+    + '<div class="demo-booking-title">' + (isFr ? 'Réserver une démo' : 'Book a demo') + '</div>'
+    + '<div class="demo-booking-sub">' + (isFr ? 'Choisissez avec qui vous souhaitez échanger.' : 'Choose who you would like to meet with.') + '</div>'
+    + '<a class="demo-booking-person" href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">'
+    + '<img class="demo-booking-avatar" src="https://avatars.githubusercontent.com/u/179679237?v=4" alt="Axel">'
+    + '<span class="demo-booking-person-copy"><strong>Axel</strong><span>CEO</span></span><span class="demo-booking-arrow">→</span></a>'
+    + '<a class="demo-booking-person" href="https://calendar.app.google/AWQX2bxp8cnqtsaJ9" target="_blank" rel="noopener noreferrer">'
+    + '<span class="demo-booking-avatar demo-booking-avatar--initial">I</span>'
+    + '<span class="demo-booking-person-copy"><strong>Ilan</strong><span>CTO</span></span><span class="demo-booking-arrow">→</span></a>'
+    + '</div>';
+  document.body.appendChild(modal);
+
+  const style = document.createElement('style');
+  style.textContent = [
+    '.demo-booking-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:20px}',
+    '.demo-booking-modal.is-open{display:flex}',
+    '.demo-booking-backdrop{position:absolute;inset:0;background:rgba(18,18,18,.36);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}',
+    '.demo-booking-card{position:relative;z-index:1;width:min(430px,100%);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.2)}',
+    '.demo-booking-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:#f2f2f2;color:#222;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center}',
+    '.demo-booking-title{font-size:24px;font-weight:800;letter-spacing:-.03em;color:#1a1a1a;padding-right:38px}',
+    '.demo-booking-sub{margin-top:7px;margin-bottom:20px;font-size:14px;line-height:1.45;color:#777}',
+    '.demo-booking-person{display:flex;align-items:center;gap:13px;padding:13px;border:1px solid rgba(0,0,0,.08);border-radius:14px;margin-top:10px;background:#fff;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}',
+    '.demo-booking-person:hover{transform:translateY(-1px);border-color:rgba(0,0,0,.18);box-shadow:0 8px 22px rgba(0,0,0,.06)}',
+    '.demo-booking-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:0 0 48px;background:#eee}',
+    '.demo-booking-avatar--initial{display:flex;align-items:center;justify-content:center;background:#1a1a1a;color:#fff;font-size:17px;font-weight:800}',
+    '.demo-booking-person-copy{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}',
+    '.demo-booking-person-copy strong{font-size:15px;color:#1a1a1a}',
+    '.demo-booking-person-copy span{font-size:13px;color:#888}',
+    '.demo-booking-arrow{font-size:18px;color:#888}',
+    '@media(max-width:600px){.demo-booking-card{padding:22px;border-radius:17px}.demo-booking-title{font-size:21px}}'
+  ].join('');
+  document.head.appendChild(style);
+
+  function openModal() {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function(event) {
+    const trigger = event.target.closest('[data-book-demo]');
+    if (trigger) {
+      event.preventDefault();
+      openModal();
+      return;
+    }
+    if (event.target.closest('[data-demo-close]')) closeModal();
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
 })();
 
