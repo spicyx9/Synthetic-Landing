@@ -19,9 +19,9 @@ LABELS = {
  'fr': dict(customers='Nos clients',solution='Notre solution',pricing='Tarifs',faq='FAQ',about='À propos',careers='Recrutement',media='Médias',contact='Contact',privacy='Confidentialité',terms='Conditions',login='Se connecter',demo='Réserver une démo',who='Qui sommes-nous')
 }
 def url(key, lang): return ROUTES[key][lang == 'fr']
-def booking(lang, prefix):
+def booking(lang, prefix, label=None):
  return f'''<div class="demo-booking">
-  <button type="button" class="btn-get-started" data-book-demo data-disclosure-trigger aria-expanded="false" aria-controls="{prefix}-demo-options">{LABELS[lang]['demo']}</button>
+  <button type="button" class="btn-get-started" data-book-demo data-disclosure-trigger aria-expanded="false" aria-controls="{prefix}-demo-options">{label or LABELS[lang]['demo']}</button>
   <div class="demo-booking-popover" id="{prefix}-demo-options" data-disclosure-panel hidden>
     <a class="demo-booking-person" href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer"><img class="demo-booking-avatar" src="/assets/team/axel-ceo.png" alt="" width="38" height="38"><span class="demo-booking-person-copy"><strong>Axel</strong><span>CEO</span></span><span aria-hidden="true">↗</span></a>
     <a class="demo-booking-person" href="https://calendar.app.google/AWQX2bxp8cnqtsaJ9" target="_blank" rel="noopener noreferrer"><img class="demo-booking-avatar" src="/assets/team/ilan-cto.jpg" alt="" width="38" height="38"><span class="demo-booking-person-copy"><strong>Ilan</strong><span>CTO</span></span><span aria-hidden="true">↗</span></a>
@@ -48,8 +48,8 @@ def header(lang,key):
       <div class="lang-toggle" role="group" aria-label="{'Langue' if lang=='fr' else 'Language'}">
         <a href="{url(key,'en')}" data-lang="en" class="lang-toggle-link{' lang-toggle-link--active' if lang=='en' else ''}" lang="en">EN</a><span class="lang-toggle-sep" aria-hidden="true">|</span><a href="{url(key,'fr')}" data-lang="fr" class="lang-toggle-link{' lang-toggle-link--active' if lang=='fr' else ''}" lang="fr">FR</a>
       </div>
-      <a href="https://app.syntheticswarm.ai/ui/" class="btn-login" target="_blank" rel="noopener noreferrer">{t['login']}</a>
-      {booking(lang,'header')}
+      <a href="https://app.syntheticswarm.ai/ui/" class="btn-login" target="_blank" rel="noopener noreferrer">{'Connexion' if lang=='fr' else 'Log in'}</a>
+      {booking(lang,'header','Démo' if lang=='fr' else 'Demo')}
     </div>
   </div>
 </header>'''
