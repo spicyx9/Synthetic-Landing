@@ -11,7 +11,7 @@
   ];
 
   const amount = document.querySelector('[data-pricing-amount]');
-  const leads = document.querySelector('[data-pricing-leads]');
+  const leadCounters = Array.from(document.querySelectorAll('[data-pricing-leads]'));
   const steps = Array.from(document.querySelectorAll('[data-pricing-step]'));
   const checkout = document.querySelector('[data-pricing-checkout]');
 
@@ -26,7 +26,9 @@
 
     range.style.setProperty('--progress', progress + '%');
     if (amount) amount.textContent = formatPrice(plan.price) + ' €';
-    if (leads) leads.textContent = String(plan.leads);
+    leadCounters.forEach(function (counter) {
+      counter.textContent = String(plan.leads);
+    });
 
     steps.forEach(function (step, stepIndex) {
       step.classList.toggle('is-active', stepIndex === index);
