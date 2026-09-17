@@ -14,7 +14,7 @@
   const leadCounters = Array.from(document.querySelectorAll('[data-pricing-leads]'));
   const steps = Array.from(document.querySelectorAll('[data-pricing-step]'));
   const checkout = document.querySelector('[data-pricing-checkout]');
-  const preferredBadge = document.querySelector('[data-pricing-preferred]');
+  const preferredBadge = document.querySelector('.pricing-config-badge');
 
   function formatPrice(value) {
     return new Intl.NumberFormat(document.documentElement.lang === 'fr' ? 'fr-FR' : 'en-US').format(value);
