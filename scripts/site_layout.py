@@ -29,7 +29,7 @@ def booking(lang, prefix, label=None):
 </div>'''
 def company_link(key,lang,label=None):
  label=label or LABELS[lang][key]
- if key=='media': return f'<span class="nav-disabled" role="link" aria-disabled="true">{label}</span>'
+ if key in ['media','customers']: return f'<span class="nav-disabled" role="link" aria-disabled="true">{label}</span>'
  return f'<a href="{url(key,lang)}">{label}</a>'
 def header(lang,key):
  t=LABELS[lang];links='\n'.join(f'<a href="{url(k,lang)}"'+(' aria-current="page"' if key==k else '')+f'>{t[k]}</a>' for k in ['solution','pricing'])
