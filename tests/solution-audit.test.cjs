@@ -21,7 +21,7 @@ for (const file of pages) test(`${file}: detailed Solution contract and approved
  assert.match(html,/aria-controls="floating-demo-options"/);
  const h1=html.match(/<h1>(.*?)<\/h1>/s)[1];
  assert.equal(h1,file.startsWith('notre')?'D’un changement de situation à votre prochain appel.':'From a business change to your next conversation.');
- assert.ok(html.includes(file.startsWith('notre')?'href="/pricing-fr"':'href="/pricing"'));
+ assert.ok(html.includes(file.startsWith('notre')?'href="/tarifs"':'href="/pricing"'));
 });
 test('every public HTML page loads one shared motion runtime with visible default reveals',()=>{
  for(const file of fs.readdirSync('.').filter(file=>file.endsWith('.html'))){

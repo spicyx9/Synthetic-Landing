@@ -56,7 +56,7 @@ for (const name of pages) {
 
 for (const lang of ['en', 'fr']) {
   test(`${lang}: pricing defaults and every interactive tier`, () => {
-    const html = read(lang === 'fr' ? 'pricing-fr.html' : 'pricing.html');
+    const html = read(lang === 'fr' ? 'tarifs.html' : 'pricing.html');
     assert.equal([...html.matchAll(/class="pricing-config-card"/g)].length, 1);
     assert.match(html, /data-pricing-range[^>]*value="2"/);
     assert.doesNotMatch(html, /quand disponibles|when available|location\.replace/);
