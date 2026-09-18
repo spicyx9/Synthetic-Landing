@@ -223,3 +223,21 @@
   .sp-phone-number { font-size: 25px; }
   .sp-detailed .sp-final .page-actions { flex-direction: column; align-items: center; }
 }
+/* Opportunity story: explicit orientation survives section reordering. */
+.sp-rework .sp-editorial:nth-of-type(even) .sp-editorial-copy { order: initial; }
+.sp-rework .sp-editorial:nth-of-type(even) .sp-editorial-visual { order: initial; }
+.sp-rework .sp-editorial:has(#changes-title) .sp-editorial-copy,
+.sp-rework .sp-editorial:has(#verification-title) .sp-editorial-copy { order: 2; }
+.sp-rework .sp-editorial:has(#changes-title) .sp-editorial-visual,
+.sp-rework .sp-editorial:has(#verification-title) .sp-editorial-visual { order: 1; }
+.sp-rework .sp-wrap { padding-top: 64px; padding-bottom: 64px; }
+.sp-rework .sp-hero { padding-top: 76px; }
+.sp-target-section { position: relative; }
+.sp-target-section::after { content: ''; position: absolute; bottom: 0; left: 50%; height: 44px; width: 1px; background: #bdd1e4; }
+.sp-rework .sp-targeting .sp-setting { margin-top: 16px; grid-template-columns: 100px 1fr; }
+@media(max-width:700px) {
+ .sp-rework .sp-editorial .sp-editorial-copy { order: 0 !important; }
+ .sp-rework .sp-editorial .sp-editorial-visual { order: 1 !important; }
+ .sp-rework .sp-wrap { padding-top: 48px; padding-bottom: 48px; }
+ .sp-rework .sp-targeting .sp-setting { grid-template-columns: 1fr; }
+}
