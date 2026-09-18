@@ -70,7 +70,7 @@ def footer(lang):
     {columns}
     <div><h2>{'Compte' if lang=='fr' else 'Account'}</h2><ul><li><a href="https://app.syntheticswarm.ai/ui/" target="_blank" rel="noopener noreferrer">{t['login']}</a></li><li>{booking(lang,'footer')}</li></ul></div>
   </nav>
-  <p class="site-footer-copy">© 2026 Synthetic Swarm</p>
+  <p class="site-footer-copy">© 2026 Synthetic Swarm. {'Tous droits réservés.' if lang=='fr' else 'All rights reserved.'}</p>
 </footer>'''
 def page(key,lang,title,description,body):
  canonical='https://www.syntheticswarm.ai'+url(key,lang)

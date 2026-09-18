@@ -10,18 +10,8 @@ for(const pair of pairs) test(`legal translations and missing information: ${pai
   assert.doesNotMatch(html,/[–—]|HISTIA|Stolos|histia\.net/);
   assert.match(html,new RegExp(`lang="${i===0?'fr':'en'}"`));
   assert.ok(html.includes(`href="/${pair[1-i]}" data-lang`));
-  if(pair[0]!=='confidentialite') assert.match(html,/septembre 2026|September 2026/);
+  assert.doesNotMatch(html,/\[\[A COMPLETER|temporarily unavailable|temporairement indisponible/);
  });
- const markers=html=>[...new Set(html.match(/\[\[A COMPLETER[^\]]*\]\]/g))].sort();
- assert.deepEqual(markers(pages[0]),markers(pages[1]));
- if(['confidentialite','conditions'].includes(pair[0])) {
-  pages.forEach(html=>{
-   assert.equal(markers(html).length,0);
-   const main=html.match(/<main[\s\S]*?<\/main>/)[0];
-   assert.equal((main.match(/href="mailto:contact@syntheticswarm.ai"/g)||[]).length,2);
-   assert.doesNotMatch(main,/page-button|Article 14|CNIL/);
-  });
- } else assert.ok(markers(pages[0]).length);
 });
 test('legal navigation is present across all public footers',()=>{
  for(const file of fs.readdirSync(path.join(__dirname,'..')).filter(x=>x.endsWith('.html'))){
@@ -30,11 +20,15 @@ test('legal navigation is present across all public footers',()=>{
   assert.match(footer,/aria-disabled="true">(?:Nos clients|Customers)<\/span>/);
  }
 });
-test('unconfigured opt-out cannot transmit personal information',()=>{
+test('opt-out uses a prefilled email without collecting data in a form',()=>{
  for(const file of ['opposition.html','opt-out.html']){
-  const html=read(file);
-  assert.match(html,/<fieldset[^>]*disabled/);
-  assert.match(html,/<button[^>]*disabled/);
-  assert.doesNotMatch(html,/<form[^>]*action="https?:/);
+  const html=read(file),main=html.match(/<main[\s\S]*?<\/main>/)[0];
+  assert.doesNotMatch(main,/<form|<input|<fieldset|disabled/);
+  const href=main.match(/class="page-button" href="([^"]+)"/)[1].replaceAll('&amp;','&');
+  const url=new URL(href);
+  assert.equal(url.pathname,'contact@syntheticswarm.ai');
+  assert.equal(url.searchParams.get('subject'),file==='opposition.html'?"Demande d'opposition - Synthetic Swarm":'Opt-out request - Synthetic Swarm');
+  const body=url.searchParams.get('body');
+  assert.match(body,file==='opposition.html'?/Nom : \nPrénom : \nEntreprise : \nEmail ou téléphone à retirer : /:/First name:\nLast name:\nCompany:\nEmail or phone number to remove:/);
  }
 });
