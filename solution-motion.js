@@ -38,10 +38,8 @@ window.SwarmMotion?.ready(M => {
       steps.push(M.step(section.querySelector('.sp-identity h3'),660,'fade'));
       steps.push(M.step(section.querySelector('.sp-identity div > span'),720,'fade'));
       section.querySelectorAll('.sp-contact-actions li').forEach((element,i)=>steps.push(M.step(element,760+i*100,'surface')));
-      steps.push(M.step(section.querySelector('.sp-profile-event'),1100));
       steps.push(M.step(section.querySelector('.sp-why'),1380));
       steps.push(M.step(section.querySelector('.sp-profile-top .sp-ready'),1710,'surface'));
-      steps.push(M.step(section.querySelector('.sp-profile-bottom'),1800,'fade'));
     }
     M.sequence(section,steps);
   });
