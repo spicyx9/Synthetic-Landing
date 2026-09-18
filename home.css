@@ -416,3 +416,26 @@
  .home .solution-target li { min-height:36px; }
  .home .solution-target strong { font-size:13px; }
 }
+
+/* A quiet insurance-network label between the hero and comparison. */
+.home-trust { max-width:1120px; margin-inline:auto; padding:22px 32px 26px; }
+.home-trust h2 { margin:0 0 20px; text-align:center; color:#74716d; font-size:12px; font-weight:500; letter-spacing:.08em; line-height:1.5; }
+.home-trust-logos { display:flex; justify-content:space-between; align-items:center; gap:24px; list-style:none; margin:0; padding:0; }
+.home-trust-logo { display:flex; align-items:center; justify-content:center; flex:1; min-width:0; height:42px; overflow:hidden; filter:grayscale(1); opacity:.63; transition:opacity 150ms ease; mix-blend-mode:multiply; }
+.home-trust-logo:hover { opacity:.85; }
+.home-trust-logo img { display:block; width:auto; height:36px; max-width:120px; object-fit:contain; }
+.home-trust-logo--allianz img { flex:none; max-width:128px; width:100%; height:auto; }
+.home-trust-logo--generali img,.home-trust-logo--swiss img { height:42px; }
+.home-trust-logo--abeille img { width:112px; height:auto; }
+@media(max-width:700px) {
+ .home-trust { padding:22px 22px 26px; }
+ .home-trust h2 { font-size:11px; margin-bottom:20px; }
+ .home-trust-logos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px 16px; }
+ .home-trust-logo img { max-width:100%; }
+ .home-trust-logo--allianz img { width:100%; height:auto; max-width:104px; }
+}
+@media(prefers-reduced-motion:reduce) { .home-trust-logo { transition:none; } }
+
+.home-trust-logo--cnp img { height:40px; }
+.home-trust-logo--france img { width:116px; height:auto; }
+@media(max-width:700px) { .home-trust-logo:last-child:nth-child(3n + 1) { grid-column:2; } }
