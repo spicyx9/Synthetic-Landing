@@ -71,3 +71,8 @@
   document.addEventListener('focusin', schedule);
   update();
 })();
+
+// Keep one focused moment open, including browsers without details[name] support.
+document.querySelectorAll('.sp-change').forEach(item => item.addEventListener('toggle', () => {
+  if (item.open) document.querySelectorAll('.sp-change').forEach(other => { if (other !== item) other.open = false; });
+}));
