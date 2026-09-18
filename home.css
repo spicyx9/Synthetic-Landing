@@ -271,10 +271,6 @@
   .home .home-focused-hero .hero-decor--rocket { display: none; }
   .home .home-focused-hero .hero-decor--sparkles-lg { width: 58px; left: 4%; top: 4%; }
 }
-@media (max-width: 700px) {
-  .home .comparison-columns { grid-template-columns: 1fr; gap: 24px; padding: 24px 0; }
-  .home .comparison-arrow { justify-self: start; transform: rotate(90deg); }
-}
 
 /* Three short steps lead directly into one concrete product example. */
 .home .home-solution-preview { padding-top: 32px; padding-bottom: 32px; }
@@ -345,3 +341,20 @@
 .home .comparison-trails { opacity: .45; }
 @keyframes comparison-cue { 0%, 100% { opacity: .65; transform: translateX(-2px); } 50% { opacity: 1; transform: translateX(2px); } }
 @media (prefers-reduced-motion: reduce) { .home .comparison-arrow svg { animation: none; } }
+/* Narrow columns keep long FR lines readable; mobile keeps the same story order. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .home .comparison-columns { grid-template-columns: minmax(0,1fr) 56px minmax(0,1fr); gap: 20px; }
+  .home .comparison-arrow { width: 56px; height: 56px; }
+  .home .comparison-arrow svg { width: 50px; height: 36px; }
+  .home .comparison-side--before li { margin-right: 0; }
+  .home .comparison-side--before li:nth-child(2) { margin-left: 16px; }
+}
+@media (max-width: 700px) {
+  .home .comparison-side h2 { margin-bottom: 16px; }
+  .home .comparison-side ul { margin-bottom: 16px; }
+  .home .comparison-side--before li { margin-right: 12px; }
+  .home .comparison-side--before li:nth-child(2) { margin-left: 16px; }
+  .home .comparison-conclusion { padding-top: 16px; font-size: 20px; }
+  .home .comparison-arrow { width: 56px; height: 56px; }
+  .home .comparison-arrow svg { width: 50px; height: 36px; }
+}
