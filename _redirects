@@ -1,6 +1,0 @@
-# Netlify redirects
-# La home (/ et /index-fr) présente désormais Synthetic Swarm (page société).
-# Le cas d'usage lead magnets vit sur ses propres URLs, atteignables via la nav « Cas d'usage » :
-#   /lead-magnets      (EN)
-#   /lead-magnets-fr   (FR)
-# Ces pages sont servies directement (cleanUrls) — aucune redirection nécessaire.
