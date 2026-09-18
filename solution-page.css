@@ -64,3 +64,24 @@
 .sp-consequence h3 { margin: 10px 0 12px; font-size: 24px; letter-spacing: -.025em; }
 .sp-consequence p { color: #555; line-height: 1.7; font-size: 16px; }
 .solution-page button:focus-visible, .sp-moment-panel:focus-visible { outline: 2px solid #0a66c2; outline-offset: 4px; }
+.sp-output { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 76px; padding-top: 110px; padding-bottom: 110px; }
+.sp-output-heading h2 { margin: 20px 0 24px; }
+.sp-output-heading p { font-size: 18px; color: #555; line-height: 1.7; }
+.sp-output-note { display: block; color: #555; font-size: 12px; margin-top: 32px; }
+.sp-profile { padding: 32px; background: #fff; border: 1px solid #e8e5e0; border-radius: 20px; box-shadow: 0 14px 44px rgba(0,0,0,.06); }
+.sp-profile-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.sp-profile-brand { font-size: 11px; color: #555; }
+.sp-identity { display: flex; gap: 20px; align-items: center; margin: 32px 0 24px; }
+.sp-initials { width: 64px; height: 64px; display: grid; place-items: center; flex-shrink: 0; background: #f7f5f1; color: #555; border-radius: 18px; font-size: 20px; }
+.sp-identity p { font-size: 13px; color: #555; }
+.sp-identity h3 { font-size: 27px; letter-spacing: -.035em; margin: 4px 0; line-height: 1.2; }
+.sp-identity div > span { font-size: 13px; color: #555; }
+.sp-contact-actions { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+.sp-contact-actions li { padding: 8px 10px; border: 1px solid #e8e5e0; border-radius: 8px; font-size: 12px; }
+.sp-contact-actions li > span { margin-right: 6px; color: #555; }
+.sp-profile-event { border-top: 1px solid #e8e5e0; padding-top: 24px; }
+.sp-profile-event .page-kicker, .sp-why .page-kicker { font-size: 10px; }
+.sp-profile-event h4 { font-size: 19px; letter-spacing: -.02em; margin: 8px 0 22px; }
+.sp-why { background: #f0f5fa; padding: 20px; border-radius: 12px; }
+.sp-why p { font-size: 15px; color: #254b70; line-height: 1.6; margin-top: 10px; }
+.sp-profile-bottom { display: flex; gap: 20px; margin-top: 20px; color: #555; font-size: 11px; }
