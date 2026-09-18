@@ -9,3 +9,7 @@
 .floating-demo-copy > span { display: block; color: #c7c7c7; font-size: 12px; line-height: 1.5; }
 .floating-demo-arrow { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #333; font-size: 17px; flex-shrink: 0; }
 .floating-demo .demo-booking-popover { top: auto; bottom: calc(100% + 12px); left: 0; right: 0; width: 100%; max-width: 100%; }
+.floating-demo-button:focus-visible { outline: 2px solid #0a66c2; outline-offset: 4px; }
+@media(hover:hover) { .floating-demo-button:hover { background: #252525; transform: translateY(-1px); box-shadow: 0 10px 28px rgba(0,0,0,.17); } }
+@media(max-width:600px) { .floating-demo { width: calc(100% - 32px); max-width: 340px; bottom: calc(16px + env(safe-area-inset-bottom,0px)); } .floating-demo-button { min-height: 66px; gap: 10px; padding: 12px; } .floating-demo-avatars img { width: 32px; height: 32px; } }
+@media(prefers-reduced-motion:reduce) { .floating-demo { transition: none; } .floating-demo-button:hover { transform: none; } }
