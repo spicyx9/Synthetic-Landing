@@ -1,7 +1,7 @@
 .floating-demo {
-  position: fixed; bottom: 24px; left: 50%; z-index: 50;
+  position: fixed; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); left: 50%; z-index: 50;
   width: auto; min-width: max-content; max-width: calc(100% - 16px);
-  opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(14px);
+  opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(10px);
   transition: opacity 150ms, transform 150ms, visibility 150ms;
 }
 .floating-demo.is-visible { opacity: 1; visibility: visible; transform: translateX(-50%); }
@@ -34,7 +34,7 @@
   .floating-demo-button:hover .floating-demo-arrow { background: #3a3a3a; }
 }
 @media (max-width: 479px) {
-  .floating-demo { bottom: 16px; }
+  .floating-demo { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
   .floating-demo-button { height: 44px; }
   .floating-demo-avatars img { width: 32px; height: 32px; }
   .floating-demo-copy strong { font-size: 13px; }
