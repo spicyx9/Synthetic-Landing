@@ -23,3 +23,4 @@
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .floating-demo { scale: 1; }
 }
+.motion-headline-part, .demo-hero__headline .hl { display: inline-block; }
