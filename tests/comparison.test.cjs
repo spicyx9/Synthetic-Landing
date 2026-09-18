@@ -30,7 +30,8 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.doesNotMatch(newsletter,/<form[^>]*action=/);
  const output=html.match(/<section id="solution-preview"[\s\S]*?<\/section>/)[0];
  assert.doesNotMatch(output,/solution-disclaimer|Fictional example|Exemple fictif/);
- assert.equal((output.match(/class="solution-node(?: solution-node--signals)?"/g)||[]).length,4);
+ assert.match(output,/class="solution-engine"/);
+ assert.doesNotMatch(output,/class="solution-flow"|class="solution-node/);
  assert.doesNotMatch(output,/<dl>|<time/);
  assert.doesNotMatch(output,/href="(?:tel:|mailto:|https:\/\/.*linkedin)/);
 });

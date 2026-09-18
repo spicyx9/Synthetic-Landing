@@ -87,13 +87,14 @@
   <span class="page-kicker">Notre solution</span>
   <h2 id="solution-title">De votre cible à votre prochain appel.</h2>
   <p class="solution-intro">Vous définissez qui vous cherchez. Synthetic Swarm fait le reste.</p>
-  <ol class="solution-flow" role="list">
-    <li class="solution-node"><h3>Votre cible</h3><p>Métier · Taille · Zone</p></li>
-    <li class="solution-node solution-node--signals"><h3>Signaux détectés</h3><ul class="solution-signals"><li>Création</li><li>Embauche</li><li>Changement de statut</li><li>Nouveau dirigeant</li></ul></li>
-    <li class="solution-node"><h3>Qualification</h3><ul class="solution-node-list"><li>Entreprise pertinente ?</li><li>Bon contact ?</li></ul></li>
-    <li class="solution-node"><h3>Coordonnées enrichies</h3><ul class="solution-node-list"><li>Téléphone</li><li>Email</li><li>LinkedIn</li></ul></li>
-    <li id="prospect-example" class="solution-output"><h3>Fiche prête à appeler</h3><h4>Ateliers Exemple</h4><p class="solution-person">Camille Exemple</p><p class="solution-contact">06 XX XX XX XX<br>camille@...</p><div class="solution-reason"><strong>Pourquoi appeler ?</strong><p>Un nouveau besoin potentiel apparaît à la suite de ce changement.</p></div></li>
-  </ol>
+  <div class="solution-system">
+    <div class="solution-target"><h3>Votre cible</h3><ul><li>Métier</li><li>Taille</li><li>Zone</li></ul></div>
+    <div class="solution-transform">
+      <ul class="solution-inputs"><li>Création</li><li>Embauche</li><li>Changement de statut</li><li>Nouveau dirigeant</li></ul>
+      <div class="solution-engine"><span class="solution-engine-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m16 3 12 7v12l-12 7-12-7V10Z M4 10l12 7 12-7M16 17v12M10 6l12 7v12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><h3>Synthetic Swarm</h3><ul><li>Détecte</li><li>Qualifie</li><li>Enrichit</li></ul></div>
+    </div>
+    <div id="prospect-example" class="solution-output"><h3>Prêt à appeler</h3><h4>Ateliers Exemple</h4><p class="solution-person">Camille Exemple</p><p class="solution-contact">06 XX XX XX XX<br>camille@...</p><div class="solution-reason"><strong>Pourquoi appeler ?</strong><p>Un nouveau besoin potentiel apparaît à la suite de ce changement.</p></div></div>
+  </div>
 </section>
 <section id="customer-proof" class="content-page home-customer-proof" data-customer-stories data-customer-preview aria-labelledby="customer-preview-title">
   <h2 id="customer-preview-title">Ce sont nos clients qui en parlent le mieux.</h2>
