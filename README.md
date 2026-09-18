@@ -45,3 +45,7 @@ The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CS
 ## Automatic language
 
 On `/`, Vercel's trusted `x-vercel-ip-country` header selects French for `FR`; all other or unknown countries keep English. Temporary redirects avoid permanently caching a visitor's location. Explicit language URLs remain accessible worldwide. The EN/FR switch sets a first-party `ss-language` cookie for one year, so manual choice overrides automatic detection. No external geolocation service or browser-language heuristic is used.
+
+## Homepage newsletter
+
+The FR/EN newsletter is static HTML with an explicitly disabled fieldset. No addresses are collected, stored or sent, and no success state is simulated. To activate, connect a subscription endpoint, add server validation and consent/unsubscribe handling, implement accessible success/error feedback, then remove the disabled state and temporary availability message. Do not enable the controls before that integration is ready.
