@@ -38,7 +38,7 @@
 .about-milestones time { font-size:13px; color:#555; }
 .about-milestones h3 { margin:8px 0 0; font-size:19px; line-height:1.35; letter-spacing:-.02em; color:#1a1a1a; }
 .about-launch-proof { margin:24px 0 0; font-size:15px; line-height:1.65; color:#1a1a1a; }
-.about-sf { padding-top:32px; }
+.about-sf { display:grid; grid-template-columns:minmax(0,42fr) minmax(0,58fr); align-items:center; gap:40px; padding-top:40px; }
 .about-sf .page-kicker { margin-bottom:12px; }
 .about-sf h2 { margin:0 0 16px; font-size:clamp(32px,4.5vw,48px); line-height:1.12; letter-spacing:-.04em; color:#1a1a1a; }
 .about-sf-copy { margin:0; font-size:18px; line-height:1.65; color:#1a1a1a; }
@@ -60,3 +60,9 @@
 @media(max-width:700px) { .founder-school-logo { height:20px; } }
 
 .about-sf-meta { display:flex; flex-wrap:wrap; gap:8px 20px; margin:24px 0 0; padding-top:16px; border-top:1px solid #e8e5e0; font-size:13px; color:#666; }
+
+.about-sf-gallery { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); grid-template-rows:repeat(2,minmax(0,1fr)); gap:16px; aspect-ratio:1.5; }
+.about-sf-photo { position:relative; min-width:0; min-height:0; overflow:hidden; border:1px solid #dfdbd6; border-radius:18px; background:linear-gradient(145deg,#f3f1ed,#e8e5e0); }
+.about-sf-photo--main { grid-row:span 2; background:linear-gradient(150deg,#e8e5e0,#dfdbd6); }
+.about-sf-photo--team { background:linear-gradient(35deg,#dfdbd6,#f3f1ed); }
+.about-sf-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
