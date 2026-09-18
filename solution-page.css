@@ -202,3 +202,24 @@
 .sp-setting select:focus-visible, .sp-volume input:focus-visible { outline: 2px solid #0a66c2; outline-offset: 4px; }
 /* The experimental page retains the booking chooser inside the compact pill. */
 .solution-route .floating-demo .demo-booking-popover { top: auto; bottom: calc(100% + 12px); left: 0; right: 0; width: 100%; max-width: 100%; }
+@media (max-width: 1000px) {
+  .sp-editorial { gap: 40px; }
+  .sp-facts { gap: 10px; }
+  .sp-facts > span { padding: 16px; }
+  .sp-setting { grid-template-columns: 70px 1fr; gap: 12px; }
+}
+@media (max-width: 700px) {
+  .sp-editorial { grid-template-columns: 1fr; gap: 32px; }
+  .sp-editorial:nth-of-type(even) .sp-editorial-copy, .sp-editorial:nth-of-type(even) .sp-editorial-visual { order: initial; }
+  .sp-detailed .sp-hero { padding-top: 56px; padding-bottom: 48px; }
+  .sp-editorial-copy h2 { font-size: 32px; }
+  .sp-editorial-copy > p { font-size: 16px; }
+  .sp-surface { padding: 22px; }
+  .sp-facts { flex-direction: column; }
+  .sp-facts > span { width: 100%; text-align: center; }
+  .sp-combined { padding: 24px; }
+  .sp-combined p { font-size: 19px; }
+  .sp-setting { grid-template-columns: 1fr; gap: 8px; }
+  .sp-phone-number { font-size: 25px; }
+  .sp-detailed .sp-final .page-actions { flex-direction: column; align-items: center; }
+}
