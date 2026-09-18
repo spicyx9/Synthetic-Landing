@@ -16,7 +16,7 @@ for (const name of pages) {
       assert.equal((html.match(/Hyperstack/g) || []).length, 1);
       assert.doesNotMatch(html, /hyperstack\.studio/i);
     }
-    const login = html.match(/<a\b[^>]*class="btn-login"[^>]*>/)[0];
+    const login = html.match(/<a\b[^>]*class="btn-login header-action"[^>]*>/)[0];
     for (const attr of ['href="https://app.syntheticswarm.ai/ui/"', 'target="_blank"', 'rel="noopener noreferrer"']) assert.ok(login.includes(attr));
     assert.match(html, /<button[^>]*data-book-demo[^>]*aria-expanded="false"/);
     for (const calendar of ['91k1Mpontca7NGea6', 'AWQX2bxp8cnqtsaJ9']) {
