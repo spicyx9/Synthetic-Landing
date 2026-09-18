@@ -12,7 +12,10 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.doesNotMatch(html,/id="signals"|home-final-cta/);
  assert.equal((html.match(/class="solution-output"/g)||[]).length,1);
  assert.doesNotMatch(html,/class="home-steps"|class="prospect-card"|class="content-page home-output"/);
- assert.equal((html.match(/class="customer-placeholder"/g)||[]).length,3);
+ assert.equal((html.match(/class="home-testimonial"/g)||[]).length,3);
+ const testimonials=html.match(/<section id="customer-proof"[\s\S]*?<\/section>/)[0];
+ assert.equal((testimonials.match(/class="home-testimonial-label"/g)||[]).length,3);
+ assert.doesNotMatch(testimonials,/data-customer-stories|data-customer-preview/);
  const hero=html.match(/<section class="hero[\s\S]*?<\/section>/)[0];
  assert.equal((hero.match(/data-book-demo/g)||[]).length,1);
  assert.equal((hero.match(/class="page-button page-button--secondary"/g)||[]).length,1);
