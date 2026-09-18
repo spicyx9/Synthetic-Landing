@@ -563,3 +563,32 @@
  .sp-rework .product-card .sp-combination-controls { flex-wrap:nowrap; gap:0; }
  .sp-rework .product-card .sp-combination-controls button { padding-inline:6px; font-size:11px; }
 }
+
+/* Product setup controls: six settings, followed by one full-width volume rail. */
+.sp-rework .target-configurator { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 16px; }
+.sp-rework .target-configurator .product-card-header { margin-bottom:0; padding-bottom:16px; }
+.sp-rework .target-configurator .sp-setting {
+ display:grid; grid-template-columns:minmax(0,1fr); align-content:start; gap:7px;
+}
+.sp-rework .target-configurator .sp-setting label { font-size:11px; font-weight:500; color:#666; line-height:1.4; }
+.sp-rework .target-configurator .sp-setting :is(select,output) {
+ box-sizing:border-box; width:100%; min-width:0; height:42px; min-height:42px;
+ padding:0 12px; border:1px solid #dfdbd6; border-radius:8px;
+ background:#fcfbf8; color:#1a1a1a; font-family:inherit; font-size:12px; font-weight:500; line-height:1.4;
+ box-shadow:inset 0 1px 2px rgba(26,26,26,.015);
+}
+.sp-rework .target-configurator .sp-setting output { display:flex; align-items:center; color:#254b70; background:#f0f5fa; border-color:#e0e8f0; }
+.sp-rework .target-configurator select { cursor:pointer; }
+.sp-rework .target-configurator select:focus-visible,
+.sp-rework .target-configurator input:focus-visible { outline:2px solid #0a66c2; outline-offset:3px; }
+.sp-rework .target-configurator .sp-volume { grid-column:1 / -1; margin:0; padding:14px 0 0; border-top:var(--product-rule); }
+.sp-rework .target-configurator .sp-volume input { display:block; box-sizing:border-box; width:100%; height:20px; min-height:0; margin:0; padding:0; accent-color:#0a66c2; cursor:pointer; }
+.sp-rework .target-configurator .sp-volume-ticks { margin:6px 2px 0; color:#777; font-size:10px; line-height:1.4; }
+@media(max-width:700px) {
+ .sp-rework .target-configurator { gap:16px 12px; }
+ .sp-rework .target-configurator .sp-setting :is(select,output) { padding-inline:9px; }
+}
+@media(max-width:420px) {
+ .sp-rework .target-configurator { grid-template-columns:minmax(0,1fr); gap:12px; }
+ .sp-rework .target-configurator .sp-setting { grid-template-columns:68px minmax(0,1fr); gap:10px; align-items:center; }
+}
