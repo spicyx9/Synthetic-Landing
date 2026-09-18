@@ -36,40 +36,30 @@
 /* sous-titre : largeur calée pour 2 lignes équilibrées (pas de mot orphelin) */
 .home .demo-wrapper .demo-hero__subtitle { max-width: 600px; }
 
-/* The announcement has three distinct pieces and a fixed publication date. */
+/* One glass pill on desktop; natural text wrapping on small mobile screens. */
 .home .demo-wrapper .demo-hero__eyebrow {
-  display: inline-grid;
-  grid-template-columns: auto auto minmax(0, 1fr);
-  gap: 10px 14px;
+  display: inline-flex;
   align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
   max-width: 100%;
-  padding: 9px 16px;
+  padding: 9px 14px;
+  white-space: nowrap;
   text-align: left;
 }
 .home .hero-eyebrow-badge,
-.home .hero-eyebrow-date { white-space: nowrap; }
+.home .hero-eyebrow-date,
+.home .hero-eyebrow-news { flex: 0 0 auto; }
 .home .hero-eyebrow-date { font-size: 12px; letter-spacing: .02em; }
-.home .hero-eyebrow-news {
-  color: #fff;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.45;
-  text-transform: none;
-  letter-spacing: 0;
-}
-@media (max-width: 1000px) {
-  .home .demo-wrapper .demo-hero__eyebrow {
-    grid-template-columns: auto auto;
-    justify-content: center;
-    border-radius: 20px;
-    padding: 12px 16px;
-    gap: 9px 12px;
-  }
-  .home .hero-eyebrow-news { grid-column: 1 / -1; text-align: center; }
-}
-@media (max-width: 360px) {
-  .home .demo-wrapper .demo-hero__eyebrow { padding: 10px; gap: 9px 8px; }
-  .home .hero-eyebrow-badge { padding: 5px 7px; letter-spacing: .02em; }
+.home .hero-eyebrow-news { color: #fff; font-size: 13px; font-weight: 500; line-height: 1.45; text-transform: none; letter-spacing: 0; }
+.home .hero-eyebrow-separator { color: #fff; font-size: 12px; }
+.home .demo-wrapper .demo-hero__inner { max-width: 960px; }
+.home .demo-wrapper .demo-hero__headline { margin-left: auto; margin-right: auto; }
+@media (max-width: 600px) {
+  .home .demo-wrapper .demo-hero__eyebrow { display: block; white-space: normal; text-align: center; border-radius: 20px; padding: 10px 12px; line-height: 1.9; }
+  .home .hero-eyebrow-badge, .home .hero-eyebrow-date { display: inline; white-space: nowrap; }
+  .home .hero-eyebrow-separator { margin: 0 5px; }
+  .home .hero-eyebrow-news { display: inline; }
 }
 
 .home .home-hero-cta {
