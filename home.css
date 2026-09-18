@@ -229,7 +229,7 @@
 
 /* Editorial comparison: scattered effort resolves into an orderly call list. */
 .home .home-comparison { padding-top: 32px; padding-bottom: 40px; }
-.home .comparison-columns { display: grid; grid-template-columns: minmax(0,1fr) 72px minmax(0,1fr); gap: 28px; align-items: stretch; border-top: 1px solid #e8e5e0; border-bottom: 1px solid #e8e5e0; padding: 32px 0; }
+.home .comparison-columns { display: grid; grid-template-columns: minmax(0,1fr) 72px minmax(0,1fr); gap: 28px; align-items: stretch; padding: 32px 0; }
 .home .comparison-side { min-width: 0; display: flex; flex-direction: column; }
 .home .comparison-side h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; line-height: 1.5; color: #666; margin-bottom: 24px; }
 .home .comparison-side ul { display: grid; gap: 4px; list-style: none; margin: 0 0 24px; padding: 0; }
@@ -240,12 +240,12 @@
 .home .comparison-side--before li:nth-child(3) { color: #777; }
 .home .comparison-side--before li:nth-child(4) { margin-left: 16px; color: #555; }
 .home .comparison-side--after h2 { color: #0a66c2; }
-.home .comparison-side--after li { position: relative; padding-left: 28px; border-bottom: 1px solid #e8e5e0; color: #1a1a1a; font-weight: 500; }
+.home .comparison-side--after li { position: relative; padding-left: 28px; color: #1a1a1a; font-weight: 500; }
 .home .comparison-side--after li::before { content: '✓'; position: absolute; left: 0; color: #0a66c2; font-size: 14px; font-weight: 600; }
 .home .comparison-side--after li:first-child { font-weight: 700; }
 .home .comparison-side--after li:last-child { font-weight: 600; }
-.home .comparison-conclusion { margin-top: auto; padding-top: 20px; border-top: 1px solid #dfdbd6; font-size: clamp(19px,2vw,24px); font-weight: 600; letter-spacing: -.025em; line-height: 1.35; color: #555; }
-.home .comparison-side--after .comparison-conclusion { color: #254b70; border-top-color: #cadbe9; }
+.home .comparison-conclusion { margin-top: auto; padding-top: 20px; font-size: clamp(19px,2vw,24px); font-weight: 600; letter-spacing: -.025em; line-height: 1.35; color: #555; }
+.home .comparison-side--after .comparison-conclusion { color: #254b70; }
 .home .comparison-arrow { align-self: center; color: #0a66c2; font-size: 40px; text-align: center; }
 @media (max-width: 700px) {
   .home .comparison-columns { grid-template-columns: 1fr; gap: 24px; padding: 24px 0; }
@@ -334,30 +334,6 @@
   .home .home-focused-hero { padding-top: 40px; padding-bottom: 24px; }
   .home .home-comparison { padding-top: 8px; }
   .home .demo-wrapper .demo-hero { padding-top: 32px; padding-bottom: 24px; }
-}
-
-/* Three scattered paths merge into one direction. Motion stays decorative. */
-.home .comparison-arrow { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: #f0f5fa; }
-.home .comparison-arrow svg { display: block; width: 64px; height: 44px; animation: comparison-cue 5s ease-in-out infinite; }
-.home .comparison-trails { opacity: .45; }
-@keyframes comparison-cue { 0%, 100% { opacity: .65; transform: translateX(-2px); } 50% { opacity: 1; transform: translateX(2px); } }
-@media (prefers-reduced-motion: reduce) { .home .comparison-arrow svg { animation: none; } }
-/* Narrow columns keep long FR lines readable; mobile keeps the same story order. */
-@media (min-width: 701px) and (max-width: 1100px) {
-  .home .comparison-columns { grid-template-columns: minmax(0,1fr) 56px minmax(0,1fr); gap: 20px; }
-  .home .comparison-arrow { width: 56px; height: 56px; }
-  .home .comparison-arrow svg { width: 50px; height: 36px; }
-  .home .comparison-side--before li { margin-right: 0; }
-  .home .comparison-side--before li:nth-child(2) { margin-left: 16px; }
-}
-@media (max-width: 700px) {
-  .home .comparison-side h2 { margin-bottom: 16px; }
-  .home .comparison-side ul { margin-bottom: 16px; }
-  .home .comparison-side--before li { margin-right: 12px; }
-  .home .comparison-side--before li:nth-child(2) { margin-left: 16px; }
-  .home .comparison-conclusion { padding-top: 16px; font-size: 20px; }
-  .home .comparison-arrow { width: 56px; height: 56px; }
-  .home .comparison-arrow svg { width: 50px; height: 36px; }
 }
 
 /* The prospect is the destination, not another equally weighted process node. */
