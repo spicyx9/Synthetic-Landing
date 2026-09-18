@@ -235,27 +235,22 @@
  background:radial-gradient(ellipse at 14% 45%,rgba(230,143,158,.065),transparent 48%),radial-gradient(ellipse at 82% 44%,rgba(10,102,194,.065),transparent 48%);
 }
 /* Equal outer tracks keep the transformation exactly on the section axis. */
-.home .comparison-columns { display:grid; grid-template-columns:minmax(0,1fr) 160px minmax(0,1fr); max-width:1120px; margin-inline:auto; grid-template-rows:auto 224px auto; column-gap:24px; row-gap:22px; position:relative; }
+.home .comparison-columns { display:grid; grid-template-columns:minmax(0,1fr) 180px minmax(0,1fr); max-width:1120px; margin-inline:auto; grid-template-rows:auto 254px auto; column-gap:24px; row-gap:22px; position:relative; }
 .home .comparison-side { min-width:0; display:grid; grid-template-rows:subgrid; grid-row:1 / 4; }
 .home .comparison-side--before { grid-column:1; }
 .home .comparison-side--after { grid-column:3; }
 .home .comparison-side h2 { margin:0; font-size:12px; text-transform:uppercase; letter-spacing:.11em; line-height:1.5; color:#777; }
 .home .comparison-side ul { margin:0; padding:0; list-style:none; }
 .home .comparison-side li { min-width:0; font-size:clamp(14px,1.1vw,16px); line-height:1.45; letter-spacing:-.015em; }
-.home .comparison-side--before ul { display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start; padding-block:2px; }
-.home .comparison-side--before li { display:flex; align-items:center; gap:9px; padding:8px 10px; border:1px solid rgba(223,219,214,.65); background:rgba(255,255,255,.55); color:#6b6b6b; font-weight:400; }
-.home .comparison-side--before li:nth-child(1) { width:88%; border-radius:3px; rotate:-.6deg; border-left:2px solid #d5cec7; }
-.home .comparison-side--before li:nth-child(2) { width:88%; margin-left:12%; border-radius:20px 4px 4px 20px; rotate:.5deg; }
-.home .comparison-side--before li:nth-child(3) { width:85%; margin-left:2%; border-radius:3px; border-style:dashed; rotate:-.3deg; }
-.home .comparison-side--before li:nth-child(4) { width:91%; margin-left:7%; border-radius:2px 2px 8px 2px; border-top:0; rotate:.7deg; }
+.home .comparison-side--before ul { display:grid; grid-template-rows:repeat(4,56px); gap:10px; }
+.home .comparison-side--before li { display:flex; align-items:center; gap:12px; width:100%; height:56px; padding:10px 14px; border:1px solid #e8e5e0; border-radius:14px; background:rgba(255,255,255,.72); color:#6b6b6b; font-weight:400; }
 .home .comparison-friction-icon { flex:0 0 14px; width:14px; height:14px; color:#92918e; }
 .home .comparison-side--after h2 { color:#254b70; }
 .home .comparison-output-flow { position:relative; }
 .home .comparison-rail { position:absolute; left:0; top:28px; bottom:28px; width:1px; background:rgba(10,102,194,.5); transform-origin:top; }
-.home .comparison-side--after ul { display:grid; grid-template-rows:repeat(4,56px); }
+.home .comparison-side--after ul { display:grid; grid-template-rows:repeat(4,56px); gap:10px; }
 .home .comparison-side--after li { position:relative; display:flex; align-items:center; padding-left:24px; color:#1a1a1a; font-weight:550; }
 .home .comparison-side--after li::before { content:''; position:absolute; left:-3px; top:calc(50% - 3px); width:7px; height:7px; border-radius:50%; background:#0a66c2; }
-.home .comparison-side--after li:last-child::before { width:9px; height:9px; left:-4px; top:calc(50% - 4px); box-shadow:0 0 0 4px rgba(10,102,194,.07); }
 .home .comparison-output-bridge { position:absolute; left:100%; top:calc(50% - .9px); width:24px; height:1.8px; background:#0a66c2; transform-origin:left; }
 .home .comparison-conclusion { margin:0; max-width:350px; color:#777; font-size:17px; font-weight:400; letter-spacing:-.025em; line-height:1.4; }
 .home .comparison-side--after .comparison-conclusion { padding-left:24px; max-width:410px; color:#1a1a1a; font-size:clamp(22px,1.85vw,26px); font-weight:650; letter-spacing:-.035em; line-height:1.22; }
@@ -267,8 +262,6 @@
 .home .comparison-core { position:relative; display:grid; place-items:center; width:72px; height:72px; border-radius:50%; border:1px solid rgba(10,102,194,.1); background:rgba(255,255,255,.8); box-shadow:0 0 24px rgba(10,102,194,.07); }
 .home .comparison-core-mark { display:grid; place-items:center; }
 .home .comparison-core-mark img { width:32px; height:38px; object-fit:contain; }
-.home .comparison-core > span:last-child { position:absolute; top:calc(100% + 10px); width:110px; text-align:center; color:#254b70; font-size:10px; font-weight:500; line-height:1.2; }
-.home .comparison-sparkle { position:absolute; width:23px; height:23px; object-fit:contain; left:calc(50% + 20px); top:calc(50% - 35px); z-index:2; opacity:.5; pointer-events:none; }
 @media(max-width:1100px) and (min-width:801px) {
  .home .comparison-columns { grid-template-columns:minmax(0,1fr) 140px minmax(0,1fr); column-gap:16px; }
  .home .comparison-output-bridge { width:16px; }
@@ -277,7 +270,8 @@
  .home .home-comparison { padding-top:36px; padding-bottom:48px; }
  .home .comparison-columns { display:flex; flex-direction:column; gap:20px; width:100%; max-width:440px; }
  .home .comparison-side { display:grid; grid-template-rows:auto auto auto; gap:16px; }
- .home .comparison-side--before ul { gap:10px; }
+ .home .comparison-side--before ul { grid-template-rows:repeat(4,60px); gap:10px; }
+ .home .comparison-side--before li { height:60px; }
  .home .comparison-side li { font-size:14px; }
  .home .comparison-convergence { height:100px; }
  .home .comparison-flow { width:140px; height:100px; min-height:0; }
@@ -285,8 +279,6 @@
  .home .comparison-output-bridge { display:none; }
  .home .comparison-core { width:58px; height:58px; }
  .home .comparison-core-mark img { width:27px; height:32px; }
- .home .comparison-core > span:last-child { left:calc(100% + 9px); top:17px; width:78px; text-align:left; font-size:9px; }
- .home .comparison-sparkle { width:20px; height:20px; left:calc(50% + 10px); top:calc(50% - 28px); }
  .home .comparison-side--after { padding-left:12px; }
  .home .comparison-side--after ul { grid-template-rows:repeat(4,46px); }
  .home .comparison-rail { top:23px; bottom:23px; }
