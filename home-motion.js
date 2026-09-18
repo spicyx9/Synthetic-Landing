@@ -21,17 +21,19 @@ window.SwarmMotion?.ready(M => {
       tracks.push(M.step(element,at+i*stagger,'fade',250));
     });
     add('.comparison-side h2',0,0);
-    add('.comparison-side--before li',40);
+    add('.comparison-side--before li',0,30);
     add('.comparison-side--before .comparison-conclusion',180);
     comparison.querySelectorAll('.comparison-flow-lines path').forEach((element,i) => {
       const length = element.getTotalLength();
       const output = element.classList.contains('comparison-output-line');
-      tracks.push({element,frames:[{strokeDasharray:`${length}`,strokeDashoffset:length},{strokeDasharray:`${length}`,strokeDashoffset:0}],options:{duration:260,delay:output?350:140+i*25}});
+      tracks.push({element,frames:[{strokeDasharray:`${length}`,strokeDashoffset:length},{strokeDasharray:`${length}`,strokeDashoffset:0}],options:{duration:200,delay:output?500:250+i*15}});
     });
-    tracks.push(M.step(comparison.querySelector('.comparison-core'),190,'surface',280));
-    tracks.push({element:comparison.querySelector('.comparison-sparkle'),frames:[{opacity:0,scale:'.98'},{opacity:.45,scale:'1'}],options:{duration:240,delay:280}});
-    add('.comparison-side--after li',360,45);
-    add('.comparison-side--after .comparison-conclusion',600);
+    tracks.push(M.step(comparison.querySelector('.comparison-core'),400,'surface',200));
+    tracks.push({element:comparison.querySelector('.comparison-sparkle'),frames:[{opacity:0,scale:'.98'},{opacity:.45,scale:'1'}],options:{duration:200,delay:400}});
+    tracks.push({element:comparison.querySelector('.comparison-output-bridge'),frames:[{scale:'0 1'},{scale:'1 1'}],options:{duration:160,delay:540}});
+    tracks.push({element:comparison.querySelector('.comparison-rail'),frames:[{scale:'1 0'},{scale:'1 1'}],options:{duration:240,delay:600}});
+    add('.comparison-side--after li',600,30);
+    tracks.push(M.step(comparison.querySelector('.comparison-side--after .comparison-conclusion'),800,'fade',180));
     // Start at first intersection, rather than the shared 12% visibility gate.
     // Keep the shared lifecycle for reduced motion, focus and one-shot playback.
     if (!M.reduced() && 'IntersectionObserver' in window) {
