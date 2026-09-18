@@ -1,0 +1,10 @@
+.floating-demo { position: fixed; bottom: calc(24px + env(safe-area-inset-bottom,0px)); left: 50%; width: 340px; max-width: calc(100% - 32px); z-index: 90; opacity: 0; visibility: hidden; transform: translate(-50%,14px); transition: opacity .24s ease,transform .24s ease,visibility .24s; }
+.floating-demo.is-visible { opacity: 1; visibility: visible; transform: translate(-50%,0); }
+.floating-demo-button { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 70px; padding: 12px 16px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; color: #fff; background: #1a1a1a; box-shadow: 0 8px 26px rgba(0,0,0,.14); font: inherit; text-align: left; cursor: pointer; }
+.floating-demo-avatars { display: flex; flex-shrink: 0; }
+.floating-demo-avatars img { width: 36px; height: 36px; object-fit: cover; border: 2px solid #1a1a1a; border-radius: 50%; }
+.floating-demo-avatars img + img { margin-left: -12px; }
+.floating-demo-copy { flex: 1; min-width: 0; }
+.floating-demo-copy strong { display: block; font-size: 14px; font-weight: 600; line-height: 1.5; }
+.floating-demo-copy > span { display: block; color: #c7c7c7; font-size: 12px; line-height: 1.5; }
+.floating-demo-arrow { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #333; font-size: 17px; flex-shrink: 0; }
