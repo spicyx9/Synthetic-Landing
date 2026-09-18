@@ -82,7 +82,7 @@
         frames[frames.length - 1].offset = .96;
         frames.push({...frames[frames.length - 1], opacity: 0, offset: 1});
       }
-      return {element: item.element, frames, options: {duration: cycle, iterations: options.loop ? Infinity : 1}};
+      return {element: item.element, frames: frames.map(frame => ({...frame, easing})), options: {easing: 'linear', duration: cycle, iterations: options.loop ? Infinity : 1}};
     });
     register(root, tracks, {loop: options.loop});
   }

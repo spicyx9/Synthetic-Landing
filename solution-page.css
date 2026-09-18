@@ -200,7 +200,7 @@
 .sp-volume input { display: block; width: 100%; margin: 24px 0 8px; accent-color: #0a66c2; }
 .sp-volume-ticks { display: flex; justify-content: space-between; font-size: 11px; color: #666; }
 .sp-setting select:focus-visible, .sp-volume input:focus-visible { outline: 2px solid #0a66c2; outline-offset: 4px; }
-/* The experimental page retains the booking chooser inside the compact pill. */
+/* The Solution page retains the booking chooser inside the compact pill. */
 .solution-route .floating-demo .demo-booking-popover { top: auto; bottom: calc(100% + 12px); left: 0; right: 0; width: 100%; max-width: 100%; }
 @media (max-width: 1000px) {
   .sp-editorial { gap: 40px; }
@@ -355,3 +355,9 @@
  .eng-node { display: none; }
  .eng-node:nth-child(1), .eng-node:nth-child(7), .eng-node:nth-child(10), .eng-node:nth-child(13), .eng-node:nth-child(14), .eng-node:nth-child(20), .eng-node:nth-child(25), .eng-node:nth-child(28) { display: inline-flex; }
 }
+
+/* Final states belong to the reserved product layout, not injected content. */
+.sp-volume { position:relative; }
+.sp-target-ready { position:absolute; right:0; top:-12px; display:grid; place-items:center; width:24px; height:24px; border-radius:50%; background:#f0f5fa; color:#254b70; font-size:13px; }
+.sp-verification-ready { margin-top:20px; color:#254b70; font-size:12px; font-weight:600; }
+.solution-page :where(a, button, input, select, summary):focus { scroll-margin-bottom:calc(88px + env(safe-area-inset-bottom, 0px)); }

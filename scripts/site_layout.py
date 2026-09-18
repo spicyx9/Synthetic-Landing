@@ -72,6 +72,13 @@ def footer(lang):
   </nav>
   <p class="site-footer-copy">© 2026 Synthetic Swarm. {'Tous droits réservés.' if lang=='fr' else 'All rights reserved.'}</p>
 </footer>'''
+def motion_assets(key):
+ module = {'home': 'home-motion', 'solution': 'solution-motion', 'about': 'editorial-motion', 'careers': 'editorial-motion'}.get(key)
+ assets = ['  <link rel="stylesheet" href="/motion.css?v=3">', '  <script src="/motion.js?v=main-audit-1" defer></script>']
+ if module: assets.append(f'  <script src="/{module}.js?v={"main-audit-1" if module == "solution-motion" else "2" if module == "home-motion" else "1"}" defer></script>')
+ assets.append('  <script src="/page-motion.js?v=1" defer></script>')
+ return '\n'.join(assets)
+
 def page(key,lang,title,description,body):
  canonical='https://www.syntheticswarm.ai'+url(key,lang)
  html=f'''<!DOCTYPE html>
@@ -91,6 +98,7 @@ def page(key,lang,title,description,body):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+{motion_assets(key)}
 </head>
 <body>
   <a href="#main" class="skip-link">{'Aller au contenu' if lang=='fr' else 'Skip to content'}</a>
@@ -112,6 +120,7 @@ def sync(headers=True,footers=True):
    if headers:s=re.sub(r'<header class="header">.*?</header>',lambda _:header(lang,key),s,flags=re.S)
    if footers:s=re.sub(r'<footer class="footer[^\"]*">.*?</footer>',lambda _:footer(lang),s,flags=re.S)
    if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">\n</head>')
+   if '/motion.js' not in s:s=s.replace('</head>',motion_assets(key)+'\n</head>')
    p.write_text(s)
 def sync_conversion():
  # Dedicated pricing HTML is the source for homepage pricing and purchase FAQ.

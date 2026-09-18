@@ -75,3 +75,12 @@ test('story timelines keep monotonic offsets and finish before the hold',()=>{
   assert.ok(frames.every((frame,i)=>!i||frame.offset>=frames[i-1].offset));assert.equal(frames.at(-1).offset,1);
   assert.equal(frames.at(-1).opacity,0);assert.equal(frames.at(-2).offset,.96);
 });
+test('story milestones keep wall-clock timing instead of easing the whole cycle',()=>{
+  const {M,Element}=setup();const root=new Element(),profile=new Element();
+  M.story(root,[{element:profile,at:5400}],{duration:10000,loop:true});
+  const {frames,options}=profile.animations[0];
+  assert.equal(options.easing,'linear');
+  assert.equal(frames[1].offset*options.duration,5400);
+  assert.equal(frames[1].opacity,0);
+  assert.ok(frames.every(frame=>frame.easing));
+});

@@ -32,7 +32,7 @@ Legacy `/lead-magnets` and `/lead-magnets-fr` redirect to the matching solution 
 
 Careers and Media intentionally have empty states. The media pages include an inert `media-item-template` with publication, logo, title, date, excerpt, type and external URL fields. Populate it only with verified coverage.
 
-Privacy and Terms have document placeholders, not fabricated policies. Publish approved legal text when supplied. No recruiting/support email or company social URL was verified, so the site uses the supplied team calendars and Contact page.
+Legal pages contain the supplied short policies and contact links. Preserve the approved wording; do not restore old placeholders. Demo CTAs use the supplied team calendars.
 
 Signal scenarios and prospect examples are clearly illustrative. Confirm supported signal coverage before publishing a supported-signals catalog. Do not substitute real personal contact data in illustrative examples.
 
@@ -49,3 +49,9 @@ On `/`, Vercel's trusted `x-vercel-ip-country` header selects French for `FR`; a
 ## Homepage newsletter
 
 The FR/EN newsletter is a compact CTA band with a static, disabled fieldset. The input has an accessible name without a duplicate visible label; no availability status is displayed. No addresses are collected, stored or sent, and no success state is simulated. To activate, connect a subscription endpoint, add server validation and consent/unsubscribe handling, implement accessible success/error feedback, then remove the disabled state. Do not enable the controls before that integration is ready.
+
+## Shared motion
+
+`motion.js` owns one observer, once-only entrances, pause lifecycle, focus fallback and reduced-motion handling. `motion.css` defines shared tokens. Page choreography lives in `home-motion.js`, `solution-motion.js`, `editorial-motion.js` and `page-motion.js`. Shared layout generation includes these assets. Product timeline time is linear; easing applies within individual steps so story milestones retain their scheduled times. Content is visible by default without JavaScript.
+
+Work directly on main for the current audit/fix/deploy workflow. Parked copy changes remain out of scope until explicitly released.

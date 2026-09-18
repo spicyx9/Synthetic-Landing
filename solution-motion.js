@@ -11,8 +11,12 @@ window.SwarmMotion?.ready(M => {
     const visual = section.querySelector('.sp-editorial-visual');
     steps.push(M.step(visual,320,'surface'));
     if (section.querySelector('.sp-targeting')) {
-      section.querySelectorAll('.sp-setting').forEach((element,i)=>steps.push(M.step(element,450+i*110)));
+      section.querySelectorAll('.sp-setting').forEach((element,i)=> {
+        steps.push(M.step(element,450+i*110));
+        steps.push(M.step(element.querySelector('select'),540+i*110,'fade'));
+      });
       steps.push(M.step(section.querySelector('.sp-volume'),1150,'surface'));
+      steps.push(M.step(section.querySelector('.sp-target-ready'),1500,'surface'));
     } else if (section.querySelector('.sp-event-feed')) {
       section.querySelectorAll('.sp-change').forEach((element,i)=>steps.push(M.step(element,440+i*100,'left')));
       steps.push(M.step(section.querySelector('.sp-catalogue-note'),1100,'fade'));
@@ -27,9 +31,12 @@ window.SwarmMotion?.ready(M => {
       });
       steps.push(M.step(section.querySelector('.sp-phone-detail'),1350,'fade'));
       steps.push(M.step(section.querySelector('.sp-uncertainty'),1460,'fade'));
+      steps.push(M.step(section.querySelector('.sp-verification-ready'),1680,'surface'));
     } else if (section.querySelector('.sp-profile')) {
       steps.push(M.step(section.querySelector('.sp-profile-brand'),400,'fade'));
       steps.push(M.step(section.querySelector('.sp-identity'),550));
+      steps.push(M.step(section.querySelector('.sp-identity h3'),660,'fade'));
+      steps.push(M.step(section.querySelector('.sp-identity div > span'),720,'fade'));
       section.querySelectorAll('.sp-contact-actions li').forEach((element,i)=>steps.push(M.step(element,760+i*100,'surface')));
       steps.push(M.step(section.querySelector('.sp-profile-event'),1100));
       steps.push(M.step(section.querySelector('.sp-why'),1380));
@@ -53,7 +60,7 @@ window.SwarmMotion?.ready(M => {
     items.push({element:engine.querySelector('.eng-result-moment'),at:6750});
     items.push({element:engine.querySelector('.eng-result-why'),at:7000});
     items.push({element:engine.querySelector('.sp-ready'),at:7600});
-    M.story(engine,items,{duration:11000,loop:true});
+    M.story(engine,items,{duration:10000,loop:true});
     const heading = page.querySelector('.sp-section-top');
     M.sequence(heading,[...heading.querySelectorAll('.page-kicker,h2,button')].map((element,i)=>M.step(element,i*100)));
     const instruction = page.querySelector('.eng-instruction');

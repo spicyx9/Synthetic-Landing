@@ -68,5 +68,6 @@
   window.addEventListener('scroll', schedule, {passive: true});
   window.addEventListener('resize', schedule);
   window.addEventListener('pageshow', update);
+  document.addEventListener('focusin', schedule);
   update();
 })();
