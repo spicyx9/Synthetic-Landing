@@ -23,7 +23,8 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.match(html,/data-pricing-range[^>]*value="2"/);
  const newsletter=html.match(/<section id="newsletter"[\s\S]*?<\/section>/)[0];
  assert.match(newsletter,/<fieldset disabled>/);
- assert.match(newsletter,/<label for="newsletter-email">/);
+ assert.match(newsletter,/aria-label="(?:Votre email professionnel|Your work email)"/);
+ assert.doesNotMatch(newsletter,/<label|newsletter-status|Pas de spam|No spam|temporairement|temporarily/);
  assert.match(newsletter,/type="email"/);
  assert.doesNotMatch(newsletter,/<form[^>]*action=/);
  const output=html.match(/<section id="prospect-example"[\s\S]*?<\/section>/)[0];
