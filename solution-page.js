@@ -9,26 +9,63 @@
       : (paused ? 'Resume animation' : 'Pause animation');
   });
 })();
+
 (() => {
-  const tabs = [...document.querySelectorAll('.sp-moment-tabs [role="tab"]')];
-  function select(tab) {
-    tabs.forEach(item => {
-      const active = item === tab;
-      item.setAttribute('aria-selected', String(active));
-      item.tabIndex = active ? 0 : -1;
-      document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
-    });
-  }
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => select(tab));
-    tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      if (next === undefined) return;
-      event.preventDefault(); select(tabs[next]); tabs[next].focus();
-    });
+  const volume = document.querySelector('#target-volume');
+  const output = document.querySelector('#target-volume-value');
+  volume?.addEventListener('input', () => {
+    output.textContent = `${volume.value} / ${document.documentElement.lang === 'fr' ? 'semaine' : 'week'}`;
   });
+})();
+(() => {
+  const floating = document.querySelector('[data-floating-demo]');
+  const trigger = floating?.querySelector('[data-disclosure-trigger]');
+  if (!trigger) return;
+  new MutationObserver(() => {
+    if (floating.getAttribute('aria-hidden') === 'true' && trigger.getAttribute('aria-expanded') === 'true') {
+      document.getElementById(trigger.getAttribute('aria-controls')).hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  }).observe(floating, {attributes: true, attributeFilter: ['aria-hidden']});
+})();
+(() => {
+  const choices = [...document.querySelectorAll('[data-combination]')];
+  choices.forEach(choice => choice.addEventListener('click', () => {
+    choices.forEach(button => {
+      const selected = button === choice;
+      button.setAttribute('aria-pressed', String(selected));
+      document.getElementById(button.getAttribute('aria-controls')).hidden = !selected;
+    });
+  }));
+  const summary = document.querySelector('[data-target-summary]');
+  const fields = ['target-0', 'target-1', 'target-decision'].map(id => document.getElementById(id));
+  fields.forEach(field => field?.addEventListener('change', () => {
+    summary.textContent = fields.map(item => item.value).join(' · ');
+  }));
+})();
+// This version follows the review brief: visible between hero and final CTA.
+(() => {
+  const floating = document.querySelector('[data-floating-demo]');
+  const hero = document.querySelector('[data-demo-hero]');
+  const end = document.querySelector('[data-demo-end]');
+  if (!floating || !hero || !end) return;
+  let queued = false;
+  function update() {
+    queued = false;
+    if (document.querySelector('.mobile-menu-overlay.open')) return;
+    const headerBottom = document.querySelector('header').getBoundingClientRect().bottom;
+    const visible = hero.getBoundingClientRect().bottom <= headerBottom && end.getBoundingClientRect().top > innerHeight + 24;
+    if (!visible && floating.contains(document.activeElement)) {
+      const target = document.querySelector('.mobile-menu-toggle');
+      (target?.getClientRects().length ? target : document.querySelector('header [data-book-demo]'))?.focus({preventScroll: true});
+    }
+    floating.classList.toggle('is-visible', visible);
+    floating.inert = !visible;
+    floating.setAttribute('aria-hidden', String(!visible));
+  }
+  function schedule() { if (!queued) { queued = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', schedule, {passive: true});
+  window.addEventListener('resize', schedule);
+  window.addEventListener('pageshow', update);
+  update();
 })();
