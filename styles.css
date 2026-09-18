@@ -4468,3 +4468,35 @@ button {
 
 .btn-get-pricing { display: inline-block; padding: 12px 24px; background: #1a1a1a; color: #fff; border-radius: 10px; font-weight: 600; }
 .btn-get-pricing:focus-visible { outline: 2px solid #0a66c2; outline-offset: 4px; }
+
+/* Shared public-site canvas. One composited layer, behind content and controls.
+   Hero's local aurora remains unchanged; these are its colors at 25% strength. */
+body { isolation: isolate; --site-atmosphere-intensity: .25; }
+body::before {
+  content: '';
+  position: fixed;
+  inset: -4%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--site-atmosphere-intensity);
+  background:
+    radial-gradient(ellipse 68% 75% at 0% 8%, rgba(0,113,227,.42), transparent 75%),
+    radial-gradient(ellipse 62% 68% at 100% 14%, rgba(60,150,255,.30), transparent 76%),
+    radial-gradient(ellipse 75% 60% at 52% 100%, rgba(255,70,120,.33), transparent 78%);
+  animation: site-atmosphere-drift 48s ease-in-out infinite alternate;
+}
+body:has(.legal-page, .privacy-page) { --site-atmosphere-intensity: .15; }
+/* Only page canvases lose their opaque fill. Cards, forms and popovers retain it. */
+body .solution-page { background: transparent; }
+.home .hero::after { background: none; }
+@keyframes site-atmosphere-drift {
+  from { transform: translate3d(-1%, -1%, 0); }
+  to { transform: translate3d(1%, 1%, 0); }
+}
+@media (max-width: 700px) {
+  body { --site-atmosphere-intensity: .20; }
+  body:has(.legal-page, .privacy-page) { --site-atmosphere-intensity: .12; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; transform: none; }
+}
