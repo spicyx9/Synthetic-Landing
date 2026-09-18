@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fcfbf8">
-  <title>Exercer votre droit d’opposition | Synthetic Swarm</title>
+  <title>Droit d’opposition | Synthetic Swarm</title>
   <meta name="description" content="Demander le retrait de vos coordonnées professionnelles des fiches Synthetic Swarm.">
   <link rel="canonical" href="https://www.syntheticswarm.ai/opposition">
   <link rel="alternate" hreflang="en" href="https://www.syntheticswarm.ai/opt-out">
@@ -12,20 +12,10 @@
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
+  <link rel="stylesheet" href="/legal.css?v=legal-cleanup">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <style>
-    .opt-out-form { max-width: 760px; }
-    .opt-out-form fieldset { border: 0; padding: 0; margin: 24px 0 0; min-width: 0; }
-    .opt-out-form legend { font-weight: 600; margin-bottom: 20px; }
-    .opt-out-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-    .opt-out-fields label { display: grid; gap: 8px; font-size: 14px; color: #555; }
-    .opt-out-fields input { width: 100%; min-width: 0; padding: 12px; border: 1px solid #dfdbd6; border-radius: 8px; font: inherit; background: #f7f5f1; color: #666; }
-    .opt-out-form button:disabled { opacity: .55; cursor: not-allowed; }
-    .opt-out-form p { overflow-wrap: anywhere; }
-    @media (max-width: 700px) { .opt-out-fields { grid-template-columns: 1fr; } }
-  </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Aller au contenu</a>
@@ -61,27 +51,11 @@
     </div>
   </div>
 </header>
-  <main id="main" class="content-page">
-    <section class="page-intro"><span class="page-kicker">Vos données</span><h1>Exercer votre droit d’opposition</h1><p>Synthetic Swarm traite des coordonnées professionnelles de dirigeants issues de registres publics.</p><p>Dernière mise à jour : septembre 2026.</p></section>
-    <section class="content-card opt-out-form" aria-labelledby="request-heading">
-      <h2 id="request-heading">Demander le retrait de vos coordonnées</h2>
-      <p>Aucun compte ni pièce d’identité ne sont demandés par défaut.</p>
-      <p id="form-status"><strong>Formulaire temporairement indisponible.</strong> Les champs et l’envoi sont désactivés tant que la destination n’est pas configurée. Aucune donnée n’est envoyée depuis cette page.</p>
-      <p>[[A COMPLETER : destination du formulaire, adresse email ou endpoint]]</p>
-      <form aria-describedby="form-status" onsubmit="return false">
-        <fieldset disabled><legend>Vos coordonnées</legend>
-          <div class="opt-out-fields">
-            <label for="last-name">Nom<input id="last-name" name="last_name" autocomplete="family-name" required></label>
-            <label for="first-name">Prénom<input id="first-name" name="first_name" autocomplete="given-name" required></label>
-            <label for="company">Entreprise<input id="company" name="company" autocomplete="organization" required></label>
-            <label for="concerned-contact">Email ou téléphone concerné<input id="concerned-contact" name="concerned_contact" type="text" required aria-describedby="contact-help"></label>
-          </div>
-          <p id="contact-help">Indiquez l’adresse email ou le numéro de téléphone que vous souhaitez faire retirer.</p>
-          <div class="page-actions"><button type="submit" class="page-button" disabled>Envoyer la demande</button></div>
-        </fieldset>
-      </form>
-    </section>
-    <section class="page-section" aria-labelledby="next-heading"><h2 id="next-heading">Que se passe-t-il ensuite ?</h2><p>Une fois votre demande reçue, vos coordonnées sont supprimées sous [[A COMPLETER : nombre de jours]] jours.<br>Elles sont ajoutées à une liste de suppression permanente pour empêcher leur réapparition dans les livraisons futures.</p><p>Pour en savoir plus, consultez notre <a href="/confidentialite">politique de confidentialité</a>.</p></section>
+  <main id="main" class="content-page legal-page">
+    <h1>Droit d’opposition</h1>
+    <p>Pour demander le retrait de vos coordonnées, écrivez à :</p>
+    <p><a href="mailto:contact@syntheticswarm.ai">contact@syntheticswarm.ai</a></p>
+    <p><a class="page-button" href="mailto:contact@syntheticswarm.ai?subject=Demande%20d%27opposition%20-%20Synthetic%20Swarm&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20demander%20le%20retrait%20de%20mes%20coordonn%C3%A9es.%0A%0ANom%20%3A%20%0APr%C3%A9nom%20%3A%20%0AEntreprise%20%3A%20%0AEmail%20ou%20t%C3%A9l%C3%A9phone%20%C3%A0%20retirer%20%3A%20%0A%0AMerci.">Envoyer un email →</a></p>
   </main>
   <footer class="footer site-footer">
   <div class="site-footer-top"><a href="/index-fr" class="logo">Synthetic Swarm</a><p>La bonne personne. Le bon signal. Le bon moment.</p></div>

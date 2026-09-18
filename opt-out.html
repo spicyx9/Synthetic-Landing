@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fcfbf8">
-  <title>Opt out of prospecting records | Synthetic Swarm</title>
+  <title>Opt out | Synthetic Swarm</title>
   <meta name="description" content="Request removal of your professional contact details from Synthetic Swarm prospecting records.">
   <link rel="canonical" href="https://www.syntheticswarm.ai/opt-out">
   <link rel="alternate" hreflang="en" href="https://www.syntheticswarm.ai/opt-out">
@@ -12,20 +12,10 @@
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
+  <link rel="stylesheet" href="/legal.css?v=legal-cleanup">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <style>
-    .opt-out-form { max-width: 760px; }
-    .opt-out-form fieldset { border: 0; padding: 0; margin: 24px 0 0; min-width: 0; }
-    .opt-out-form legend { font-weight: 600; margin-bottom: 20px; }
-    .opt-out-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-    .opt-out-fields label { display: grid; gap: 8px; font-size: 14px; color: #555; }
-    .opt-out-fields input { width: 100%; min-width: 0; padding: 12px; border: 1px solid #dfdbd6; border-radius: 8px; font: inherit; background: #f7f5f1; color: #666; }
-    .opt-out-form button:disabled { opacity: .55; cursor: not-allowed; }
-    .opt-out-form p { overflow-wrap: anywhere; }
-    @media (max-width: 700px) { .opt-out-fields { grid-template-columns: 1fr; } }
-  </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -61,27 +51,11 @@
     </div>
   </div>
 </header>
-  <main id="main" class="content-page">
-    <section class="page-intro"><span class="page-kicker">Your data</span><h1>Opt out of prospecting records</h1><p>Synthetic Swarm processes company directors’ professional contact details sourced from public registers.</p><p>Last updated: September 2026.</p></section>
-    <section class="content-card opt-out-form" aria-labelledby="request-heading">
-      <h2 id="request-heading">Request removal of your contact details</h2>
-      <p>No account or identity document is required by default.</p>
-      <p id="form-status"><strong>Form temporarily unavailable.</strong> The fields and submission are disabled until a destination is configured. This page does not send any data.</p>
-      <p>[[A COMPLETER : destination du formulaire, adresse email ou endpoint]]</p>
-      <form aria-describedby="form-status" onsubmit="return false">
-        <fieldset disabled><legend>Your contact details</legend>
-          <div class="opt-out-fields">
-            <label for="last-name">Last name<input id="last-name" name="last_name" autocomplete="family-name" required></label>
-            <label for="first-name">First name<input id="first-name" name="first_name" autocomplete="given-name" required></label>
-            <label for="company">Company<input id="company" name="company" autocomplete="organization" required></label>
-            <label for="concerned-contact">Email address or phone number concerned<input id="concerned-contact" name="concerned_contact" type="text" required aria-describedby="contact-help"></label>
-          </div>
-          <p id="contact-help">Enter the email address or phone number you want removed.</p>
-          <div class="page-actions"><button type="submit" class="page-button" disabled>Submit request</button></div>
-        </fieldset>
-      </form>
-    </section>
-    <section class="page-section" aria-labelledby="next-heading"><h2 id="next-heading">What happens next?</h2><p>Once your request is received, your contact details are removed within [[A COMPLETER : nombre de jours]] days.<br>They are added to a permanent suppression list to prevent them from appearing in future deliveries.</p><p>For more information, read our <a href="/privacy">privacy policy</a>.</p></section>
+  <main id="main" class="content-page legal-page">
+    <h1>Opt out</h1>
+    <p>To request the removal of your contact details, email:</p>
+    <p><a href="mailto:contact@syntheticswarm.ai">contact@syntheticswarm.ai</a></p>
+    <p><a class="page-button" href="mailto:contact@syntheticswarm.ai?subject=Opt-out%20request%20-%20Synthetic%20Swarm&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20request%20the%20removal%20of%20my%20contact%20details.%0A%0AFirst%20name%3A%0ALast%20name%3A%0ACompany%3A%0AEmail%20or%20phone%20number%20to%20remove%3A%0A%0AThank%20you.">Send an email →</a></p>
   </main>
   <footer class="footer site-footer">
   <div class="site-footer-top"><a href="/" class="logo">Synthetic Swarm</a><p>The right person. The right signal. The right time.</p></div>
