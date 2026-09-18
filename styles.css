@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   scroll-padding-top: calc(var(--site-header-offset) + 16px);
   -webkit-text-size-adjust: 100%;
   overflow-x: clip;
@@ -4160,7 +4161,7 @@ button {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 9999;
+  z-index: 200;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
