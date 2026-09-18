@@ -20,3 +20,7 @@
 .careers-visual div { background: #e8e5e0; border-radius: 18px; }
 .careers-visual div:first-child { grid-row: span 2; background: #d8d5d0; margin-top: 24px; }
 .careers-visual div:last-child { background: #efede9; margin-right: 24px; }
+.careers-reasons { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; margin-bottom: 76px; }
+.careers-reasons article > span { display: block; font-size: 12px; color: #0a66c2; margin-bottom: 18px; }
+.careers-reasons h2 { font-size: 13px; line-height: 1.5; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 12px; }
+.careers-reasons p { color: #666; font-size: 15px; line-height: 1.65; }
