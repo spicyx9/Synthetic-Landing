@@ -254,3 +254,17 @@
   .home .comparison-columns { grid-template-columns: 1fr; gap: 24px; padding: 24px 0; }
   .home .comparison-arrow { justify-self: start; transform: rotate(90deg); }
 }
+
+/* Three short steps lead directly into one concrete product example. */
+.home .home-solution-preview { padding-top: 32px; padding-bottom: 32px; }
+.home .home-steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; list-style: none; }
+.home .home-steps li { min-width: 0; border-top: 1px solid #dfdbd6; padding-top: 20px; }
+.home .home-steps h3 { font-size: 19px; line-height: 1.35; letter-spacing: -.02em; margin: 16px 0 12px; }
+.home .home-steps p { font-size: 15px; line-height: 1.65; color: #666; }
+.home .home-output { padding-top: 24px; padding-bottom: 48px; }
+.home .home-output > h2 { font-size: clamp(24px,3vw,32px); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 24px; }
+.home .home-output .prospect-card { margin: 0 auto; width: 100%; }
+@media (max-width: 700px) {
+  .home .home-steps { grid-template-columns: 1fr; gap: 24px; }
+  .home .home-steps h3 { margin-top: 12px; }
+}
