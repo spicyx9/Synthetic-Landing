@@ -1,0 +1,5 @@
+.contact-page { max-width: 900px; }
+.contact-page .page-intro { margin-bottom: 32px; }
+.contact-page .page-intro h1 { margin-bottom: 16px; }
+.contact-email { margin: 28px 0; font-size: clamp(18px,3vw,23px); letter-spacing: -.02em; }
+.contact-email a { color: #0a66c2; overflow-wrap: anywhere; }
