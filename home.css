@@ -27,14 +27,20 @@
    ========================================================================= */
 /* titre : plus petit + plus tranchant que le défaut demo.css */
 .home .demo-wrapper .demo-hero__headline {
-  font-size: clamp(29px, 4.3vw, 46px);
-  line-height: 1.12;
-  letter-spacing: -0.035em;
+  font-size: 66px;
+  line-height: 1;
+  letter-spacing: -0.045em;
   max-width: 780px;
 }
 .home .demo-wrapper .demo-hero__headline .hl { color: var(--hs-blue); }
-/* Editorial accent: one short hero phrase, with the existing size and color. */
-.hero-word-highlight { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-style: normal; font-synthesis: none; letter-spacing: -.025em; }
+/* Two-line signature: strong sans, expressive display serif. */
+.home .demo-hero__headline .motion-headline-part { display:block; font-weight:800; color:#1a1a1a; }
+.hero-word-highlight { font-family:"DM Serif Display",Georgia,serif; font-weight:400; font-style:italic; font-synthesis:none; letter-spacing:-.035em; }
+.home .demo-hero__headline .hero-word-highlight { display:block; margin-top:2px; font-size:84px; line-height:1.03; }
+@media(max-width:700px) {
+ .home .demo-wrapper .demo-hero__headline { font-size:clamp(32px,8.5vw,48px); }
+ .home .demo-hero__headline .hero-word-highlight { font-size:clamp(42px,11vw,62px); }
+}
 /* A wide subtitle uses horizontal room; vertical spacing separates the message. */
 .home .demo-wrapper .demo-hero__subtitle { max-width: 960px; text-wrap: balance; }
 
