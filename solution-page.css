@@ -299,3 +299,14 @@
 .sp-qualification-bridge strong { font-size: 14px; }
 .sp-qualification-bridge small { font-size: 11px; color: #555; }
 .sp-combination-example[hidden] { display: none; }
+.sp-full-verification > ol { list-style: none; margin: 0; padding: 0; }
+.sp-full-verification > ol > li { display: grid; grid-template-columns: 26px 1fr 18px; gap: 16px; padding: 24px 0; border-bottom: 1px solid #e8e5e0; align-items: baseline; }
+.sp-check-index { font-size: 11px; color: #666; }
+.sp-check-mark { color: #0a66c2; font-size: 13px; }
+.sp-full-verification h3 { font-size: 17px; font-weight: 500; }
+.sp-full-verification li p { color: #555; font-size: 13px; line-height: 1.65; margin-top: 8px; }
+.sp-phone-detail { margin-top: 24px; padding: 16px; border-radius: 12px; background: #f7f5f1; }
+.sp-phone-detail summary { font-size: 12px; cursor: pointer; }
+.sp-phone-detail > p { font-size: 16px; margin: 16px 0; }
+.sp-phone-detail li { font-size: 12px; color: #555; margin-top: 8px; }
+.sp-full-verification .sp-uncertainty { font-size: 11px; color: #555; margin-top: 20px; }
