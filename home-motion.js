@@ -16,23 +16,33 @@ window.SwarmMotion?.ready(M => {
 window.SwarmMotion?.ready(M => {
   const comparison = document.querySelector('.home-comparison');
   if (comparison) {
-    const items = [];
-    const add = (selector,at,stagger=100) => comparison.querySelectorAll(selector).forEach((element,i) => items.push({element,at:at+i*stagger}));
-    add('.comparison-side--before h2',0);
-    add('.comparison-side--before li',200,160);
-    add('.comparison-side--before .comparison-conclusion',800);
+    const tracks = [];
+    const add = (selector, at, stagger = 35) => comparison.querySelectorAll(selector).forEach((element,i) => {
+      tracks.push(M.step(element,at+i*stagger,'fade',250));
+    });
+    add('.comparison-side h2',0,0);
+    add('.comparison-side--before li',40);
+    add('.comparison-side--before .comparison-conclusion',180);
     comparison.querySelectorAll('.comparison-flow-lines path').forEach((element,i) => {
       const length = element.getTotalLength();
       const output = element.classList.contains('comparison-output-line');
-      const start = output ? .53 : .27+i*.025;
-      items.push({element,frames:[{strokeDasharray:`${length}`,strokeDashoffset:length,offset:0},{strokeDasharray:`${length}`,strokeDashoffset:length,offset:start},{strokeDasharray:`${length}`,strokeDashoffset:0,offset:start+.16},{strokeDasharray:`${length}`,strokeDashoffset:0,offset:1}]});
+      tracks.push({element,frames:[{strokeDasharray:`${length}`,strokeDashoffset:length},{strokeDasharray:`${length}`,strokeDashoffset:0}],options:{duration:260,delay:output?350:140+i*25}});
     });
-    add('.comparison-core',1500);
-    items.push({element:comparison.querySelector('.comparison-sparkle'),frames:[{opacity:0,scale:'.98',offset:0},{opacity:0,scale:'.98',offset:.48},{opacity:.58,scale:'1.02',offset:.58},{opacity:.45,scale:'1',offset:.7},{opacity:.45,scale:'1',offset:1}]});
-    add('.comparison-side--after h2',2350);
-    add('.comparison-side--after li',2550,170);
-    add('.comparison-side--after .comparison-conclusion',3300);
-    M.story(comparison,items,{duration:4000});
+    tracks.push(M.step(comparison.querySelector('.comparison-core'),190,'surface',280));
+    tracks.push({element:comparison.querySelector('.comparison-sparkle'),frames:[{opacity:0,scale:'.98'},{opacity:.45,scale:'1'}],options:{duration:240,delay:280}});
+    add('.comparison-side--after li',360,45);
+    add('.comparison-side--after .comparison-conclusion',600);
+    // Start at first intersection, rather than the shared 12% visibility gate.
+    // Keep the shared lifecycle for reduced motion, focus and one-shot playback.
+    if (!M.reduced() && 'IntersectionObserver' in window) {
+      const entrance = new IntersectionObserver(entries => {
+        if (!entries.some(entry => entry.isIntersecting)) return;
+        entrance.disconnect();
+        M.sequence(comparison,tracks,{entrance:true});
+      },{threshold:0});
+      entrance.observe(comparison);
+    }
+
   }
   const system = document.querySelector('.solution-system');
   if (system) {
