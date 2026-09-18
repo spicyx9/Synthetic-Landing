@@ -37,8 +37,6 @@
 }
 
 .job-title { display:inline-flex; align-items:center; flex-wrap:wrap; gap:4px; }
-.job-flags { display:inline-block; white-space:nowrap; flex-shrink:0; font-size:16px; line-height:1; letter-spacing:2px; }
-.job-content .job-flags { font-size:18px; }
 
 .careers-spontaneous { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px 28px; margin-top:40px; padding-top:28px; border-top:1px solid #e8e5e0; }
 .careers-spontaneous h2 { margin:0 0 8px; font-size:24px; line-height:1.2; letter-spacing:-.025em; }
@@ -46,7 +44,11 @@
 .careers-spontaneous .page-button { gap:8px; max-width:100%; }
 @media(max-width:700px) { .careers-spontaneous { margin-top:28px; padding-top:24px; } }
 
-.job-geography { display:inline-flex; align-items:baseline; gap:6px; white-space:nowrap; }
+.job-geography { display:inline-flex; align-items:center; gap:0; white-space:nowrap; }
 .job-active-arrow { flex-shrink:0; }
 
-@media(max-width:700px) { .job-flags, .job-content .job-flags { font-size:16px; } }
+
+.role-flags { display:inline-flex; align-items:center; gap:6px; margin-left:8px; vertical-align:middle; flex-shrink:0; }
+.role-flag { display:inline-block; font-size:18px; line-height:1; font-weight:400; letter-spacing:0; }
+.role-detail-title .role-flag { font-size:20px; line-height:1; }
+@media(max-width:700px) { .role-flag, .role-detail-title .role-flag { font-size:16px; line-height:1; } }
