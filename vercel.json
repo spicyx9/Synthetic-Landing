@@ -34,6 +34,11 @@
       ]
     },
     {
+      "source": "/pricing-fr",
+      "destination": "/tarifs",
+      "permanent": true
+    },
+    {
       "source": "/lead-magnets",
       "destination": "/our-solution",
       "permanent": true

@@ -7,7 +7,7 @@ import re
 ROOT = Path(__file__).resolve().parent.parent
 ROUTES = {
  'home': ('/', '/index-fr'), 'solution': ('/our-solution', '/notre-solution'),
- 'pricing': ('/pricing', '/pricing-fr'), 'faq': ('/faq', '/faq-fr'),
+ 'pricing': ('/pricing', '/tarifs'), 'faq': ('/faq', '/faq-fr'),
  'about': ('/about', '/a-propos'), 'careers': ('/careers', '/recrutement'),
  'media': ('/media', '/medias'), 'contact': ('/contact', '/contact-fr'),
  'privacy': ('/privacy', '/confidentialite'), 'terms': ('/terms', '/conditions'),
@@ -87,11 +87,12 @@ def page(key,lang,title,description,body):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fcfbf8">
-  <title>{escape(title)} — Synthetic Swarm</title>
+  <title>{escape(title)} | Synthetic Swarm</title>
   <meta name="description" content="{escape(description,quote=True)}">
   <link rel="canonical" href="{canonical}">
   <link rel="alternate" hreflang="en" href="https://www.syntheticswarm.ai{url(key,'en')}">
   <link rel="alternate" hreflang="fr" href="https://www.syntheticswarm.ai{url(key,'fr')}">
+  <link rel="alternate" hreflang="x-default" href="https://www.syntheticswarm.ai{url(key,'en')}">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
@@ -125,7 +126,7 @@ def sync(headers=True,footers=True):
 def sync_conversion():
  # Dedicated pricing HTML is the source for homepage pricing and purchase FAQ.
  for lang in ['en', 'fr']:
-  pricing=(ROOT/('pricing-fr.html' if lang=='fr' else 'pricing.html')).read_text()
+  pricing=(ROOT/('tarifs.html' if lang=='fr' else 'pricing.html')).read_text()
   home=ROOT/('index-fr.html' if lang=='fr' else 'index.html')
   html=home.read_text()
   if '<!-- SHARED PRICING START -->' not in html: continue
