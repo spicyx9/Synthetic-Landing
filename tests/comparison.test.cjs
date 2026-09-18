@@ -10,7 +10,8 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  const positions=['home-focused-hero','id="comparison"','id="solution-preview"','id="prospect-example"','id="customer-proof"','id="pricing"','id="faq"','id="newsletter"','<footer'].map(token=>html.indexOf(token));
  assert.ok(positions.every((n,i)=>n>=0&&(!i||n>positions[i-1])));
  assert.doesNotMatch(html,/id="signals"|home-final-cta/);
- assert.equal((html.match(/class="prospect-card"/g)||[]).length,1);
+ assert.equal((html.match(/class="solution-output"/g)||[]).length,1);
+ assert.doesNotMatch(html,/class="home-steps"|class="prospect-card"|class="content-page home-output"/);
  assert.equal((html.match(/class="customer-placeholder"/g)||[]).length,3);
  const hero=html.match(/<section class="hero[\s\S]*?<\/section>/)[0];
  assert.equal((hero.match(/data-book-demo/g)||[]).length,1);
@@ -27,7 +28,9 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.doesNotMatch(newsletter,/<label|newsletter-status|Pas de spam|No spam|temporairement|temporarily/);
  assert.match(newsletter,/type="email"/);
  assert.doesNotMatch(newsletter,/<form[^>]*action=/);
- const output=html.match(/<section id="prospect-example"[\s\S]*?<\/section>/)[0];
- assert.match(output,/FICTIONAL EXAMPLE|EXEMPLE FICTIF/);
+ const output=html.match(/<section id="solution-preview"[\s\S]*?<\/section>/)[0];
+ assert.match(output,/Fictional example|Exemple fictif/);
+ assert.equal((output.match(/class="solution-node(?: solution-node--signals)?"/g)||[]).length,4);
+ assert.doesNotMatch(output,/<dl>|<time/);
  assert.doesNotMatch(output,/href="(?:tel:|mailto:|https:\/\/.*linkedin)/);
 });
