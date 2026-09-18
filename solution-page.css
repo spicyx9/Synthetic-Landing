@@ -148,3 +148,20 @@
 
 .sp-detailed .sp-engine-section { padding-top: 24px; }
 .sp-detailed .sp-section-top h2 { font-size: clamp(28px,3.2vw,40px); max-width: 740px; }
+.sp-registers ul { list-style: none; margin: 0; padding: 0; }
+.sp-registers li { display: flex; gap: 16px; align-items: center; padding: 20px 0; border-bottom: 1px solid #e8e5e0; }
+.sp-source-index { color: #0a66c2; font-size: 11px; }
+.sp-registers h3 { font-size: 15px; font-weight: 600; }
+.sp-registers li p { margin-top: 4px; font-size: 12px; color: #555; line-height: 1.5; }
+.sp-registers li > span:last-child { margin-left: auto; color: #777; }
+.sp-register-foot { padding-top: 20px; font-size: 11px; color: #555; }
+.sp-event-feed { padding: 16px 0; }
+.sp-change { border-bottom: 1px solid #dfdbd6; }
+.sp-change summary { list-style: none; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; }
+.sp-change summary::-webkit-details-marker { display: none; }
+.sp-change strong { display: block; font-size: 17px; font-weight: 500; }
+.sp-change small { display: block; margin-top: 6px; font-size: 11px; color: #666; }
+.sp-change-plus { font-size: 20px; color: #0a66c2; }
+.sp-change[open] .sp-change-plus { transform: rotate(45deg); }
+.sp-change > p { padding: 0 24px 24px 0; color: #254b70; font-size: 15px; line-height: 1.7; }
+.sp-change[open] strong { color: #0a66c2; }
