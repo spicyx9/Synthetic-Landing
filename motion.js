@@ -79,7 +79,7 @@
     });
     register(root, tracks, {loop: options.loop});
   }
-  const api = {step, sequence, story, refresh: () => records.forEach(sync), reduced: () => media.matches,
+  const api = {step, sequence, story, replay(root, steps) { const old = records.get(root); if (old) { finish(old); records.delete(root); } sequence(root, steps, {entrance:true}); }, refresh: () => records.forEach(sync), reduced: () => media.matches,
     ready(callback) { if (document.readyState === 'loading') pending.push(callback); else run(callback); }};
   function run(callback) { try { callback(api); } catch (_) { records.forEach(finish); } }
   window.SwarmMotion = api;
