@@ -29,7 +29,7 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.match(newsletter,/type="email"/);
  assert.doesNotMatch(newsletter,/<form[^>]*action=/);
  const output=html.match(/<section id="solution-preview"[\s\S]*?<\/section>/)[0];
- assert.match(output,/Fictional example|Exemple fictif/);
+ assert.doesNotMatch(output,/solution-disclaimer|Fictional example|Exemple fictif/);
  assert.equal((output.match(/class="solution-node(?: solution-node--signals)?"/g)||[]).length,4);
  assert.doesNotMatch(output,/<dl>|<time/);
  assert.doesNotMatch(output,/href="(?:tel:|mailto:|https:\/\/.*linkedin)/);

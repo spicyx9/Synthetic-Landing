@@ -282,7 +282,6 @@
 .home .solution-signals { display: grid; justify-items: start; gap: 8px; list-style: none; padding: 0 0 0 12px; margin: 0; border-left: 1px solid #cadbe9; }
 .home .solution-signals li { position: relative; max-width: 100%; padding: 4px 8px; border: 1px solid #e8e5e0; border-radius: 8px; background: #fff; color: #555; font-size: 12px; line-height: 1.5; }
 .home .solution-signals li::before { content: ''; position: absolute; width: 12px; height: 1px; left: -13px; top: 50%; background: #cadbe9; }
-.home .solution-disclaimer { margin-top: 16px; color: #777; font-size: 12px; line-height: 1.5; }
 
 /* Static gray slots use the same warm neutral treatment as the SF gallery. */
 .home .home-customer-proof { padding-top: 32px; padding-bottom: 48px; }
@@ -362,12 +361,10 @@
   .home .solution-output { margin-left: 24px; }
   .home .solution-output::before { top: 14px; left: -24px; width: 23px; height: 1px; border: 0; background: #cadbe9; transform: none; }
   .home .solution-output::after { content: ''; position: absolute; top: -28px; left: -25px; height: 43px; width: 1px; background: #cadbe9; }
-  .home .solution-disclaimer { max-width: 600px; margin-left: auto; margin-right: auto; padding-left: 48px; }
 }
 @media (max-width: 700px) {
   .home .solution-flow { padding-left: 4px; }
   .home .solution-output { padding: 20px; }
-  .home .solution-disclaimer { padding-left: 28px; }
 }
 
 /* Four quiet inputs merge into a single blue output; no arrow or button. */
