@@ -425,3 +425,26 @@
  .sp-rework .sp-full-verification { padding:16px; }
  .sp-full-verification > ol > li { grid-template-columns:16px minmax(0,1fr) 12px; gap:8px; }
 }
+
+/* The final deliverable stays medium-sized, below the engine in visual weight. */
+.sp-rework .sp-profile { max-width:560px; padding:24px; border-radius:18px; box-shadow:0 8px 24px rgba(0,0,0,.04); }
+.sp-rework .sp-profile .sp-profile-top { flex-direction:row; align-items:center; flex-wrap:wrap; gap:8px; }
+.sp-rework .sp-profile .sp-identity { margin:20px 0 16px; gap:14px; }
+.sp-rework .sp-profile .sp-identity h3 { font-size:26px; }
+.sp-profile .sp-initials { width:48px; height:48px; font-size:16px; border-radius:12px; }
+.sp-profile .sp-contact-actions { gap:6px; margin-bottom:16px; }
+.sp-profile .sp-contact-actions li { padding:6px 8px; font-size:11px; border-radius:6px; }
+.sp-profile .sp-profile-event { padding-top:16px; }
+.sp-profile .sp-profile-event h4 { font-size:17px; margin:6px 0 14px; }
+.sp-rework .sp-profile .sp-why { padding:16px; border-radius:10px; }
+.sp-rework .sp-profile .sp-why p { font-size:15px; line-height:1.55; margin-top:8px; }
+.sp-profile .sp-profile-bottom { margin-top:12px; }
+@media(max-width:700px) {
+ .sp-rework .sp-profile { padding:18px; }
+ .sp-rework .sp-profile .sp-identity { gap:10px; margin:16px 0 14px; }
+ .sp-rework .sp-profile .sp-identity h3 { font-size:22px; }
+ .sp-profile .sp-initials { width:40px; height:40px; font-size:13px; border-radius:10px; }
+ .sp-profile .sp-profile-brand { font-size:10px; }
+ .sp-rework .sp-profile .sp-why { padding:14px; }
+ .sp-rework .sp-profile .sp-why p { font-size:14px; }
+}
