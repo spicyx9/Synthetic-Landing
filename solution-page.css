@@ -165,3 +165,22 @@
 .sp-change[open] .sp-change-plus { transform: rotate(45deg); }
 .sp-change > p { padding: 0 24px 24px 0; color: #254b70; font-size: 15px; line-height: 1.7; }
 .sp-change[open] strong { color: #0a66c2; }
+.sp-facts { display: flex; align-items: center; gap: 16px; }
+.sp-facts > span { flex: 1; padding: 20px; border: 1px solid #dfdbd6; border-radius: 12px; background: #fff; font-size: 15px; line-height: 1.5; }
+.sp-facts b { font-size: 22px; color: #0a66c2; font-weight: 400; }
+.sp-converge { display: flex; justify-content: center; align-items: flex-start; height: 64px; color: #0a66c2; }
+.sp-converge i { width: 25%; height: 32px; border-bottom: 1px solid #bdd1e4; border-left: 1px solid #bdd1e4; border-radius: 0 0 0 18px; }
+.sp-converge i:last-child { transform: scaleX(-1); }
+.sp-converge > span { align-self: flex-end; font-size: 24px; margin: 0 -3px; }
+.sp-combined { padding: 28px; border-radius: 18px; background: #f0f5fa; }
+.sp-combined p { font-size: 21px; line-height: 1.5; color: #254b70; letter-spacing: -.025em; }
+.sp-secondary-combination { border-top: 1px solid #dfdbd6; margin-top: 32px; padding-top: 24px; }
+.sp-secondary-combination > span { font-size: 12px; font-weight: 600; }
+.sp-secondary-combination p { color: #555; font-size: 14px; line-height: 1.6; margin-top: 8px; }
+.sp-phone-number { font-size: clamp(22px,2.6vw,32px); letter-spacing: -.035em; margin: 28px 0; }
+.sp-validation li { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-top: 1px solid #e8e5e0; font-size: 14px; }
+.sp-validation li > span { color: #0a66c2; }
+.sp-rejected { margin-top: 20px; display: flex; gap: 16px; padding: 20px; background: #f7f5f1; border-radius: 12px; }
+.sp-rejected > span { font-size: 22px; line-height: 1; }
+.sp-rejected strong { font-size: 13px; font-weight: 500; }
+.sp-rejected small { display: block; color: #555; font-size: 11px; margin-top: 4px; }
