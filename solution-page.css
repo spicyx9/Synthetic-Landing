@@ -184,3 +184,19 @@
 .sp-rejected > span { font-size: 22px; line-height: 1; }
 .sp-rejected strong { font-size: 13px; font-weight: 500; }
 .sp-rejected small { display: block; color: #555; font-size: 11px; margin-top: 4px; }
+.sp-profile-source { margin-top: 24px; }
+.sp-profile-source .page-kicker { font-size: 10px; margin-bottom: 6px; }
+.sp-profile-source p { font-size: 12px; color: #555; }
+.sp-company-details { border-top: 1px solid #e8e5e0; padding-top: 20px; margin-top: 24px; }
+.sp-company-details summary { font-size: 13px; cursor: pointer; color: #0a66c2; }
+.sp-company-details p { margin-top: 16px; font-size: 13px; line-height: 1.7; color: #555; }
+.sp-targeting { padding: 32px; }
+.sp-setting { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 16px; margin-top: 24px; }
+.sp-setting label, .sp-volume label { font-size: 13px; color: #555; }
+.sp-setting select { width: 100%; min-width: 0; appearance: auto; padding: 12px; background: #fcfbf8; border: 1px solid #dfdbd6; border-radius: 8px; color: #1a1a1a; font: inherit; font-size: 13px; }
+.sp-volume { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8e5e0; }
+.sp-volume > div:first-child { display: flex; justify-content: space-between; gap: 12px; }
+.sp-volume output { font-size: 13px; color: #0a66c2; }
+.sp-volume input { display: block; width: 100%; margin: 24px 0 8px; accent-color: #0a66c2; }
+.sp-volume-ticks { display: flex; justify-content: space-between; font-size: 11px; color: #666; }
+.sp-setting select:focus-visible, .sp-volume input:focus-visible { outline: 2px solid #0a66c2; outline-offset: 4px; }

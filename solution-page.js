@@ -32,3 +32,10 @@
     });
   });
 })();
+(() => {
+  const volume = document.querySelector('#target-volume');
+  const output = document.querySelector('#target-volume-value');
+  volume?.addEventListener('input', () => {
+    output.textContent = `${volume.value} / ${document.documentElement.lang === 'fr' ? 'semaine' : 'week'}`;
+  });
+})();
