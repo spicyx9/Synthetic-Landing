@@ -48,4 +48,4 @@ On `/`, Vercel's trusted `x-vercel-ip-country` header selects French for `FR`; a
 
 ## Homepage newsletter
 
-The FR/EN newsletter is static HTML with an explicitly disabled fieldset. No addresses are collected, stored or sent, and no success state is simulated. To activate, connect a subscription endpoint, add server validation and consent/unsubscribe handling, implement accessible success/error feedback, then remove the disabled state and temporary availability message. Do not enable the controls before that integration is ready.
+The FR/EN newsletter is a compact CTA band with a static, disabled fieldset. The input has an accessible name without a duplicate visible label; no availability status is displayed. No addresses are collected, stored or sent, and no success state is simulated. To activate, connect a subscription endpoint, add server validation and consent/unsubscribe handling, implement accessible success/error feedback, then remove the disabled state. Do not enable the controls before that integration is ready.

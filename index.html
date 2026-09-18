@@ -12,7 +12,7 @@
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/demo.css">
-  <link rel="stylesheet" href="/home.css?v=home-flow-20260918">
+  <link rel="stylesheet" href="/home.css?v=newsletter-20260918">
   <link rel="stylesheet" href="/pricing-interactive.css">
   <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,16 +160,19 @@
         <p>Yes. Telephone prospecting between professionals in France remains permitted when the offer relates to the activity of the person being called. The prior-consent requirement introduced on August 11, 2026 applies to consumer telemarketing, not B2B.</p>
       </details>
     </section><!-- SHARED FAQ END --><section id="newsletter" class="content-page home-newsletter" aria-labelledby="newsletter-title">
-  <div><h2 id="newsletter-title">Stay in the loop.</h2><p>Get product updates, market insights and important announcements.</p></div>
-  <!-- Enable only after connecting a real subscription endpoint and error handling. -->
-  <form aria-labelledby="newsletter-title" aria-describedby="newsletter-status">
-    <fieldset disabled>
-      <label for="newsletter-email">Your work email</label>
-      <div class="newsletter-controls"><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your work email" required aria-describedby="newsletter-status newsletter-microcopy"><button class="page-button" type="submit">Subscribe</button></div>
-    </fieldset>
-    <p id="newsletter-microcopy" class="newsletter-microcopy">No spam. Unsubscribe anytime.</p>
-    <p id="newsletter-status" class="newsletter-status">Subscription temporarily unavailable.</p>
-  </form>
+  <div class="newsletter-band">
+    <div class="newsletter-copy"><h2 id="newsletter-title">Stay in the loop.</h2><p>Get product updates and important announcements.</p></div>
+    <!-- Keep controls disabled until a real subscription endpoint is connected. -->
+    <form aria-labelledby="newsletter-title">
+      <fieldset disabled>
+        <div class="newsletter-controls">
+          <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your work email" aria-label="Your work email" required aria-describedby="newsletter-microcopy">
+          <button class="page-button" type="submit">Subscribe</button>
+        </div>
+      </fieldset>
+      <p id="newsletter-microcopy" class="newsletter-microcopy">Unsubscribe anytime.</p>
+    </form>
+  </div>
 </section></main>
   <footer class="footer site-footer">
   <div class="site-footer-top"><a href="/" class="logo">Synthetic Swarm</a><p>The right person. The right signal. The right time.</p></div>
