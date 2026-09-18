@@ -49,6 +49,7 @@
     overlay.querySelectorAll('[data-disclosure-panel]').forEach(panel => { panel.hidden = true; });
     background.forEach(node => { node.inert = previousInert.get(node) || false; });
     if (restoreFocus) toggle.focus({preventScroll: true});
+    else header.querySelector('a[href]')?.focus({preventScroll: true});
   }
   toggle.addEventListener('click', function () {
     scrollPosition = window.scrollY;
