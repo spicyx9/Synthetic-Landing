@@ -1,5 +1,7 @@
 # Global motion QA
 
+Historical branch-only review. See [current production audit](production-implementation-audit.md) for the later main audit and fixes.
+
 Date: 2026-09-18
 Branch: `solution-page-v1-detailed`. No merge to `main`.
 
