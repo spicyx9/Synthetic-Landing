@@ -5,7 +5,7 @@ const path=require('node:path');
 for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversion flow and honest integration states`,()=>{
  const html=fs.readFileSync(path.join(__dirname,'..',file),'utf8');
  const section=html.match(/<section id="comparison"[\s\S]*?<\/section>/)[0];
- assert.equal((section.match(/<li>/g)||[]).length,8);
+ assert.equal((section.match(/<li(?:\s[^>]*)?>/g)||[]).length,8);
  assert.doesNotMatch(section,/comparison-example|<dl>|<h3>|comparison-disclaimer/);
  const positions=['home-focused-hero','id="comparison"','id="solution-preview"','id="prospect-example"','id="customer-proof"','id="pricing"','id="faq"','id="newsletter"','<footer'].map(token=>html.indexOf(token));
  assert.ok(positions.every((n,i)=>n>=0&&(!i||n>positions[i-1])));
