@@ -17,7 +17,7 @@ Static HTML, CSS and JavaScript. Vercel serves the repository root with clean UR
 | --- | --- | --- |
 | Home | `/` | `/index-fr` |
 | Solution | `/our-solution` | `/notre-solution` |
-| Pricing | `/pricing` | `/pricing-fr` |
+| Pricing | `/pricing` | `/tarifs` |
 | FAQ | `/faq` | `/faq-fr` |
 | About | `/about` | `/a-propos` |
 | Careers | `/careers` | `/recrutement` |

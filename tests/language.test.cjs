@@ -13,13 +13,13 @@ test('French IP defaults to French; all other and unknown countries default to E
 });
 test('explicit language preference wins without redirect loops or disturbing deep links',()=>{
  assert.equal(destination('FR','en'),'/');assert.equal(destination('US','fr'),'/index-fr');
- for(const path of ['/index-fr','/pricing','/pricing-fr','/customers','/clients'])assert.equal(destination('FR',undefined,path),path);
+ for(const path of ['/index-fr','/pricing','/tarifs','/customers','/clients'])assert.equal(destination('FR',undefined,path),path);
  for(const rule of rules)assert.equal(rule.permanent,false);
 });
 
 test('language dropdown preserves all equivalent page routes and current-language labels',()=>{
  const fs=require('node:fs'),path=require('node:path');
- const pairs=[['index','index-fr'],['pricing','pricing-fr'],['our-solution','notre-solution'],['about','a-propos'],['careers','recrutement'],['media','medias'],['contact','contact-fr'],['faq','faq-fr'],['customers','clients']];
+ const pairs=[['index','index-fr'],['pricing','tarifs'],['our-solution','notre-solution'],['about','a-propos'],['careers','recrutement'],['media','medias'],['contact','contact-fr'],['faq','faq-fr'],['customers','clients']];
  for(const pair of pairs)for(const [index,name] of pair.entries()){
   const html=fs.readFileSync(path.join(__dirname,'..',name+'.html'),'utf8');
   const header=html.match(/<header[\s\S]*?<\/header>/)[0];

@@ -7,7 +7,7 @@ import re
 ROOT = Path(__file__).resolve().parent.parent
 ROUTES = {
  'home': ('/', '/index-fr'), 'solution': ('/our-solution', '/notre-solution'),
- 'pricing': ('/pricing', '/pricing-fr'), 'faq': ('/faq', '/faq-fr'),
+ 'pricing': ('/pricing', '/tarifs'), 'faq': ('/faq', '/faq-fr'),
  'about': ('/about', '/a-propos'), 'careers': ('/careers', '/recrutement'),
  'media': ('/media', '/medias'), 'contact': ('/contact', '/contact-fr'),
  'privacy': ('/privacy', '/confidentialite'), 'terms': ('/terms', '/conditions'),
@@ -125,7 +125,7 @@ def sync(headers=True,footers=True):
 def sync_conversion():
  # Dedicated pricing HTML is the source for homepage pricing and purchase FAQ.
  for lang in ['en', 'fr']:
-  pricing=(ROOT/('pricing-fr.html' if lang=='fr' else 'pricing.html')).read_text()
+  pricing=(ROOT/('tarifs.html' if lang=='fr' else 'pricing.html')).read_text()
   home=ROOT/('index-fr.html' if lang=='fr' else 'index.html')
   html=home.read_text()
   if '<!-- SHARED PRICING START -->' not in html: continue
