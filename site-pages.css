@@ -88,3 +88,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .language-panel a[aria-current="true"] { font-weight: 700; }
 .mobile-menu-footer .language-menu { align-self: flex-start; }
 .mobile-menu-footer .language-panel { left: 0; right: auto; }
+
+/* About and language use the same static SVG and icon treatment, including mobile clones. */
+.shared-chevron-trigger { display:inline-flex; align-items:center; gap:6px; }
+.shared-chevron-trigger .dropdown-chevron { display:block; flex:0 0 10px; width:10px; height:10px; margin:0; opacity:1; fill:currentColor; stroke:none; color:#555; transform:none; transition:none; }
+.shared-chevron-trigger:hover .dropdown-chevron { color:#1a1a1a; }
+.shared-chevron-trigger[aria-expanded="true"] .dropdown-chevron { transform:none; }
+
+.mobile-menu-body .about-menu > button.shared-chevron-trigger { justify-content:flex-start; gap:6px; }

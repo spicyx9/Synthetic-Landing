@@ -32,6 +32,8 @@ def company_link(key,lang,label=None):
  label=label or LABELS[lang][key]
  if key in ['media','customers']: return f'<span class="nav-disabled" role="link" aria-disabled="true">{label}</span>'
  return f'<a href="{url(key,lang)}">{label}</a>'
+def dropdown_chevron():
+ return '<svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M2 3.5 5 6.5 8 3.5Z"/></svg>'
 def header(lang,key):
  t=LABELS[lang];links='\n'.join(f'<a href="{url(k,lang)}"'+(' aria-current="page"' if key==k else '')+f'>{t[k]}</a>' for k in ['solution','pricing'])
  about='\n'.join(company_link(k,lang,t["who"] if k=="about" else t[k]) for k in ['about','careers','media'])
@@ -41,13 +43,13 @@ def header(lang,key):
     <nav class="nav-links" aria-label="{'Navigation principale' if lang=='fr' else 'Main navigation'}">
       {links}
       <div class="about-menu">
-        <button type="button" class="nav-link-dropdown" data-disclosure-trigger aria-expanded="false" aria-controls="header-about-options">{t['about']} <span aria-hidden="true">⌄</span></button>
+        <button type="button" class="nav-link-dropdown shared-chevron-trigger" data-disclosure-trigger aria-expanded="false" aria-controls="header-about-options">{t['about']} {dropdown_chevron()}</button>
         <div class="about-menu-panel" id="header-about-options" data-disclosure-panel hidden>{about}</div>
       </div>
     </nav>
     <div class="nav-actions">
       <div class="language-menu">
-        <button type="button" class="language-trigger" data-disclosure-trigger aria-expanded="false" aria-controls="header-language-options" aria-label="{'Choisir la langue' if lang=='fr' else 'Choose language'}">{lang.upper()} <span aria-hidden="true">▾</span></button>
+        <button type="button" class="language-trigger shared-chevron-trigger" data-disclosure-trigger aria-expanded="false" aria-controls="header-language-options" aria-label="{'Choisir la langue' if lang=='fr' else 'Choose language'}">{lang.upper()} {dropdown_chevron()}</button>
         <div class="language-panel" id="header-language-options" data-disclosure-panel hidden>
           <a href="{url(key,lang)}" data-lang="{lang}" lang="{lang}" aria-current="true">{lang.upper()}</a>
           <a href="{url(key,'en' if lang=='fr' else 'fr')}" data-lang="{'en' if lang=='fr' else 'fr'}" lang="{'en' if lang=='fr' else 'fr'}">{'EN' if lang=='fr' else 'FR'}</a>
@@ -85,7 +87,7 @@ def page(key,lang,title,description,body):
   <link rel="alternate" hreflang="fr" href="https://www.syntheticswarm.ai{url(key,'fr')}">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/site-pages.css">
+  <link rel="stylesheet" href="/site-pages.css?v=shared-chevron-1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -109,7 +111,7 @@ def sync(headers=True,footers=True):
    s=p.read_text()
    if headers:s=re.sub(r'<header class="header">.*?</header>',lambda _:header(lang,key),s,flags=re.S)
    if footers:s=re.sub(r'<footer class="footer[^\"]*">.*?</footer>',lambda _:footer(lang),s,flags=re.S)
-   if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css">\n</head>')
+   if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css?v=shared-chevron-1">\n</head>')
    p.write_text(s)
 def sync_conversion():
  # Dedicated pricing HTML is the source for homepage pricing and purchase FAQ.

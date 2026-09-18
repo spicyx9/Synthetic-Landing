@@ -24,7 +24,7 @@ test('language dropdown preserves all equivalent page routes and current-languag
   const html=fs.readFileSync(path.join(__dirname,'..',name+'.html'),'utf8');
   const header=html.match(/<header[\s\S]*?<\/header>/)[0];
   assert.doesNotMatch(header,/lang-toggle-sep/);
-  assert.match(header,new RegExp('>'+ (index?'FR':'EN')+' <span aria-hidden="true">▾'));
+  assert.match(header,new RegExp('>'+ (index?'FR':'EN')+' <svg class="dropdown-chevron"'));
   for(const [i,target] of pair.entries())assert.ok(header.includes(`href="${target==='index'?'/':'/'+target}" data-lang="${i?'fr':'en'}"`));
  }
 });

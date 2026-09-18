@@ -27,6 +27,10 @@ for (const name of pages) {
     assert.doesNotMatch(html, />IS<\/span>/);
     assert.doesNotMatch(html, /avatars\.githubusercontent|heroEyebrowDate/);
     const header = html.match(/<header[\s\S]*?<\/header>/)[0];
+    const chevrons = [...header.matchAll(/<svg class="dropdown-chevron"[\s\S]*?<\/svg>/g)].map(m => m[0]);
+    assert.equal(chevrons.length, 2);
+    assert.equal(chevrons[0], chevrons[1]);
+    assert.doesNotMatch(header, /[⌄▾∨]/);
     const footer = html.match(/<footer[\s\S]*?<\/footer>/)[0];
     assert.doesNotMatch(header + footer, /href="#"|Lead magnets|Keyword targeting|Multichannel outreach|Resources|Ressources/i);
     assert.doesNotMatch(header.match(/<nav[\s\S]*?<\/nav>/)[0], /href="\/(?:faq(?:-fr)?|clients|customers)"/);
