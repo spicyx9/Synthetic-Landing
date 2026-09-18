@@ -87,11 +87,12 @@ def page(key,lang,title,description,body):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fcfbf8">
-  <title>{escape(title)} — Synthetic Swarm</title>
+  <title>{escape(title)} | Synthetic Swarm</title>
   <meta name="description" content="{escape(description,quote=True)}">
   <link rel="canonical" href="{canonical}">
   <link rel="alternate" hreflang="en" href="https://www.syntheticswarm.ai{url(key,'en')}">
   <link rel="alternate" hreflang="fr" href="https://www.syntheticswarm.ai{url(key,'fr')}">
+  <link rel="alternate" hreflang="x-default" href="https://www.syntheticswarm.ai{url(key,'en')}">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
