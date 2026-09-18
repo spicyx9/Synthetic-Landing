@@ -10,7 +10,7 @@
   <link rel="alternate" hreflang="en" href="https://www.syntheticswarm.ai/">
   <link rel="alternate" hreflang="fr" href="https://www.syntheticswarm.ai/index-fr">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="/styles.css?v=persistent-header-20260918">
+  <link rel="stylesheet" href="/styles.css?v=motion-1">
   <link rel="stylesheet" href="/demo.css">
   <link rel="stylesheet" href="/home.css?v=solution-engine-20260918">
   <link rel="stylesheet" href="/pricing-interactive.css">
@@ -19,6 +19,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/customers.css">
+  <link rel="stylesheet" href="/motion.css?v=3">
+  <script src="/motion.js?v=2" defer></script>
+  <script src="/home-motion.js?v=2" defer></script>
+  <script src="/page-motion.js?v=2" defer></script>
 </head>
 <body class="home">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -60,7 +64,7 @@
  <img src="/assets/decor-3.png" alt="" class="hero-decor hero-decor--rocket" aria-hidden="true">
  <div class="hero-content"><div class="demo-hero"><div class="demo-hero__inner">
  <div class="demo-hero__eyebrow"><span class="hero-eyebrow-badge">BREAKING NEWS</span> <span class="hero-eyebrow-separator" aria-hidden="true">·</span> <time class="hero-eyebrow-date" datetime="2026-09-17">SEPTEMBER 17, 2026</time> <span class="hero-eyebrow-separator" aria-hidden="true">·</span> <span class="hero-eyebrow-news">Synthetic Swarm moves to San Francisco.</span></div>
- <h1 class="demo-hero__headline">Know who to call. <span class="hl">At the right time.</span></h1><p class="demo-hero__subtitle">Synthetic Swarm detects the changes that create insurance needs and provides you with qualified prospects, their contact details, and a clear reason to reach out at the right time.</p>
+ <h1 class="demo-hero__headline"><span class="motion-headline-part">Know who to call.</span> <span class="hl">At the right time.</span></h1><p class="demo-hero__subtitle">Synthetic Swarm detects the changes that create insurance needs and provides you with qualified prospects, their contact details, and a clear reason to reach out at the right time.</p>
  <div class="page-actions home-actions"><div class="demo-booking">
   <button type="button" class="btn-get-started" data-book-demo data-disclosure-trigger aria-expanded="false" aria-controls="hero-demo-options">Book a demo</button>
   <div class="demo-booking-popover" id="hero-demo-options" data-disclosure-panel hidden>
@@ -87,6 +91,7 @@
   <span class="page-kicker">Our solution</span>
   <h2 id="solution-title">From your target to your next call.</h2>
   <p class="solution-intro">You define who you are looking for. Synthetic Swarm does the rest.</p>
+  <button class="home-motion-toggle" type="button" data-home-motion aria-pressed="false" hidden>Pause animation</button>
   <div class="solution-system">
     <div class="solution-target"><h3>Your target</h3><ul><li>Industry</li><li>Company size</li><li>Geography</li></ul></div>
     <div class="solution-transform">
@@ -193,7 +198,7 @@
   <p class="site-footer-copy">© 2026 Synthetic Swarm. All rights reserved.</p>
 </footer>
   <script src="/pricing.js"></script>
-  <script src="/mobile-menu.js?v=persistent-header-20260918"></script>
+  <script src="/mobile-menu.js?v=motion-1"></script>
   <script src="/customers.js?v=home-flow-20260918" defer></script>
 </body>
 </html>
