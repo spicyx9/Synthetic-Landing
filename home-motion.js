@@ -29,7 +29,6 @@ window.SwarmMotion?.ready(M => {
       tracks.push({element,frames:[{strokeDasharray:`${length}`,strokeDashoffset:length},{strokeDasharray:`${length}`,strokeDashoffset:0}],options:{duration:200,delay:output?500:250+i*15}});
     });
     tracks.push(M.step(comparison.querySelector('.comparison-core'),400,'surface',200));
-    tracks.push({element:comparison.querySelector('.comparison-sparkle'),frames:[{opacity:0,scale:'.98'},{opacity:.45,scale:'1'}],options:{duration:200,delay:400}});
     tracks.push({element:comparison.querySelector('.comparison-output-bridge'),frames:[{scale:'0 1'},{scale:'1 1'}],options:{duration:160,delay:540}});
     tracks.push({element:comparison.querySelector('.comparison-rail'),frames:[{scale:'1 0'},{scale:'1 1'}],options:{duration:240,delay:600}});
     add('.comparison-side--after li',600,30);
