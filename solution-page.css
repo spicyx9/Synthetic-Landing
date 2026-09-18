@@ -8,8 +8,6 @@
 .solution-page .page-actions { justify-content: center; gap: 12px; margin-top: 32px; }
 .sp-final { text-align: center; border-top: 1px solid #e8e5e0; padding-top: 100px; padding-bottom: 110px; }
 .sp-final h2 { max-width: 780px; margin: 20px auto 0; }
-.solution-route { padding-top: 60px; }
-.solution-route > .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
 .sp-section-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
 .sp-section-top h2 { margin-top: 16px; }
 .sp-section-top h2 > span { color: #0a66c2; }
