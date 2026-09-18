@@ -369,3 +369,7 @@
   .home .solution-output { padding: 20px; }
   .home .solution-disclaimer { padding-left: 28px; }
 }
+
+/* Four quiet inputs merge into a single blue output; no arrow or button. */
+.home .comparison-convergence { align-self: start; margin-top: 58px; }
+.home .comparison-convergence svg { display: block; width: 100%; height: auto; }
