@@ -33,8 +33,8 @@
   max-width: 780px;
 }
 .home .demo-wrapper .demo-hero__headline .hl { color: var(--hs-blue); }
-/* Centered reading width keeps the hero subtitle compact and balanced. */
-.home .demo-wrapper .demo-hero__subtitle { max-width: 480px; text-wrap: balance; }
+/* A wide subtitle uses horizontal room; vertical spacing separates the message. */
+.home .demo-wrapper .demo-hero__subtitle { max-width: 960px; text-wrap: balance; }
 
 /* One glass pill on desktop; natural text wrapping on small mobile screens. */
 .home .demo-wrapper .demo-hero__eyebrow {
@@ -369,3 +369,12 @@
 .home .solution-contact { font-size: 13px; color: #555; line-height: 1.8; margin-top: 16px; }
 .home .solution-reason { margin-top: 20px; padding: 14px; background: #f0f5fa; color: #254b70; border-radius: 12px; font-size: 13px; line-height: 1.5; }
 .home .solution-reason strong { display: block; margin-bottom: 6px; font-weight: 600; }
+
+/* Wide desktop copy, with comfortable space between headline, copy and actions. */
+@media (min-width: 1001px) {
+  .home .home-focused-hero .hero-content { max-width: 1040px; }
+  .home .demo-wrapper .demo-hero__inner { max-width: 1040px; }
+  .home .demo-wrapper .demo-hero__headline { max-width: 1000px; margin-bottom: 24px; }
+  .home .demo-wrapper .demo-hero__subtitle { line-height: 1.5; margin-bottom: 32px; }
+  .home .home-actions { margin-top: 0; }
+}
