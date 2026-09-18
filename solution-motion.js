@@ -3,24 +3,9 @@ window.SwarmMotion?.ready(M => {
   if (!page) return;
   const hero = page.querySelector('.sp-hero');
   M.sequence(hero, [
-    ...[...hero.querySelectorAll('.sp-hero-copy > .page-kicker, .sp-hero-copy > h1, .sp-hero-copy > p')].map((element,i)=>M.step(element,100+i*120,i===1?'line':'rise')),
+    ...[...hero.querySelectorAll(':scope > .page-kicker, :scope > h1, :scope > p')].map((element,i)=>M.step(element,100+i*120,i===1?'line':'rise')),
     ...[...hero.querySelectorAll('.page-actions > *')].map((element,i)=>M.step(element,460+i*60))
   ],{entrance:true});
-  const scene = hero.querySelector('.sh-scene');
-  if (scene) {
-    const pace = window.matchMedia('(max-width:800px)').matches ? .7 : 1;
-    const steps = [];
-    const add = (selector,delay,stagger=70) => scene.querySelectorAll(selector).forEach((element,i)=>steps.push(M.step(element,(delay+i*stagger)*pace,'fade',300*pace)));
-    add('.sh-events li',0,50);
-    add('.sh-wires',250);
-    add('.sh-pipeline',450);
-    add('.sh-pipeline li',600,100);
-    add('.sh-lead',950);
-    add('.sh-identity',1100);
-    add('.sh-contacts li',1250,60);
-    add('.sh-reason',1500);
-    M.sequence(scene,steps);
-  }
   page.querySelectorAll('.sp-editorial').forEach(section => {
     const steps = [...section.querySelectorAll('.sp-editorial-copy > *')].map((element,i)=>M.step(element,i*100));
     const visual = section.querySelector('.sp-editorial-visual');
