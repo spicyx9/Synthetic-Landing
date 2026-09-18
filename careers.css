@@ -36,7 +36,7 @@
  .job-content .page-button { max-width:100%; }
 }
 
-.job-title { display:inline-flex; align-items:center; flex-wrap:wrap; gap:8px; }
+.job-title { display:inline-flex; align-items:center; flex-wrap:wrap; gap:4px; }
 .job-flags { display:inline-block; white-space:nowrap; flex-shrink:0; font-size:14px; line-height:1; letter-spacing:2px; }
 
 .careers-spontaneous { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px 28px; margin-top:40px; padding-top:28px; border-top:1px solid #e8e5e0; }
@@ -44,3 +44,6 @@
 .careers-spontaneous p { margin:0; font-size:15px; line-height:1.65; color:#666; }
 .careers-spontaneous .page-button { gap:8px; max-width:100%; }
 @media(max-width:700px) { .careers-spontaneous { margin-top:28px; padding-top:24px; } }
+
+.job-geography { display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
+.job-active-arrow { flex-shrink:0; }
