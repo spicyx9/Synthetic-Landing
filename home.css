@@ -380,3 +380,16 @@
 .home .solution-contact { list-style: none; padding: 0; display: grid; gap: 10px; }
 .home .solution-contact li { display: flex; align-items: center; gap: 10px; }
 .home .solution-contact svg { flex: 0 0 16px; width: 16px; height: 16px; color: #0a66c2; }
+
+/* Company changes surround the engine and converge behind its surface. */
+.home .solution-transform { min-height: 460px; }
+.home .solution-connections { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.home .solution-inputs { position: absolute; inset: 0; }
+.home .solution-inputs li { position: absolute; z-index: 1; max-width: 52%; padding: 7px 11px; border: 1px solid #e8e5e0; border-radius: 999px; background: #fff; color: #666; font-size: 12px; line-height: 1.5; text-align: center; }
+.home .solution-inputs li:nth-child(1) { top: 8px; left: 0; }
+.home .solution-inputs li:nth-child(2) { top: 0; right: 8px; }
+.home .solution-inputs li:nth-child(3) { bottom: 0; left: 0; }
+.home .solution-inputs li:nth-child(4) { bottom: 8px; right: 0; }
+.home .solution-target { position: relative; }
+.home .solution-target::after { content: ''; position: absolute; top: 50%; left: calc(100% + 10px); width: 26px; height: 1px; background: #cadbe9; }
+.home .solution-output::before { content: ''; position: absolute; top: 50%; right: 100%; width: 36px; height: 2px; background: linear-gradient(90deg,#cadbe9,#0a66c2); }
