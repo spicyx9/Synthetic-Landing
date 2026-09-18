@@ -16,10 +16,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/floating-demo.css?v=main-audit-1">
-  <link rel="stylesheet" href="/solution-page.css?v=shared-card-1">
+  <link rel="stylesheet" href="/solution-page.css?v=split-hero-1">
   <link rel="stylesheet" href="/motion.css?v=3">
   <script src="/motion.js?v=main-audit-1" defer></script>
-  <script src="/solution-motion.js?v=shared-card-1" defer></script>
+  <script src="/solution-motion.js?v=split-hero-1" defer></script>
   <script src="/page-motion.js?v=2" defer></script>
 </head>
 <body class="solution-route">
@@ -58,6 +58,7 @@
 </header>
   <main id="main" class="solution-page sp-detailed sp-rework">
 <section class="sp-hero sp-wrap" data-demo-hero>
+<div class="sp-hero-copy">
 <span class="page-kicker">Notre solution</span>
 <h1>D’un changement de situation à votre prochain appel.</h1><p>Nous repérons les changements qui comptent pour votre marché, identifions les bonnes personnes et vous livrons leurs coordonnées avec une raison claire de les contacter cette semaine.</p><div class="page-actions"><div class="demo-booking">
   <button type="button" class="btn-get-started" data-book-demo data-disclosure-trigger aria-expanded="false" aria-controls="solution-hero-demo">Réserver une démo</button>
@@ -66,6 +67,18 @@
     <a class="demo-booking-person" href="https://calendar.app.google/AWQX2bxp8cnqtsaJ9" target="_blank" rel="noopener noreferrer"><img class="demo-booking-avatar" src="/assets/team/ilan-cto.jpg" alt="" width="38" height="38"><span class="demo-booking-person-copy"><strong>Ilan</strong><span>CTO</span></span><span aria-hidden="true">↗</span></a>
   </div>
 </div><a class="page-button page-button--secondary" href="/pricing-fr">Voir les tarifs</a></div>
+</div>
+<div class="sh-scene" role="group" aria-label="Du changement à la fiche prête à appeler">
+  <ul class="sh-events"><li>Création</li><li>Embauche</li><li>Changement de statut</li><li>Nouveau dirigeant</li></ul>
+  <svg class="sh-wires" viewBox="0 0 560 70" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M60 0V20Q60 34 80 34H260Q280 34 280 54V70M190 0V34M350 0V34H280M480 0V20Q480 34 460 34H280" stroke="#cadbe9" stroke-width="1.2"/></svg>
+  <div class="sh-pipeline"><span class="sh-brand"><img src="/assets/logo-black-narrow.png" alt="" width="18" height="22">Synthetic Swarm</span><ol><li><span aria-hidden="true">01</span>Détecte</li><li><span aria-hidden="true">02</span>Qualifie</li><li><span aria-hidden="true">03</span>Enrichit</li></ol></div>
+  <article class="sh-lead">
+    <div class="sh-lead-header"><span>✓ PRÊT À APPELER</span><span aria-hidden="true">↗</span></div>
+    <div class="sh-lead-body"><div class="sh-identity"><span class="sh-avatar" aria-hidden="true">CE</span><div><p>Ateliers Exemple</p><h3>Camille Exemple</h3><p>Dirigeante</p></div></div>
+    <ul class="sh-contacts"><li>06 XX XX XX XX</li><li>camille@...</li><li>LinkedIn ↗</li></ul>
+    <div class="sh-reason"><strong>Pourquoi appeler ?</strong><p>L’entreprise devient employeur. C’est un moment pertinent pour revoir l’organisation de sa protection sociale.</p></div></div>
+  </article>
+</div>
 </section>
 <section class="sp-editorial section-shell sp-wrap sp-target-section " id="targeting" aria-labelledby="targeting-title"><div class="sp-editorial-copy section-copy"><span class="page-kicker section-eyebrow">VOTRE CIBLE</span><h2 class="section-title" id="targeting-title">Vous définissez qui compte pour vous.</h2><p class="section-description">Activité, taille, zone, dirigeant et coordonnées recherchées : vous définissez votre marché. Nous cherchons les entreprises qui correspondent et les moments qui méritent votre attention.</p></div><div class="sp-editorial-visual section-visual"><div class="sp-surface sp-targeting product-card solution-demo-card target-configurator"><div class="sp-interface-caption product-card-header"><span>VOTRE CIBLE</span><span>Synthetic Swarm <i class="sp-target-ready" aria-hidden="true">✓</i></span></div><div class="solution-demo-body"><div class="sp-setting"><label for="target-0">Activité</label><select id="target-0"><option>Professions libérales</option><option>Artisans</option><option>Commerçants</option></select></div><div class="sp-setting"><label for="target-1">Zone</label><select id="target-1"><option>Île-de-France</option><option>Auvergne-Rhône-Alpes</option><option>France entière</option></select></div><div class="sp-setting"><label for="target-2">Taille</label><select id="target-2"><option>1–50 salariés</option><option>Indépendants</option><option>51–200 salariés</option></select></div><div class="sp-setting"><label for="target-3">Contact</label><select id="target-3"><option>Portable + email</option><option>Portable uniquement</option><option>Email + LinkedIn</option></select></div><div class="sp-setting"><label for="target-decision">Décideur</label><select id="target-decision"><option>Dirigeant</option><option>Associé</option></select></div><div class="sp-setting sp-volume-setting"><label for="target-volume">Volume</label><output for="target-volume" id="target-volume-value">50 / semaine</output></div><div class="sp-volume"><input id="target-volume" type="range" min="10" max="200" step="10" value="50" aria-describedby="target-volume-value"><div class="sp-volume-ticks"><span>10</span><span>200</span></div></div></div></div></div></section>
 <section class="sp-engine-section sp-wrap eng-section" id="engine" aria-labelledby="engine-title"><div class="sp-section-top"><div><span class="page-kicker">Synthetic Swarm fait le lien</span><h2 id="engine-title">Des informations dispersées.<br>Une seule lecture exploitable.</h2></div><button class="sp-motion" type="button" data-motion aria-pressed="false">Mettre en pause</button></div>
