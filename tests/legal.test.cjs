@@ -10,11 +10,18 @@ for(const pair of pairs) test(`legal translations and missing information: ${pai
   assert.doesNotMatch(html,/[–—]|HISTIA|Stolos|histia\.net/);
   assert.match(html,new RegExp(`lang="${i===0?'fr':'en'}"`));
   assert.ok(html.includes(`href="/${pair[1-i]}" data-lang`));
-  assert.match(html,/septembre 2026|September 2026/);
+  if(pair[0]!=='confidentialite') assert.match(html,/septembre 2026|September 2026/);
  });
  const markers=html=>[...new Set(html.match(/\[\[A COMPLETER[^\]]*\]\]/g))].sort();
  assert.deepEqual(markers(pages[0]),markers(pages[1]));
- assert.ok(markers(pages[0]).length);
+ if(pair[0]==='confidentialite') {
+  pages.forEach(html=>{
+   assert.equal(markers(html).length,0);
+   const main=html.match(/<main[\s\S]*?<\/main>/)[0];
+   assert.equal((main.match(/href="mailto:contact@syntheticswarm.ai"/g)||[]).length,2);
+   assert.doesNotMatch(main,/page-button|Article 14|CNIL/);
+  });
+ } else assert.ok(markers(pages[0]).length);
 });
 test('legal navigation is present across all public footers',()=>{
  for(const file of fs.readdirSync(path.join(__dirname,'..')).filter(x=>x.endsWith('.html'))){
