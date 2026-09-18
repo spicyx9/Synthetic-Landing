@@ -33,8 +33,8 @@
   max-width: 780px;
 }
 .home .demo-wrapper .demo-hero__headline .hl { color: var(--hs-blue); }
-/* sous-titre : largeur calée pour 2 lignes équilibrées (pas de mot orphelin) */
-.home .demo-wrapper .demo-hero__subtitle { max-width: 600px; }
+/* Centered reading width keeps the hero subtitle compact and balanced. */
+.home .demo-wrapper .demo-hero__subtitle { max-width: 480px; text-wrap: balance; }
 
 /* One glass pill on desktop; natural text wrapping on small mobile screens. */
 .home .demo-wrapper .demo-hero__eyebrow {
