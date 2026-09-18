@@ -437,3 +437,33 @@
 @media(prefers-reduced-motion:reduce) { .home-trust-logo { transition:none; } }
 
 .home-trust-logo--france img { width:116px; height:auto; }
+
+/* Quiet, seamless chapter bridge. Each identical list occupies half the track. */
+.home-signals { max-width:1120px; margin-inline:auto; padding:20px 32px 24px; }
+.home-signals-heading { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:18px; }
+.home-signals h2 { margin:0; color:#74716d; font-size:11px; font-weight:500; letter-spacing:.08em; line-height:18px; }
+.home-signals-window { overflow:hidden; mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent); }
+.home-signals-track { display:flex; width:max-content; animation:detected-feed 30s linear infinite; }
+.home-signals-track ul { display:flex; align-items:center; gap:36px; flex:none; width:max-content; margin:0; padding:0 36px 0 0; list-style:none; }
+.home-signals-track li { display:flex; align-items:center; gap:10px; white-space:nowrap; font-size:14px; line-height:22px; color:#555; }
+.home-signals-track li::before { content:''; width:5px; height:5px; flex:none; border-radius:50%; background:var(--hs-blue,#0a66c2); opacity:.7; }
+.home-signals-pause { position:relative; display:grid; place-items:center; width:20px; height:20px; cursor:pointer; }
+.home-signals-pause input { position:absolute; inset:0; width:100%; height:100%; margin:0; appearance:none; border:0; background:transparent; cursor:pointer; }
+.home-signals-pause span { width:7px; height:9px; border-inline:2px solid #888; pointer-events:none; }
+.home-signals-pause input:checked + span { width:0; height:0; border:5px solid transparent; border-left:7px solid #888; border-right:0; }
+.home-signals-pause input:focus-visible { outline:2px solid var(--hs-blue,#0a66c2); outline-offset:3px; border-radius:3px; }
+.home-signals:hover .home-signals-track,.home-signals:focus-within .home-signals-track,.home-signals:has(input:checked) .home-signals-track { animation-play-state:paused; }
+@keyframes detected-feed { to { transform:translateX(-50%); } }
+@media(max-width:700px) {
+ .home-signals { padding:18px 22px 22px; }
+ .home-signals-track { animation-duration:35s; }
+ .home-signals-track ul { gap:28px; padding-right:28px; }
+ .home-signals-track li { font-size:13px; }
+ .home-signals-window { mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent); }
+}
+@media(prefers-reduced-motion:reduce) {
+ .home-signals-track { animation:none; width:auto; }
+ .home-signals-track ul { width:auto; flex-wrap:wrap; justify-content:center; gap:12px 24px; padding:0; }
+ .home-signals-track ul[aria-hidden],.home-signals-pause { display:none; }
+ .home-signals-window { mask-image:none; overflow:visible; }
+}
