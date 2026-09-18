@@ -8,3 +8,4 @@
 .floating-demo-copy strong { display: block; font-size: 14px; font-weight: 600; line-height: 1.5; }
 .floating-demo-copy > span { display: block; color: #c7c7c7; font-size: 12px; line-height: 1.5; }
 .floating-demo-arrow { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #333; font-size: 17px; flex-shrink: 0; }
+.floating-demo .demo-booking-popover { top: auto; bottom: calc(100% + 12px); left: 0; right: 0; width: 100%; max-width: 100%; }
