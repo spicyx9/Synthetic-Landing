@@ -11,7 +11,7 @@
 .founder-heading { min-width:0; }
 .founder-card h2 { margin:0; font-size:24px; letter-spacing:-.025em; }
 .founder-role { display:block; margin-top:8px; font-size:14px; font-weight:600; color:#0a66c2; letter-spacing:0; }
-.founder-card .founder-background { margin:12px 0 0; font-size:13px; line-height:1.5; color:#666; }
+.founder-card .founder-background { display:inline-flex; align-items:center; flex-wrap:wrap; gap:6px; margin:12px 0 0; font-size:13px; line-height:1.5; color:#666; }
 .founder-bio { display:flex; flex-direction:column; flex:1; }
 .founder-bio p + p { margin-top:12px; }
 .founder-link { display:inline-flex; align-items:center; align-self:flex-end; gap:8px; margin-top:auto; padding-top:20px; font-size:14px; font-weight:600; color:#0a66c2; }
@@ -56,3 +56,6 @@
  .about-sf { padding-top:28px; }
  .about-sf-copy { font-size:16px; }
 }
+
+.founder-school-logo { display:block; width:auto; height:22px; max-width:100%; object-fit:contain; flex-shrink:0; }
+@media(max-width:700px) { .founder-school-logo { height:20px; } }
