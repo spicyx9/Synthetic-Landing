@@ -220,8 +220,6 @@
 }
 
 .home-solution-preview > h2, .home-comparison > h2, .home-final-cta > h2 { font-size: clamp(28px,3.5vw,38px); line-height: 1.2; letter-spacing: -.03em; margin-bottom: 28px; }
-.home-solution-preview .page-section > h3 { margin-bottom: 14px; font-size: 22px; }
-.home-solution-preview .prospect-card { max-width: 780px; }
 .home .home-comparison { padding-top: 16px; padding-bottom: 24px; }
 .home-purchase-faq { max-width: 720px; padding: 0 24px; margin: 16px auto 0; }
 .home-purchase-faq > h2 { text-align: center; font-size: 26px; letter-spacing: -.025em; margin-bottom: 20px; }
@@ -272,19 +270,22 @@
   .home .home-focused-hero .hero-decor--sparkles-lg { width: 58px; left: 4%; top: 4%; }
 }
 
-/* Three short steps lead directly into one concrete product example. */
-.home .home-solution-preview { padding-top: 32px; padding-bottom: 32px; }
-.home .home-steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; list-style: none; }
-.home .home-steps li { min-width: 0; border-top: 1px solid #dfdbd6; padding-top: 20px; }
-.home .home-steps h3 { font-size: 19px; line-height: 1.35; letter-spacing: -.02em; margin: 16px 0 12px; }
-.home .home-steps p { font-size: 15px; line-height: 1.65; color: #666; }
-.home .home-output { padding-top: 24px; padding-bottom: 48px; }
-.home .home-output > h2 { font-size: clamp(24px,3vw,32px); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 24px; }
-.home .home-output .prospect-card { margin: 0 auto; width: 100%; }
-@media (max-width: 700px) {
-  .home .home-steps { grid-template-columns: 1fr; gap: 24px; }
-  .home .home-steps h3 { margin-top: 12px; }
-}
+/* One connected path: light process nodes lead into the final prospect. */
+.home .home-solution-preview { padding-top: 32px; padding-bottom: 40px; }
+.home .home-solution-preview > h2 { margin-bottom: 12px; }
+.home .solution-intro { color: #666; font-size: 15px; line-height: 1.65; margin-bottom: 32px; }
+.home .solution-flow { --flow-gap: 28px; display: grid; grid-template-columns: .8fr 1.1fr .85fr .95fr 1.7fr; gap: var(--flow-gap); align-items: start; list-style: none; margin: 0; padding: 0; }
+.home .solution-flow > li { min-width: 0; position: relative; }
+.home .solution-node { padding-top: 40px; }
+.home .solution-node::before { content: ''; position: absolute; top: 15px; left: 0; width: calc(100% + var(--flow-gap)); height: 1px; background: #cadbe9; }
+.home .solution-node::after { content: ''; position: absolute; top: 11px; left: 0; width: 9px; height: 9px; border: 2px solid #0a66c2; border-radius: 50%; background: #fcfbf8; }
+.home .solution-flow h3 { font-size: 11px; line-height: 1.5; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; margin: 0 0 14px; color: #254b70; }
+.home .solution-node p, .home .solution-node-list { font-size: 13px; line-height: 1.65; color: #555; }
+.home .solution-node-list { display: grid; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.home .solution-signals { display: grid; justify-items: start; gap: 8px; list-style: none; padding: 0 0 0 12px; margin: 0; border-left: 1px solid #cadbe9; }
+.home .solution-signals li { position: relative; max-width: 100%; padding: 4px 8px; border: 1px solid #e8e5e0; border-radius: 8px; background: #fff; color: #555; font-size: 12px; line-height: 1.5; }
+.home .solution-signals li::before { content: ''; position: absolute; width: 12px; height: 1px; left: -13px; top: 50%; background: #cadbe9; }
+.home .solution-disclaimer { margin-top: 16px; color: #777; font-size: 12px; line-height: 1.5; }
 
 /* Static gray slots use the same warm neutral treatment as the SF gallery. */
 .home .home-customer-proof { padding-top: 32px; padding-bottom: 48px; }
