@@ -14,7 +14,7 @@ for (const file of pages) test(`${file}: detailed Solution contract and approved
  for(const id of ['target-0','target-1','target-2','target-3','target-decision','target-volume']) assert.ok(html.includes(`for="${id}"`));
  for(const name of ['REDACTED','REDACTED','REDACTED','REDACTED','REDACTED','REDACTED']) assert.ok(html.includes(name));
  assert.doesNotMatch(html,/Six official sources|Six sources officielles|Cinq familles|Five kinds|Aucun fichier acheté|No purchased lists|REDACTED|confirmed need/i);
- const profile=html.split('<article class="sp-profile">')[1].split('</article>')[0];
+ const profile=html.match(/<article class="sp-profile(?: [^"]*)?">([\s\S]*?)<\/article>/)[1];
  assert.doesNotMatch(profile,/REDACTED|REDACTED|sp-profile-source|sp-company-details/);
  assert.ok(html.includes('sp-target-ready'));assert.ok(html.includes('sp-verification-ready'));
  assert.match(html,/class="floating-demo demo-booking"[^>]+inert/);
