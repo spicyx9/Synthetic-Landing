@@ -32,29 +32,35 @@
   overlay.querySelectorAll('[aria-controls]').forEach(node => node.setAttribute('aria-controls', 'mobile-' + node.getAttribute('aria-controls')));
   document.body.appendChild(overlay);
 
-  let previousOverflow = '';
+  let scrollPosition = 0;
+  let previousBodyStyles = {};
+  const lockedProperties = ['position', 'top', 'left', 'right', 'overflow'];
   const background = [...document.body.children].filter(node => node !== overlay && !['SCRIPT', 'STYLE'].includes(node.tagName));
   const previousInert = new Map();
   function closeMenu(restoreFocus = true) {
+    if (!overlay.classList.contains('open')) return;
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
     overlay.inert = true;
     toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = previousOverflow;
+    lockedProperties.forEach(property => { document.body.style[property] = previousBodyStyles[property]; });
+    window.scrollTo({top: scrollPosition, behavior: 'instant'});
     overlay.querySelectorAll('[data-disclosure-trigger]').forEach(button => button.setAttribute('aria-expanded', 'false'));
     overlay.querySelectorAll('[data-disclosure-panel]').forEach(panel => { panel.hidden = true; });
     background.forEach(node => { node.inert = previousInert.get(node) || false; });
-    if (restoreFocus) toggle.focus();
+    if (restoreFocus) toggle.focus({preventScroll: true});
   }
   toggle.addEventListener('click', function () {
-    previousOverflow = document.body.style.overflow;
+    scrollPosition = window.scrollY;
+    previousBodyStyles = Object.fromEntries(lockedProperties.map(property => [property, document.body.style[property]]));
     background.forEach(node => { previousInert.set(node, node.inert); node.inert = true; });
     overlay.inert = false;
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
     toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-    overlay.querySelector('.mobile-menu-close').focus();
+    // Fix the document in place for iOS as well as desktop engines.
+    Object.assign(document.body.style, {position: 'fixed', top: `-${scrollPosition}px`, left: '0', right: '0', overflow: 'hidden'});
+    overlay.querySelector('.mobile-menu-close').focus({preventScroll: true});
   });
   overlay.querySelector('.mobile-menu-close').addEventListener('click', () => closeMenu());
   overlay.addEventListener('click', event => {
