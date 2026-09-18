@@ -7,6 +7,9 @@
 
 .pricing-config-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
   background: #fff;
   border: 2px solid #1a1a1a;
   border-radius: 20px;
@@ -71,6 +74,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  margin-top: auto;
   margin-bottom: 15px;
 }
 
@@ -265,9 +269,13 @@
 
 @media (max-width: 600px) {
   .pricing-config-card {
+    display: block;
+    min-height: 0;
     padding: 30px 22px 26px;
     border-radius: 17px;
   }
+
+  .pricing-volume-row { margin-top: 0; }
 
   .pricing-config-badge {
     position: static;
