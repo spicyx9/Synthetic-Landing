@@ -16,7 +16,7 @@ ROUTES = {
  'legacy': ('/lead-magnets', '/lead-magnets-fr')
 }
 LABELS = {
- 'en': dict(notice='Legal notice',opposition='Opt out',customers='Customers',solution='Our solution',pricing='Pricing',faq='FAQ',about='About',careers='Careers',media='Media',contact='Contact',privacy='Privacy',terms='Terms',login='Log in',demo='Book a demo',who='Who we are'),
+ 'en': dict(notice='Legal Notice',opposition='Opt out',customers='Customers',solution='Our solution',pricing='Pricing',faq='FAQ',about='About',careers='Careers',media='Media',contact='Contact',privacy='Privacy',terms='Terms',login='Log in',demo='Book a demo',who='Who we are'),
  'fr': dict(notice='Mentions légales',opposition='Opposition',customers='Nos clients',solution='Notre solution',pricing='Tarifs',faq='FAQ',about='À propos',careers='Recrutement',media='Médias',contact='Contact',privacy='Confidentialité',terms='Conditions',login='Se connecter',demo='Réserver une démo',who='Qui sommes-nous')
 }
 def url(key, lang): return ROUTES[key][lang == 'fr']
