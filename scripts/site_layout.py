@@ -65,7 +65,7 @@ def footer(lang):
  groups=[('Produit' if lang=='fr' else 'Product',['solution','pricing','faq']),('Entreprise' if lang=='fr' else 'Company',['about','customers','careers','media','contact']),('Informations légales' if lang=='fr' else 'Legal',['notice','privacy','terms','opposition'])]
  columns=''.join('<div><h2>'+title+'</h2><ul>'+''.join('<li>'+company_link(k,lang)+'</li>' for k in keys)+'</ul></div>' for title,keys in groups)
  return f'''<footer class="footer site-footer">
-  <div class="site-footer-top"><a href="{url('home',lang)}" class="logo">Synthetic Swarm</a><p>{'La bonne personne. Le bon signal. Le bon moment.' if lang=='fr' else 'The right person. The right signal. The right time.'}</p></div>
+  <div class="site-footer-top"><a href="{url('home',lang)}" class="logo">Synthetic Swarm</a><p>{'Sachez qui appeler. Au bon moment.' if lang=='fr' else 'The right person. The right signal. The right time.'}</p></div>
   <nav class="site-footer-columns" aria-label="{'Pied de page' if lang=='fr' else 'Footer'}">
     {columns}
     <div><h2>{'Compte' if lang=='fr' else 'Account'}</h2><ul><li><a href="https://app.syntheticswarm.ai/ui/" target="_blank" rel="noopener noreferrer">{t['login']}</a></li><li>{booking(lang,'footer')}</li></ul></div>
