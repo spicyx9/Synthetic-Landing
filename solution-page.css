@@ -8,3 +8,44 @@
 .solution-page .page-actions { justify-content: center; gap: 12px; margin-top: 32px; }
 .sp-final { text-align: center; border-top: 1px solid #e8e5e0; padding-top: 100px; padding-bottom: 110px; }
 .sp-final h2 { max-width: 780px; margin: 20px auto 0; }
+.solution-route { padding-top: 60px; }
+.solution-route > .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+.sp-section-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.sp-section-top h2 { margin-top: 16px; }
+.sp-section-top h2 > span { color: #0a66c2; }
+.sp-motion { padding: 8px 12px; border: 1px solid #dfdbd6; border-radius: 999px; background: transparent; font: inherit; font-size: 12px; color: #555; cursor: pointer; white-space: nowrap; }
+.sp-machine { position: relative; display: grid; grid-template-columns: 1.25fr 48px 1fr 48px 1fr; align-items: center; min-height: 440px; margin-top: 40px; padding: 32px 24px; background: radial-gradient(ellipse at 50% 50%,#eaf2fb 0%,transparent 63%); border-top: 1px solid #e8e5e0; border-bottom: 1px solid #e8e5e0; }
+.sp-sources { display: flex; align-content: center; justify-content: center; gap: 12px 8px; flex-wrap: wrap; transform: rotate(-5deg); }
+.sp-source { font-size: 12px; color: #555; padding: 9px 12px; border: 1px solid #e8e5e0; background: #fff; border-radius: 8px; animation: sp-input 14s ease-in-out infinite; animation-delay: calc(var(--i) * -0.12s); }
+.sp-source:nth-child(3n) { transform: translateX(-12px); }
+.sp-noise { animation-name: sp-noise; }
+.sp-core { position: relative; z-index: 1; padding: 32px 12px; text-align: center; border: 1px solid #dce7f1; border-radius: 20px; background: #fff; box-shadow: 0 18px 48px rgba(26,26,46,.08); }
+.sp-core svg { width: 48px; height: 48px; color: #0a66c2; margin-bottom: 16px; }
+.sp-core strong { display: block; font-size: 28px; line-height: 1.05; letter-spacing: -.04em; font-weight: 600; }
+.sp-core > span { display: block; font-size: 11px; color: #555; margin-top: 20px; }
+.sp-stream { height: 100px; position: relative; }
+.sp-stream::before,.sp-stream::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #bdd1e4; }
+.sp-stream::after { transform: rotate(25deg); }
+.sp-stream i { position: absolute; top: 50%; width: 4px; height: 4px; background: #0a66c2; border-radius: 50%; animation: sp-travel 3s ease-in-out infinite; }
+.sp-stream i:nth-child(2) { top: 30%; animation-delay: 1s; }
+.sp-stream i:nth-child(3) { top: 70%; animation-delay: 2s; }
+.sp-stream-out::after { display: none; }
+.sp-clean-output { background: #fff; padding: 24px; border: 1px solid #dce7f1; border-radius: 18px; box-shadow: 0 10px 26px rgba(26,26,46,.055); animation: sp-produced 14s ease-in-out infinite; }
+.sp-mini-label { font-size: 10px; color: #0a66c2; font-weight: 600; letter-spacing: .06em; }
+.sp-clean-output h3 { font-size: 19px; letter-spacing: -.02em; margin-top: 8px; }
+.sp-clean-output > p { font-size: 12px; line-height: 1.5; color: #555; margin-top: 6px; }
+.sp-mini-person { display: flex; align-items: center; gap: 10px; border-top: 1px solid #e8e5e0; margin-top: 20px; padding-top: 18px; }
+.sp-mini-person > b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #f0f5fa; font-size: 12px; color: #254b70; flex-shrink: 0; }
+.sp-mini-person strong { font-size: 12px; display: block; }
+.sp-mini-person small { font-size: 11px; color: #555; }
+.sp-contact-reveal { font-size: 12px; line-height: 1.7; margin: 16px 0; animation: sp-details 14s ease-in-out infinite; }
+.sp-ready { font-size: 11px; color: #254b70; font-weight: 600; }
+.sp-sequence { display: flex; justify-content: space-between; gap: 24px; list-style: none; counter-reset: stages; padding: 24px 0 0; margin: 0; }
+.sp-sequence li { font-size: 12px; color: #555; }
+.sp-sequence li::before { counter-increment: stages; content: '0' counter(stages); color: #0a66c2; margin-right: 8px; }
+@keyframes sp-input { 0%,100% { opacity: .6; } 20%,55% { opacity: 1; translate: 6px 0; } }
+@keyframes sp-noise { 0%,100% { opacity: .65; } 35%,75% { opacity: .15; } }
+@keyframes sp-travel { 0% { left: 0; opacity: 0; } 30% { opacity: 1; } 100% { left: 95%; opacity: 0; } }
+@keyframes sp-produced { 0%,20%,100% { opacity: .45; transform: translateY(8px); } 45%,90% { opacity: 1; transform: translateY(0); } }
+@keyframes sp-details { 0%,40%,100% { opacity: .25; } 65%,90% { opacity: 1; } }
+.solution-page.is-paused *, .solution-page.is-paused *::before, .solution-page.is-paused *::after { animation-play-state: paused !important; }
