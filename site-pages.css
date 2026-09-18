@@ -111,3 +111,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .mobile-menu-footer .language-menu { grid-column:1/-1; justify-self:start; }
 .mobile-menu-footer .header-action { width:112px; min-width:112px; }
 .mobile-menu-footer > .demo-booking { min-width:0; }
+
+/* Header-aware fragment navigation and keyboard focus share one offset. */
+:where(main [id], main :focus, footer :focus) { scroll-margin-top: 8px; scroll-margin-bottom: 16px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
