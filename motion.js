@@ -24,7 +24,8 @@
     if (record.visible && !paused) {
       record.root.dataset.motionState = 'playing';
       record.animations.forEach(animation => animation.play());
-    } else if (record.loop || !record.started) {
+    } else if (paused || record.loop || !record.started) {
+      record.root.dataset.motionState = 'paused';
       record.animations.forEach(animation => animation.pause());
     }
     if (record.visible) record.started = true;
@@ -45,6 +46,7 @@
       tracks.forEach(track => {
         if (!track.element) return;
         const animation = track.element.animate(track.frames, {...track.options, easing: track.options?.easing || easing, fill: 'both'});
+        animation.finished.catch(() => {});
         animation.pause(); animation.currentTime = 0;
         record.animations.push(animation);
       });
@@ -72,9 +74,14 @@
       const start = Math.min(.9, (item.at || 0) / cycle);
       const end = Math.min(.98, start + (item.duration || 600) / cycle);
       let frames;
-      if (item.pulse) frames = [{opacity: .55, offset: 0},{opacity: .55, offset: start},{opacity: 1, offset: end},{opacity: 1, offset: 1}];
-      else if (item.filter) frames = [{opacity: 0, offset: 0},{opacity: 1, offset: .14},{opacity: 1, offset: .24},{opacity: .15, offset: .32},{opacity: .15, offset: 1}];
+      if (item.frames) frames = item.frames;
+      else if (item.pulse) frames = [{opacity: .55, offset: 0},{opacity: .55, offset: start},{opacity: 1, offset: end},{opacity: 1, offset: 1}];
+      else if (item.filter || item.move) frames = [{opacity: 0, translate: '0 8px', offset: 0},{opacity: 0, translate: '0 8px', offset: start},{opacity: 1, translate: '0 0', offset: end},{opacity: 1, translate: '0 0', offset: .2},{opacity: item.filter ? .15 : 1, translate: item.move || '0 0', offset: .32},{opacity: item.filter ? .15 : 1, translate: item.move || '0 0', offset: 1}];
       else frames = [{opacity: 0, translate: '0 8px', offset: 0},{opacity: 0, translate: '0 8px', offset: start},{opacity: 1, translate: '0 0', offset: end},{opacity: 1, translate: '0 0', offset: 1}];
+      if (options.loop && !item.pulse) {
+        frames[frames.length - 1].offset = .96;
+        frames.push({...frames[frames.length - 1], opacity: 0, offset: 1});
+      }
       return {element: item.element, frames, options: {duration: cycle, iterations: options.loop ? Infinity : 1}};
     });
     register(root, tracks, {loop: options.loop});

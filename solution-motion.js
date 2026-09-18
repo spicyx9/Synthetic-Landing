@@ -42,8 +42,9 @@ window.SwarmMotion?.ready(M => {
   if (engine) {
     const items = [];
     const nodes = [...engine.querySelectorAll('.eng-node')].filter(element => getComputedStyle(element).display !== 'none');
-    nodes.forEach((element,i)=>items.push({element,at:400+i*(1000/Math.max(1,nodes.length-1)),filter:element.classList.contains('eng-muted')}));
+    nodes.forEach((element,i)=>items.push({element,at:400+i*(1000/Math.max(1,nodes.length-1)),filter:element.classList.contains('eng-muted'),move:innerWidth<701?'0 8px':'18px 0'}));
     items.push({element:engine.querySelector('.eng-convergence'),at:1800});
+    engine.querySelectorAll('.eng-flow').forEach((element,i)=>items.push({element,frames:[{strokeDashoffset:440,opacity:0,offset:0},{strokeDashoffset:440,opacity:1,offset:.17+i*.025},{strokeDashoffset:0,opacity:1,offset:.44+i*.025},{strokeDashoffset:0,opacity:0,offset:.5},{strokeDashoffset:0,opacity:0,offset:1}]}));
     engine.querySelectorAll('.eng-core li').forEach((element,i)=>items.push({element,at:3000+i*600,pulse:true}));
     items.push({element:engine.querySelector('.eng-exit'),at:5000});
     items.push({element:engine.querySelector('.eng-result'),at:5400});
