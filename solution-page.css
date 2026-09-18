@@ -472,3 +472,8 @@
  .sp-rework .sp-final { padding-top:48px; padding-bottom:64px; }
  .sp-target-section::after { height:24px; }
 }
+@media(max-width:700px) {
+ .sp-full-verification > ol > li > div { font-size:12px; line-height:1.5; }
+ .sp-full-verification h3 { display:inline; margin-right:6px; font-size:13px; }
+ .sp-full-verification li p { display:inline; margin:0; }
+}
