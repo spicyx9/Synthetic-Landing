@@ -133,3 +133,15 @@
   .solution-page *, .solution-page *::before, .solution-page *::after { animation: none !important; transition: none !important; }
   .sp-motion { display: none; }
 }
+/* Version A: alternating editorial product story. */
+.sp-detailed .sp-hero { padding-top: 76px; padding-bottom: 64px; }
+.sp-detailed .sp-hero h1 { max-width: 1000px; }
+.sp-editorial { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; }
+.sp-editorial-copy h2 { margin: 20px 0 24px; font-size: clamp(30px,3.2vw,44px); }
+.sp-editorial-copy > p { color: #555; font-size: 17px; line-height: 1.75; }
+.sp-editorial-copy > p + p { margin-top: 16px; }
+.sp-editorial:nth-of-type(even) .sp-editorial-copy { order: 2; }
+.sp-editorial:nth-of-type(even) .sp-editorial-visual { order: 1; }
+.sp-editorial-visual { min-width: 0; }
+.sp-surface { background: #fff; border: 1px solid #e8e5e0; border-radius: 20px; box-shadow: 0 10px 26px rgba(26,26,46,.055); padding: 28px; }
+.sp-interface-caption { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 20px; font-size: 11px; color: #555; border-bottom: 1px solid #e8e5e0; }
