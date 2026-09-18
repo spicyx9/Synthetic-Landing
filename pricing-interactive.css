@@ -297,3 +297,29 @@
 .pricing-custom-copy p { color: #666; font-size: 15px; line-height: 1.6; }
 .pricing-custom-booking .demo-booking-popover { top: auto; bottom: calc(100% + 10px); }
 .pricing-custom-booking .pricing-config-btn { text-align: center; }
+
+/* Both states share one intrinsic desktop slot. Hidden copy still contributes
+   its dimensions, so translated/wrapped text reserves exactly the space needed. */
+@media (min-width: 601px) {
+  .pricing-config-state { display: grid; }
+  .pricing-config-state > .pricing-config-price { grid-area: 1 / 1; }
+  .pricing-config-state > .pricing-config-summary,
+  .pricing-config-state > .pricing-custom-copy { grid-area: 2 / 1; }
+  .pricing-config-state > .pricing-config-summary[hidden],
+  .pricing-config-state > .pricing-custom-copy[hidden] {
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 601px) {
+  .pricing-config-actions { display: grid; }
+  .pricing-config-actions > * { grid-area: 1 / 1; }
+  .pricing-config-actions > [hidden] {
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .pricing-config-actions .pricing-custom-booking > .pricing-config-btn { height: 100%; }
+}
