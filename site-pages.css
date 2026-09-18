@@ -96,3 +96,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .shared-chevron-trigger[aria-expanded="true"] .dropdown-chevron { transform:none; }
 
 .mobile-menu-body .about-menu > button.shared-chevron-trigger { justify-content:flex-start; gap:6px; }
+
+/* Matching header controls: the border is included in both fixed footprints. */
+.nav-actions { gap:10px; }
+.nav-actions .header-action, .mobile-menu-footer .header-action {
+ box-sizing:border-box; display:inline-flex !important; align-items:center; justify-content:center;
+ width:112px; min-width:112px; height:38px; padding:8px 16px; margin:0;
+ border:1px solid transparent; border-radius:8px; font-family:inherit;
+ font-size:14px; font-weight:500; line-height:20px; white-space:nowrap; flex-shrink:0;
+}
+.nav-actions .btn-login.header-action, .mobile-menu-footer .btn-login.header-action { border-color:#dfdbd6; }
+.nav-actions .btn-login.header-action:hover, .mobile-menu-footer .btn-login.header-action:hover { border-color:#d0ccc7; }
+.mobile-menu-footer { display:grid; grid-template-columns:repeat(2,112px); justify-content:center; padding:20px 16px; gap:10px; align-items:center; }
+.mobile-menu-footer .language-menu { grid-column:1/-1; justify-self:start; }
+.mobile-menu-footer .header-action { width:112px; min-width:112px; }
+.mobile-menu-footer > .demo-booking { min-width:0; }

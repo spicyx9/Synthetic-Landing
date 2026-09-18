@@ -22,7 +22,7 @@ LABELS = {
 def url(key, lang): return ROUTES[key][lang == 'fr']
 def booking(lang, prefix, label=None):
  return f'''<div class="demo-booking">
-  <button type="button" class="btn-get-started" data-book-demo data-disclosure-trigger aria-expanded="false" aria-controls="{prefix}-demo-options">{label or LABELS[lang]['demo']}</button>
+  <button type="button" class="btn-get-started{' header-action' if prefix == 'header' else ''}" data-book-demo data-disclosure-trigger aria-expanded="false" aria-controls="{prefix}-demo-options">{label or LABELS[lang]['demo']}</button>
   <div class="demo-booking-popover" id="{prefix}-demo-options" data-disclosure-panel hidden>
     <a class="demo-booking-person" href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer"><img class="demo-booking-avatar" src="/assets/team/axel-ceo.png" alt="" width="38" height="38"><span class="demo-booking-person-copy"><strong>Axel</strong><span>CEO</span></span><span aria-hidden="true">↗</span></a>
     <a class="demo-booking-person" href="https://calendar.app.google/AWQX2bxp8cnqtsaJ9" target="_blank" rel="noopener noreferrer"><img class="demo-booking-avatar" src="/assets/team/ilan-cto.jpg" alt="" width="38" height="38"><span class="demo-booking-person-copy"><strong>Ilan</strong><span>CTO</span></span><span aria-hidden="true">↗</span></a>
@@ -55,7 +55,7 @@ def header(lang,key):
           <a href="{url(key,'en' if lang=='fr' else 'fr')}" data-lang="{'en' if lang=='fr' else 'fr'}" lang="{'en' if lang=='fr' else 'fr'}">{'EN' if lang=='fr' else 'FR'}</a>
         </div>
       </div>
-      <a href="https://app.syntheticswarm.ai/ui/" class="btn-login" target="_blank" rel="noopener noreferrer">{'Connexion' if lang=='fr' else 'Log in'}</a>
+      <a href="https://app.syntheticswarm.ai/ui/" class="btn-login header-action" target="_blank" rel="noopener noreferrer">{'Connexion' if lang=='fr' else 'Log in'}</a>
       {booking(lang,'header','Démo' if lang=='fr' else 'Demo')}
     </div>
   </div>
@@ -87,7 +87,7 @@ def page(key,lang,title,description,body):
   <link rel="alternate" hreflang="fr" href="https://www.syntheticswarm.ai{url(key,'fr')}">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/site-pages.css?v=shared-chevron-1">
+  <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -111,7 +111,7 @@ def sync(headers=True,footers=True):
    s=p.read_text()
    if headers:s=re.sub(r'<header class="header">.*?</header>',lambda _:header(lang,key),s,flags=re.S)
    if footers:s=re.sub(r'<footer class="footer[^\"]*">.*?</footer>',lambda _:footer(lang),s,flags=re.S)
-   if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css?v=shared-chevron-1">\n</head>')
+   if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">\n</head>')
    p.write_text(s)
 def sync_conversion():
  # Dedicated pricing HTML is the source for homepage pricing and purchase FAQ.
