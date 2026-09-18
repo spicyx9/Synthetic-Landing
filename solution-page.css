@@ -361,3 +361,33 @@
 .sp-target-ready { position:absolute; right:0; top:-12px; display:grid; place-items:center; width:24px; height:24px; border-radius:50%; background:#f0f5fa; color:#254b70; font-size:13px; }
 .sp-verification-ready { margin-top:20px; color:#254b70; font-size:12px; font-weight:600; }
 .solution-page :where(a, button, input, select, summary):focus { scroll-margin-bottom:calc(88px + env(safe-area-inset-bottom, 0px)); }
+
+/* Compact setup and event feed. The large engine keeps its own dimensions. */
+.sp-rework .sp-editorial-visual > * { width:100%; margin-inline:auto; }
+.sp-rework .sp-surface { border-radius:14px; padding:20px; box-shadow:0 8px 24px rgba(0,0,0,.04); }
+.sp-rework .sp-interface-caption { padding-bottom:12px; gap:12px; font-size:10px; line-height:1.4; }
+.sp-rework .sp-targeting { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; max-width:520px; }
+.sp-targeting > .sp-interface-caption { grid-column:1 / -1; }
+.sp-rework .sp-targeting .sp-setting { display:grid; grid-template-columns:1fr; gap:6px; margin:0; align-content:start; }
+.sp-targeting .sp-setting label, .sp-targeting .sp-volume label { font-size:11px; line-height:1.4; }
+.sp-targeting .sp-setting select { min-height:38px; padding:8px 10px; font-size:12px; border-radius:8px; }
+.sp-targeting .sp-volume { margin:0; padding:0; border:0; align-self:start; }
+.sp-targeting .sp-volume output { font-size:11px; }
+.sp-targeting .sp-volume input { margin:11px 0 4px; height:18px; }
+.sp-targeting .sp-volume-ticks { font-size:10px; }
+.sp-targeting .sp-target-ready { top:auto; bottom:-8px; right:0; width:18px; height:18px; font-size:10px; }
+.sp-rework .sp-event-feed { max-width:500px; padding:0; }
+.sp-event-feed .sp-change summary { padding:12px 0; gap:12px; }
+.sp-event-feed .sp-change strong { font-size:14px; line-height:1.4; }
+.sp-event-feed .sp-change small { display:none; }
+.sp-event-feed .sp-change-plus { font-size:16px; }
+.sp-event-feed .sp-change > p { padding:0 20px 14px 0; font-size:13px; line-height:1.55; }
+.sp-event-feed .sp-catalogue-note { margin-top:14px !important; font-size:11px; }
+@media(max-width:700px) {
+ .sp-rework .sp-surface { padding:16px; }
+ .sp-rework .sp-targeting { grid-template-columns:1fr; gap:12px; }
+ .sp-rework .sp-targeting .sp-setting { grid-template-columns:70px minmax(0,1fr); align-items:center; gap:10px; }
+ .sp-targeting .sp-setting select { min-height:36px; padding:7px 8px; }
+ .sp-targeting .sp-volume { margin-top:2px; padding-top:12px; border-top:1px solid #e8e5e0; }
+ .sp-targeting .sp-target-ready { right:0; bottom:-4px; }
+}
