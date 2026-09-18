@@ -60,13 +60,15 @@
         const preview = host.hasAttribute('data-customer-preview');
         const lang = document.documentElement.lang === 'fr' ? 'fr' : 'en';
         const markup = render(data, lang, preview);
+        // Keep the static homepage placeholders until three verified stories exist.
+        if (preview && !markup) return;
         host.querySelector('[data-customer-grid]').innerHTML = markup;
-        if (preview) host.hidden = !markup;
+        if (preview) host.hidden = false;
         else {
           const empty = host.querySelector('[data-customer-empty]');
           empty.hidden = records(data, lang).length > 0;
         }
       });
-    }).catch(() => { /* Keep the static empty state and the homepage preview hidden. */ });
+    }).catch(() => { /* Keep the static empty state or homepage placeholders. */ });
   }
 })(typeof window !== 'undefined' ? window : this);
