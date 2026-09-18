@@ -33,6 +33,8 @@
   max-width: 780px;
 }
 .home .demo-wrapper .demo-hero__headline .hl { color: var(--hs-blue); }
+/* Editorial accent: one short hero phrase, with the existing size and color. */
+.hero-word-highlight { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-style: normal; font-synthesis: none; letter-spacing: -.025em; }
 /* A wide subtitle uses horizontal room; vertical spacing separates the message. */
 .home .demo-wrapper .demo-hero__subtitle { max-width: 960px; text-wrap: balance; }
 
