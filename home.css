@@ -365,3 +365,12 @@
 .home .solution-target ul { display: grid; gap: 10px; }
 .home .solution-target li { padding: 10px 12px; border-radius: 8px; background: #f3f1ed; color: #555; font-size: 13px; }
 .home .solution-target li::before { content: ''; display: inline-block; width: 6px; height: 6px; border: 1px solid #888; border-radius: 2px; margin-right: 10px; vertical-align: 1px; }
+/* A softly lit engine is the visual center, with three concise capabilities. */
+.home .solution-transform { position: relative; display: grid; justify-items: center; align-content: center; min-height: 380px; isolation: isolate; }
+.home .solution-transform::before { content: ''; position: absolute; inset: 40px -24px; z-index: -1; background: radial-gradient(ellipse,rgba(10,102,194,.11),rgba(240,245,250,.3) 50%,transparent 72%); }
+.home .solution-engine { position: relative; z-index: 1; width: 230px; padding: 28px 24px; border: 1px solid #cadbe9; border-radius: 22px; background: linear-gradient(145deg,#fff,#f0f5fa); box-shadow: 0 14px 36px rgba(37,75,112,.09),inset 0 1px 0 #fff; text-align: center; }
+.home .solution-engine-mark { display: grid; place-items: center; width: 48px; height: 48px; margin: 0 auto 16px; border-radius: 14px; color: #0a66c2; background: rgba(10,102,194,.07); }
+.home .solution-engine-mark svg { width: 32px; height: 32px; }
+.home .solution-engine h3 { font-size: 13px; color: #1a1a1a; letter-spacing: .055em; margin-bottom: 20px; }
+.home .solution-engine ul { display: flex; flex-direction: column; align-items: center; gap: 10px; color: #254b70; font-size: 15px; font-weight: 500; }
+.home .solution-engine li + li::before { content: ''; display: block; width: 1px; height: 10px; margin: 0 auto 10px; background: #cadbe9; }
