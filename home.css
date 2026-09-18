@@ -239,7 +239,24 @@
 .home .comparison-side--after h2 { color: #0a66c2; }
 .home .comparison-side--after li { color: #1a1a1a; font-weight: 600; }
 .home .comparison-arrow { color: #0a66c2; font-size: 32px; text-align: center; }
+/* The header is 60px. Reserve a small preview of the next section. */
 .home .home-focused-hero { min-height: auto; }
+.home .home-focused-hero .hero-decor { pointer-events: none; cursor: default; scale: 1; }
+.home .home-focused-hero .hero-decor--rocket { width: clamp(84px,8vw,116px); right: 5%; bottom: 12%; opacity: .8; }
+@media (min-width: 1001px) {
+  .home .home-focused-hero {
+    --hero-peek: 92px;
+    min-height: calc(100vh - 60px - var(--hero-peek));
+    min-height: calc(100svh - 60px - var(--hero-peek));
+    padding-top: clamp(24px,6svh,60px);
+    padding-bottom: clamp(32px,6svh,56px);
+  }
+  .home .home-focused-hero .hero-decor--sparkles-lg { width: clamp(100px,9vw,130px); left: 5%; top: 16%; }
+}
+@media (max-width: 1000px) {
+  .home .home-focused-hero .hero-decor--rocket { display: none; }
+  .home .home-focused-hero .hero-decor--sparkles-lg { width: 58px; left: 4%; top: 4%; }
+}
 @media (max-width: 700px) {
   .home .comparison-columns { grid-template-columns: 1fr; gap: 24px; padding: 24px 0; }
   .home .comparison-arrow { justify-self: start; transform: rotate(90deg); }
@@ -300,4 +317,10 @@
   .home .newsletter-band { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
   .home .newsletter-controls { flex-direction: column; }
   .home .newsletter-controls input { flex: auto; }
+}
+/* Short mobile screens keep both actions visible and hint at the next section. */
+@media (max-width: 700px) and (max-height: 740px) {
+  .home .home-focused-hero { padding-top: 40px; padding-bottom: 24px; }
+  .home .home-comparison { padding-top: 8px; }
+  .home .demo-wrapper .demo-hero { padding-top: 32px; padding-bottom: 24px; }
 }
