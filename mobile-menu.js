@@ -2,6 +2,8 @@
 (function () {
   const header = document.querySelector('.header-inner');
   if (!header) return;
+  const main = document.querySelector('main[id]');
+  if (main && !main.hasAttribute('tabindex')) main.tabIndex = -1;
   const isFr = document.documentElement.lang === 'fr';
   const toggle = document.createElement('button');
   toggle.type = 'button';
