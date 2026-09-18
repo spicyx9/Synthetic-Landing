@@ -21,14 +21,16 @@ window.SwarmMotion?.ready(M => {
     add('.comparison-side--before h2',0);
     add('.comparison-side--before li',120,110);
     add('.comparison-side--before .comparison-conclusion',500);
-    add('.comparison-convergence',620);
-    comparison.querySelectorAll('.comparison-convergence path').forEach((element,i) => {
+    add('.comparison-flow-lines',620);
+    comparison.querySelectorAll('.comparison-flow-lines path').forEach((element,i) => {
       const length = element.getTotalLength();
       items.push({element,frames:[{strokeDasharray:`${length}`,strokeDashoffset:length,offset:0},{strokeDasharray:`${length}`,strokeDashoffset:length,offset:.24+i*.02},{strokeDasharray:`${length}`,strokeDashoffset:0,offset:.55+i*.02},{strokeDasharray:`${length}`,strokeDashoffset:0,offset:1}]});
     });
-    add('.comparison-side--after h2',820);
-    add('.comparison-side--after li',980,120);
-    add('.comparison-side--after .comparison-conclusion',1600);
+    add('.comparison-core',760);
+    add('.comparison-sparkle',840);
+    add('.comparison-side--after h2',920);
+    add('.comparison-side--after li',1080,120);
+    add('.comparison-side--after .comparison-conclusion',1700);
     M.story(comparison,items,{duration:2600});
   }
   const system = document.querySelector('.solution-system');
