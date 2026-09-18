@@ -55,7 +55,7 @@
 .home .hero-eyebrow-separator { color: #fff; font-size: 12px; }
 .home .demo-wrapper .demo-hero__inner { max-width: 960px; }
 .home .demo-wrapper .demo-hero__headline { margin-left: auto; margin-right: auto; }
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .home .demo-wrapper .demo-hero__eyebrow { display: block; white-space: normal; text-align: center; border-radius: 20px; padding: 10px 12px; line-height: 1.9; }
   .home .hero-eyebrow-badge, .home .hero-eyebrow-date { display: inline; white-space: nowrap; }
   .home .hero-eyebrow-separator { margin: 0 5px; }
