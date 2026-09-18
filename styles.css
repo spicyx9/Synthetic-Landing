@@ -5,20 +5,23 @@
   box-sizing: border-box;
 }
 
+:root { --site-header-height: 61px; --site-header-offset: calc(var(--site-header-height) + env(safe-area-inset-top, 0px)); }
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
+  padding-top: var(--site-header-offset);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: #1a1a1a;
   background-color: #fcfbf8;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   position: relative;
 }
@@ -62,8 +65,11 @@ button {
 
 /* ===== HEADER / NAV ===== */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  padding-top: env(safe-area-inset-top, 0px);
   z-index: 100;
   background: rgba(252, 251, 248, 0.82);
   backdrop-filter: saturate(180%) blur(16px);
