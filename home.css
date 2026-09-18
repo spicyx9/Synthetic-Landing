@@ -359,3 +359,13 @@
   .home .comparison-arrow { width: 56px; height: 56px; }
   .home .comparison-arrow svg { width: 50px; height: 36px; }
 }
+
+/* The prospect is the destination, not another equally weighted process node. */
+.home .solution-output { padding: 22px; border: 1px solid #cadbe9; border-radius: 18px; background: #fff; box-shadow: 0 10px 26px rgba(26,26,46,.055); }
+.home .solution-output::before { content: ''; position: absolute; left: -6px; top: 11px; width: 8px; height: 8px; border-top: 1px solid #0a66c2; border-right: 1px solid #0a66c2; transform: rotate(45deg); }
+.home .solution-output h3 { color: #0a66c2; margin-bottom: 20px; }
+.home .solution-output h4 { color: #1a1a1a; font-size: 18px; line-height: 1.3; letter-spacing: -.025em; margin-bottom: 6px; }
+.home .solution-person { font-size: 14px; color: #555; line-height: 1.5; }
+.home .solution-contact { font-size: 13px; color: #555; line-height: 1.8; margin-top: 16px; }
+.home .solution-reason { margin-top: 20px; padding: 14px; background: #f0f5fa; color: #254b70; border-radius: 12px; font-size: 13px; line-height: 1.5; }
+.home .solution-reason strong { display: block; margin-bottom: 6px; font-weight: 600; }
