@@ -39,3 +39,13 @@
     output.textContent = `${volume.value} / ${document.documentElement.lang === 'fr' ? 'semaine' : 'week'}`;
   });
 })();
+(() => {
+  const floating = document.querySelector('[data-floating-demo]');
+  const trigger = floating?.querySelector('[data-disclosure-trigger]');
+  if (!trigger) return;
+  new MutationObserver(() => {
+    if (floating.getAttribute('aria-hidden') === 'true' && trigger.getAttribute('aria-expanded') === 'true') {
+      trigger.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', bubbles: true}));
+    }
+  }).observe(floating, {attributes: true, attributeFilter: ['aria-hidden']});
+})();
