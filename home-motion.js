@@ -48,31 +48,20 @@ window.SwarmMotion?.ready(M => {
   }
   const system = document.querySelector('.solution-system');
   if (system) {
-    const items = [];
-    const add = (selector,at,stagger=150) => system.querySelectorAll(selector).forEach((element,i) => items.push({element,at:at+i*stagger}));
-    add('.solution-target h3',0);
-    add('.solution-target li',160,160);
-    system.querySelectorAll('.solution-inputs li').forEach((element,i)=>items.push({element,at:850+i*180,move:innerWidth<701?'0 8px':`${i%2 ? -12:12}px ${i<2?8:-8}px`}));
-    add('.solution-connections',1600);
-    add('.solution-engine-mark, .solution-engine h3',1900);
-    add('.solution-engine li',2500,500);
-    add('.solution-output',4000);
-    add('.solution-output h4',4450);
-    add('.solution-person',4850);
-    add('.solution-contact li',5300,300);
-    add('.solution-reason',6150);
-    add('.solution-output > h3',7100);
-    M.story(system,items,{duration:10000,loop:true});
-    const toggle = document.querySelector('[data-home-motion]');
-    if (toggle && !M.reduced()) {
-      toggle.hidden = false;
-      toggle.addEventListener('click',()=> {
-        const paused = system.classList.toggle('is-paused');
-        toggle.setAttribute('aria-pressed',String(paused));
-        toggle.textContent = document.documentElement.lang === 'fr' ? (paused?'Reprendre l’animation':'Mettre en pause') : (paused?'Resume animation':'Pause animation');
-        M.refresh();
-      });
-    }
+    const steps = [];
+    const add = (selector, delay, stagger=35) => system.querySelectorAll(selector).forEach((element,i) => steps.push(M.step(element,delay+i*stagger,'fade',220)));
+    add('.solution-target',0);
+    add('.solution-target li',30,25);
+    add('.solution-inputs li',150,30);
+    add('.solution-connections',260);
+    add('.solution-engine',320);
+    add('.solution-engine li',380,40);
+    steps.push({element:system.querySelector('.solution-output-connector'),frames:[{opacity:0,clipPath:'inset(0 100% 100% 0)'},{opacity:1,clipPath:'inset(0 0 0 0)'}],options:{duration:180,delay:500}});
+    add('.solution-output',600);
+    add('.solution-output h3,.solution-output h4,.solution-person',650,30);
+    add('.solution-contact li',730,30);
+    add('.solution-moment,.solution-reason,.solution-qualified',800,60);
+    M.sequence(system,steps);
   }
   const preview = document.querySelector('.home-solution-preview');
   if (preview) M.sequence(preview,[...preview.querySelectorAll(':scope > .page-kicker, :scope > h2, :scope > p')].map((element,i)=>M.step(element,i*100)));
