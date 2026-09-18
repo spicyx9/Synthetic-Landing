@@ -393,3 +393,29 @@
 .home .solution-target { position: relative; }
 .home .solution-target::after { content: ''; position: absolute; top: 50%; left: calc(100% + 10px); width: 26px; height: 1px; background: #cadbe9; }
 .home .solution-output::before { content: ''; position: absolute; top: 50%; right: 100%; width: 36px; height: 2px; background: linear-gradient(90deg,#cadbe9,#0a66c2); }
+/* Static by design: the story remains complete with reduced motion enabled. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .home .solution-system { grid-template-columns: 180px minmax(0,1fr); gap: 28px 40px; max-width: 760px; margin: 0 auto; }
+  .home .solution-output { grid-column: 2; width: 100%; max-width: 360px; justify-self: center; }
+  .home .solution-output::before { top: -114px; left: 50%; width: 1px; height: 114px; background: linear-gradient(#cadbe9,#0a66c2); }
+}
+@media (max-width: 700px) {
+  .home .solution-system { grid-template-columns: minmax(0,1fr); gap: 32px; max-width: 440px; margin: 0 auto; padding-top: 8px; }
+  .home .solution-target { text-align: center; }
+  .home .solution-target ul { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+  .home .solution-target li { padding: 10px 6px; font-size: 12px; }
+  .home .solution-target li::before { display: none; }
+  .home .solution-target::after { top: 100%; left: 50%; width: 1px; height: 32px; }
+  .home .solution-transform { min-height: 0; gap: 48px; }
+  .home .solution-inputs { position: relative; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .home .solution-inputs li { position: static; max-width: 100%; font-size: 11px; }
+  .home .solution-connections { display: none; }
+  .home .solution-engine { width: min(100%,260px); }
+  .home .solution-engine::before { content: ''; position: absolute; bottom: 100%; left: 20%; width: 60%; height: 32px; border: 1px solid #cadbe9; border-top: 0; border-radius: 0 0 50% 50%; transform: translateY(-16px); }
+  .home .solution-engine::after { content: ''; position: absolute; bottom: 100%; left: 50%; width: 1px; height: 16px; background: #cadbe9; }
+  .home .solution-output { width: 100%; padding: 24px; }
+  .home .solution-output::before { top: -32px; left: 50%; width: 2px; height: 32px; }
+}
+.home .solution-transform::after { content: ''; position: absolute; top: 50%; left: -26px; right: -36px; height: 1px; background: linear-gradient(90deg,#cadbe9 45%,#0a66c2); z-index: -1; }
+@media (max-width: 1100px) { .home .solution-transform::after { right: 50%; background: #cadbe9; } }
+@media (max-width: 700px) { .home .solution-transform::after { display: none; } }
