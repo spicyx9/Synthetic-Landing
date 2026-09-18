@@ -12,7 +12,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .skip-link:focus { transform: translateY(0); }
 .site-footer { max-width: 1200px; padding: 48px 32px 24px; border-top: 1px solid #e8e5e0; }
 .site-footer-top { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 32px; }
-.site-footer-top p, .site-footer-copy { color: #777; font-size: 13px; }
+.site-footer-top p, .site-footer-copy { color: #666; font-size: 13px; }
 .site-footer-columns { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px; }
 .site-footer-columns h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 14px; }
 .site-footer-columns li { margin: 10px 0; font-size: 14px; color: #555; }
