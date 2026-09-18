@@ -1,0 +1,25 @@
+:root {
+  --motion-fast: 160ms;
+  --motion-medium: 560ms;
+  --motion-slow: 760ms;
+  --ease-out-premium: cubic-bezier(.16,1,.3,1);
+  --reveal-distance-small: 8px;
+  --reveal-distance-medium: 18px;
+  --stagger-1: 100ms;
+  --stagger-2: 200ms;
+  --stagger-3: 300ms;
+}
+/* Visibility is never dependent on JS. WAAPI owns only temporary effects. */
+.reveal, .reveal.visible { opacity: 1; transform: none; transition: none; }
+.motion-story-managed *, .motion-story-managed *::before, .motion-story-managed *::after { animation: none !important; }
+@media(hover:hover) {
+  .page-button, .btn-get-started, .btn-login { transition: background var(--motion-fast), translate var(--motion-fast) var(--ease-out-premium); }
+  .page-button:hover, .btn-get-started:hover { translate: 0 -1px; }
+}
+.sp-change-plus, .job-toggle { transition: transform var(--motion-fast) var(--ease-out-premium); }
+.floating-demo { scale: .98; transition: opacity var(--motion-fast), transform var(--motion-fast) var(--ease-out-premium), scale var(--motion-fast), visibility var(--motion-fast); }
+.floating-demo.is-visible { scale: 1; }
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .floating-demo { scale: 1; }
+}
