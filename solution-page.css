@@ -477,3 +477,89 @@
  .sp-full-verification h3 { display:inline; margin-right:6px; font-size:13px; }
  .sp-full-verification li p { display:inline; margin:0; }
 }
+
+/* Shared product section system. Existing sp-* hooks retain behavior and motion. */
+.sp-rework {
+ --product-width:520px;
+ --product-radius:14px;
+ --product-padding:24px;
+ --product-border:#e8e5e0;
+ --product-muted:#666;
+ --product-rule:1px solid var(--product-border);
+ --product-shadow:0 4px 16px rgba(26,26,26,.025);
+ --callout-padding:16px;
+}
+.sp-rework .section-shell {
+ max-width:1200px; margin-inline:auto;
+ grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+ gap:64px; align-items:center; padding-block:52px;
+}
+.sp-rework .section-copy { max-width:500px; }
+.sp-rework .section-copy .section-eyebrow {
+ display:block; margin:0 0 14px; color:#0a66c2;
+ font-size:11px; font-weight:650; letter-spacing:.1em; line-height:1.5;
+}
+.sp-rework .section-copy .section-title {
+ max-width:500px; margin:0 0 20px;
+ font-size:clamp(30px,2.65vw,38px); font-weight:650;
+ line-height:1.18; letter-spacing:-.035em;
+}
+.sp-rework .section-copy .section-description {
+ max-width:480px; margin:0; font-size:16px; line-height:1.65; color:var(--product-muted);
+}
+.sp-rework .section-visual { width:100%; min-width:0; max-width:var(--product-width); justify-self:center; }
+.sp-rework .section-visual .product-card {
+ width:100%; max-width:var(--product-width); margin-inline:auto;
+ padding:var(--product-padding); border:var(--product-rule);
+ border-radius:var(--product-radius); background:#fff; box-shadow:var(--product-shadow);
+}
+.sp-rework .product-card .product-card-header {
+ display:flex; align-items:center; justify-content:space-between;
+ gap:12px; margin:0 0 18px; padding:0 0 14px; border-bottom:var(--product-rule);
+ color:var(--product-muted); font-size:10px; font-weight:500; line-height:1.5;
+}
+.sp-rework .product-card-header .sp-ready { color:#254b70; font-size:10px; font-weight:600; }
+.sp-rework .product-card-header .sp-profile-brand { color:var(--product-muted); font-size:10px; }
+.sp-rework .product-card .product-card-footer {
+ margin:16px 0 0; padding-top:12px; border-top:var(--product-rule);
+ color:#254b70; font-size:11px; line-height:1.5;
+}
+.sp-rework .section-visual .info-callout {
+ margin:0; padding:var(--callout-padding); background:#f0f5fa;
+ border:0; border-radius:10px; box-shadow:none;
+}
+.sp-rework .section-visual .info-callout .page-kicker {
+ display:block; margin:0; font-size:10px; font-weight:650;
+ letter-spacing:.07em; line-height:1.5; color:#254b70;
+}
+.sp-rework .section-visual .info-callout p {
+ margin:8px 0 0; font-size:15px; font-weight:400;
+ line-height:1.55; letter-spacing:-.01em; color:#254b70;
+}
+.sp-rework .product-card .sp-profile-event { border-top:var(--product-rule); padding-top:16px; }
+.sp-rework .product-card .sp-profile-event > .page-kicker { font-size:10px; line-height:1.5; letter-spacing:.07em; color:#254b70; }
+.sp-rework .product-card .sp-identity { margin:0 0 16px; }
+.sp-rework .product-card > ol > li { border-color:var(--product-border); padding-block:10px; }
+.sp-rework .product-card > ol > li:last-child { border-bottom:0; }
+.sp-rework .product-card .sp-facts > span { border:var(--product-rule); box-shadow:none; background:#fcfbf8; }
+.sp-rework .product-card .sp-combination-controls { justify-content:flex-start; gap:4px; }
+.sp-rework .product-card .sp-combination-controls button { padding:7px 8px; font-size:12px; }
+.sp-rework .product-card .sp-change { border-color:var(--product-border); }
+@media(max-width:1100px) {
+ .sp-rework .section-shell { gap:40px; }
+}
+@media(max-width:900px) {
+ .sp-rework .section-shell { grid-template-columns:1fr; gap:28px; padding-block:40px; }
+ .sp-rework .section-shell .section-copy,
+ .sp-rework .section-shell .section-visual { width:100%; max-width:var(--product-width); justify-self:center; }
+}
+@media(max-width:700px) {
+ .sp-rework { --product-padding:18px; --callout-padding:14px; }
+ .sp-rework .section-shell { padding-block:32px; gap:24px; }
+ .sp-rework .section-copy .section-title { font-size:30px; margin-bottom:16px; }
+ .sp-rework .section-copy .section-description { font-size:15px; }
+ .sp-rework .section-visual .info-callout p { font-size:14px; }
+ .sp-rework .product-card .product-card-header { flex-wrap:wrap; gap:6px 12px; margin-bottom:16px; padding-bottom:12px; }
+ .sp-rework .product-card .sp-combination-controls { flex-wrap:nowrap; gap:0; }
+ .sp-rework .product-card .sp-combination-controls button { padding-inline:6px; font-size:11px; }
+}
