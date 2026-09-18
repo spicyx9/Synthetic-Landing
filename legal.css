@@ -1,4 +1,4 @@
-/* Shared, minimal reading layout for the terms of sale in both languages. */
+/* Shared, minimal reading layout for legal information in both languages. */
 .legal-page { max-width: 824px; }
 .legal-page h1 { font-size: clamp(30px,4vw,42px); line-height: 1.15; letter-spacing: -.035em; margin-bottom: 40px; }
 .legal-page section + section { margin-top: 28px; }
@@ -9,3 +9,5 @@
 
 .legal-page h1 { margin-bottom: 16px; }
 .legal-page .legal-updated { font-size: 14px; color: #777; margin-bottom: 36px; }
+
+.legal-page a.page-button { color: #fff; text-decoration: none; margin-top: 12px; }
