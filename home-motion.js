@@ -59,7 +59,7 @@ window.SwarmMotion?.ready(M => {
     add('.solution-output',600);
     add('.solution-output h3,.solution-output h4,.solution-person',650,30);
     add('.solution-contact li',730,30);
-    add('.solution-moment,.solution-reason,.solution-qualified',800,60);
+    add('.solution-reason',800);
     M.sequence(system,steps);
   }
   const preview = document.querySelector('.home-solution-preview');

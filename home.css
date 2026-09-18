@@ -367,16 +367,16 @@
   .home .home-actions { margin-top: 0; }
 }
 /* Product preview: the same compact UI language from setup to delivered lead. */
-.home .solution-system { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.88fr) minmax(0,1.05fr); align-items:center; gap:36px; padding:32px 0 20px; }
+.home .solution-system { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.88fr) minmax(0,1fr); align-items:center; gap:36px; padding:32px 0 20px; }
 .home .solution-system > * { min-width:0; }
 .home .solution-target, .home .solution-engine, .home .solution-output { position:relative; padding:22px; border:1px solid #dedfdc; border-radius:14px; background:#fff; box-shadow:0 4px 14px rgba(26,26,26,.035); }
 .home .solution-system h3 { margin:0 0 16px; padding-bottom:14px; border-bottom:1px solid #e8e5e0; font-size:10px; line-height:1.5; font-weight:650; letter-spacing:.08em; text-transform:uppercase; color:#254b70; }
 .home .solution-system ul { list-style:none; margin:0; padding:0; }
-.home .solution-target ul { display:grid; gap:10px; }
-.home .solution-target li { display:grid; grid-template-columns:68px minmax(0,1fr); align-items:center; gap:8px; font-size:11px; color:#777; }
-.home .solution-target strong { position:relative; display:block; min-width:0; padding:8px 18px 8px 9px; border:1px solid #e8e5e0; border-radius:5px; background:#fcfbf8; color:#333; font-size:11px; line-height:1.4; font-weight:500; }
-.home .solution-target strong::after { content:''; position:absolute; right:8px; top:calc(50% - 3px); width:4px; height:4px; border-right:1px solid #8b8b86; border-bottom:1px solid #8b8b86; rotate:45deg; }
-.home .solution-target li:last-child strong::after { display:none; }
+.home .solution-target, .home .solution-output { height:340px; display:flex; flex-direction:column; }
+.home .solution-target ul { flex:1; display:grid; grid-template-rows:repeat(6,1fr); }
+.home .solution-target li { display:grid; grid-template-columns:68px minmax(0,1fr); align-items:center; gap:12px; border-bottom:1px solid #f0eeea; color:#777; font-size:11px; }
+.home .solution-target li:last-child { border-bottom:0; }
+.home .solution-target strong { color:#333; font-size:13px; line-height:1.4; font-weight:500; }
 .home .solution-target::after { content:''; position:absolute; left:100%; top:50%; width:36px; height:1px; background:#cadbe9; }
 .home .solution-transform { position:relative; display:grid; align-items:center; min-height:360px; }
 .home .solution-connections { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
@@ -398,10 +398,8 @@
 .home .solution-system .solution-contact { display:grid; gap:8px; margin:16px 0; font-size:12px; color:#555; }
 .home .solution-contact li { display:flex; align-items:center; gap:8px; }
 .home .solution-contact svg { flex:0 0 14px; width:14px; height:14px; color:#64788b; }
-.home .solution-moment { border-top:1px solid #e8e5e0; padding-top:12px; margin:0 0 10px; font-size:11px; font-weight:500; color:#555; }
-.home .solution-reason { padding:12px; border-radius:7px; background:#f0f5fa; color:#254b70; font-size:12px; line-height:1.5; }
+.home .solution-reason { margin-top:auto; padding:12px; border-radius:7px; background:#f0f5fa; color:#254b70; font-size:12px; line-height:1.5; }
 .home .solution-reason strong { display:block; margin-bottom:4px; font-weight:600; }
-.home .solution-qualified { margin:12px 0 0; font-size:10px; color:#0a66c2; font-weight:600; }
 @media (min-width:901px) and (max-width:1100px) {
  .home .solution-system { gap:24px; }
  .home .solution-target, .home .solution-engine, .home .solution-output { padding:16px; }
@@ -413,5 +411,7 @@
  .home .solution-target::after { top:100%; left:50%; width:1px; height:32px; }
  .home .solution-transform { min-height:360px; }
  .home .solution-output-connector { top:100%; left:50%; width:2px; height:32px; transform-origin:top; }
- .home .solution-target strong { font-size:12px; }
+ .home .solution-target, .home .solution-output { height:auto; min-height:320px; }
+ .home .solution-target li { min-height:36px; }
+ .home .solution-target strong { font-size:13px; }
 }
