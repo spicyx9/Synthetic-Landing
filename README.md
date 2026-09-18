@@ -8,7 +8,7 @@ Static HTML, CSS and JavaScript. Vercel serves the repository root with clean UR
 - Shared header/footer markup lives in `scripts/site_layout.py`. Run `python3 scripts/site_layout.py` after changing it to synchronize every public page. It also copies pricing and the purchase FAQ from the dedicated pricing pages into the homepage, so the conversion sections stay consistent.
 - `mobile-menu.js` provides About/demo disclosures and the mobile menu; it does not replace page content.
 - `pricing.js` owns the five fixed prices and the sixth custom state. Default: index 2, 50 leads/week, 399 €/month. The custom state removes checkout pricing data and exposes calendar booking.
-- Run `node --test tests/site.test.cjs` for content, links, syntax, route configuration and pricing interaction checks. No dependencies are required.
+- Run `node --test tests/*.test.cjs` for content, links, syntax, route configuration and pricing interaction checks. No dependencies are required.
 - Browser regression: test 320, 390, 768, 1024 and 1440px widths, all six pricing stops, closed FAQ defaults, About/demo keyboard controls, mobile menu and footer. Native slider thumb centers and label centers share an inset of 12px.
 
 ## Routes
