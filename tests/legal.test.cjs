@@ -14,7 +14,7 @@ for(const pair of pairs) test(`legal translations and missing information: ${pai
  });
  const markers=html=>[...new Set(html.match(/\[\[A COMPLETER[^\]]*\]\]/g))].sort();
  assert.deepEqual(markers(pages[0]),markers(pages[1]));
- if(pair[0]==='confidentialite') {
+ if(['confidentialite','conditions'].includes(pair[0])) {
   pages.forEach(html=>{
    assert.equal(markers(html).length,0);
    const main=html.match(/<main[\s\S]*?<\/main>/)[0];
