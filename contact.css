@@ -3,3 +3,9 @@
 .contact-page .page-intro h1 { margin-bottom: 16px; }
 .contact-email { margin: 28px 0; font-size: clamp(18px,3vw,23px); letter-spacing: -.02em; }
 .contact-email a { color: #0a66c2; overflow-wrap: anywhere; }
+.contact-founders { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.contact-founder { display: flex; align-items: center; gap: 16px; padding: 20px; border: 1px solid #e8e5e0; border-radius: 18px; background: #fff; }
+.contact-founder img { border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.contact-founder h2 { font-size: 20px; margin-bottom: 6px; }
+.contact-founder h2 span { font-size: 13px; font-weight: 400; color: #666; margin-left: 6px; }
+.contact-founder a { font-size: 14px; color: #0a66c2; }
