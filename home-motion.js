@@ -19,19 +19,20 @@ window.SwarmMotion?.ready(M => {
     const items = [];
     const add = (selector,at,stagger=100) => comparison.querySelectorAll(selector).forEach((element,i) => items.push({element,at:at+i*stagger}));
     add('.comparison-side--before h2',0);
-    add('.comparison-side--before li',120,110);
-    add('.comparison-side--before .comparison-conclusion',500);
-    add('.comparison-flow-lines',620);
+    add('.comparison-side--before li',200,160);
+    add('.comparison-side--before .comparison-conclusion',800);
     comparison.querySelectorAll('.comparison-flow-lines path').forEach((element,i) => {
       const length = element.getTotalLength();
-      items.push({element,frames:[{strokeDasharray:`${length}`,strokeDashoffset:length,offset:0},{strokeDasharray:`${length}`,strokeDashoffset:length,offset:.24+i*.02},{strokeDasharray:`${length}`,strokeDashoffset:0,offset:.55+i*.02},{strokeDasharray:`${length}`,strokeDashoffset:0,offset:1}]});
+      const output = element.classList.contains('comparison-output-line');
+      const start = output ? .53 : .27+i*.025;
+      items.push({element,frames:[{strokeDasharray:`${length}`,strokeDashoffset:length,offset:0},{strokeDasharray:`${length}`,strokeDashoffset:length,offset:start},{strokeDasharray:`${length}`,strokeDashoffset:0,offset:start+.16},{strokeDasharray:`${length}`,strokeDashoffset:0,offset:1}]});
     });
-    add('.comparison-core',760);
-    add('.comparison-sparkle',840);
-    add('.comparison-side--after h2',920);
-    add('.comparison-side--after li',1080,120);
-    add('.comparison-side--after .comparison-conclusion',1700);
-    M.story(comparison,items,{duration:2600});
+    add('.comparison-core',1500);
+    items.push({element:comparison.querySelector('.comparison-sparkle'),frames:[{opacity:0,scale:'.98',offset:0},{opacity:0,scale:'.98',offset:.48},{opacity:.58,scale:'1.02',offset:.58},{opacity:.45,scale:'1',offset:.7},{opacity:.45,scale:'1',offset:1}]});
+    add('.comparison-side--after h2',2350);
+    add('.comparison-side--after li',2550,170);
+    add('.comparison-side--after .comparison-conclusion',3300);
+    M.story(comparison,items,{duration:4000});
   }
   const system = document.querySelector('.solution-system');
   if (system) {
