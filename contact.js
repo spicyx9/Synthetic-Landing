@@ -9,6 +9,20 @@
     send:'Send', sending:'Sending…', required:'This field is required.', email:'Enter a valid email address.', invalid:'Please check this field.',
     success:'Message sent. We’ll get back to you soon.', error:'Something went wrong. You can also email us at contact@syntheticswarm.ai.'
   };
+  const copyButton = document.querySelector('[data-copy-email]');
+  const copyStatus = document.querySelector('.copy-status');
+  let copyTimer;
+  copyButton?.addEventListener('click', async () => {
+    clearTimeout(copyTimer);
+    try {
+      await navigator.clipboard.writeText('contact@syntheticswarm.ai');
+      copyButton.textContent = fr ? 'Copié' : 'Copied';
+      copyStatus.textContent = fr ? 'Adresse email copiée.' : 'Email address copied.';
+    } catch {
+      copyStatus.textContent = fr ? 'Sélectionnez l’adresse pour la copier.' : 'Select the address to copy it.';
+    }
+    copyTimer = setTimeout(() => { copyButton.textContent = fr ? 'Copier' : 'Copy'; copyStatus.textContent = ''; }, 2500);
+  });
   const fields = [...form.querySelectorAll('.contact-field input,.contact-field textarea')];
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector('.contact-status');
