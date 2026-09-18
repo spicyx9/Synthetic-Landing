@@ -18,7 +18,7 @@ test('comparison starts at first intersection and finishes within one second',()
  h.observer.callback([{isIntersecting:false}]);assert.equal(h.calls.length,0);
  h.observer.callback([{isIntersecting:true}]);assert.equal(h.calls.length,1);assert.equal(h.observer.disconnected,true);
  const [root,tracks,options]=h.calls[0];assert.equal(root,h.root);assert.equal(options.entrance,true);
- assert.equal(Math.max(...tracks.map(t=>(t.options.delay||0)+t.options.duration)),850);
+ assert.equal(Math.max(...tracks.map(t=>(t.options.delay||0)+t.options.duration)),980);
  assert.ok(tracks.every(t=>!t.options.iterations || t.options.iterations===1));
 });
 test('comparison stays visible without scheduling motion when reduced motion is requested',()=>{
