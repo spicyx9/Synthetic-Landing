@@ -25,7 +25,7 @@ window.SwarmMotion?.ready(M => {
       steps.push(M.step(section.querySelector('.sp-combination-example:not([hidden]) .sp-qualification-bridge'),1050,'fade'));
       steps.push(M.step(section.querySelector('.sp-combination-example:not([hidden]) .sp-combined'),1350));
     } else if (section.querySelector('.sp-full-verification')) {
-      section.querySelectorAll('.sp-full-verification > ol > li').forEach((element,i)=> {
+      section.querySelectorAll('.sp-full-verification .solution-demo-body > ol > li').forEach((element,i)=> {
         steps.push(M.step(element,440+i*220));
         steps.push(M.step(element.querySelector('.sp-check-mark'),610+i*220,'surface'));
       });
