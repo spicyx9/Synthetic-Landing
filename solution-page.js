@@ -28,3 +28,18 @@
     }
   }).observe(floating, {attributes: true, attributeFilter: ['aria-hidden']});
 })();
+(() => {
+  const choices = [...document.querySelectorAll('[data-combination]')];
+  choices.forEach(choice => choice.addEventListener('click', () => {
+    choices.forEach(button => {
+      const selected = button === choice;
+      button.setAttribute('aria-pressed', String(selected));
+      document.getElementById(button.getAttribute('aria-controls')).hidden = !selected;
+    });
+  }));
+  const summary = document.querySelector('[data-target-summary]');
+  const fields = ['target-0', 'target-1', 'target-decision'].map(id => document.getElementById(id));
+  fields.forEach(field => field?.addEventListener('change', () => {
+    summary.textContent = fields.map(item => item.value).join(' · ');
+  }));
+})();

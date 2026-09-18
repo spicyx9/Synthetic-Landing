@@ -288,3 +288,14 @@
 @keyframes eng-step { 0%,100% { color:#1a1a1a; } 35%,50% { color:#0a66c2; } }
 @keyframes eng-resolve { 0%,30%,100% { transform: translateY(5px); } 65%,90% { transform: translateY(0); } }
 @keyframes eng-contact { 0%,40%,100% { opacity:.65; } 65%,90% { opacity:1; } }
+.sp-catalogue-note { margin-top: 24px !important; font-size: 12px; color: #555; }
+.sp-combination-controls { display: flex; gap: 6px; margin-bottom: 28px; border-bottom: 1px solid #dfdbd6; }
+.sp-combination-controls button { background: transparent; padding: 12px 10px; font: inherit; font-size: 12px; color: #555; border-bottom: 2px solid transparent; }
+.sp-combination-controls button[aria-pressed=true] { color: #0a66c2; border-color: #0a66c2; }
+.sp-rework .sp-facts { gap: 8px; }
+.sp-rework .sp-facts > span { padding: 16px 12px; font-size: 13px; }
+.sp-qualification-bridge { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px 0; }
+.sp-qualification-bridge > span { color: #0a66c2; }
+.sp-qualification-bridge strong { font-size: 14px; }
+.sp-qualification-bridge small { font-size: 11px; color: #555; }
+.sp-combination-example[hidden] { display: none; }
