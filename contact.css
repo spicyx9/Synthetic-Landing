@@ -1,5 +1,6 @@
-.contact-page { max-width: 900px; }
-.contact-page .page-intro { margin-bottom: 32px; }
+.contact-page { max-width: 1120px; display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 64px; align-items: start; }
+.contact-details { min-width: 0; }
+.contact-page .page-intro { margin-bottom: 28px; }
 .contact-page .page-intro h1 { margin-bottom: 16px; }
 .contact-email { margin: 28px 0; font-size: clamp(18px,3vw,23px); letter-spacing: -.02em; }
 .contact-email a { color: #0a66c2; overflow-wrap: anywhere; }
