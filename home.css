@@ -288,3 +288,24 @@
 /* Keep price and objections together without another conversion block. */
 .home .pricing-section { padding-top: 40px; padding-bottom: 40px; }
 .home .home-purchase-faq { margin: 0 auto; padding-top: 16px; padding-bottom: 40px; }
+
+/* A real form structure; disabled until subscription delivery is connected. */
+.home .home-newsletter { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; padding-top: 40px; padding-bottom: 64px; }
+.home .home-newsletter h2 { font-size: clamp(28px,3.5vw,38px); letter-spacing: -.03em; line-height: 1.2; margin-bottom: 16px; }
+.home .home-newsletter p { font-size: 15px; line-height: 1.65; color: #666; }
+.home .home-newsletter fieldset { border: 0; min-width: 0; }
+.home .home-newsletter label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+.home .newsletter-controls { display: flex; gap: 8px; }
+.home .newsletter-controls input { flex: 1; min-width: 0; width: 100%; height: 48px; padding: 12px 16px; border: 1px solid #dfdbd6; border-radius: 10px; background: #fff; color: #555; font: inherit; font-size: 14px; opacity: 1; }
+.home .newsletter-controls input::placeholder { color: #666; opacity: 1; }
+.home .newsletter-controls button { min-height: 48px; white-space: nowrap; }
+.home .newsletter-controls :disabled { cursor: not-allowed; }
+.home .newsletter-controls input:focus-visible { outline: 2px solid #0a66c2; outline-offset: 4px; }
+.home .home-newsletter .newsletter-microcopy { margin-top: 12px; font-size: 12px; }
+.home .home-newsletter .newsletter-status { margin-top: 4px; font-size: 12px; }
+@media (max-width:700px) {
+  .home .home-newsletter { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width:380px) {
+  .home .newsletter-controls { flex-direction: column; }
+}

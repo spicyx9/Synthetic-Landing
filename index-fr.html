@@ -159,7 +159,18 @@
         <summary>Est-ce que j'ai le droit d'appeler ces personnes ?</summary>
         <p>Oui. La prospection téléphonique entre professionnels reste autorisée quand l'offre proposée est en rapport avec l'activité de la personne appelée. Le consentement préalable instauré le 11 août 2026 vise le démarchage des consommateurs, pas le B2B.</p>
       </details>
-    </section><!-- SHARED FAQ END --><section id="newsletter" class="content-page home-final-cta" aria-labelledby="newsletter-title"><h2 id="newsletter-title">Newsletter</h2><p>Les inscriptions à notre newsletter ne sont pas encore ouvertes.</p></section></main>
+    </section><!-- SHARED FAQ END --><section id="newsletter" class="content-page home-newsletter" aria-labelledby="newsletter-title">
+  <div><h2 id="newsletter-title">Restez informé.</h2><p>Recevez nos nouveautés produit, analyses de marché et annonces importantes.</p></div>
+  <!-- Enable only after connecting a real subscription endpoint and error handling. -->
+  <form aria-labelledby="newsletter-title" aria-describedby="newsletter-status">
+    <fieldset disabled>
+      <label for="newsletter-email">Votre email professionnel</label>
+      <div class="newsletter-controls"><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Votre email professionnel" required aria-describedby="newsletter-status newsletter-microcopy"><button class="page-button" type="submit">S’inscrire</button></div>
+    </fieldset>
+    <p id="newsletter-microcopy" class="newsletter-microcopy">Pas de spam. Désinscription en un clic.</p>
+    <p id="newsletter-status" class="newsletter-status">Inscription temporairement indisponible.</p>
+  </form>
+</section></main>
   <footer class="footer site-footer">
   <div class="site-footer-top"><a href="/index-fr" class="logo">Synthetic Swarm</a><p>La bonne personne. Le bon signal. Le bon moment.</p></div>
   <nav class="site-footer-columns" aria-label="Pied de page">
