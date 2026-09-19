@@ -14,7 +14,7 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.doesNotMatch(html,/class="home-steps"|class="prospect-card"|class="content-page home-output"/);
  assert.equal((html.match(/class="home-testimonial"/g)||[]).length,3);
  const testimonials=html.match(/<section id="customer-proof"[\s\S]*?<\/section>/)[0];
- assert.equal((testimonials.match(/class="home-testimonial-disclosure"/g)||[]).length,1);
+ assert.doesNotMatch(testimonials,/home-testimonial-disclosure/);
  assert.doesNotMatch(testimonials,/home-testimonial-label|EXEMPLE ILLUSTRATIF|ILLUSTRATIVE EXAMPLE/);
  assert.doesNotMatch(testimonials,/data-customer-stories|data-customer-preview/);
  const hero=html.match(/<section class="hero[\s\S]*?<\/section>/)[0];
