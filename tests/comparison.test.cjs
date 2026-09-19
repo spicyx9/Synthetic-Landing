@@ -21,7 +21,7 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.equal((hero.match(/data-book-demo/g)||[]).length,1);
  assert.equal((hero.match(/class="page-button page-button--secondary"/g)||[]).length,1);
  assert.doesNotMatch(hero,/href="\/pricing/);
- assert.match(hero,file==='index-fr.html' ? /Synthetic Swarm déménage à San Francisco\./ : /Synthetic Swarm moves to San Francisco\./);
+ assert.match(hero,file==='index-fr.html' ? /Synthetic Swarm emménage à San Francisco\./ : /Synthetic Swarm moves to San Francisco\./);
  assert.equal((hero.match(/class="hero-eyebrow-separator"/g)||[]).length,2);
  assert.equal((html.match(/<details class="pricing-faq-item">/g)||[]).length,3);
  assert.doesNotMatch(html,/<details[^>]*\bopen\b/);
