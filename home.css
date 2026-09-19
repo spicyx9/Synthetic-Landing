@@ -493,20 +493,22 @@
 
 /* Mobile hero: one composition for narrow screens; desktop remains unchanged. */
 .hero-date-mobile { display:none; }
+.hero-eyebrow-meta { display:contents; }
+.home .hero-eyebrow-meta > * { position:relative; z-index:1; }
 @media (max-width:700px) {
  .home .demo-wrapper .home-focused-hero { min-height:0; padding:44px 20px 42px; }
  .home .demo-wrapper .demo-hero { padding:0; }
  .home .demo-wrapper .demo-hero__inner { max-width:380px; }
  .home .demo-wrapper .demo-hero__eyebrow { display:block; max-width:340px; margin:0 auto 28px; padding:0; border:0; border-radius:0; background:none; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; white-space:normal; text-align:center; line-height:1.65; }
  .home .demo-wrapper .demo-hero__eyebrow::before, .home .demo-wrapper .demo-hero__eyebrow::after { display:none; }
+ .home .hero-eyebrow-meta { display:flex; justify-content:center; align-items:center; gap:7px; }
  .home .hero-eyebrow-badge { display:inline-block; padding:3px 5px; border-radius:5px; font-size:9px; line-height:1.2; vertical-align:baseline; }
- .home .hero-eyebrow-date, .home .demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date { display:inline; font-size:11px; color:#62666b; letter-spacing:0; text-transform:none; }
+ .home .hero-eyebrow-date, .home .demo-wrapper .demo-hero__eyebrow .hero-eyebrow-date { display:inline; font-size:11px; font-weight:500; color:#62666b; letter-spacing:0; text-transform:none; text-shadow:none; }
  .home .hero-date-desktop { display:none; }
  .home .hero-date-mobile { display:inline; }
- .home .hero-eyebrow-separator { color:#7b7b7b; margin:0 2px; font-size:11px; }
- .home .hero-eyebrow-badge + .hero-eyebrow-separator { display:none; }
- .home .hero-eyebrow-news { display:inline; color:#62666b; font-size:11px; font-weight:400; line-height:1.65; }
- .home .hero-eyebrow-news::after { content:' →'; white-space:nowrap; }
+ .home .hero-eyebrow-separator { color:#7b7b7b; margin:0; font-size:11px; }
+ .home .hero-eyebrow-meta + .hero-eyebrow-separator { display:none; }
+ .home .hero-eyebrow-news { display:block; margin-top:8px; color:#62666b; font-size:12px; font-weight:400; line-height:1.45; }
  .home .demo-wrapper .demo-hero__headline { max-width:380px; margin:0 auto 24px; font-size:clamp(30px,10.5vw,46px); line-height:1.05; letter-spacing:-.055em; }
  .home .demo-hero__headline .hero-word-highlight { margin-top:3px; font-size:clamp(42px,13.3vw,56px); line-height:1.02; }
  .home .demo-wrapper .demo-hero__subtitle { max-width:360px; margin:0 auto 24px; font-size:16px; line-height:1.55; text-wrap:pretty; }
