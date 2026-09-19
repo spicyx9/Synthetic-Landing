@@ -50,7 +50,10 @@
   function update() {
     queued = false;
     story.classList.toggle('story-progress-enabled', desktop.matches);
-    if (!desktop.matches) return;
+    if (!desktop.matches) {
+      chapters.forEach(chapter => chapter.classList.toggle('is-progress-visible', false));
+      return;
+    }
     const headerRect = header?.getBoundingClientRect();
     const top = headerRect ? Math.round(headerRect.bottom) : 61;
     story.style.setProperty('--progress-top', `${top}px`);
@@ -59,17 +62,21 @@
     chapters.forEach((chapter, index) => {
       if (chapter.getBoundingClientRect().top <= top + index * rowHeight) activeStep = index;
     });
-    let visibleThroughStep = activeStep;
+    const started = chapters[0].getBoundingClientRect().top <= top;
+    let visibleThroughStep = started ? activeStep : -1;
     const stackBottom = top + (activeStep + 1) * rowHeight;
     const previewDistance = 140;
     const nextChapter = chapters[activeStep + 1];
-    if (nextChapter && nextChapter.getBoundingClientRect().top <= stackBottom + previewDistance) {
+    if (started && nextChapter && nextChapter.getBoundingClientRect().top <= stackBottom + previewDistance) {
       visibleThroughStep = activeStep + 1;
     }
     rows.forEach((row, index) => {
       row.hidden = index > visibleThroughStep;
-      row.classList.toggle('is-active', index === activeStep);
+      row.classList.toggle('is-active', started && index === activeStep);
       row.classList.toggle('is-upcoming', index > activeStep && index <= visibleThroughStep);
+    });
+    chapters.forEach((chapter, index) => {
+      chapter.classList.toggle('is-progress-visible', index <= visibleThroughStep);
     });
     const exit = Math.min(0, story.getBoundingClientRect().bottom - top - (visibleThroughStep + 1) * rowHeight);
     progress.style.setProperty('--progress-exit', `${exit}px`);
