@@ -44,22 +44,16 @@ window.SwarmMotion?.ready(M => {
     }
 
   }
-  const system = document.querySelector('.solution-system');
-  if (system) {
-    const steps = [];
-    const add = (selector, delay, stagger=35) => system.querySelectorAll(selector).forEach((element,i) => steps.push(M.step(element,delay+i*stagger,'fade',220)));
-    add('.solution-target',0);
-    add('.solution-target li',30,25);
-    add('.solution-inputs li',150,30);
-    add('.solution-connections',260);
-    add('.solution-engine',320);
-    add('.solution-engine li',380,40);
-    steps.push({element:system.querySelector('.solution-output-connector'),frames:[{opacity:0,clipPath:'inset(0 100% 100% 0)'},{opacity:1,clipPath:'inset(0 0 0 0)'}],options:{duration:180,delay:500}});
-    add('.solution-output',600);
-    add('.solution-output h3,.solution-output h4,.solution-person',650,30);
-    add('.solution-contact li',730,30);
-    add('.solution-reason',800);
-    M.sequence(system,steps);
+  const product = document.querySelector('.home-product-window');
+  if (product) {
+    // The target is always visible; the selected result resolves into one profile.
+    const q = selector => product.querySelector(selector);
+    M.sequence(product,[
+      M.step(q('.home-product-company'),0,'fade',250),
+      {element:q('.home-product-change'),frames:[{color:'#777970'},{color:'#0a66c2'}],options:{duration:200,delay:250}},
+      {element:q('.home-product-drawer'),frames:[{opacity:0,translate:'20px 0'},{opacity:1,translate:'0 0'}],options:{duration:300,delay:450}},
+      M.step(q('.home-product-reason'),750,'fade',250)
+    ]);
   }
   const preview = document.querySelector('.home-solution-preview');
   if (preview) M.sequence(preview,[...preview.querySelectorAll(':scope > .page-kicker, :scope > h2, :scope > p')].map((element,i)=>M.step(element,i*100)));
