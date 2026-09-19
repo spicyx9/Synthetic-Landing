@@ -11,7 +11,7 @@ test('progress accumulates, reverses, exits and disables on narrow screens indep
   const classes = () => ({toggle(name, value) { this[name] = value; }});
   const style = () => ({setProperty(name, value) { this[name] = value; }});
   const rows = Array.from({length:4}, () => ({hidden:false, classList:classes()}));
-  const chapters = [600,1300,2000,2700].map(top => ({getBoundingClientRect:() => ({top:top-scroll})}));
+  const chapters = [600,1300,2000,2700].map((top,index) => ({getBoundingClientRect:() => ({top:top-scroll}), querySelector:() => ({getBoundingClientRect:() => ({top:top+(index+1)*52+24-scroll})})}));
   const progress = {style:style(), querySelectorAll:() => rows};
   const story = {
     classList:classes(), style:style(),
@@ -22,15 +22,26 @@ test('progress accumulates, reverses, exits and disables on narrow screens indep
   const source = fs.readFileSync('solution-page.js','utf8').split('// One visual progression stack;')[1];
   vm.runInNewContext(source.slice(source.indexOf('(() =>')), {
     document:{querySelector:selector => selector === '.product-story' ? story : {getBoundingClientRect:() => ({height:61, bottom:headerBottom})}},
+    innerHeight:900,
     matchMedia:query => { assert.equal(query,'(min-width:701px) and (min-height:600px)'); return media; },
     getComputedStyle:() => ({getPropertyValue:() => '52px'}),
     addEventListener:(event,fn) => { events[event] = fn; },
     requestAnimationFrame:fn => fn(),
     ResizeObserver:class { observe() {} }
   });
-  for (const [y,count] of [[600,1],[1300,2],[2000,3],[2700,4],[1300,2],[600,1]]) {
+  for (const [y,count] of [[600,2],[1300,3],[2100,4],[2700,4],[1300,3],[400,1]]) {
     scroll=y; events.scroll(); assert.equal(rows.filter(row=>!row.hidden).length,count);
     assert.equal(rows.filter(row=>row.classList['is-active']).length,1);
+  }
+  // Upcoming titles precede the first content pixel without activating early.
+  for (const [index,y] of [[1,504],[2,1256],[3,2008]]) {
+    scroll=y; events.scroll();
+    assert.equal(rows[index].hidden,false);
+    assert.equal(rows[index].classList['is-upcoming'],true);
+    assert.equal(rows[index].classList['is-active'],false);
+    scroll=y-50; events.scroll();
+    assert.equal(rows[index].hidden,true);
+    assert.equal(rows[index].classList['is-upcoming'],false);
   }
   scroll=3400; events.scroll(); assert.equal(progress.style['--progress-exit'],'-169px');
   headerBottom=85.4; events.resize();
