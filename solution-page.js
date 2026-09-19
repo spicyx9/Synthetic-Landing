@@ -1,17 +1,4 @@
 (() => {
-  const page = document.querySelector('.solution-page');
-  const motion = page?.querySelector('[data-motion]');
-  motion?.addEventListener('click', () => {
-    const paused = page.classList.toggle('is-paused');
-    motion.setAttribute('aria-pressed', String(paused));
-    window.SwarmMotion?.refresh();
-    motion.textContent = document.documentElement.lang === 'fr'
-      ? (paused ? 'Reprendre l’animation' : 'Mettre en pause')
-      : (paused ? 'Resume animation' : 'Pause animation');
-  });
-})();
-
-(() => {
   const floating = document.querySelector('[data-floating-demo]');
   const trigger = floating?.querySelector('[data-disclosure-trigger]');
   if (!trigger) return;
@@ -21,16 +8,6 @@
       trigger.setAttribute('aria-expanded', 'false');
     }
   }).observe(floating, {attributes: true, attributeFilter: ['aria-hidden']});
-})();
-(() => {
-  const choices = [...document.querySelectorAll('[data-combination]')];
-  choices.forEach(choice => choice.addEventListener('click', () => {
-    choices.forEach(button => {
-      const selected = button === choice;
-      button.setAttribute('aria-pressed', String(selected));
-      document.getElementById(button.getAttribute('aria-controls')).hidden = !selected;
-    });
-  }));
 })();
 // This version follows the review brief: visible between hero and final CTA.
 (() => {
@@ -59,8 +36,3 @@
   document.addEventListener('focusin', schedule);
   update();
 })();
-
-// Keep one focused moment open, including browsers without details[name] support.
-document.querySelectorAll('.sp-change').forEach(item => item.addEventListener('toggle', () => {
-  if (item.open) document.querySelectorAll('.sp-change').forEach(other => { if (other !== item) other.open = false; });
-}));

@@ -2,24 +2,26 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const pages=['notre-solution.html','our-solution.html'];
-const order=['data-demo-hero','targeting-title','engine-title','changes-title','qualification-title','verification-title','delivery-title','data-demo-end'];
-for (const file of pages) test(`${file}: detailed Solution contract and approved headline`,()=>{
+const order=['data-demo-hero','id="targeting"','id="moments"','id="qualification"','id="prospect"','data-demo-end'];
+for (const file of pages) test(`${file}: continuous product story and approved headline`,()=>{
  const html=fs.readFileSync(file,'utf8');
  let last=-1;
  for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
- assert.equal((html.match(/class="eng-node /g)||[]).length,30);
- assert.equal((html.match(/class="sp-targeting|class="sp-surface sp-targeting/g)||[]).length,1);
- assert.equal((html.match(/data-combination="/g)||[]).length,3);
- assert.equal((html.match(/class="sp-check-mark"/g)||[]).length,4);
+ assert.equal((html.match(/class="story-chapter /g)||[]).length,4);
+ assert.doesNotMatch(html,/class="eng-node |class="sp-change|id="verification"|target-configurator/);
  const targeting=html.match(/<section[^>]+id="targeting"[\s\S]*?<\/section>/)[0];
  assert.doesNotMatch(targeting,/<select|<input|<textarea|<button/);
- assert.equal((targeting.match(/<dt>/g)||[]).length,6);
- assert.match(targeting,/class="target-description"/);
+ assert.equal((targeting.match(/class="story-base"/g)||[]).length,1);
+ assert.match(targeting,/class="story-target-text"/);
+ const changes=html.match(/<section[^>]+id="moments"[\s\S]*?<\/section>/)[0];
+ assert.equal((changes.match(/class="story-signal(?: is-selected)?"/g)||[]).length,6);
+ assert.equal((changes.match(/is-selected/g)||[]).length,1);
  for(const name of ['REDACTED','REDACTED','REDACTED','REDACTED','REDACTED','REDACTED']) assert.ok(html.includes(name));
  assert.doesNotMatch(html,/Six official sources|Six sources officielles|Cinq familles|Five kinds|Aucun fichier acheté|No purchased lists|REDACTED|confirmed need/i);
- const profile=html.match(/<article class="sp-profile(?: [^"]*)?">([\s\S]*?)<\/article>/)[1];
+ const profile=html.match(/<article class="story-surface story-profile">([\s\S]*?)<\/article>/)[1];
  assert.doesNotMatch(profile,/REDACTED|REDACTED|sp-profile-source|sp-company-details/);
- assert.ok(html.includes('sp-target-ready'));assert.ok(html.includes('sp-verification-ready'));
+ assert.equal((profile.match(/<li>/g)||[]).length,7);
+ assert.match(profile,/Camille Exemple/);
  assert.match(html,/class="floating-demo demo-booking"[^>]+inert/);
  assert.match(html,/aria-controls="floating-demo-options"/);
  const h1=html.match(/<h1>(.*?)<\/h1>/s)[1];
