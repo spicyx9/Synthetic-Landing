@@ -1,0 +1,131 @@
+fichier,taille_octets,url_prod,code_http_prod,content_type_prod,identique_a_la_prod,nb_pages_referencantes,pages_referencantes,autres_fichiers_referencants
+.claude/launch.json,260,https://www.syntheticswarm.ai/.claude/launch.json,200,application/json; charset=utf-8,identique,0,,
+.gitignore,172,https://www.syntheticswarm.ai/.gitignore,404,text/plain; charset=utf-8,,0,,
+BRAND.md,23148,https://www.syntheticswarm.ai/BRAND.md,200,text/markdown; charset=utf-8,identique,0,,docs/production-implementation-audit.md
+CONTACT_SETUP.md,1294,https://www.syntheticswarm.ai/CONTACT_SETUP.md,200,text/markdown; charset=utf-8,identique,0,,
+LEGAL_AUDIT.md,1950,https://www.syntheticswarm.ai/LEGAL_AUDIT.md,200,text/markdown; charset=utf-8,identique,0,,
+README.md,5718,https://www.syntheticswarm.ai/README.md,404,text/plain; charset=utf-8,,0,,docs/production-implementation-audit.md
+a-propos.html,12317,https://www.syntheticswarm.ai/a-propos,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/site.test.cjs
+about.css,5234,https://www.syntheticswarm.ai/about.css,200,text/css; charset=utf-8,identique,2,a-propos.html;about.html,
+about.html,11806,https://www.syntheticswarm.ai/about,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/site.test.cjs
+api/contact.js,2888,https://www.syntheticswarm.ai/api/contact.js,308,text/plain,,2,contact-fr.html;contact.html,tests/contact.test.cjs
+api/newsletter.js,2294,https://www.syntheticswarm.ai/api/newsletter.js,308,text/plain,,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,scripts/site_layout.py;tests/newsletter.test.cjs
+assets/40612c4abf743aacd69ec8b9755a5d2e.png,598335,https://www.syntheticswarm.ai/assets/40612c4abf743aacd69ec8b9755a5d2e.png,200,image/png,identique,0,,
+assets/Louis-adam.jpeg,45633,https://www.syntheticswarm.ai/assets/Louis-adam.jpeg,200,image/jpeg,identique,0,,
+assets/customers/README.md,284,https://www.syntheticswarm.ai/assets/customers/README.md,200,text/markdown; charset=utf-8,identique,0,,
+assets/customers/illustrative-claire.jpg,21645,https://www.syntheticswarm.ai/assets/customers/illustrative-claire.jpg,200,image/jpeg,identique,2,index-fr.html;index.html,
+assets/customers/illustrative-sonia.jpg,21257,https://www.syntheticswarm.ai/assets/customers/illustrative-sonia.jpg,200,image/jpeg,identique,2,index-fr.html;index.html,
+assets/customers/illustrative-thomas.jpg,19417,https://www.syntheticswarm.ai/assets/customers/illustrative-thomas.jpg,200,image/jpeg,identique,2,index-fr.html;index.html,
+assets/data/README.md,1614,https://www.syntheticswarm.ai/assets/data/README.md,200,text/markdown; charset=utf-8,identique,0,,README.md
+assets/data/customers.json,419,https://www.syntheticswarm.ai/assets/data/customers.json,200,application/json; charset=utf-8,identique,0,,BRAND.md;README.md;customers.js;tests/customers.test.cjs
+assets/decor-1.png,177883,https://www.syntheticswarm.ai/assets/decor-1.png,200,image/png,identique,0,,
+assets/decor-2.png,143894,https://www.syntheticswarm.ai/assets/decor-2.png,200,image/png,identique,2,index-fr.html;index.html,BRAND.md
+assets/decor-3.png,255682,https://www.syntheticswarm.ai/assets/decor-3.png,200,image/png,identique,2,index-fr.html;index.html,
+assets/decor-5.png,591781,https://www.syntheticswarm.ai/assets/decor-5.png,200,image/png,identique,0,,
+assets/decor-6.png,600811,https://www.syntheticswarm.ai/assets/decor-6.png,200,image/png,identique,0,,
+assets/decor-7.png,550733,https://www.syntheticswarm.ai/assets/decor-7.png,200,image/png,identique,0,,
+assets/dory-pic.png,270382,https://www.syntheticswarm.ai/assets/dory-pic.png,200,image/png,identique,0,,
+assets/emlyon-logo.png,24916,https://www.syntheticswarm.ai/assets/emlyon-logo.png,200,image/png,identique,2,a-propos.html;about.html,
+assets/favicon.png,604,https://www.syntheticswarm.ai/assets/favicon.png,200,image/png,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,scripts/site_layout.py
+assets/femme-letter-2.png,450942,https://www.syntheticswarm.ai/assets/femme-letter-2.png,200,image/png,identique,0,,
+assets/femme-pouce-rouge.png,488296,https://www.syntheticswarm.ai/assets/femme-pouce-rouge.png,200,image/png,identique,0,,
+assets/follower-growth.png,820692,https://www.syntheticswarm.ai/assets/follower-growth.png,200,image/png,identique,0,,
+assets/gift-emoji.png,60818,https://www.syntheticswarm.ai/assets/gift-emoji.png,200,image/png,identique,0,,
+assets/homme-couper.png,276878,https://www.syntheticswarm.ai/assets/homme-couper.png,200,image/png,identique,0,,
+assets/ieseg-logo.svg,7586,https://www.syntheticswarm.ai/assets/ieseg-logo.svg,200,image/svg+xml,identique,2,a-propos.html;about.html,
+assets/itec-logo.png,2544,https://www.syntheticswarm.ai/assets/itec-logo.png,200,image/png,identique,0,,
+assets/licorne-explosion.png,536103,https://www.syntheticswarm.ai/assets/licorne-explosion.png,200,image/png,identique,0,,
+assets/licorne-letter-2.png,515711,https://www.syntheticswarm.ai/assets/licorne-letter-2.png,200,image/png,identique,0,,
+assets/logo-2x.png,3460,https://www.syntheticswarm.ai/assets/logo-2x.png,200,image/png,identique,0,,
+assets/logo-black-2x.png,2334,https://www.syntheticswarm.ai/assets/logo-black-2x.png,200,image/png,identique,0,,
+assets/logo-black-narrow.png,124746,https://www.syntheticswarm.ai/assets/logo-black-narrow.png,200,image/png,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,BRAND.md;scripts/site_layout.py
+assets/logo-black.png,1023,https://www.syntheticswarm.ai/assets/logo-black.png,200,image/png,identique,2,index-fr.html;index.html,
+assets/logo-white-2x.png,3460,https://www.syntheticswarm.ai/assets/logo-white-2x.png,200,image/png,identique,0,,
+assets/logo-white.png,1233,https://www.syntheticswarm.ai/assets/logo-white.png,200,image/png,identique,0,,
+assets/logo.png,1233,https://www.syntheticswarm.ai/assets/logo.png,200,image/png,identique,0,,
+assets/louis-content.png,1465727,https://www.syntheticswarm.ai/assets/louis-content.png,200,image/png,identique,0,,
+assets/lutecienne-logo.png,25735,https://www.syntheticswarm.ai/assets/lutecienne-logo.png,200,image/png,identique,0,,
+assets/memoji-reflecting.png,139410,https://www.syntheticswarm.ai/assets/memoji-reflecting.png,200,image/png,identique,0,,
+assets/memoji-wishing.png,86171,https://www.syntheticswarm.ai/assets/memoji-wishing.png,200,image/png,identique,0,,
+assets/proof-post-2.png,1183371,https://www.syntheticswarm.ai/assets/proof-post-2.png,200,image/png,identique,0,,
+assets/proof-post-3.png,1253391,https://www.syntheticswarm.ai/assets/proof-post-3.png,200,image/png,identique,0,,
+assets/school-logo-sources.md,294,https://www.syntheticswarm.ai/assets/school-logo-sources.md,200,text/markdown; charset=utf-8,identique,0,,
+assets/team/axel-ceo.png,1721963,https://www.syntheticswarm.ai/assets/team/axel-ceo.png,200,image/png,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,README.md;scripts/site_layout.py;tests/site.test.cjs
+assets/team/ilan-cto.jpg,110587,https://www.syntheticswarm.ai/assets/team/ilan-cto.jpg,200,image/jpeg,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,README.md;scripts/site_layout.py;tests/site.test.cjs
+assets/trust/abeille-assurances.svg,7738,https://www.syntheticswarm.ai/assets/trust/abeille-assurances.svg,200,image/svg+xml,identique,2,index-fr.html;index.html,
+assets/trust/allianz.png,31069,https://www.syntheticswarm.ai/assets/trust/allianz.png,200,image/png,identique,2,index-fr.html;index.html,
+assets/trust/axa.webp,20218,https://www.syntheticswarm.ai/assets/trust/axa.webp,200,image/webp,identique,2,index-fr.html;index.html,
+assets/trust/france-assurance.png,18988,https://www.syntheticswarm.ai/assets/trust/france-assurance.png,200,image/png,identique,2,index-fr.html;index.html,
+assets/trust/generali.jpg,145294,https://www.syntheticswarm.ai/assets/trust/generali.jpg,200,image/jpeg,identique,2,index-fr.html;index.html,
+assets/trust/swiss-life.svg,32520,https://www.syntheticswarm.ai/assets/trust/swiss-life.svg,200,image/svg+xml,identique,2,index-fr.html;index.html,
+careers.css,3730,https://www.syntheticswarm.ai/careers.css,200,text/css; charset=utf-8,identique,2,careers.html;recrutement.html,
+careers.html,13629,https://www.syntheticswarm.ai/careers,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+careers.js,359,https://www.syntheticswarm.ai/careers.js,200,application/javascript; charset=utf-8,identique,2,careers.html;recrutement.html,
+clients.html,8354,https://www.syntheticswarm.ai/clients,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+conditions.html,13567,https://www.syntheticswarm.ai/conditions,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/source-copy.test.cjs
+confidentialite.html,8907,https://www.syntheticswarm.ai/confidentialite,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/source-copy.test.cjs
+contact-fr.html,11095,https://www.syntheticswarm.ai/contact-fr,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+contact.css,3529,https://www.syntheticswarm.ai/contact.css,200,text/css; charset=utf-8,identique,2,contact-fr.html;contact.html,
+contact.html,10898,https://www.syntheticswarm.ai/contact,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+contact.js,3336,https://www.syntheticswarm.ai/contact.js,200,application/javascript; charset=utf-8,identique,2,contact-fr.html;contact.html,tests/contact.test.cjs
+customers.css,2986,https://www.syntheticswarm.ai/customers.css,200,text/css; charset=utf-8,identique,4,clients.html;customers.html;index-fr.html;index.html,BRAND.md
+customers.html,8093,https://www.syntheticswarm.ai/customers,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+customers.js,5210,https://www.syntheticswarm.ai/customers.js,200,application/javascript; charset=utf-8,identique,4,clients.html;customers.html;index-fr.html;index.html,BRAND.md;README.md;assets/data/README.md;tests/customers.test.cjs
+demo.css,9288,https://www.syntheticswarm.ai/demo.css,200,text/css; charset=utf-8,identique,4,index-fr.html;index.html;notre-solution.html;our-solution.html,BRAND.md;docs/production-implementation-audit.md;home.css
+demo.js,988,https://www.syntheticswarm.ai/demo.js,200,application/javascript; charset=utf-8,identique,2,index-fr.html;index.html,
+docs/header-audit.md,3751,https://www.syntheticswarm.ai/docs/header-audit.md,200,text/markdown; charset=utf-8,identique,0,,
+docs/motion-qa.md,4829,https://www.syntheticswarm.ai/docs/motion-qa.md,200,text/markdown; charset=utf-8,identique,0,,docs/production-implementation-audit.md
+docs/production-implementation-audit.md,7946,https://www.syntheticswarm.ai/docs/production-implementation-audit.md,200,text/markdown; charset=utf-8,identique,0,,docs/motion-qa.md
+editorial-motion.js,1246,https://www.syntheticswarm.ai/editorial-motion.js,200,application/javascript; charset=utf-8,identique,4,a-propos.html;about.html;careers.html;recrutement.html,README.md;docs/motion-qa.md
+faq-fr.html,15036,https://www.syntheticswarm.ai/faq-fr,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+faq.html,14597,https://www.syntheticswarm.ai/faq,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+floating-demo.css,2637,https://www.syntheticswarm.ai/floating-demo.css,200,text/css; charset=utf-8,identique,4,index-fr.html;index.html;notre-solution.html;our-solution.html,docs/production-implementation-audit.md
+floating-demo.js,1013,https://www.syntheticswarm.ai/floating-demo.js,200,application/javascript; charset=utf-8,identique,2,index-fr.html;index.html,
+home-motion.js,3769,https://www.syntheticswarm.ai/home-motion.js,200,application/javascript; charset=utf-8,identique,2,index-fr.html;index.html,README.md;docs/motion-qa.md;tests/comparison-motion.test.cjs
+home.css,34379,https://www.syntheticswarm.ai/home.css,200,text/css; charset=utf-8,identique,2,index-fr.html;index.html,BRAND.md
+index-fr.html,35604,https://www.syntheticswarm.ai/index-fr,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;scripts/site_layout.py;tests/comparison.test.cjs;tests/legal.test.cjs;tests/site.test.cjs
+index.html,34369,https://www.syntheticswarm.ai/,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;scripts/site_layout.py;tests/comparison.test.cjs;tests/legal.test.cjs;tests/site.test.cjs
+leadgen.css,6005,https://www.syntheticswarm.ai/leadgen.css,200,text/css; charset=utf-8,identique,0,,BRAND.md
+legal-notice.html,7526,https://www.syntheticswarm.ai/legal-notice,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/source-copy.test.cjs
+legal.css,803,https://www.syntheticswarm.ai/legal.css,200,text/css; charset=utf-8,identique,6,conditions.html;legal-notice.html;mentions-legales.html;opposition.html;opt-out.html;terms.html,
+media.html,8213,https://www.syntheticswarm.ai/media,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+medias.html,8451,https://www.syntheticswarm.ai/medias,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+mentions-legales.html,7705,https://www.syntheticswarm.ai/mentions-legales,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/source-copy.test.cjs
+mobile-menu.js,7138,https://www.syntheticswarm.ai/mobile-menu.js,200,application/javascript; charset=utf-8,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,README.md;docs/motion-qa.md;docs/production-implementation-audit.md;scripts/site_layout.py;tests/solution-audit.test.cjs
+motion.css,1816,https://www.syntheticswarm.ai/motion.css,200,text/css; charset=utf-8,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,README.md;docs/motion-qa.md;scripts/site_layout.py;tests/solution-audit.test.cjs
+motion.js,6516,https://www.syntheticswarm.ai/motion.js,200,application/javascript; charset=utf-8,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,README.md;docs/motion-qa.md;docs/production-implementation-audit.md;scripts/site_layout.py;tests/comparison-motion.test.cjs;tests/motion.test.cjs;tests/solution-audit.test.cjs
+newsletter.js,1890,https://www.syntheticswarm.ai/newsletter.js,200,application/javascript; charset=utf-8,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,README.md;scripts/site_layout.py;tests/newsletter.test.cjs
+notre-solution.html,18682,https://www.syntheticswarm.ai/notre-solution,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/solution-audit.test.cjs
+opposition.html,8044,https://www.syntheticswarm.ai/opposition,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/legal.test.cjs;tests/source-copy.test.cjs
+opt-out.html,7818,https://www.syntheticswarm.ai/opt-out,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/legal.test.cjs;tests/source-copy.test.cjs
+our-solution.html,18123,https://www.syntheticswarm.ai/our-solution,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/solution-audit.test.cjs
+page-motion.js,3292,https://www.syntheticswarm.ai/page-motion.js,200,application/javascript; charset=utf-8,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,README.md;docs/motion-qa.md;scripts/site_layout.py;tests/solution-audit.test.cjs
+pricing-interactive.css,8999,https://www.syntheticswarm.ai/pricing-interactive.css,200,text/css; charset=utf-8,identique,4,index-fr.html;index.html;pricing.html;tarifs.html,BRAND.md
+pricing.html,11899,https://www.syntheticswarm.ai/pricing,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;scripts/site_layout.py;tests/site.test.cjs
+pricing.js,2847,https://www.syntheticswarm.ai/pricing.js,200,application/javascript; charset=utf-8,identique,4,index-fr.html;index.html;pricing.html;tarifs.html,README.md;tests/site.test.cjs
+privacy.css,606,https://www.syntheticswarm.ai/privacy.css,200,text/css; charset=utf-8,identique,2,confidentialite.html;privacy.html,
+privacy.html,8478,https://www.syntheticswarm.ai/privacy,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/source-copy.test.cjs
+recrutement.html,14243,https://www.syntheticswarm.ai/recrutement,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+robots.txt,91,https://www.syntheticswarm.ai/robots.txt,200,text/plain; charset=utf-8,identique,0,,
+scripts/site_layout.py,13134,https://www.syntheticswarm.ai/scripts/site_layout.py,200,application/octet-stream,identique,0,,README.md;docs/production-implementation-audit.md
+site-pages.css,15864,https://www.syntheticswarm.ai/site-pages.css,200,text/css; charset=utf-8,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,BRAND.md;scripts/site_layout.py
+sitemap.xml,9500,https://www.syntheticswarm.ai/sitemap.xml,200,application/xml,identique,0,,robots.txt
+solution-motion.js,1509,https://www.syntheticswarm.ai/solution-motion.js,200,application/javascript; charset=utf-8,identique,2,notre-solution.html;our-solution.html,README.md;docs/motion-qa.md;docs/production-implementation-audit.md
+solution-page.css,19418,https://www.syntheticswarm.ai/solution-page.css,200,text/css; charset=utf-8,identique,2,notre-solution.html;our-solution.html,docs/production-implementation-audit.md
+solution-page.js,4609,https://www.syntheticswarm.ai/solution-page.js,200,application/javascript; charset=utf-8,identique,2,notre-solution.html;our-solution.html,docs/motion-qa.md;docs/production-implementation-audit.md;tests/solution-progress.test.cjs
+styles.css,92495,https://www.syntheticswarm.ai/styles.css,200,text/css; charset=utf-8,identique,26,a-propos.html;about.html;careers.html;clients.html;conditions.html;confidentialite.html;contact-fr.html;contact.html;customers.html;faq-fr.html;faq.html;index-fr.html;index.html;legal-notice.html;media.html;medias.html;mentions-legales.html;notre-solution.html;opposition.html;opt-out.html;our-solution.html;pricing.html;privacy.html;recrutement.html;tarifs.html;terms.html,BRAND.md;docs/motion-qa.md;home.css;scripts/site_layout.py
+tarifs.html,12230,https://www.syntheticswarm.ai/tarifs,200,text/html; charset=utf-8,identique,0,,scripts/site_layout.py;tests/site.test.cjs
+terms.html,12604,https://www.syntheticswarm.ai/terms,200,text/html; charset=utf-8,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md;tests/source-copy.test.cjs
+tests/comparison-motion.test.cjs,3709,https://www.syntheticswarm.ai/tests/comparison-motion.test.cjs,200,application/node,identique,0,,
+tests/comparison.test.cjs,3354,https://www.syntheticswarm.ai/tests/comparison.test.cjs,200,application/node,identique,0,,
+tests/contact.test.cjs,2193,https://www.syntheticswarm.ai/tests/contact.test.cjs,200,application/node,identique,0,,
+tests/customers.test.cjs,3482,https://www.syntheticswarm.ai/tests/customers.test.cjs,200,application/node,identique,0,,
+tests/language.test.cjs,1966,https://www.syntheticswarm.ai/tests/language.test.cjs,200,application/node,identique,0,,
+tests/legal.test.cjs,4013,https://www.syntheticswarm.ai/tests/legal.test.cjs,200,application/node,identique,0,,
+tests/motion.test.cjs,5439,https://www.syntheticswarm.ai/tests/motion.test.cjs,200,application/node,identique,0,,docs/motion-qa.md;docs/production-implementation-audit.md
+tests/newsletter.test.cjs,4934,https://www.syntheticswarm.ai/tests/newsletter.test.cjs,200,application/node,identique,0,,
+tests/site.test.cjs,7592,https://www.syntheticswarm.ai/tests/site.test.cjs,200,application/node,identique,0,,
+tests/solution-audit.test.cjs,3750,https://www.syntheticswarm.ai/tests/solution-audit.test.cjs,200,application/node,identique,0,,docs/production-implementation-audit.md
+tests/solution-progress.test.cjs,3826,https://www.syntheticswarm.ai/tests/solution-progress.test.cjs,200,application/node,identique,0,,
+tests/source-copy.test.cjs,1313,https://www.syntheticswarm.ai/tests/source-copy.test.cjs,200,application/node,identique,0,,README.md
+vercel.json,974,https://www.syntheticswarm.ai/vercel.json,404,text/plain; charset=utf-8,,0,,README.md;tests/language.test.cjs;tests/site.test.cjs
