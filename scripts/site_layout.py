@@ -164,6 +164,8 @@ def sync_conversion():
   body=re.search(r'<section class="pricing-section"[^>]*>(.*?)</section>',pricing,re.S)[1]
   faq=re.search(r'<div class="pricing-objections reveal">(.*?)</div>',body,re.S)
   pricing_body=body[:faq.start()].strip().replace('<h1 ', '<h2 ').replace('</h1>', '</h2>')
+  # The starter recommendation is dedicated-page only; preserve the homepage badge.
+  pricing_body=pricing_body.replace('class="pricing-config-badge" data-plan-index="1" hidden', 'class="pricing-config-badge"').replace('Idéal pour démarrer' if lang=='fr' else 'Best to start', 'Forfait préféré' if lang=='fr' else 'Preferred plan')
   pricing_section='<section id="pricing" class="pricing-section">'+pricing_body+'</section>'
   faq_section='<section id="faq" class="pricing-objections home-purchase-faq">'+faq[1].replace('<h3>', '<h2>').replace('</h3>', '</h2>')+'</section>'
   html=re.sub(r'<!-- SHARED PRICING START -->.*?<!-- SHARED PRICING END -->',lambda _: '<!-- SHARED PRICING START -->'+pricing_section+'<!-- SHARED PRICING END -->',html,flags=re.S)
