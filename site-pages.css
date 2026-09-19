@@ -178,7 +178,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
  .brand-close-newsletter h2 { margin-bottom:12px; }
  .brand-close-newsletter > p { max-width:340px; margin:0 auto 20px; }
  .brand-close-fields input { text-align:left; }
- .brand-close-newsletter { margin-top:32px; }
+ .brand-close-newsletter { margin-top:48px; padding-top:32px; border-top:1px solid #e8e5e0; }
  .brand-close-navigation { grid-template-columns:1fr; gap:36px; padding:40px 0; }
  .brand-close .site-footer-columns { grid-template-columns:1fr; gap:26px; }
  .brand-close .site-footer-columns h2 { margin-bottom:12px; }
