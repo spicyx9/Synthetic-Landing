@@ -29,17 +29,22 @@ test('progress accumulates, reverses, exits and disables on narrow screens indep
     requestAnimationFrame:fn => fn(),
     ResizeObserver:class { observe() {} }
   });
-  for (const [y,count] of [[600,2],[1300,3],[2100,4],[2700,4],[1300,3],[400,1]]) {
+  for (const [y,count] of [[600,1],[1300,2],[2100,3],[2700,4],[1300,2],[400,1]]) {
     scroll=y; events.scroll(); assert.equal(rows.filter(row=>!row.hidden).length,count);
     assert.equal(rows.filter(row=>row.classList['is-active']).length,1);
   }
-  // Upcoming titles precede the first content pixel without activating early.
-  for (const [index,y] of [[1,504],[2,1256],[3,2008]]) {
+  // Preview only within 140px of the active stack bottom, in both directions.
+  for (const [index,y] of [[1,1047],[2,1695],[3,2343]]) {
     scroll=y; events.scroll();
     assert.equal(rows[index].hidden,false);
     assert.equal(rows[index].classList['is-upcoming'],true);
     assert.equal(rows[index].classList['is-active'],false);
-    scroll=y-50; events.scroll();
+    scroll=y+139; events.scroll();
+    assert.equal(rows[index].classList['is-upcoming'],true);
+    scroll=y+140; events.scroll();
+    assert.equal(rows[index].classList['is-active'],true);
+    assert.equal(rows[index].classList['is-upcoming'],false);
+    scroll=y-1; events.scroll();
     assert.equal(rows[index].hidden,true);
     assert.equal(rows[index].classList['is-upcoming'],false);
   }
