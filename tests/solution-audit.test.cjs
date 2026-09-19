@@ -21,7 +21,11 @@ for (const file of pages) test(`${file}: continuous product story and approved h
  const changes=html.match(/<section[^>]+id="moments"[\s\S]*?<\/section>/)[0];
  assert.equal((changes.match(/class="story-signal(?: is-selected)?"/g)||[]).length,6);
  assert.equal((changes.match(/is-selected/g)||[]).length,1);
- for(const name of ['REDACTED','REDACTED','REDACTED','REDACTED','REDACTED','REDACTED']) assert.ok(html.includes(name));
+ assert.equal((changes.match(/<time datetime=/g)||[]).length,6);
+ assert.equal((changes.match(/class="story-row-category"/g)||[]).length,6);
+ assert.doesNotMatch(changes,/95|Mandataires|Insurance agents|story-sources/);
+ assert.match(changes,/Atelier R\./);
+ assert.match(changes,/Île-de-France · 2–20/);
  assert.doesNotMatch(html,/Six official sources|Six sources officielles|Cinq familles|Five kinds|Aucun fichier acheté|No purchased lists|REDACTED|confirmed need/i);
  const profile=html.match(/<article class="story-surface story-profile">([\s\S]*?)<\/article>/)[1];
  assert.doesNotMatch(profile,/REDACTED|REDACTED|sp-profile-source|sp-company-details/);

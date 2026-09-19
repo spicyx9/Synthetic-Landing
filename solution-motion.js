@@ -12,8 +12,7 @@ window.SwarmMotion?.ready(M => {
     const tracks = [M.step(section.querySelector('.story-subtitle'),0,'fade',280)];
     const add = (selector,at,stagger=45,effect='fade') => section.querySelectorAll(selector).forEach((el,i)=>tracks.push(M.step(el,at+i*stagger,effect,320)));
     if (section.id === 'moments') {
-      add('.story-monitor',40); add('.story-signal',140,65,'left');
-      tracks.push({element:section.querySelector('.is-selected'),frames:[{backgroundColor:'transparent'},{backgroundColor:'#f0f5fa'}],options:{delay:560,duration:300}});
+      add('.story-monitor',0); add('.story-signal',80,40);
     } else if (section.id === 'qualification') {
       add('.story-facts li',100,80,'left'); add('.story-convergence',300); add('.story-meaning',460);
     } else {
