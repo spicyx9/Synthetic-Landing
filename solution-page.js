@@ -76,7 +76,8 @@
       row.classList.toggle('is-upcoming', index > activeStep && index <= visibleThroughStep);
     });
     chapters.forEach((chapter, index) => {
-      chapter.classList.toggle('is-progress-visible', index <= visibleThroughStep);
+      // Upcoming rows preview the next chapter; only active titles hand off.
+      chapter.classList.toggle('is-progress-visible', started && index <= activeStep);
     });
     const exit = Math.min(0, story.getBoundingClientRect().bottom - top - (visibleThroughStep + 1) * rowHeight);
     progress.style.setProperty('--progress-exit', `${exit}px`);
