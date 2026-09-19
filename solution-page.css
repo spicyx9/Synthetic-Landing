@@ -16,7 +16,7 @@
 
 /* One case, four centered product chapters. */
 .product-story { max-width:1280px; margin-inline:auto; padding:0 32px; }
-.story-chapter { position:relative; padding:48px 48px 64px; scroll-margin-top:88px; }
+.story-chapter { position:relative; top:auto; padding:48px 48px 64px; scroll-margin-top:88px; }
 .story-heading { display:flex; gap:22px; align-items:baseline; max-width:960px; margin:0 auto 36px; }
 .story-number { flex:none; font-size:11px; letter-spacing:.09em; color:#81817d; }
 .story-heading h2 { font-size:clamp(28px,2.7vw,38px); line-height:1.16; letter-spacing:-.035em; font-weight:600; }
@@ -91,9 +91,10 @@
 .story-thread--blue { background:linear-gradient(#93b7d9,transparent); }
 @media(min-width:1101px) and (min-height:700px) and (prefers-reduced-motion:no-preference) {
  .story-stack > .story-chapter { position:sticky; top:88px; min-height:78svh; border-top:1px solid #e8e5e0; }
- .story-detection { z-index:1; }
- .story-stack > .story-interpretation { top:104px; z-index:2; }
- .story-stack > .story-delivery { top:120px; z-index:3; }
+ .story-stack > .story-target { top:88px; z-index:1; }
+ .story-stack > .story-detection { top:104px; z-index:2; }
+ .story-stack > .story-interpretation { top:120px; z-index:3; }
+ .story-stack > .story-delivery { top:136px; z-index:4; }
  /* Expanding source information must remain reachable in short viewports. */
  .story-stack > .story-chapter:has(details[open]) { position:relative; top:auto; }
 }

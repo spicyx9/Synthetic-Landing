@@ -8,6 +8,9 @@ for (const file of pages) test(`${file}: continuous product story and approved h
  let last=-1;
  for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
  assert.equal((html.match(/class="story-chapter /g)||[]).length,4);
+ assert.equal((html.match(/class="story-stack"/g)||[]).length,1);
+ assert.match(html,/<div class="story-stack">\s*<section class="story-chapter story-target"/);
+ assert.ok(html.indexOf('class="story-stack"') < html.indexOf('id="targeting"'));
  assert.doesNotMatch(html,/class="eng-node |class="sp-change|id="verification"|target-configurator/);
  const targeting=html.match(/<section[^>]+id="targeting"[\s\S]*?<\/section>/)[0];
  assert.doesNotMatch(targeting,/<select|<input|<textarea|<button/);
