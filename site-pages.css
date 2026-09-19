@@ -193,3 +193,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 /* The mobile login is a text action; Demo remains the primary control. */
 .mobile-menu-footer .btn-login.header-action,
 .mobile-menu-footer .btn-login.header-action:hover { border-color:transparent; background:transparent; box-shadow:none; }
+
+/* Prevent iOS focus zoom while preserving pinch zoom and desktop typography. */
+@media(max-width:700px) { .brand-close-fields input { font-size:16px; line-height:1.4; } }
