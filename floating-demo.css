@@ -34,7 +34,7 @@
   .floating-demo-button:hover .floating-demo-arrow { background: #3a3a3a; }
 }
 @media (max-width: 479px) {
-  .floating-demo { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+  .floating-demo { bottom: calc(8px + env(safe-area-inset-bottom, 0px)); }
   .floating-demo-button { height: 44px; }
   .floating-demo-avatars img { width: 32px; height: 32px; }
   .floating-demo-copy strong { font-size: 13px; }
