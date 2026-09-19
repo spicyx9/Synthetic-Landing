@@ -285,8 +285,8 @@
   }
 
   /* Dedicated pricing pages reserve the badge even when it is hidden. */
-  .pricing-config-badge-slot { display:flex; align-items:flex-start; height:52px; }
-  .pricing-config-badge-slot .pricing-config-badge { margin:0; }
+  body:not(.home) .pricing-config-badge-slot { display:flex; align-items:flex-start; height:52px; }
+  body:not(.home) .pricing-config-badge-slot .pricing-config-badge { margin:0; }
 
   .pricing-config-amount { font-size: 44px; }
   .pricing-volume-row { align-items: flex-end; }
@@ -332,9 +332,9 @@
 
 /* Mobile uses the same intrinsic slots, scoped away from homepage pricing. */
 @media (max-width:600px) {
-  .pricing-config-price:has(.pricing-config-price-reserve) { display:grid; }
-  .pricing-config-price-value { display:flex; align-items:baseline; gap:6px; grid-area:1 / 1; }
-  .pricing-config-price-reserve { display:block; visibility:hidden; grid-area:1 / 1; font-size:44px; line-height:1; font-weight:800; letter-spacing:-.045em; }
+  body:not(.home) .pricing-config-price:has(.pricing-config-price-reserve) { display:grid; }
+  body:not(.home) .pricing-config-price-value { display:flex; align-items:baseline; gap:6px; grid-area:1 / 1; }
+  body:not(.home) .pricing-config-price-reserve { display:block; visibility:hidden; grid-area:1 / 1; font-size:44px; line-height:1; font-weight:800; letter-spacing:-.045em; }
   body:not(.home) .pricing-config-state,
   body:not(.home) .pricing-config-actions { display:grid; }
   body:not(.home) .pricing-config-state > .pricing-config-price,
