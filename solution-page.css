@@ -64,6 +64,7 @@
 .story-composer-body { padding:20px 28px; }
 .story-field-label { font-size:11px; color:#757570; }
 .story-target-text { max-width:700px; padding:10px 0 22px; font-size:24px; font-weight:500; line-height:1.45; letter-spacing:-.025em; color:#252925; }
+.story-target-understood { margin:0 0 12px; font-size:9px; letter-spacing:.06em; color:#0a66c2; }
 .story-target-criteria { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:18px 28px; margin:0; }
 .story-target-criteria > div { grid-column:span 2; min-width:0; }
 .story-target-criteria > div:nth-child(-n+2) { grid-column:span 3; }
