@@ -63,7 +63,7 @@ for (const lang of ['en', 'fr']) {
   test(`${lang}: pricing defaults and every interactive tier`, () => {
     const html = read(lang === 'fr' ? 'tarifs.html' : 'pricing.html');
     assert.equal([...html.matchAll(/class="pricing-config-card"/g)].length, 1);
-    assert.match(html, /data-pricing-range[^>]*value="2"/);
+    assert.match(html, /data-pricing-range[^>]*value="1"/);
     assert.doesNotMatch(html, /quand disponibles|when available|location\.replace/);
     assert.equal([...html.matchAll(/<details class="pricing-faq-item">/g)].length, 3);
     assert.doesNotMatch(html, /<details[^>]*\bopen\b/);
@@ -76,17 +76,22 @@ for (const lang of ['en', 'fr']) {
     customBooking.querySelector = selector => selector === '[data-disclosure-panel]' ? panel : trigger;
     const selectors = { '[data-pricing-range]': range, '[data-pricing-amount]': amount, '[data-pricing-checkout]': checkout, '.pricing-config-badge': badge, '[data-pricing-period]': period, '[data-pricing-summary]': summary, '[data-pricing-custom-copy]': customCopy, '[data-pricing-custom-booking]': customBooking };
     vm.runInNewContext(read('pricing.js'), { Intl, document: { documentElement: { lang }, querySelector: s => selectors[s], querySelectorAll: s => s === '[data-pricing-leads]' ? counters : steps } });
-    assert.equal(range.value, '2');
-    assert.equal(amount.textContent, '399 €');
+    assert.equal(range.value, '1');
+    assert.equal(amount.textContent, '169 €');
     assert.equal(badge.hidden, false);
+    assert.equal(checkout.attrs.href, `https://app.syntheticswarm.ai/ui/?leads=20&lang=${lang}`);
+    assert.match(html, /data-pricing-amount>169 €/);
+    assert.match(html, /data-pricing-step class="is-active">20/);
+    assert.doesNotMatch(html, /data-plan-index="1" hidden/);
     const leads = [10, 20, 50, 100, 200], prices = [89, 169, 399, 789, 1499];
     for (const i of [0, 1, 2, 3, 4, 2]) {
       steps[i].events.click();
       assert.equal(range.value, String(i));
       assert.equal(amount.textContent.replace(/[^0-9]/g, ''), String(prices[i]));
       assert.ok(counters.every(c => c.textContent === String(leads[i])));
-      assert.equal(badge.hidden, i !== 2);
+      assert.equal(badge.hidden, i !== 1);
       assert.equal(checkout.dataset.price, String(prices[i]));
+      assert.equal(checkout.attrs.href, `https://app.syntheticswarm.ai/ui/?leads=${leads[i]}&lang=${lang}`);
       assert.equal(steps[i].attrs['aria-pressed'], 'true');
     }
     steps[5].events.click();

@@ -25,7 +25,7 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.equal((hero.match(/class="hero-eyebrow-separator"/g)||[]).length,2);
  assert.equal((html.match(/<details class="pricing-faq-item">/g)||[]).length,3);
  assert.doesNotMatch(html,/<details[^>]*\bopen\b/);
- assert.match(html,/data-pricing-range[^>]*value="2"/);
+ assert.match(html,/data-pricing-range[^>]*value="1"/);
  const newsletter=html.match(/<section id="newsletter"[\s\S]*?<\/section>/)[0];
  assert.doesNotMatch(newsletter,/<fieldset[^>]*disabled/);
  assert.match(newsletter,/data-newsletter-form/);
