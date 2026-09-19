@@ -63,20 +63,12 @@
       if (chapter.getBoundingClientRect().top <= top + index * rowHeight) activeStep = index;
     });
     const started = chapters[0].getBoundingClientRect().top <= top;
-    let visibleThroughStep = started ? activeStep : -1;
-    const stackBottom = top + (activeStep + 1) * rowHeight;
-    const previewDistance = 140;
-    const nextChapter = chapters[activeStep + 1];
-    if (started && nextChapter && nextChapter.getBoundingClientRect().top <= stackBottom + previewDistance) {
-      visibleThroughStep = activeStep + 1;
-    }
+    const visibleThroughStep = started ? activeStep : -1;
     rows.forEach((row, index) => {
       row.hidden = index > visibleThroughStep;
       row.classList.toggle('is-active', started && index === activeStep);
-      row.classList.toggle('is-upcoming', index > activeStep && index <= visibleThroughStep);
     });
     chapters.forEach((chapter, index) => {
-      // Upcoming rows preview the next chapter; only active titles hand off.
       chapter.classList.toggle('is-progress-visible', started && index <= activeStep);
     });
     const exit = Math.min(0, story.getBoundingClientRect().bottom - top - (visibleThroughStep + 1) * rowHeight);
