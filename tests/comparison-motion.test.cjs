@@ -26,12 +26,12 @@ test('comparison stays visible without scheduling motion when reduced motion is 
 });
 
 test('product preview reveals the complete deliverable promptly without a story loop',()=>{
- const system={querySelector:()=>({}),querySelectorAll:selector=>Array.from({length:selector==='.solution-target li'?6:selector==='.solution-inputs li'?4:selector.includes(',')?3:selector.endsWith('li')?3:1},()=>({}))};
+ const system={querySelector:()=>({})};
  const sequences=[];
  const M={ready:cb=>cb(M),step:(element,delay,effect,duration)=>({element,options:{delay,duration}}),sequence:(...args)=>sequences.push(args),story:()=>assert.fail('Product preview must not hide and replay the deliverable in a loop')};
- vm.runInNewContext(source,{window:{SwarmMotion:M},document:{querySelector:s=>s==='.solution-system'?system:null}});
+ vm.runInNewContext(source,{window:{SwarmMotion:M},document:{querySelector:s=>s==='.home-product-window'?system:null}});
  assert.equal(sequences.length,1);
  const tracks=sequences[0][1];
- assert.ok(Math.max(...tracks.map(t=>t.options.delay+t.options.duration))<=1200);
+ assert.ok(Math.max(...tracks.map(t=>t.options.delay+t.options.duration))<=1100);
  assert.equal(tracks[0].options.delay,0);
 });
