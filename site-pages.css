@@ -123,3 +123,45 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .mobile-menu-close:focus-visible, .mobile-menu-toggle:focus-visible { outline: 2px solid #0a66c2; outline-offset: 2px; }
 
 @media (max-width: 980px) { .header-inner { padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); } }
+
+/* Shared closing statement, secondary newsletter, and compact navigation. */
+.footer.site-footer.brand-close { position:relative; isolation:isolate; max-width:none; margin:0; padding:0 32px; border:0; background:transparent; text-align:left; }
+.brand-close::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(ellipse at 12% 22%,rgba(218,235,249,.46),transparent 58%),radial-gradient(ellipse at 76% 85%,rgba(242,222,219,.4),transparent 62%); mask-image:linear-gradient(transparent,#000 22%); }
+.brand-close-inner { max-width:1136px; margin-inline:auto; }
+.brand-close-statement { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); align-items:center; gap:80px; padding:112px 0; }
+.brand-close-copy h2 { margin:0; font-size:clamp(42px,4.3vw,62px); font-weight:800; line-height:1.08; letter-spacing:-.045em; color:#1a1a1a; }
+.brand-close-copy h2 span { display:block; font-family:"DM Serif Display",Georgia,serif; font-weight:400; font-style:italic; font-synthesis:none; color:#0a66c2; letter-spacing:-.025em; }
+.brand-close-copy > p { max-width:470px; margin:24px 0 0; font-size:15px; line-height:1.7; color:#666; }
+.brand-close-cta { display:flex; align-items:center; flex-wrap:wrap; gap:18px 24px; }
+.brand-close .brand-close-cta .btn-get-started { padding:14px 22px; font-size:14px; white-space:nowrap; }
+.brand-close-solution { font-size:14px; color:#343434; }
+.brand-close-newsletter { margin-top:44px; }
+.brand-close-newsletter h2 { margin:0 0 10px; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.brand-close-newsletter p { margin:0 0 16px; color:#666; font-size:13px; line-height:1.6; }
+.brand-close-newsletter form,.brand-close-newsletter fieldset { margin:0; padding:0; border:0; min-width:0; }
+.brand-close-fields { display:flex; gap:8px; }
+.brand-close-fields input { min-width:0; width:100%; flex:1; border:1px solid #e0ddd7; border-radius:8px; background:rgba(255,255,255,.55); height:44px; padding:10px 12px; font:inherit; font-size:13px; color:#666; opacity:1; }
+.brand-close-fields button { border:1px solid #dedbd5; border-radius:8px; padding:10px 14px; background:transparent; color:#666; font:inherit; font-size:13px; white-space:nowrap; opacity:1; }
+.brand-close-navigation { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.55fr); gap:64px; padding:64px 0; border-top:1px solid #e8e5e0; }
+.brand-close-identity .logo { font-size:22px; }
+.brand-close-identity p { margin:16px 0; color:#666; font-size:14px; line-height:1.6; }
+.brand-close-login { display:inline-block; margin-top:8px; font-size:13px; color:#666; }
+.brand-close .site-footer-columns { grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px; }
+.brand-close .site-footer-columns h2 { font-size:11px; font-weight:600; margin-bottom:16px; }
+.brand-close .site-footer-columns li { margin:9px 0; font-size:14px; }
+.brand-close a { transition:color 150ms,opacity 150ms; }
+.brand-close a:hover { color:#0a66c2; }
+.brand-close-bottom { padding:30px 0; border-top:1px solid #e8e5e0; }
+.brand-close-bottom p { margin:0; color:#76736d; font-size:12px; }
+@media(max-width:1100px) { .brand-close-statement { gap:40px; padding:100px 0; } .brand-close-navigation { gap:40px; } }
+@media(max-width:700px) {
+ .footer.site-footer.brand-close { padding-inline:22px; }
+ .brand-close-statement { grid-template-columns:1fr; gap:30px; padding:64px 0 48px; }
+ .brand-close-copy h2 { font-size:40px; }
+ .brand-close-copy > p { font-size:14px; margin-top:20px; }
+ .brand-close-newsletter { margin-top:32px; }
+ .brand-close-navigation { grid-template-columns:1fr; gap:36px; padding:40px 0; }
+ .brand-close .site-footer-columns { grid-template-columns:1fr; gap:26px; }
+ .brand-close .site-footer-columns h2 { margin-bottom:12px; }
+ .brand-close-bottom { padding:28px 0; }
+}

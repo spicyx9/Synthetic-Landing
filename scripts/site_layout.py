@@ -62,15 +62,31 @@ def header(lang,key):
 </header>'''
 def footer(lang):
  t=LABELS[lang]
- groups=[('Produit' if lang=='fr' else 'Product',['solution','pricing','faq']),('Entreprise' if lang=='fr' else 'Company',['about','customers','careers','media','contact']),('Informations légales' if lang=='fr' else 'Legal',['notice','privacy','terms','opposition'])]
+ fr=lang=='fr'
+ groups=[('Produit' if fr else 'Product',['solution','pricing','faq']),('Entreprise' if fr else 'Company',['about','customers','careers','media','contact']),('Légal' if fr else 'Legal',['notice','privacy','terms','opposition'])]
  columns=''.join('<div><h2>'+title+'</h2><ul>'+''.join('<li>'+company_link(k,lang)+'</li>' for k in keys)+'</ul></div>' for title,keys in groups)
- return f'''<footer class="footer site-footer">
-  <div class="site-footer-top"><a href="{url('home',lang)}" class="logo">Synthetic Swarm</a><p>{'Sachez qui appeler. Au bon moment.' if lang=='fr' else 'The right person. The right signal. The right time.'}</p></div>
-  <nav class="site-footer-columns" aria-label="{'Pied de page' if lang=='fr' else 'Footer'}">
-    {columns}
-    <div><h2>{'Compte' if lang=='fr' else 'Account'}</h2><ul><li><a href="https://app.syntheticswarm.ai/ui/" target="_blank" rel="noopener noreferrer">{t['login']}</a></li><li>{booking(lang,'footer')}</li></ul></div>
-  </nav>
-  <p class="site-footer-copy">© 2026 Synthetic Swarm. {'Tous droits réservés.' if lang=='fr' else 'All rights reserved.'}</p>
+ return f'''<footer class="footer site-footer brand-close">
+  <div class="brand-close-inner">
+    <div class="brand-close-statement">
+      <div class="brand-close-copy">
+        <h2>{'Sachez qui appeler.' if fr else 'Know who to call.'}<span>{'Au bon moment.' if fr else 'At the right time.'}</span></h2>
+        <p>{'Synthetic Swarm détecte les changements qui comptent et transforme ces signaux en prospects prêts à contacter.' if fr else 'Synthetic Swarm detects the changes that matter and turns them into prospects ready to contact.'}</p>
+      </div>
+      <div class="brand-close-actions">
+        <div class="brand-close-cta">{booking(lang,'footer')}<a class="brand-close-solution" href="{url('solution',lang)}">{'Voir notre solution' if fr else 'Explore our solution'}<span aria-hidden="true"> →</span></a></div>
+        <section id="newsletter" class="brand-close-newsletter" aria-labelledby="newsletter-title">
+          <h2 id="newsletter-title">{'Restez informé' if fr else 'Stay in the loop'}</h2>
+          <p>{'Recevez nos nouveautés produit et annonces importantes.' if fr else 'Get product updates and important announcements.'}</p>
+          <form aria-label="{'Newsletter' if fr else 'Newsletter'}"><fieldset disabled><div class="brand-close-fields"><input type="email" aria-label="{'Votre email' if fr else 'Your email'}" placeholder="{'Votre email' if fr else 'Your email'}" autocomplete="email"><button type="submit">{'S’inscrire' if fr else 'Subscribe'}</button></div></fieldset></form>
+        </section>
+      </div>
+    </div>
+    <div class="brand-close-navigation">
+      <div class="brand-close-identity"><a href="{url('home',lang)}" class="logo"><img src="/assets/logo-black-narrow.png" alt="" width="23" height="28">Synthetic Swarm</a><p>{'Sachez qui appeler. Au bon moment.' if fr else 'Know who to call. At the right time.'}</p><a class="brand-close-login" href="https://app.syntheticswarm.ai/ui/" target="_blank" rel="noopener noreferrer">{t['login']}</a></div>
+      <nav class="site-footer-columns" aria-label="{'Pied de page' if fr else 'Footer'}">{columns}</nav>
+    </div>
+    <div class="brand-close-bottom"><p>© 2026 Synthetic Swarm. {'Tous droits réservés.' if fr else 'All rights reserved.'}</p></div>
+  </div>
 </footer>'''
 def motion_assets(key):
  module = {'home': 'home-motion', 'solution': 'solution-motion', 'about': 'editorial-motion', 'careers': 'editorial-motion'}.get(key)
@@ -98,7 +114,7 @@ def page(key,lang,title,description,body):
   <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 {motion_assets(key)}
 </head>
 <body>
@@ -119,6 +135,11 @@ def sync(headers=True,footers=True):
    if not p.exists():continue
    s=p.read_text()
    if headers:s=re.sub(r'<header class="header">.*?</header>',lambda _:header(lang,key),s,flags=re.S)
+   if footers and key=='home':
+    s=re.sub(r'<section id="newsletter" class="prefooter-signup.*?</section>', '', s, flags=re.S)
+   if footers:
+    s=s.replace('family=Inter:', 'family=DM+Serif+Display:ital@1&amp;family=Inter:') if 'family=DM+Serif+Display' not in s else s
+    s=re.sub(r'/site-pages.css(?:\?[^"\s]*)?', '/site-pages.css?v=brand-close-1', s)
    if footers:s=re.sub(r'<footer class="footer[^\"]*">.*?</footer>',lambda _:footer(lang),s,flags=re.S)
    if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">\n</head>')
    if '/motion.js' not in s:s=s.replace('</head>',motion_assets(key)+'\n</head>')
