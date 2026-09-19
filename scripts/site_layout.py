@@ -81,7 +81,11 @@ def footer(lang):
         <section id="newsletter" class="brand-close-newsletter" aria-labelledby="newsletter-title">
           <h2 id="newsletter-title">{'Restez informé' if fr else 'Stay in the loop'}</h2>
           <p>{'Recevez nos nouveautés produit et annonces importantes.' if fr else 'Get product updates and important announcements.'}</p>
-          <form aria-label="{'Newsletter' if fr else 'Newsletter'}"><fieldset disabled><div class="brand-close-fields"><input type="email" aria-label="{'Votre email' if fr else 'Your email'}" placeholder="{'Votre email' if fr else 'Your email'}" autocomplete="email"><button type="submit">{'S’inscrire' if fr else 'Subscribe'}</button></div></fieldset></form>
+          <form class="newsletter-form" data-newsletter-form aria-label="Newsletter" method="post" action="/api/newsletter">
+            <div class="brand-close-fields"><input type="email" name="email" required maxlength="254" aria-label="{'Votre email' if fr else 'Your email'}" placeholder="{'Votre email' if fr else 'Your email'}" autocomplete="email"><button type="submit">{'S’inscrire' if fr else 'Subscribe'}</button></div>
+            <input class="newsletter-honeypot" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p data-newsletter-status role="status" aria-live="polite" aria-atomic="true"></p>
+          </form>
         </section>
       </div>
     </div>
@@ -127,6 +131,7 @@ def page(key,lang,title,description,body):
   <main id="main" class="content-page">{body}</main>
   {footer(lang)}
   <script src="/mobile-menu.js"></script>
+  <script src="/newsletter.js" defer></script>
 </body>
 </html>
 '''
@@ -147,6 +152,7 @@ def sync(headers=True,footers=True):
    if footers:s=re.sub(r'<footer class="footer[^\"]*">.*?</footer>',lambda _:footer(lang),s,flags=re.S)
    if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">\n</head>')
    if '/motion.js' not in s:s=s.replace('</head>',motion_assets(key)+'\n</head>')
+   if 'data-newsletter-form' in s and '/newsletter.js' not in s:s=s.replace('</body>','  <script src="/newsletter.js" defer></script>\n</body>')
    p.write_text(s)
 def sync_conversion():
  # Dedicated pricing HTML is the source for homepage pricing and purchase FAQ.

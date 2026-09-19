@@ -70,13 +70,15 @@
         <p>Synthetic Swarm détecte les changements qui comptent et transforme ces signaux en prospects prêts à contacter.</p>
       </div>
       <div class="brand-close-actions">
-        <div class="brand-close-cta"><div class="demo-booking">
-  <a class="btn-get-started" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">Réserver une démo</a>
-</div><a class="brand-close-solution" href="/notre-solution">Voir notre solution<span aria-hidden="true"> →</span></a></div>
+        <div class="brand-close-cta"><div class="demo-booking"><a class="btn-get-started" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">Réserver une démo</a></div><a class="brand-close-solution" href="/notre-solution">Voir notre solution<span aria-hidden="true"> →</span></a></div>
         <section id="newsletter" class="brand-close-newsletter" aria-labelledby="newsletter-title">
           <h2 id="newsletter-title">Restez informé</h2>
           <p>Recevez nos nouveautés produit et annonces importantes.</p>
-          <form aria-label="Newsletter"><fieldset disabled><div class="brand-close-fields"><input type="email" aria-label="Votre email" placeholder="Votre email" autocomplete="email"><button type="submit">S’inscrire</button></div></fieldset></form>
+          <form class="newsletter-form" data-newsletter-form aria-label="Newsletter" method="post" action="/api/newsletter">
+            <div class="brand-close-fields"><input type="email" name="email" required maxlength="254" aria-label="Votre email" placeholder="Votre email" autocomplete="email"><button type="submit">S’inscrire</button></div>
+            <input class="newsletter-honeypot" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p data-newsletter-status role="status" aria-live="polite" aria-atomic="true"></p>
+          </form>
         </section>
       </div>
     </div>
@@ -88,5 +90,6 @@
   </div>
 </footer>
   <script src="/mobile-menu.js?v=motion-1"></script>
+  <script src="/newsletter.js" defer></script>
 </body>
 </html>
