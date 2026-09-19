@@ -11,7 +11,10 @@ for (const file of pages) test(`${file}: detailed Solution contract and approved
  assert.equal((html.match(/class="sp-targeting|class="sp-surface sp-targeting/g)||[]).length,1);
  assert.equal((html.match(/data-combination="/g)||[]).length,3);
  assert.equal((html.match(/class="sp-check-mark"/g)||[]).length,4);
- for(const id of ['target-0','target-1','target-2','target-3','target-decision','target-volume']) assert.ok(html.includes(`for="${id}"`));
+ const targeting=html.match(/<section[^>]+id="targeting"[\s\S]*?<\/section>/)[0];
+ assert.doesNotMatch(targeting,/<select|<input|<textarea|<button/);
+ assert.equal((targeting.match(/<dt>/g)||[]).length,6);
+ assert.match(targeting,/class="target-description"/);
  for(const name of ['SIRENE','BODACC','RNE','ORIAS','France Travail','ADEME']) assert.ok(html.includes(name));
  assert.doesNotMatch(html,/Six official sources|Six sources officielles|Cinq familles|Five kinds|Aucun fichier acheté|No purchased lists|Pappers|confirmed need/i);
  const profile=html.match(/<article class="sp-profile(?: [^"]*)?">([\s\S]*?)<\/article>/)[1];

@@ -7,17 +7,19 @@ window.SwarmMotion?.ready(M => {
     ...[...hero.querySelectorAll('.page-actions > *')].map((element,i)=>M.step(element,460+i*60))
   ],{entrance:true});
   page.querySelectorAll('.sp-editorial').forEach(section => {
+    if (section.id === 'targeting') {
+      const tracks = [...section.querySelectorAll('.sp-editorial-copy > *')].map((element,i)=>M.step(element,i*45,'fade',240));
+      tracks.push(M.step(section.querySelector('.sp-editorial-visual'),0,'surface',240));
+      tracks.push(M.step(section.querySelector('.target-description'),80,'fade',260));
+      section.querySelectorAll('.target-summary > div').forEach((element,i)=>tracks.push(M.step(element,220+i*35,'fade',220)));
+      tracks.push(M.step(section.querySelector('.sp-target-ready'),480,'fade',240));
+      M.sequence(section,tracks);
+      return;
+    }
     const steps = [...section.querySelectorAll('.sp-editorial-copy > *')].map((element,i)=>M.step(element,i*100));
     const visual = section.querySelector('.sp-editorial-visual');
     steps.push(M.step(visual,320,'surface'));
-    if (section.querySelector('.sp-targeting')) {
-      section.querySelectorAll('.sp-setting').forEach((element,i)=> {
-        steps.push(M.step(element,450+i*110));
-        steps.push(M.step(element.querySelector('select'),540+i*110,'fade'));
-      });
-      steps.push(M.step(section.querySelector('.sp-volume'),1150,'surface'));
-      steps.push(M.step(section.querySelector('.sp-target-ready'),1500,'surface'));
-    } else if (section.querySelector('.sp-event-feed')) {
+    if (section.querySelector('.sp-event-feed')) {
       section.querySelectorAll('.sp-change').forEach((element,i)=>steps.push(M.step(element,440+i*100,'left')));
       steps.push(M.step(section.querySelector('.sp-catalogue-note'),1100,'fade'));
     } else if (section.querySelector('.sp-combination')) {

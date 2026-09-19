@@ -12,13 +12,6 @@
 })();
 
 (() => {
-  const volume = document.querySelector('#target-volume');
-  const output = document.querySelector('#target-volume-value');
-  volume?.addEventListener('input', () => {
-    output.textContent = `${volume.value} / ${document.documentElement.lang === 'fr' ? 'semaine' : 'week'}`;
-  });
-})();
-(() => {
   const floating = document.querySelector('[data-floating-demo]');
   const trigger = floating?.querySelector('[data-disclosure-trigger]');
   if (!trigger) return;
@@ -37,11 +30,6 @@
       button.setAttribute('aria-pressed', String(selected));
       document.getElementById(button.getAttribute('aria-controls')).hidden = !selected;
     });
-  }));
-  const summary = document.querySelector('[data-target-summary]');
-  const fields = ['target-0', 'target-1', 'target-decision'].map(id => document.getElementById(id));
-  fields.forEach(field => field?.addEventListener('change', () => {
-    summary.textContent = fields.map(item => item.value).join(' · ');
   }));
 })();
 // This version follows the review brief: visible between hero and final CTA.
