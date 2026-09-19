@@ -531,3 +531,14 @@
  .home .home-focused-hero .hero-decor--rocket { display:none; }
  .home .home-focused-hero .hero-decor--sparkles-lg { width:34px; left:3%; top:8px; opacity:.45; }
 }
+
+/* One review at a time; native horizontal scrolling also supports touch swipes. */
+.home .testimonial-carousel { max-width:720px; margin-inline:auto; min-width:0; }
+.home .home-customer-proof .testimonial-track { display:grid; grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:100%; gap:20px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scrollbar-width:none; align-items:stretch; }
+.testimonial-track::-webkit-scrollbar { display:none; }
+.home .testimonial-track .home-testimonial { scroll-snap-align:start; scroll-snap-stop:always; }
+.testimonial-controls { display:flex; justify-content:flex-end; gap:4px; padding-top:8px; }
+.testimonial-controls button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; background:transparent; color:#666; font-size:22px; cursor:pointer; }
+.testimonial-controls button:hover { color:#1a1a1a; }
+.testimonial-controls button:disabled { opacity:.25; cursor:default; }
+.testimonial-controls button:focus-visible,.testimonial-track:focus-visible { outline:2px solid #0a66c2; outline-offset:3px; border-radius:8px; }
