@@ -27,11 +27,12 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.doesNotMatch(html,/<details[^>]*\bopen\b/);
  assert.match(html,/data-pricing-range[^>]*value="2"/);
  const newsletter=html.match(/<section id="newsletter"[\s\S]*?<\/section>/)[0];
- assert.match(newsletter,/<fieldset disabled>/);
+ assert.doesNotMatch(newsletter,/<fieldset[^>]*disabled/);
+ assert.match(newsletter,/data-newsletter-form/);
  assert.match(newsletter,/aria-label="(?:Votre email|Your email)"/);
- assert.doesNotMatch(newsletter,/<label|newsletter-status|Pas de spam|No spam|temporairement|temporarily/);
+ assert.doesNotMatch(newsletter,/<label|Pas de spam|No spam|temporairement|temporarily/);
  assert.match(newsletter,/type="email"/);
- assert.doesNotMatch(newsletter,/<form[^>]*action=/);
+ assert.match(newsletter,/action="\/api\/newsletter"/);
  const output=html.match(/<section id="solution-preview"[\s\S]*?<\/section>/)[0];
  assert.doesNotMatch(output,/solution-disclaimer|Fictional example|Exemple fictif/);
  assert.match(output,/class="home-prospect-preview"/);

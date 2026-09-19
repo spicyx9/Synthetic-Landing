@@ -183,3 +183,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
  .brand-close .site-footer-columns h2 { margin-bottom:12px; }
  .brand-close-bottom { padding:28px 0; }
 }
+
+/* Newsletter behavior only; preserve the existing footer form geometry. */
+.newsletter-honeypot { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); border:0; }
+.brand-close-newsletter [data-newsletter-status]:empty { display:none; }
+.brand-close-newsletter [data-newsletter-status]:not(:empty) { margin:10px 0 0; font-size:12px; }

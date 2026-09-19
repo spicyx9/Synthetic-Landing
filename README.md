@@ -52,7 +52,7 @@ On `/`, Vercel's trusted `x-vercel-ip-country` header selects French for `FR`; a
 
 ## Homepage newsletter
 
-The FR/EN newsletter is a compact CTA band with a static, disabled fieldset. The input has an accessible name without a duplicate visible label; no availability status is displayed. No addresses are collected, stored or sent, and no success state is simulated. To activate, connect a subscription endpoint, add server validation and consent/unsubscribe handling, implement accessible success/error feedback, then remove the disabled state. Do not enable the controls before that integration is ready.
+The shared footer generator supplies an editable FR/EN form and `newsletter.js` submits JSON to `/api/newsletter`. The server normalizes and validates email, caps payloads at 2 KB, ignores honeypot submissions, and creates or resubscribes Resend Contacts. Configure `RESEND_API_KEY` with Contacts permissions on Vercel; sending-only keys are insufficient. The key never reaches the browser. Existing contacts are updated by email, with a create fallback for missing contacts. Success is shown only after the API confirms it; failures use translated inline feedback. Tests mock Resend and do not create real subscribers. No newsletter email is sent by this endpoint.
 
 ## Shared motion
 
