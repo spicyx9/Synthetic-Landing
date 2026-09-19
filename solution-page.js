@@ -44,6 +44,7 @@
   if (!progress) return;
   const chapters = [...story.querySelectorAll('.story-chapter')];
   const rows = [...progress.querySelectorAll('.story-progress-row')];
+  const contents = chapters.map(chapter => chapter.querySelector('.story-chapter-content'));
   const header = document.querySelector('.header');
   const desktop = matchMedia('(min-width:701px) and (min-height:600px)');
   let queued = false;
@@ -55,15 +56,25 @@
     const top = headerRect ? Math.round(headerRect.bottom) : 61;
     story.style.setProperty('--progress-top', `${top}px`);
     const rowHeight = parseFloat(getComputedStyle(story).getPropertyValue('--progress-row-height'));
-    let active = 0;
+    let activeStep = 0;
     chapters.forEach((chapter, index) => {
-      if (chapter.getBoundingClientRect().top <= top + index * rowHeight + 1) active = index;
+      if (chapter.getBoundingClientRect().top <= top + index * rowHeight + 1) activeStep = index;
+    });
+    let visibleThroughStep = activeStep;
+    const previewTriggerY = innerHeight * 0.62;
+    chapters.forEach((chapter, index) => {
+      // Reveal before content enters even when chapter padding is shorter than 38vh.
+      const contentTop = contents[index]?.getBoundingClientRect().top ?? chapter.getBoundingClientRect().top;
+      if (chapter.getBoundingClientRect().top <= previewTriggerY || contentTop <= innerHeight + 24) {
+        visibleThroughStep = Math.max(visibleThroughStep, index);
+      }
     });
     rows.forEach((row, index) => {
-      row.hidden = index > active;
-      row.classList.toggle('is-active', index === active);
+      row.hidden = index > visibleThroughStep;
+      row.classList.toggle('is-active', index === activeStep);
+      row.classList.toggle('is-upcoming', index > activeStep && index <= visibleThroughStep);
     });
-    const exit = Math.min(0, story.getBoundingClientRect().bottom - top - (active + 1) * rowHeight);
+    const exit = Math.min(0, story.getBoundingClientRect().bottom - top - (visibleThroughStep + 1) * rowHeight);
     progress.style.setProperty('--progress-exit', `${exit}px`);
   }
   function schedule() {
