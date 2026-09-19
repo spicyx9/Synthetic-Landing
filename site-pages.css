@@ -174,9 +174,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 @media(max-width:1100px) { .brand-close-statement { gap:40px; padding:100px 0; } .brand-close-navigation { gap:40px; } }
 @media(max-width:700px) {
  .footer.site-footer.brand-close { padding-inline:22px; }
- .brand-close-statement { grid-template-columns:1fr; gap:30px; padding:64px 0 48px; }
- .brand-close-copy h2 { font-size:40px; }
- .brand-close-copy > p { font-size:14px; margin-top:20px; }
+ .brand-close-statement { grid-template-columns:1fr; gap:26px; padding:64px 0 52px; text-align:center; }
+ .brand-close-copy h2 { max-width:360px; margin-inline:auto; font-size:40px; }
+ .brand-close-copy > p { max-width:340px; margin:20px auto 0; font-size:14px; line-height:1.55; }
+ .brand-close-cta { justify-content:center; }
+ .brand-close-solution { width:fit-content; }
+ .brand-close-newsletter h2 { margin-bottom:12px; }
+ .brand-close-newsletter > p { max-width:340px; margin:0 auto 20px; }
+ .brand-close-fields input { text-align:left; }
  .brand-close-newsletter { margin-top:32px; }
  .brand-close-navigation { grid-template-columns:1fr; gap:36px; padding:40px 0; }
  .brand-close .site-footer-columns { grid-template-columns:1fr; gap:26px; }
