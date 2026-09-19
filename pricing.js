@@ -36,13 +36,14 @@
       step.classList.toggle('is-active', i === index);
       step.setAttribute('aria-pressed', i === index ? 'true' : 'false');
     });
-    preferredBadge.hidden = index !== Number(preferredBadge.dataset.planIndex ?? 2);
+    preferredBadge.hidden = index !== Number(preferredBadge.dataset.planIndex ?? 1);
     checkout.hidden = custom;
     if (custom) {
       delete checkout.dataset.leads;
       delete checkout.dataset.price;
     } else {
       checkout.dataset.leads = String(plan.leads);
+      checkout.setAttribute('href', 'https://app.syntheticswarm.ai/ui/?leads=' + plan.leads + '&lang=' + (isFr ? 'fr' : 'en'));
       checkout.dataset.price = String(plan.price);
       // Closing the custom selector also prevents stale focusable calendar links.
       customBooking.querySelector('[data-disclosure-panel]').hidden = true;
@@ -53,8 +54,8 @@
     range.value = String(index);
     updatePricing();
   }));
-  // Every fresh load starts at 50, including browsers that restore form state.
-  range.value = '2';
+  // Every fresh load starts at 20, including browsers that restore form state.
+  range.value = '1';
   range.addEventListener('input', updatePricing);
   range.addEventListener('change', updatePricing);
   updatePricing();

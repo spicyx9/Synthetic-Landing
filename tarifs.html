@@ -13,7 +13,7 @@
   <link rel="alternate" hreflang="x-default" href="https://www.syntheticswarm.ai/pricing">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css?v=global-atmosphere-1">
-  <link rel="stylesheet" href="pricing-interactive.css?v=corner-badge-2">
+  <link rel="stylesheet" href="pricing-interactive.css?v=starter-default-3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&amp;family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -65,31 +65,31 @@
 
     <div class="pricing-configurator reveal reveal-delay-1">
       <div class="pricing-config-card">
-        <div class="pricing-config-badge-slot"><div class="pricing-config-badge" data-plan-index="1" hidden>Idéal pour démarrer</div></div>
+        <div class="pricing-config-badge-slot"><div class="pricing-config-badge" data-plan-index="1">Idéal pour démarrer</div></div>
         <p class="pricing-config-kicker">Synthetic Swarm</p>
         <div class="pricing-config-state">
           <div class="pricing-config-price">
           <span class="pricing-config-price-reserve" aria-hidden="true">Sur mesure</span>
           <span class="pricing-config-price-value">
-          <span class="pricing-config-amount" data-pricing-amount>399 €</span>
+          <span class="pricing-config-amount" data-pricing-amount>169 €</span>
           <span class="pricing-config-period" data-pricing-period>/mois</span></span>
           </div>
-          <p class="pricing-config-summary" data-pricing-summary><strong data-pricing-leads>50</strong> leads qualifiés par semaine</p>
+          <p class="pricing-config-summary" data-pricing-summary><strong data-pricing-leads>20</strong> leads qualifiés par semaine</p>
           <div class="pricing-custom-copy" data-pricing-custom-copy hidden><h2>Besoin de plus de 200 leads par semaine ?</h2><p>Parlons de votre volume et construisons une offre sur mesure.</p></div>
         </div>
 
         <div class="pricing-volume-row">
           <span class="pricing-volume-label">Leads par semaine</span>
-          <span class="pricing-volume-current"><span data-pricing-leads>50</span> leads</span>
+          <span class="pricing-volume-current"><span data-pricing-leads>20</span> leads</span>
         </div>
-        <input class="pricing-range" data-pricing-range type="range" min="0" max="5" step="1" value="2" aria-valuetext="50 leads par semaine" aria-label="Leads par semaine">
+        <input class="pricing-range" data-pricing-range type="range" min="0" max="5" step="1" value="1" aria-valuetext="20 leads par semaine" aria-label="Leads par semaine">
         <div class="pricing-range-steps" role="group" aria-label="Leads par semaine">
           <button type="button" data-pricing-step>10</button>
-          <button type="button" data-pricing-step>20</button>
-          <button type="button" data-pricing-step class="is-active">50</button>
+          <button type="button" data-pricing-step class="is-active">20</button>
+          <button type="button" data-pricing-step>50</button>
           <button type="button" data-pricing-step>100</button>
-          <button type="button" data-pricing-step>200</button>
-          <button type="button" data-pricing-step>200+</button>
+          <button type="button" data-pricing-step class="is-active">200</button>
+          <button type="button" data-pricing-step class="is-active">200+</button>
         </div>
 
         <div class="pricing-config-divider"></div>
@@ -100,7 +100,7 @@
           <li><span class="pricing-config-check">✓</span><span>Ciblage selon vos critères : métier, taille et zone géographique</span></li>
         </ul>
         <div class="pricing-config-actions">
-        <a href="https://app.syntheticswarm.ai/ui/" class="pricing-config-btn" data-pricing-checkout data-leads="50" data-price="399">Choisir ce forfait</a>
+        <a href="https://app.syntheticswarm.ai/ui/?leads=20&amp;lang=fr" class="pricing-config-btn" data-pricing-checkout data-leads="20" data-price="169">Choisir ce forfait</a>
         <div class="demo-booking pricing-custom-booking" data-pricing-custom-booking hidden>
   <a class="btn-get-started pricing-config-btn" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">Réserver un rendez-vous</a>
 </div>
@@ -154,7 +154,7 @@
   </div>
 </footer>
 
-  <script src="pricing.js"></script>
+  <script src="pricing.js?v=starter-default-2"></script>
   <script src="/mobile-menu.js?v=motion-1"></script>
   <script src="/newsletter.js" defer></script>
 </body>
