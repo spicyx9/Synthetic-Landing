@@ -126,9 +126,8 @@
 @media(min-width:701px) and (min-height:600px) {
  .product-story { --progress-row-height:52px; --progress-top:76px; }
  .story-progress-enabled .story-progress { display:block; position:sticky; top:var(--progress-top); height:0; z-index:10; }
- .story-progress-rows::before { content:""; position:absolute; inset:-16px 0 auto; height:16px; background:#fcfbf8; }
  .story-progress-rows { transform:translateY(var(--progress-exit,0px)); }
- .story-progress-row { display:flex; align-items:center; gap:22px; height:var(--progress-row-height); padding:0 24px; background:#fcfbf8; border-bottom:1px solid #e5e5e0; }
+ .story-progress-row { display:flex; align-items:center; gap:22px; height:var(--progress-row-height); min-height:var(--progress-row-height); max-height:var(--progress-row-height); box-sizing:border-box; flex:0 0 var(--progress-row-height); padding:0 24px; background:#fcfbf8; border-bottom:1px solid #e5e5e0; }
  .story-progress-row[hidden] { display:none; }
  .story-progress-row:nth-child(2) { background:#f4f8fb; }
  .story-progress-row:nth-child(3) { background:#faf6ee; }
