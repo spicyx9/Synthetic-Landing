@@ -38,14 +38,19 @@ test('progress accumulates, reverses, exits and disables on narrow screens indep
   for (const [index,y] of [[1,1047],[2,1695],[3,2343]]) {
     scroll=y; events.scroll();
     assert.equal(rows[index].hidden,false);
-    assert.equal(chapters[index].classList['is-progress-visible'],true);
+    assert.equal(chapters[index].classList['is-progress-visible'],false);
     assert.equal(rows[index].classList['is-upcoming'],true);
     assert.equal(rows[index].classList['is-active'],false);
     scroll=y+139; events.scroll();
     assert.equal(rows[index].classList['is-upcoming'],true);
+    assert.equal(chapters[index].classList['is-progress-visible'],false);
     scroll=y+140; events.scroll();
     assert.equal(rows[index].classList['is-active'],true);
+    assert.equal(chapters[index].classList['is-progress-visible'],true);
     assert.equal(rows[index].classList['is-upcoming'],false);
+    scroll=y+139; events.scroll();
+    assert.equal(rows[index].classList['is-upcoming'],true);
+    assert.equal(chapters[index].classList['is-progress-visible'],false);
     scroll=y-1; events.scroll();
     assert.equal(rows[index].hidden,true);
     assert.equal(chapters[index].classList['is-progress-visible'],false);
