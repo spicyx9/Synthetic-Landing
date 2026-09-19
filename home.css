@@ -488,7 +488,8 @@
 .home-signals:hover .home-signals-track,.home-signals:focus-within .home-signals-track,.home-signals:has(input:checked) .home-signals-track { animation-play-state:paused; }
 @keyframes detected-feed { to { transform:translateX(-50%); } }
 @media(max-width:700px) {
- .home-signals { padding-inline:22px; }
+ .home-signals { padding:28px 22px; }
+ .home-signals-heading { display:none; }
  .home-signals-track { animation-duration:35s; }
  .home-signals-track ul { gap:28px; padding-right:28px; }
  .home-signals-track li { font-size:13px; }
