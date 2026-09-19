@@ -8,11 +8,10 @@ window.SwarmMotion?.ready(M => {
     M.step(hero.querySelector('.solution-capabilities'),300,'fade',240)
   ],{entrance:true});
   page.querySelectorAll('.story-chapter').forEach(section => {
+    if (section.id === 'targeting') return;
     const tracks = [M.step(section.querySelector('.story-subtitle'),0,'fade',280)];
     const add = (selector,at,stagger=45,effect='fade') => section.querySelectorAll(selector).forEach((el,i)=>tracks.push(M.step(el,at+i*stagger,effect,320)));
-    if (section.id === 'targeting') {
-      add('.story-composer',60); add('.story-target-text',130); add('.story-filter-row > span',220,25); add('.story-base',420);
-    } else if (section.id === 'moments') {
+    if (section.id === 'moments') {
       add('.story-monitor',40); add('.story-signal',140,65,'left');
       tracks.push({element:section.querySelector('.is-selected'),frames:[{backgroundColor:'transparent'},{backgroundColor:'#f0f5fa'}],options:{delay:560,duration:300}});
     } else if (section.id === 'qualification') {

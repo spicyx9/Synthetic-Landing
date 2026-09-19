@@ -14,7 +14,9 @@ for (const file of pages) test(`${file}: continuous product story and approved h
  assert.doesNotMatch(html,/class="eng-node |class="sp-change|id="verification"|target-configurator/);
  const targeting=html.match(/<section[^>]+id="targeting"[\s\S]*?<\/section>/)[0];
  assert.doesNotMatch(targeting,/<select|<input|<textarea|<button/);
- assert.equal((targeting.match(/class="story-base"/g)||[]).length,1);
+ assert.equal((targeting.match(/<dt>/g)||[]).length,5);
+ assert.match(targeting,/class="story-target-ready"/);
+ assert.doesNotMatch(targeting,/story-base|story-active|>95<|VOS BASES|YOUR BASES/);
  assert.match(targeting,/class="story-target-text"/);
  const changes=html.match(/<section[^>]+id="moments"[\s\S]*?<\/section>/)[0];
  assert.equal((changes.match(/class="story-signal(?: is-selected)?"/g)||[]).length,6);
