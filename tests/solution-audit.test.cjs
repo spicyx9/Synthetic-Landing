@@ -29,8 +29,13 @@ for (const file of pages) test(`${file}: continuous product story and approved h
  assert.doesNotMatch(html,/Six official sources|Six sources officielles|Cinq familles|Five kinds|Aucun fichier acheté|No purchased lists|REDACTED|confirmed need/i);
  const profile=html.match(/<article class="story-surface story-profile">([\s\S]*?)<\/article>/)[1];
  assert.doesNotMatch(profile,/REDACTED|REDACTED|sp-profile-source|sp-company-details/);
- assert.equal((profile.match(/<li>/g)||[]).length,7);
- assert.match(profile,/Camille Exemple/);
+ assert.equal((profile.match(/<li>/g)||[]).length,4);
+ assert.match(profile,/Camille R\./);
+ assert.match(profile,/06 73 54 26 ••/);
+ assert.match(profile,/camille@ateliers-r\.fr/);
+ assert.match(profile,/<time datetime="2026-09-15">/);
+ assert.ok(profile.indexOf('story-profile-why') < profile.indexOf('story-person'));
+ assert.doesNotMatch(profile,/Camille Exemple|Ateliers Exemple|06 XX|camille@\.\.\.|story-initials|story-call-reason/);
  assert.match(html,/class="floating-demo demo-booking"[^>]+inert/);
  assert.match(html,/<a class="floating-demo-button"[^>]*href="https:\/\/calendar.app.google\/91k1Mpontca7NGea6"/);
  const h1=html.match(/<h1>(.*?)<\/h1>/s)[1].replace(/<[^>]*>/g,'');

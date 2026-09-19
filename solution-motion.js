@@ -16,7 +16,7 @@ window.SwarmMotion?.ready(M => {
     } else if (section.id === 'qualification') {
       add('.story-facts li',100,80,'left'); add('.story-convergence',300); add('.story-meaning',460);
     } else {
-      add('.story-profile',60); add('.story-person',160); add('.story-contacts li',230,50); add('.story-call-reason',380); add('.story-checks li',460,35);
+      add('.story-profile',0); add('.story-profile-why',40); add('.story-person',130); add('.story-contacts',210); add('.story-checks',290);
     }
     M.sequence(section,tracks);
   });
