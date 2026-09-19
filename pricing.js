@@ -36,7 +36,7 @@
       step.classList.toggle('is-active', i === index);
       step.setAttribute('aria-pressed', i === index ? 'true' : 'false');
     });
-    preferredBadge.hidden = index !== 2;
+    preferredBadge.hidden = index !== Number(preferredBadge.dataset.planIndex ?? 2);
     checkout.hidden = custom;
     if (custom) {
       delete checkout.dataset.leads;
