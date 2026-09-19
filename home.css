@@ -423,7 +423,6 @@
 .prospect-channels { display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:13px; color:#777f73; font-size:13px; line-height:1.5; }
 .prospect-channels a { color:#0a66c2; text-decoration:underline; text-decoration-color:#b7cfe6; text-underline-offset:3px; }
 .prospect-channels a:hover { text-decoration-color:currentColor; }
-.home-prospect-preview .prospect-example-note { margin-top:auto; padding-top:12px; text-align:right; font-size:11px; color:#a0a29b; }
 .prospect-preview-link { display:block; width:fit-content; margin:26px 0 0 auto; font-size:14px; font-weight:500; color:#0a66c2; }
 .prospect-preview-link:hover { text-decoration:underline; text-underline-offset:4px; }
 @media(min-width:701px) and (max-width:1100px) {
