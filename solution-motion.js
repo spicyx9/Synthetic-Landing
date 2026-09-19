@@ -3,8 +3,9 @@ window.SwarmMotion?.ready(M => {
   if (!page) return;
   const hero = page.querySelector('.sp-hero');
   M.sequence(hero, [
-    ...[...hero.querySelectorAll(':scope > .page-kicker, :scope > h1, :scope > p')].map((element,i)=>M.step(element,100+i*120,i===1?'line':'rise')),
-    ...[...hero.querySelectorAll('.page-actions > *')].map((element,i)=>M.step(element,460+i*60))
+    ...[...hero.querySelectorAll(':scope > .page-kicker, :scope > h1, :scope > p')].map((element,i)=>M.step(element,i*60,'fade',220)),
+    ...[...hero.querySelectorAll('.page-actions > *')].map((element,i)=>M.step(element,180+i*40,'fade',220)),
+    M.step(hero.querySelector('.solution-capabilities'),300,'fade',240)
   ],{entrance:true});
   page.querySelectorAll('.story-chapter').forEach(section => {
     const tracks = [...section.querySelectorAll('.story-heading > *')].map((el,i)=>M.step(el,i*50,'fade',280));
