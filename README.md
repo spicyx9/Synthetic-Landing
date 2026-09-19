@@ -11,9 +11,9 @@ Static HTML, CSS and JavaScript. Vercel serves the repository root with clean UR
 - Run `node --test tests/*.test.cjs` for content, links, syntax, route configuration and pricing interaction checks. No dependencies are required.
 - Browser regression: test 320, 390, 768, 1024 and 1440px widths, all six pricing stops, closed FAQ defaults, About/demo keyboard controls, mobile menu and footer. Native slider thumb centers and label centers share an inset of 12px.
 
-## Permanent source-copy rule
+## Permanent public-site content rule
 
-Marketing UI and SEO copy must use specific source names only, such as SIRENE, BODACC, RNE, ORIAS, France Travail and ADEME. Omit the source sentence when names are not useful. Do not add generic descriptions of public data origins, including inside expandable blocks, captions, mobile variants or translations. This applies to static HTML, JavaScript data and `scripts/site_layout.py`; preserve distinct legal/privacy disclosures. `tests/source-copy.test.cjs` guards the public pages against regressions.
+Never expose data-source infrastructure in marketing or product-preview UI: no source names, registries, databases, generic source wording, source-disclosure links, collection methodology, scraping or monitoring infrastructure. Describe what Synthetic Swarm detects, why it matters and what the user receives. This applies to HTML, SEO, shared generators, JavaScript, captions, expandable blocks and both languages. Keep distinct legal/privacy disclosures outside marketing. `tests/source-copy.test.cjs` enforces this rule on public pages.
 
 ## Routes
 

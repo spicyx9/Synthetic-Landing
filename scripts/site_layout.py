@@ -4,8 +4,8 @@ Pages remain ordinary HTML served directly by Vercel; no build service is requir
 from pathlib import Path
 from html import escape
 import re
-# Marketing copy must show specific source names only (SIRENE, BODACC, RNE, etc.).
-# Never introduce generic source descriptions in generated headers, footers or page copy.
+# Public marketing must not expose data sources, registries or collection infrastructure.
+# Describe detected changes, customer value and delivered outcomes only.
 ROOT = Path(__file__).resolve().parent.parent
 ROUTES = {
  'home': ('/', '/index-fr'), 'solution': ('/our-solution', '/notre-solution'),
