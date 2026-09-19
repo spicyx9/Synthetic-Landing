@@ -10,7 +10,7 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  const positions=['home-focused-hero','id="comparison"','id="solution-preview"','id="prospect-example"','id="customer-proof"','id="pricing"','id="faq"','<footer','id="newsletter"'].map(token=>html.indexOf(token));
  assert.ok(positions.every((n,i)=>n>=0&&(!i||n>positions[i-1])));
  assert.doesNotMatch(html,/id="signals"|home-final-cta/);
- assert.equal((html.match(/class="home-product-drawer"/g)||[]).length,1);
+ assert.equal((html.match(/class="prospect-detail-area"/g)||[]).length,1);
  assert.doesNotMatch(html,/class="home-steps"|class="prospect-card"|class="content-page home-output"/);
  assert.equal((html.match(/class="home-testimonial"/g)||[]).length,3);
  const testimonials=html.match(/<section id="customer-proof"[\s\S]*?<\/section>/)[0];
@@ -34,9 +34,13 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.doesNotMatch(newsletter,/<form[^>]*action=/);
  const output=html.match(/<section id="solution-preview"[\s\S]*?<\/section>/)[0];
  assert.doesNotMatch(output,/solution-disclaimer|Fictional example|Exemple fictif/);
- assert.match(output,/class="home-product-window"/);
+ assert.match(output,/class="home-prospect-preview"/);
  assert.doesNotMatch(output,/class="solution-(?:system|engine|target|transform|output)"/);
  assert.doesNotMatch(output,/class="solution-flow"|class="solution-node/);
- assert.doesNotMatch(output,/<dl>|<time/);
- assert.doesNotMatch(output,/href="(?:tel:|mailto:|https:\/\/.*linkedin)/);
+ assert.equal((output.match(/class="prospect-detail"/g)||[]).length,3);
+ assert.match(output,/<time datetime="2026-09-15"/);
+ assert.match(output,/06 73 54 26 ••/);
+ assert.doesNotMatch(output,/Camille Exemple|Ateliers Exemple|5\/5|4\/5/);
+ assert.doesNotMatch(output,/href="(?:tel:|mailto:)/);
+ assert.match(output,/href="https:\/\/www.linkedin.com\/"/);
 });

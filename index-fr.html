@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/styles.css?v=global-atmosphere-1">
   <link rel="stylesheet" href="/demo.css">
   <link rel="stylesheet" href="/floating-demo.css?v=main-audit-1">
-  <link rel="stylesheet" href="/home.css?v=product-window-1">
+  <link rel="stylesheet" href="/home.css?v=why-now-preview-1">
   <link rel="stylesheet" href="/pricing-interactive.css?v=stable-geometry-1">
   <link rel="stylesheet" href="/site-pages.css?v=brand-close-1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/customers.css">
   <link rel="stylesheet" href="/motion.css?v=3">
   <script src="/motion.js?v=main-audit-1" defer></script>
-  <script src="/home-motion.js?v=product-window-1" defer></script>
+  <script src="/home-motion.js?v=why-now-preview-1" defer></script>
   <script src="/page-motion.js?v=2" defer></script>
   <script type="application/ld+json">
 {
@@ -125,30 +125,33 @@
   <span class="page-kicker">Notre solution</span>
   <h2 id="solution-title">De votre cible à votre prochain appel.</h2>
   <p class="solution-intro">Vous définissez qui vous cherchez. Synthetic Swarm fait le reste.</p>
-  <div class="home-product-window">
-    <div class="home-product-bar"><span>LEAD GENERATOR</span><span>Synthetic Swarm</span></div>
-    <div class="home-product-body">
-      <div class="home-product-main">
-        <div class="home-product-target">
-          <p class="home-product-label">Décrivez votre client idéal</p>
-          <p class="home-product-query">Professions libérales en Île-de-France,<br>1 à 50 salariés, dirigeant, portable + email</p>
-          <ul class="home-product-filters"><li>Professions libérales</li><li>Île-de-France</li><li>1–50 salariés</li><li>Dirigeant</li><li>Portable + email</li></ul>
-        </div>
-        <div class="home-product-base">
-          <p class="home-product-label">VOTRE BASE</p>
-          <div class="home-product-base-summary"><p><strong>95</strong><span>PROSPECTS</span></p><h3>Mandataires d’assurance · Île-de-France</h3></div>
-          <div class="home-product-company"><strong>Ateliers Exemple</strong><span class="home-product-change">Première embauche</span><span aria-hidden="true">↗</span></div>
-        </div>
-      </div>
-      <aside id="prospect-example" class="home-product-drawer" aria-labelledby="home-product-name">
-        <p class="home-product-ready">PRÊT À APPELER</p>
-        <h3 id="home-product-name">Camille Exemple</h3>
-        <p class="home-product-role">Dirigeante<span>Ateliers Exemple</span></p>
-        <ul class="home-product-contact"><li>06 XX XX XX XX</li><li>camille@...</li><li>LinkedIn</li></ul>
-        <div class="home-product-reason"><h4>POURQUOI APPELER ?</h4><p><strong>Première embauche détectée.</strong><br>L’entreprise devient employeur.</p><p>C’est un moment pertinent pour prendre contact.</p></div>
-      </aside>
+  <p class="prospect-target">Votre cible : libéraux santé · Hauts-de-France · 1–10 salariés</p>
+  <div class="home-prospect-preview">
+    <div class="prospect-list"><p class="prospect-list-title">PROSPECTS QUALIFIÉS</p><p class="prospect-list-count">Cette semaine · 14 fiches</p><ul><li><button type="button" class="prospect-choice" data-prospect="camille" aria-pressed="true" aria-controls="profile-camille"><span class="prospect-choice-top"><strong>Camille R.</strong><time datetime="2026-09-15">15 sept.</time></span><span class="prospect-choice-signal">Première embauche</span></button></li><li><button type="button" class="prospect-choice" data-prospect="thomas" aria-pressed="false" aria-controls="profile-thomas"><span class="prospect-choice-top"><strong>Thomas B.</strong><time datetime="2026-09-12">12 sept.</time></span><span class="prospect-choice-signal">Nouveau dirigeant</span><span class="prospect-choice-availability">Ligne professionnelle</span></button></li><li><button type="button" class="prospect-choice" data-prospect="sonia" aria-pressed="false" aria-controls="profile-sonia"><span class="prospect-choice-top"><strong>Sonia M.</strong><time datetime="2026-09-10">10 sept.</time></span><span class="prospect-choice-signal">Création récente</span><span class="prospect-choice-availability">Email non disponible</span></button></li></ul></div>
+    <div class="prospect-detail-area" id="prospect-example">
+      <article class="prospect-detail" id="profile-camille" aria-labelledby="name-camille">
+        <p class="prospect-ready">PRÊT À APPELER</p>
+        <div class="prospect-why"><h3>POURQUOI MAINTENANT ?</h3><p class="prospect-event">Première embauche</p><p class="prospect-date"><time datetime="2026-09-15">15 sept. 2026</time> · source publique</p><p class="prospect-consequence">L’entreprise devient employeur et passe sous les obligations de santé collective et de prévoyance applicables.</p></div>
+        <div class="prospect-identity"><h4 id="name-camille">Camille R.</h4><p>Dirigeante · Ateliers R.</p></div>
+        <p class="prospect-phone">06 73 54 26 ••<span>Portable vérifié</span></p>
+        <div class="prospect-channels"><span>camille@ateliers-r.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+      </article><article class="prospect-detail" id="profile-thomas" aria-labelledby="name-thomas" hidden>
+        <p class="prospect-ready">PRÊT À APPELER</p>
+        <div class="prospect-why"><h3>POURQUOI MAINTENANT ?</h3><p class="prospect-event">Nouveau dirigeant</p><p class="prospect-date"><time datetime="2026-09-12">12 sept. 2026</time> · source publique</p><p class="prospect-consequence">La gouvernance vient d’évoluer. C’est un moment pertinent pour réexaminer la protection du dirigeant et l’organisation des garanties.</p></div>
+        <div class="prospect-identity"><h4 id="name-thomas">Thomas B.</h4><p>Dirigeant · Cabinet B.</p></div>
+        <p class="prospect-phone">03 20 45 67 8•<span>Ligne professionnelle</span></p>
+        <div class="prospect-channels"><span>thomas@cabinet-b.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+      </article><article class="prospect-detail" id="profile-sonia" aria-labelledby="name-sonia" hidden>
+        <p class="prospect-ready">PRÊT À APPELER</p>
+        <div class="prospect-why"><h3>POURQUOI MAINTENANT ?</h3><p class="prospect-event">Création récente</p><p class="prospect-date"><time datetime="2026-09-10">10 sept. 2026</time> · source publique</p><p class="prospect-consequence">La structure vient d’être créée. Les besoins de protection du dirigeant et la mise en place des couvertures professionnelles sont à définir.</p></div>
+        <div class="prospect-identity"><h4 id="name-sonia">Sonia M.</h4><p>Dirigeante · Cabinet M.</p></div>
+        <p class="prospect-phone">06 18 42 73 ••<span>Portable vérifié</span></p>
+        <div class="prospect-channels"><span>Email non disponible</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+      </article>
+      <p class="prospect-example-note">Exemples anonymisés</p>
     </div>
   </div>
+  <a class="prospect-preview-link" href="/notre-solution">Voir comment Synthetic Swarm fonctionne →</a>
 </section>
 <section id="customer-proof" class="content-page home-customer-proof" aria-labelledby="customer-preview-title">
   <h2 id="customer-preview-title">Ce sont nos clients qui en parlent le mieux.</h2>

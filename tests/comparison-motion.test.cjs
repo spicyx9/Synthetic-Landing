@@ -26,12 +26,28 @@ test('comparison stays visible without scheduling motion when reduced motion is 
 });
 
 test('product preview reveals the complete deliverable promptly without a story loop',()=>{
- const system={querySelector:()=>({})};
+ const system={querySelector:()=>({}),querySelectorAll:()=>[]};
  const sequences=[];
  const M={ready:cb=>cb(M),step:(element,delay,effect,duration)=>({element,options:{delay,duration}}),sequence:(...args)=>sequences.push(args),story:()=>assert.fail('Product preview must not hide and replay the deliverable in a loop')};
- vm.runInNewContext(source,{window:{SwarmMotion:M},document:{querySelector:s=>s==='.home-product-window'?system:null}});
+ vm.runInNewContext(source,{window:{SwarmMotion:M},document:{querySelector:s=>s==='.home-prospect-preview'?system:null}});
  assert.equal(sequences.length,1);
  const tracks=sequences[0][1];
  assert.ok(Math.max(...tracks.map(t=>t.options.delay+t.options.duration))<=1100);
  assert.equal(tracks[0].options.delay,0);
+});
+
+test('prospect selection swaps profiles and respects reduced motion',()=>{
+ for(const reduced of [false,true]) {
+  const ids=['camille','thomas','sonia'];let animations=0;
+  const profiles=ids.map((id,i)=>({id:`profile-${id}`,hidden:i!==0,getAnimations:()=>[],animate:()=>animations++}));
+  const buttons=ids.map((id,i)=>({attrs:{'aria-pressed':String(i===0),'aria-controls':`profile-${id}`},getAttribute(k){return this.attrs[k];},setAttribute(k,v){this.attrs[k]=v;},addEventListener(type,fn){this.click=fn;}}));
+  const root={querySelectorAll:s=>s==='[data-prospect]'?buttons:profiles};
+  vm.runInNewContext(source,{window:{},matchMedia:()=>({matches:reduced}),document:{querySelector:s=>s==='.home-prospect-preview'?root:null}});
+  for(const i of [1,2,0]) {
+   buttons[i].click();
+   assert.deepEqual(profiles.map(p=>p.hidden),ids.map((_,j)=>j!==i));
+   assert.deepEqual(buttons.map(b=>b.attrs['aria-pressed']),ids.map((_,j)=>String(i===j)));
+  }
+  assert.equal(animations,reduced?0:3);
+ }
 });

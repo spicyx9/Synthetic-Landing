@@ -390,60 +390,67 @@
   .home .demo-wrapper .demo-hero__subtitle { line-height: 1.5; margin-bottom: 32px; }
   .home .home-actions { margin-top: 0; }
 }
-/* One application surface, with an attached prospect detail drawer. */
+/* Qualified prospect list and insurance context in one product surface. */
 .home .home-solution-preview { max-width:1244px; padding-inline:32px; }
-.home-product-window { width:100%; max-width:1180px; margin-inline:auto; border:1px solid #e8e5e0; border-radius:16px; background:#fff; overflow:hidden; text-align:left; box-shadow:0 3px 12px rgba(26,26,26,.02); }
-.home-product-window p,.home-product-window h3,.home-product-window h4 { margin:0; }
-.home-product-bar { display:flex; justify-content:space-between; gap:16px; padding:17px 28px; border-bottom:1px solid #eeede9; font-size:10px; line-height:1.5; color:#777770; }
-.home-product-bar span:first-child { color:#454943; font-weight:550; letter-spacing:.06em; }
-.home-product-body { display:grid; grid-template-columns:minmax(0,1fr) 360px; min-height:484px; }
-.home-product-main { min-width:0; padding:30px 32px; }
-.home-product-label { font-size:11px; color:#7b7b74; line-height:1.5; }
-.home-product-query { padding-block:16px 22px; font-size:clamp(18px,1.6vw,23px); font-weight:500; line-height:1.5; letter-spacing:-.025em; color:#30332f; }
-.home-product-filters { display:flex; flex-wrap:wrap; gap:8px 0; list-style:none; margin:0; padding:13px 0; border-block:1px solid #eeede9; color:#777970; font-size:10px; line-height:1.4; }
-.home-product-filters li { padding-inline:10px; border-left:1px solid #e8e5e0; }
-.home-product-filters li:first-child { padding-left:0; border-left:0; }
-.home-product-base { margin-top:30px; }
-.home-product-base-summary { display:flex; align-items:center; gap:22px; margin:16px 0 22px; }
-.home-product-base-summary > p { display:flex; flex-direction:column; gap:2px; padding-right:22px; border-right:1px solid #eeede9; }
-.home-product-base-summary strong { font-size:27px; line-height:1.1; font-weight:550; letter-spacing:-.04em; color:#424740; }
-.home-product-base-summary span { font-size:8px; color:#909087; letter-spacing:.05em; }
-.home-product-base-summary h3 { font-size:13px; line-height:1.5; font-weight:500; color:#61665e; }
-.home-product-company { display:flex; align-items:center; gap:18px; padding:17px 14px; border-block:1px solid #e7edf1; background:#f7fafc; font-size:12px; line-height:1.5; }
-.home-product-company strong { font-weight:550; color:#343a3e; }
-.home-product-company > span:last-child { margin-left:auto; color:#8fa2b2; }
-.home-product-change { color:#0a66c2; font-size:12px; font-weight:550; }
-.home-product-drawer { min-width:0; border-left:1px solid #e8e5e0; padding:28px; background:#fff; }
-.home-product-ready { font-size:10px; font-weight:550; letter-spacing:.055em; color:#0a66c2; }
-.home-product-drawer h3 { margin-top:24px; font-size:27px; line-height:1.15; letter-spacing:-.035em; font-weight:600; color:#202722; }
-.home-product-role { padding-top:10px; font-size:13px; line-height:1.6; color:#61665e; }
-.home-product-role span { display:block; color:#92938b; font-size:12px; }
-.home-product-contact { display:flex; flex-wrap:wrap; gap:9px 20px; margin:23px 0; padding:0; list-style:none; color:#5f665e; font-size:12px; line-height:1.5; }
-.home-product-contact li:first-child { flex-basis:100%; }
-.home-product-reason { padding:19px; border-radius:8px; background:#eef5fb; color:#38536a; }
-.home-product-reason h4 { font-size:10px; letter-spacing:.05em; font-weight:550; color:#52718b; }
-.home-product-reason p { margin-top:12px; font-size:13px; line-height:1.6; }
-.home-product-reason strong { font-weight:600; color:#234e74; }
-.home-product-reason p:last-child { font-size:12px; color:#6b8295; }
-@media(max-width:1100px) and (min-width:701px) {
- .home-product-body { grid-template-columns:minmax(0,1fr) 340px; }
- .home-product-main,.home-product-drawer { padding:24px; }
- .home-product-company { flex-wrap:wrap; gap:8px 14px; }
+.home .prospect-target { margin:0 0 16px; font-size:13px; line-height:1.5; color:#797a75; }
+.home-prospect-preview { display:grid; grid-template-columns:30% minmax(0,1fr); max-width:1180px; min-height:500px; margin-inline:auto; border:1px solid #e8e5e0; border-radius:14px; background:#fff; overflow:hidden; text-align:left; }
+.home-prospect-preview p,.home-prospect-preview h3,.home-prospect-preview h4 { margin:0; }
+.prospect-list { padding:28px 24px; border-right:1px solid #e8e5e0; }
+.prospect-list-title { font-size:10px; letter-spacing:.07em; color:#777b75; font-weight:500; }
+.home-prospect-preview .prospect-list-count { margin:8px 0 22px; font-size:12px; color:#93958d; }
+.prospect-list ul { list-style:none; margin:0; padding:0; }
+.prospect-choice { display:block; align-content:start; width:100%; padding:20px 14px; min-height:96px; border:0; border-left:2px solid transparent; border-bottom:1px solid #eeede9; background:transparent; text-align:left; font:inherit; cursor:pointer; color:#747871; }
+.prospect-choice[aria-pressed="true"] { border-left-color:#0a66c2; background:#f4f8fc; color:#263c4e; }
+.prospect-choice-top { display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
+.prospect-choice strong { font-size:14px; font-weight:550; }
+.prospect-choice time { font-size:10px; color:#90968e; white-space:nowrap; }
+.prospect-choice-signal { display:block; margin-top:7px; font-size:12px; line-height:1.4; }
+.prospect-choice-availability { display:block; margin-top:5px; font-size:10px; color:#94988f; }
+.prospect-choice:focus-visible,.prospect-channels a:focus-visible,.prospect-preview-link:focus-visible { outline:2px solid #0a66c2; outline-offset:3px; }
+.prospect-detail-area { min-width:0; display:flex; flex-direction:column; padding:28px 40px 18px; }
+.prospect-detail[hidden] { display:none; }
+.prospect-ready { font-size:10px; color:#0a66c2; letter-spacing:.05em; }
+.prospect-why { margin-top:14px; padding:20px 22px; border-left:2px solid #0a66c2; background:#f2f7fc; }
+.prospect-why h3 { font-size:22px; line-height:1.2; font-weight:600; letter-spacing:-.02em; color:#1d486f; }
+.home-prospect-preview .prospect-event { margin-top:13px; font-size:17px; font-weight:550; color:#303c44; }
+.home-prospect-preview .prospect-date { margin-top:5px; color:#8a959d; font-size:11px; }
+.home-prospect-preview .prospect-consequence { margin-top:13px; font-size:14px; line-height:1.6; color:#4c6170; }
+.prospect-identity { margin-top:21px; }
+.prospect-identity h4 { font-size:16px; font-weight:550; color:#333a34; line-height:1.4; }
+.prospect-identity p { padding-top:3px; font-size:12px; color:#8c9087; }
+.home-prospect-preview .prospect-phone { margin-top:16px; font-size:19px; font-weight:550; color:#26382f; font-variant-numeric:tabular-nums; line-height:1.4; }
+.prospect-phone span { display:block; margin-top:3px; font-size:11px; font-weight:400; color:#888f84; }
+.prospect-channels { display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:13px; color:#777f73; font-size:13px; line-height:1.5; }
+.prospect-channels a { color:#0a66c2; text-decoration:underline; text-decoration-color:#b7cfe6; text-underline-offset:3px; }
+.prospect-channels a:hover { text-decoration-color:currentColor; }
+.home-prospect-preview .prospect-example-note { margin-top:auto; padding-top:12px; text-align:right; font-size:11px; color:#a0a29b; }
+.prospect-preview-link { display:block; width:fit-content; margin:26px 0 0 auto; font-size:14px; font-weight:500; color:#0a66c2; }
+.prospect-preview-link:hover { text-decoration:underline; text-underline-offset:4px; }
+@media(min-width:701px) and (max-width:1100px) {
+ .home-prospect-preview { grid-template-columns:35% minmax(0,1fr); }
+ .prospect-list { padding:24px 18px; }
+ .prospect-detail-area { padding:24px; }
+ .prospect-choice-top { flex-wrap:wrap; }
 }
 @media(max-width:700px) {
  .home .home-solution-preview { padding-inline:22px; }
- .home-product-bar { padding:14px 18px; font-size:9px; }
- .home-product-body { grid-template-columns:minmax(0,1fr); min-height:0; }
- .home-product-main { padding:24px 18px; }
- .home-product-query { font-size:19px; }
- .home-product-filters { font-size:9px; }
- .home-product-filters li { padding-inline:8px; }
- .home-product-company { flex-wrap:wrap; gap:7px 12px; }
- .home-product-company strong { flex-basis:100%; }
- .home-product-base-summary { gap:16px; }
- .home-product-base-summary > p { padding-right:16px; }
- .home-product-drawer { border-left:0; border-top:1px solid #e8e5e0; padding:24px 22px; }
- .home-product-drawer h3 { margin-top:18px; }
+ .home-prospect-preview { grid-template-columns:minmax(0,1fr); min-height:0; }
+ .prospect-list { padding:20px 0 0; border-right:0; border-bottom:1px solid #e8e5e0; }
+ .prospect-list-title,.home-prospect-preview .prospect-list-count { padding-inline:18px; }
+ .home-prospect-preview .prospect-list-count { margin-bottom:16px; }
+ .prospect-list ul { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .prospect-list li + li { border-left:1px solid #eeede9; }
+ .prospect-choice { display:flex; flex-direction:column; justify-content:flex-start; height:100%; min-height:0; padding:12px 10px 15px; border-left:0; border-bottom:0; border-top:2px solid transparent; }
+ .prospect-choice[aria-pressed="true"] { border-top-color:#0a66c2; background:transparent; }
+ .prospect-choice-top { flex-direction:column; gap:5px; }
+ .prospect-choice strong { font-size:12px; }
+ .prospect-choice-signal { font-size:10px; }
+ .prospect-choice-availability { display:none; }
+ .prospect-detail-area { padding:22px 18px 18px; }
+ .prospect-why { padding:18px 16px; }
+ .prospect-why h3 { font-size:19px; }
+ .prospect-consequence { font-size:13px; }
+ .prospect-preview-link { font-size:13px; margin-top:24px; }
 }
 
 /* A quiet insurance-network label between the hero and comparison. */

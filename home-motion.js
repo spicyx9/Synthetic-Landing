@@ -44,17 +44,28 @@ window.SwarmMotion?.ready(M => {
     }
 
   }
-  const product = document.querySelector('.home-product-window');
-  if (product) {
-    // The target is always visible; the selected result resolves into one profile.
-    const q = selector => product.querySelector(selector);
-    M.sequence(product,[
-      M.step(q('.home-product-company'),0,'fade',250),
-      {element:q('.home-product-change'),frames:[{color:'#777970'},{color:'#0a66c2'}],options:{duration:200,delay:250}},
-      {element:q('.home-product-drawer'),frames:[{opacity:0,translate:'20px 0'},{opacity:1,translate:'0 0'}],options:{duration:300,delay:450}},
-      M.step(q('.home-product-reason'),750,'fade',250)
-    ]);
-  }
+  const product = document.querySelector('.home-prospect-preview');
+  if (product) M.sequence(product,[M.step(product,0,'fade',300)]);
   const preview = document.querySelector('.home-solution-preview');
   if (preview) M.sequence(preview,[...preview.querySelectorAll(':scope > .page-kicker, :scope > h2, :scope > p')].map((element,i)=>M.step(element,i*100)));
 });
+
+// Native buttons select static, accessible profiles. Motion is optional.
+(() => {
+  const root = document.querySelector('.home-prospect-preview');
+  if (!root) return;
+  const choices = [...root.querySelectorAll('[data-prospect]')];
+  const profiles = [...root.querySelectorAll('.prospect-detail')];
+  choices.forEach(button => button.addEventListener('click', () => {
+    if (button.getAttribute('aria-pressed') === 'true') return;
+    choices.forEach(choice => choice.setAttribute('aria-pressed',String(choice === button)));
+    profiles.forEach(profile => {
+      profile.getAnimations?.().forEach(animation => animation.cancel());
+      profile.hidden = profile.id !== button.getAttribute('aria-controls');
+    });
+    const selected = profiles.find(profile => !profile.hidden);
+    if (selected && !matchMedia('(prefers-reduced-motion: reduce)').matches && selected.animate) {
+      selected.animate([{opacity:0},{opacity:1}],{duration:180,easing:'ease-out'});
+    }
+  }));
+})();
