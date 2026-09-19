@@ -26,7 +26,12 @@
 
   const nav = header.querySelector('.nav-links');
   const actions = header.querySelector('.nav-actions');
-  if (nav) [...nav.children].forEach(node => overlay.querySelector('.mobile-menu-body').appendChild(node.cloneNode(true)));
+  const mobileNav = overlay.querySelector('.mobile-menu-body');
+  if (nav) [...nav.children].forEach(node => {
+    // Flatten only the mobile clone; preserve the authored desktop disclosure.
+    const entries = node.matches('.about-menu') ? node.querySelector('.about-menu-panel').children : [node];
+    [...entries].forEach(entry => mobileNav.appendChild(entry.cloneNode(true)));
+  });
   if (actions) [...actions.children].forEach(node => overlay.querySelector('.mobile-menu-footer').appendChild(node.cloneNode(true)));
   overlay.querySelectorAll('[id]').forEach(node => { node.id = 'mobile-' + node.id; });
   overlay.querySelectorAll('[aria-controls]').forEach(node => node.setAttribute('aria-controls', 'mobile-' + node.getAttribute('aria-controls')));
@@ -81,7 +86,7 @@
     if (window.innerWidth > 980 && overlay.classList.contains('open')) closeMenu(false);
   });
 
-  // Disclosure behavior is identical for About and booking, including mobile clones.
+  // Shared disclosure behavior for desktop About and account/booking controls.
   document.querySelectorAll('[data-disclosure-trigger]').forEach(trigger => {
     const wrapper = trigger.parentElement;
     const panel = document.getElementById(trigger.getAttribute('aria-controls'));
