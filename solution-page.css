@@ -199,5 +199,5 @@
 
 /* Editorial accent on the final word only. */
 .sp-hero h1 { text-wrap:balance; }
-.sp-hero .hero-signature-word { font-family:'DM Serif Display',serif; font-style:italic; font-weight:400; font-size:1.16em; line-height:0; letter-spacing:-.025em; color:#0a66c2; }
-@media(max-width:700px) { .sp-hero .hero-signature-word { font-size:1.08em; } }
+.sp-hero .hero-signature-word, .sp-final .hero-signature-word { font-family:'DM Serif Display',serif; font-style:italic; font-weight:400; font-size:1.16em; line-height:0; letter-spacing:-.025em; color:#0a66c2; }
+@media(max-width:700px) { .sp-hero .hero-signature-word, .sp-final .hero-signature-word { font-size:1.08em; } }
