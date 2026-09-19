@@ -36,3 +36,42 @@
   document.addEventListener('focusin', schedule);
   update();
 })();
+
+// One visual progression stack; semantic chapter headings remain in document order.
+(() => {
+  const story = document.querySelector('.product-story');
+  const progress = story?.querySelector('[data-story-progress]');
+  if (!progress) return;
+  const chapters = [...story.querySelectorAll('.story-chapter')];
+  const rows = [...progress.querySelectorAll('.story-progress-row')];
+  const header = document.querySelector('.header');
+  const desktop = matchMedia('(min-width:701px) and (min-height:600px)');
+  let queued = false;
+  function update() {
+    queued = false;
+    story.classList.toggle('story-progress-enabled', desktop.matches);
+    if (!desktop.matches) return;
+    const top = (header?.getBoundingClientRect().height || 60) + 16;
+    story.style.setProperty('--progress-top', `${top}px`);
+    const rowHeight = parseFloat(getComputedStyle(story).getPropertyValue('--progress-row-height'));
+    let active = 0;
+    chapters.forEach((chapter, index) => {
+      if (chapter.getBoundingClientRect().top <= top + index * rowHeight + 1) active = index;
+    });
+    rows.forEach((row, index) => {
+      row.hidden = index > active;
+      row.classList.toggle('is-active', index === active);
+    });
+    const exit = Math.min(0, story.getBoundingClientRect().bottom - top - (active + 1) * rowHeight);
+    progress.style.setProperty('--progress-exit', `${exit}px`);
+  }
+  function schedule() {
+    if (!queued) { queued = true; requestAnimationFrame(update); }
+  }
+  addEventListener('scroll', schedule, {passive:true});
+  addEventListener('resize', schedule);
+  addEventListener('pageshow', schedule);
+  desktop.addEventListener('change', schedule);
+  if (header) new ResizeObserver(schedule).observe(header);
+  update();
+})();
