@@ -37,7 +37,7 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.match(output,/class="home-prospect-preview"/);
  assert.doesNotMatch(output,/class="solution-(?:system|engine|target|transform|output)"/);
  assert.doesNotMatch(output,/class="solution-flow"|class="solution-node/);
- assert.equal((output.match(/class="prospect-detail"/g)||[]).length,3);
+ assert.equal((output.match(/class="prospect-detail"/g)||[]).length,10);
  assert.match(output,/<time datetime="2026-09-15"/);
  assert.match(output,/06 73 54 26 ••/);
  assert.doesNotMatch(output,/Camille Exemple|Ateliers Exemple|5\/5|4\/5/);
