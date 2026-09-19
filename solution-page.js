@@ -44,7 +44,6 @@
   if (!progress) return;
   const chapters = [...story.querySelectorAll('.story-chapter')];
   const rows = [...progress.querySelectorAll('.story-progress-row')];
-  const contents = chapters.map(chapter => chapter.querySelector('.story-chapter-content'));
   const header = document.querySelector('.header');
   const desktop = matchMedia('(min-width:701px) and (min-height:600px)');
   let queued = false;
@@ -58,17 +57,15 @@
     const rowHeight = parseFloat(getComputedStyle(story).getPropertyValue('--progress-row-height'));
     let activeStep = 0;
     chapters.forEach((chapter, index) => {
-      if (chapter.getBoundingClientRect().top <= top + index * rowHeight + 1) activeStep = index;
+      if (chapter.getBoundingClientRect().top <= top + index * rowHeight) activeStep = index;
     });
     let visibleThroughStep = activeStep;
-    const previewTriggerY = innerHeight * 0.62;
-    chapters.forEach((chapter, index) => {
-      // Reveal before content enters even when chapter padding is shorter than 38vh.
-      const contentTop = contents[index]?.getBoundingClientRect().top ?? chapter.getBoundingClientRect().top;
-      if (chapter.getBoundingClientRect().top <= previewTriggerY || contentTop <= innerHeight + 24) {
-        visibleThroughStep = Math.max(visibleThroughStep, index);
-      }
-    });
+    const stackBottom = top + (activeStep + 1) * rowHeight;
+    const previewDistance = 140;
+    const nextChapter = chapters[activeStep + 1];
+    if (nextChapter && nextChapter.getBoundingClientRect().top <= stackBottom + previewDistance) {
+      visibleThroughStep = activeStep + 1;
+    }
     rows.forEach((row, index) => {
       row.hidden = index > visibleThroughStep;
       row.classList.toggle('is-active', index === activeStep);
