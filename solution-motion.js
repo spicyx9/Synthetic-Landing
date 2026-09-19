@@ -8,7 +8,7 @@ window.SwarmMotion?.ready(M => {
     M.step(hero.querySelector('.solution-capabilities'),300,'fade',240)
   ],{entrance:true});
   page.querySelectorAll('.story-chapter').forEach(section => {
-    const tracks = [...section.querySelectorAll('.story-heading > *')].map((el,i)=>M.step(el,i*50,'fade',280));
+    const tracks = [M.step(section.querySelector('.story-subtitle'),0,'fade',280)];
     const add = (selector,at,stagger=45,effect='fade') => section.querySelectorAll(selector).forEach((el,i)=>tracks.push(M.step(el,at+i*stagger,effect,320)));
     if (section.id === 'targeting') {
       add('.story-composer',60); add('.story-target-text',130); add('.story-filter-row > span',220,25); add('.story-base',420);
