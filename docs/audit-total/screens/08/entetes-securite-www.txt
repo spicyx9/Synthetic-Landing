@@ -1,0 +1,85 @@
+# Horodatage UTC : 2026-09-19T19:38:53Z
+$ curl -sS -o /dev/null -D - -m 20 https://www.syntheticswarm.ai/tarifs
+
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 929
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="tarifs"
+content-type: text/html; charset=utf-8
+date: Sat, 19 Sep 2026 19:38:53 GMT
+etag: "ac0fe4e0989fedb8543e38d111f6e913"
+last-modified: Sat, 19 Sep 2026 19:23:24 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: HIT
+x-vercel-id: iad1::v75kg-1789846733643-bf5004aca1f9
+content-length: 12260
+
+
+$ curl -sS -o /dev/null -D - -m 20 https://www.syntheticswarm.ai/styles.css
+
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 945
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="styles.css"
+content-type: text/css; charset=utf-8
+date: Sat, 19 Sep 2026 19:38:55 GMT
+etag: "1e3329fef304be74db88fe84c22a3d55"
+last-modified: Sat, 19 Sep 2026 19:23:09 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: HIT
+x-vercel-id: iad1::82lh4-1789846735480-da44f364fee6
+content-length: 92495
+
+
+$ curl -sS -o /dev/null -D - -m 20 https://www.syntheticswarm.ai/api/contact
+
+HTTP/2 405 
+age: 0
+allow: POST
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:38:57 GMT
+etag: W/"1d-0geMxcxvoN/hPybBOfieIdsh0M0"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::8j2tb-1789846737159-b21a51f69514
+content-length: 29
+
+
+$ curl -sS -o /dev/null -D - -m 20 https://www.syntheticswarm.ai/api/newsletter
+
+HTTP/2 405 
+age: 0
+allow: POST
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:38:59 GMT
+etag: W/"c-NsyIKrDf6fQ7+609QlCVGoC3ovk"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::4m7l7-1789846739241-b70655d14a9b
+content-length: 12
+
+
+$ curl -sS -o /dev/null -D - -m 20 https://www.syntheticswarm.ai/nope-audit-08
+
+HTTP/2 404 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain; charset=utf-8
+date: Sat, 19 Sep 2026 19:39:01 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-error: NOT_FOUND
+x-vercel-id: iad1::ddxks-1789846741315-25abf2d67bde
+content-length: 79
+
+
+# Fin UTC : 2026-09-19T19:39:02Z

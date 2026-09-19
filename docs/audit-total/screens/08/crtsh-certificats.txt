@@ -1,0 +1,50 @@
+# Horodatage UTC : 2026-09-19T19:39:17Z
+$ curl -sS -m 60 'https://crt.sh/?q=syntheticswarm.ai&output=json' -o crtsh.json ; code HTTP :
+502
+-- taille : 150 octets
+Erreur de lecture JSON : Expecting value: line 1 column 1 (char 0)
+# Fin UTC : 2026-09-19T19:39:18Z
+# Nouvel essai, horodatage UTC : 2026-09-19T19:44:23Z
+$ curl -sS -m 90 'https://crt.sh/?q=syntheticswarm.ai&output=json' ; code HTTP :
+502
+-- taille : 150 octets ; début : <html> <head><title>502 Bad Gateway</title></head> <body> <center><h1>502 Bad Gateway</h1></center> <hr><center>ngin
+Erreur de lecture JSON : Expecting value: line 1 column 1 (char 0)
+
+# Repli Cert Spotter (SSLMate), horodatage UTC : 2026-09-19T19:44:50Z
+$ curl -sS -m 60 'https://api.certspotter.com/v1/issuances?domain=syntheticswarm.ai&include_subdomains=true&expand=dns_names&expand=issuer' ; code HTTP :
+200
+-- taille : 1859 octets
+-- 3 émissions
+-- noms distincts révélés :
+    app.syntheticswarm.ai
+    syntheticswarm.ai
+    www.syntheticswarm.ai
+-- détail (id, émetteur, not_before, not_after, noms) :
+   id=16567235968 | Let's Encrypt | 2026-08-17T14:58:30Z -> 2026-11-15T14:58:29Z | syntheticswarm.ai
+   id=16508020750 | Let's Encrypt | 2026-08-14T16:34:17Z -> 2026-11-12T16:34:16Z | www.syntheticswarm.ai
+   id=16405662634 | Let's Encrypt | 2026-08-10T04:10:21Z -> 2026-11-08T04:10:20Z | app.syntheticswarm.ai
+
+# Troisième essai crt.sh réussi
+-- 18 entrées
+-- noms distincts :
+    app.syntheticswarm.ai
+    syntheticswarm.ai
+    www.syntheticswarm.ai
+   id=28905943197 | C=US, O=Let's Encrypt, CN=YR2 | 2026-08-17T14:58:30 -> 2026-11-15T14:58:29 | syntheticswarm.ai
+   id=28910835911 | C=US, O=Let's Encrypt, CN=YR2 | 2026-08-17T14:58:30 -> 2026-11-15T14:58:29 | syntheticswarm.ai
+   id=28918945272 | C=US, O=Let's Encrypt, CN=YR1 | 2026-08-14T16:34:17 -> 2026-11-12T16:34:16 | www.syntheticswarm.ai
+   id=28856262718 | C=US, O=Let's Encrypt, CN=YR1 | 2026-08-14T16:34:17 -> 2026-11-12T16:34:16 | www.syntheticswarm.ai
+   id=28695741373 | C=US, O=Let's Encrypt, CN=YE2 | 2026-08-10T04:10:21 -> 2026-11-08T04:10:20 | app.syntheticswarm.ai
+   id=28695727772 | C=US, O=Let's Encrypt, CN=YE2 | 2026-08-10T04:10:21 -> 2026-11-08T04:10:20 | app.syntheticswarm.ai
+   id=27222122580 | C=US, O=Let's Encrypt, CN=YR2 | 2026-06-16T02:07:55 -> 2026-09-14T02:07:54 | syntheticswarm.ai
+   id=27222158839 | C=US, O=Let's Encrypt, CN=YR2 | 2026-06-16T02:07:55 -> 2026-09-14T02:07:54 | syntheticswarm.ai
+   id=27205795329 | C=US, O=Let's Encrypt, CN=YR2 | 2026-06-15T11:41:09 -> 2026-09-13T11:41:08 | www.syntheticswarm.ai
+   id=27205789199 | C=US, O=Let's Encrypt, CN=YR2 | 2026-06-15T11:41:09 -> 2026-09-13T11:41:08 | www.syntheticswarm.ai
+   id=27093107177 | C=US, O=Let's Encrypt, CN=YE2 | 2026-06-11T15:30:49 -> 2026-09-09T15:30:48 | app.syntheticswarm.ai
+   id=27093116742 | C=US, O=Let's Encrypt, CN=YE2 | 2026-06-11T15:30:49 -> 2026-09-09T15:30:48 | app.syntheticswarm.ai
+   id=25542063542 | C=US, O=Let's Encrypt, CN=R12 | 2026-04-16T07:06:49 -> 2026-07-15T07:06:48 | www.syntheticswarm.ai
+   id=25624467306 | C=US, O=Let's Encrypt, CN=R12 | 2026-04-16T07:06:49 -> 2026-07-15T07:06:48 | www.syntheticswarm.ai
+   id=25871448680 | C=US, O=Let's Encrypt, CN=R13 | 2026-04-15T17:44:16 -> 2026-07-14T17:44:15 | syntheticswarm.ai
+   id=25516843915 | C=US, O=Let's Encrypt, CN=R13 | 2026-04-15T17:44:16 -> 2026-07-14T17:44:15 | syntheticswarm.ai
+   id=25826234405 | C=US, O=Let's Encrypt, CN=E7 | 2026-04-13T13:05:59 -> 2026-07-12T13:05:58 | app.syntheticswarm.ai
+   id=25589218853 | C=US, O=Let's Encrypt, CN=E7 | 2026-04-13T13:05:59 -> 2026-07-12T13:05:58 | app.syntheticswarm.ai

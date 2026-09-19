@@ -1,0 +1,44 @@
+# Horodatage UTC : 2026-09-19T19:45:36Z
+$ curl -sS -I 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Inter:wght@400;500;600;700;800&display=swap'
+
+HTTP/2 200 
+content-type: text/css; charset=utf-8
+vary: Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site
+access-control-allow-origin: *
+timing-allow-origin: *
+content-length: 0
+expires: Sat, 19 Sep 2026 19:45:38 GMT
+date: Sat, 19 Sep 2026 19:45:38 GMT
+cache-control: private, max-age=86400
+cross-origin-opener-policy: same-origin-allow-popups
+cross-origin-resource-policy: cross-origin
+server: ESF
+x-xss-protection: 0
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+
+$ curl -sS -I https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2
+
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+content-security-policy-report-only: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes
+cross-origin-resource-policy: cross-origin
+cross-origin-opener-policy: same-origin; report-to="apps-themes"
+report-to: {"group":"apps-themes","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/apps-themes"}]}
+timing-allow-origin: *
+content-length: 48256
+x-content-type-options: nosniff
+server: sffe
+x-xss-protection: 0
+date: Mon, 14 Sep 2026 04:01:26 GMT
+expires: Tue, 14 Sep 2027 04:01:26 GMT
+cache-control: public, max-age=31536000
+last-modified: Tue, 09 Sep 2025 18:33:53 GMT
+content-type: font/woff2
+age: 488656
+
+-- dig fonts.googleapis.com A / fonts.gstatic.com A
+fonts.googleapis.com.	247	IN	A	74.125.69.95
+fonts.gstatic.com.	43	IN	A	142.251.183.94
+# Fin UTC : 2026-09-19T19:45:42Z

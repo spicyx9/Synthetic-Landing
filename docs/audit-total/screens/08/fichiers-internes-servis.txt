@@ -1,0 +1,48 @@
+# Horodatage UTC : 2026-09-19T19:41:06Z
+# curl -sS -I https://www.syntheticswarm.ai<chemin> : chemin, code, content-type, content-length, location
+## A. Fichiers internes du repo (non référencés par une page)
+/.claude/launch.json                             200  application/json; charset=utf-8               260  
+/BRAND.md                                        200  text/markdown; charset=utf-8                23148  
+/CONTACT_SETUP.md                                200  text/markdown; charset=utf-8                 1294  
+/LEGAL_AUDIT.md                                  200  text/markdown; charset=utf-8                 1950  
+/README.md                                       404  text/plain; charset=utf-8                      79  
+/docs/header-audit.md                            200  text/markdown; charset=utf-8                 3751  
+/docs/motion-qa.md                               200  text/markdown; charset=utf-8                 4829  
+/docs/production-implementation-audit.md         200  text/markdown; charset=utf-8                 7946  
+/scripts/site_layout.py                          200  application/octet-stream                    13471  
+/assets/customers/README.md                      200  text/markdown; charset=utf-8                  284  
+/assets/data/README.md                           200  text/markdown; charset=utf-8                 1614  
+/assets/school-logo-sources.md                   200  text/markdown; charset=utf-8                  294  
+/assets/data/customers.json                      200  application/json; charset=utf-8               419  
+/tests/comparison-motion.test.cjs                200  application/node                             3709  
+/tests/comparison.test.cjs                       200  application/node                             3354  
+/tests/contact.test.cjs                          200  application/node                             2193  
+/tests/customers.test.cjs                        200  application/node                             3482  
+/tests/language.test.cjs                         200  application/node                             1966  
+/tests/legal.test.cjs                            200  application/node                             4013  
+/tests/motion.test.cjs                           200  application/node                             5439  
+/tests/newsletter.test.cjs                       200  application/node                             4934  
+/tests/site.test.cjs                             200  application/node                             7592  
+/tests/solution-audit.test.cjs                   200  application/node                             3750  
+/tests/solution-progress.test.cjs                200  application/node                             3826  
+/tests/source-copy.test.cjs                      200  application/node                             1313  
+## B. Chemins sensibles et configuration
+/.git/HEAD                                       404  text/plain; charset=utf-8                      79  
+/.git/config                                     404  text/plain; charset=utf-8                      79  
+/.env                                            404  text/plain; charset=utf-8                      79  
+/.env.local                                      404  text/plain; charset=utf-8                      79  
+/package.json                                    404  text/plain; charset=utf-8                      79  
+/vercel.json                                     404  text/plain; charset=utf-8                      79  
+/.vercelignore                                   404  text/plain; charset=utf-8                      79  
+/.gitignore                                      404  text/plain; charset=utf-8                      79  
+/.DS_Store                                       404  text/plain; charset=utf-8                      79  
+/.claude/settings.local.json                     404  text/plain; charset=utf-8                      79  
+/api/contact.js                                  308  text/plain                                      -  -> /api/contact
+/api/newsletter.js                               308  text/plain                                      -  -> /api/newsletter
+/.well-known/security.txt                        404  text/plain; charset=utf-8                      79  
+/docs/                                           308  text/plain                                      -  -> /docs
+/tests/                                          308  text/plain                                      -  -> /tests
+/scripts/                                        308  text/plain                                      -  -> /scripts
+/docs                                            404  text/plain; charset=utf-8                      79  
+/api/                                            308  text/plain                                      -  -> /api
+# Fin UTC : 2026-09-19T19:42:51Z

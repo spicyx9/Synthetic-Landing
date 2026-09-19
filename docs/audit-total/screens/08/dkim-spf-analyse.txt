@@ -1,0 +1,12 @@
+# Horodatage UTC : 2026-09-19T19:45:43Z
+-- Longueur de la clé DKIM resend._domainkey :
+Public-Key: (1024 bit)
+-- Longueur clé DKIM s1 (SendGrid) :
+Public-Key: (2048 bit)
+-- Chaîne SPF : dig mx.ovh.com TXT
+"v=spf1 ptr:mail-out.ovh.net ptr:mail.ovh.net ip4:8.33.137.105/32 ip4:192.99.77.81/32 ?all"
+-- SPF apex ne référence ni Resend ni SendGrid : include:_spf.resend.com ? sendgrid.net ? (recherche dans la chaîne apex)
+"v=spf1 include:mx.ovh.com ~all"
+-- Sous-domaine de retour SendGrid éventuel (em*.syntheticswarm.ai) : non énumérable sans la config SendGrid : [donnée à fournir]
+-- SOA serial en date : 2026-09-19T19:13:49Z
+# Fin UTC : 2026-09-19T19:45:44Z

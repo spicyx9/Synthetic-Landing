@@ -1,0 +1,7 @@
+# Horodatage UTC : 2026-09-19T19:56:42Z
+# Empreintes SRI calculées : curl -sS <url> | openssl dgst -sha384 -binary | openssl base64 -A
+https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js (44659 octets) : sha384-l8f0VcPi/M1iHPv8egOnY/15TDwqgbOR1anMIJWvU6nLRgZVLTLSaNqi/TOoT5Fh
+https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js (19469 octets) : sha384-D/t0ZMqQW31H3az8ktEiNb39wyKnS82iFY52QPACM+IjKW3jDUhyIgh2PApRqJZs
+https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.36.0/dist/tagify.min.js (81485 octets) : sha384-p/JePU4f5IZ+uRk8Mgw+3ojfVL0EFzMr5IwefB+bnKvv7i08kMfP8y3fs1ZJaSVx
+https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.36.0/dist/tagify.css (12127 octets) : sha384-G5n1rAmDQKKQ2/ro2atOFDfdfgrjACaD0Z2jAClHjeZcLVEDK4070xCdzfW65dU7
+# Fin UTC : 2026-09-19T19:57:30Z

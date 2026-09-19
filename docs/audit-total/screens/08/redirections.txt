@@ -1,0 +1,104 @@
+# Horodatage UTC : 2026-09-19T19:37:19Z
+$ curl -sS -I -m 20 http://www.syntheticswarm.ai/
+HTTP/1.1 308 Permanent Redirect
+content-type: text/plain
+location: https://www.syntheticswarm.ai/
+refresh: 0;url=https://www.syntheticswarm.ai/
+server: Vercel
+date: Sat, 19 Sep 2026 19:37:19 GMT
+transfer-encoding: chunked
+
+
+$ curl -sS -I -m 20 http://syntheticswarm.ai/
+HTTP/1.1 308 Permanent Redirect
+content-type: text/plain
+location: https://syntheticswarm.ai/
+refresh: 0;url=https://syntheticswarm.ai/
+server: Vercel
+date: Sat, 19 Sep 2026 19:37:20 GMT
+transfer-encoding: chunked
+
+
+$ curl -sS -I -m 20 https://syntheticswarm.ai/
+HTTP/1.1 200 Connection Established
+
+HTTP/2 307 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain
+date: Sat, 19 Sep 2026 19:37:23 GMT
+location: https://www.syntheticswarm.ai/
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-id: iad1::5c6ht-1789846643153-fdadb2401842
+
+
+$ curl -sS -I -m 20 https://www.syntheticswarm.ai/
+HTTP/1.1 200 Connection Established
+
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 680
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline
+content-type: text/html; charset=utf-8
+date: Sat, 19 Sep 2026 19:37:24 GMT
+etag: "fd674d25e682e899c88732db2bbc3823"
+last-modified: Sat, 19 Sep 2026 19:26:04 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: HIT
+x-vercel-id: iad1::qvx9k-1789846644843-254a3a8dd799
+content-length: 34369
+
+
+$ curl -sS -I -m 20 http://app.syntheticswarm.ai/
+HTTP/1.1 308 Permanent Redirect
+location: https://app.syntheticswarm.ai/
+server: Caddy
+date: Sat, 19 Sep 2026 19:37:28 GMT
+transfer-encoding: chunked
+
+
+$ curl -sS -I -m 20 https://app.syntheticswarm.ai/
+HTTP/1.1 200 Connection Established
+
+HTTP/2 405 
+allow: GET
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:37:29 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 31
+
+
+$ curl -sS -I -m 20 https://syntheticswarm.ai/tarifs
+HTTP/1.1 200 Connection Established
+
+HTTP/2 307 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain
+date: Sat, 19 Sep 2026 19:37:32 GMT
+location: https://www.syntheticswarm.ai/tarifs
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-id: iad1::dd9z7-1789846652540-639deae7c599
+
+
+$ curl -sS -I -m 20 http://www.syntheticswarm.ai/tarifs
+HTTP/1.1 308 Permanent Redirect
+content-type: text/plain
+location: https://www.syntheticswarm.ai/tarifs
+refresh: 0;url=https://www.syntheticswarm.ai/tarifs
+server: Vercel
+date: Sat, 19 Sep 2026 19:37:34 GMT
+transfer-encoding: chunked
+
+
+# Fin UTC : 2026-09-19T19:37:35Z

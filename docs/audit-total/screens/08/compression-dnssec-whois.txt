@@ -1,0 +1,18 @@
+# Horodatage UTC : 2026-09-19T19:50:32Z
+$ curl -sS -I -H 'Accept-Encoding: gzip, br' https://www.syntheticswarm.ai/styles.css
+cache-control: public, max-age=0, must-revalidate
+content-encoding: br
+-- taille compressée réelle : 20283 octets téléchargés (brut 92495)
+
+$ dig +dnssec +noall +answer syntheticswarm.ai A (RRSIG attendu)
+syntheticswarm.ai.	1800	IN	A	216.198.79.1
+syntheticswarm.ai.	1800	IN	RRSIG	A 13 2 1800 20261001000000 20260910000000 9080 syntheticswarm.ai. WaGEZaOXNzA/R6iQcN5kimVI0IlJwZ9TS8C016dZMYGtXYpDOO1R30iG cFWNwd6FoiQ/tJ7NmmDVEboxrTxoRA==
+$ dig +noall +answer +comments +dnssec _dmarc.syntheticswarm.ai TXT | grep flags
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+; EDNS: version: 0, flags: do; udp: 512
+
+$ curl -sS 'https://rest.db.ripe.net/search.json?query-string=178.104.121.108&flags=no-referenced&flags=no-irt'
+code 200
+    inetnum : {'inetnum': '178.104.112.0 - 178.104.127.255', 'netname': 'CLOUD-NBG1', 'country': 'DE', 'mnt-by': 'HOS-GUN'}
+    route : {'route': '178.104.0.0/15', 'descr': 'HETZNER-DC', 'origin': 'AS24940', 'org': 'ORG-HOA1-RIPE', 'mnt-by': 'HOS-GUN'}
+# Fin UTC : 2026-09-19T19:50:37Z

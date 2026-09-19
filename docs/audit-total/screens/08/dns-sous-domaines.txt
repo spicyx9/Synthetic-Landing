@@ -1,0 +1,41 @@
+# Horodatage UTC : 2026-09-19T19:39:23Z
+www.syntheticswarm.ai : opcode: QUERY, status: NOERROR, id: 6182 www.syntheticswarm.ai.	1659	IN	CNAME	34480c0bd9eb3fd2.vercel-dns-017.com. 34480c0bd9eb3fd2.vercel-dns-017.com. 300 IN A	216.198.79.65 34480c0bd9eb3fd2.vercel-dns-017.com. 300 IN A	64.29.17.65 
+app.syntheticswarm.ai : opcode: QUERY, status: NOERROR, id: 30029 app.syntheticswarm.ai.	1684	IN	A	178.104.121.108 
+mail.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 30809 
+api.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 63480 
+staging.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 6668 
+dev.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 39145 
+admin.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 51817 
+status.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 40012 
+cdn.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 60491 
+docs.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 33455 
+m.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 52826 
+send.syntheticswarm.ai : opcode: QUERY, status: NOERROR, id: 20824 send.syntheticswarm.ai.	1800	IN	CNAME	send.forge.rmta.net. 
+ftp.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 1 
+smtp.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 36476 
+imap.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 45262 
+pop.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 25912 
+webmail.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 47026 
+autodiscover.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 24238 
+autoconfig.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 12121 
+email.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 13916 
+test.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 19732 
+beta.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 57657 
+preview.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 10837 
+vercel.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 14714 
+ns1.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 19007 
+ns2.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 20614 
+blog.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 51405 
+shop.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 24476 
+portal.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 10192 
+dashboard.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 7932 
+login.syntheticswarm.ai : opcode: QUERY, status: NXDOMAIN, id: 59755 
+-- test wildcard : dig audit08-inexistant-1789846778.syntheticswarm.ai A
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 13910
+-- AXFR (doit être refusé) : dig @launch1.spaceship.net syntheticswarm.ai AXFR
+;; Connection to 162.159.26.38#53(162.159.26.38) for syntheticswarm.ai failed: timed out.
+;; no servers could be reached
+-- reverse app : dig -x 178.104.121.108
+108.121.104.178.in-addr.arpa. 21600 IN	PTR	static.108.121.104.178.clients.your-server.de.
+-- reverse apex vercel : dig -x 216.198.79.1
+# Fin UTC : 2026-09-19T19:39:43Z

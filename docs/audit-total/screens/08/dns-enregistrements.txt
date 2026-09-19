@@ -1,0 +1,126 @@
+# Horodatage UTC : 2026-09-19T19:37:01Z
+$ dig +noall +answer +comments syntheticswarm.ai NS
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 36949
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; ANSWER SECTION:
+syntheticswarm.ai.	713	IN	NS	launch2.spaceship.net.
+syntheticswarm.ai.	713	IN	NS	launch1.spaceship.net.
+
+
+$ dig +noall +answer syntheticswarm.ai A
+syntheticswarm.ai.	1800	IN	A	216.198.79.1
+
+$ dig +noall +answer syntheticswarm.ai AAAA
+
+$ dig +noall +answer www.syntheticswarm.ai A
+www.syntheticswarm.ai.	1800	IN	CNAME	34480c0bd9eb3fd2.vercel-dns-017.com.
+34480c0bd9eb3fd2.vercel-dns-017.com. 300 IN A	216.198.79.65
+34480c0bd9eb3fd2.vercel-dns-017.com. 300 IN A	64.29.17.65
+
+$ dig +noall +answer www.syntheticswarm.ai AAAA
+www.syntheticswarm.ai.	1800	IN	CNAME	34480c0bd9eb3fd2.vercel-dns-017.com.
+
+$ dig +noall +answer www.syntheticswarm.ai CNAME
+www.syntheticswarm.ai.	1800	IN	CNAME	34480c0bd9eb3fd2.vercel-dns-017.com.
+
+$ dig +noall +answer app.syntheticswarm.ai A
+app.syntheticswarm.ai.	1800	IN	A	178.104.121.108
+
+$ dig +noall +answer app.syntheticswarm.ai AAAA
+
+$ dig +noall +answer app.syntheticswarm.ai CNAME
+
+$ dig +noall +answer syntheticswarm.ai MX
+syntheticswarm.ai.	1800	IN	MX	100 mx3.mail.ovh.net.
+syntheticswarm.ai.	1800	IN	MX	1 mx0.mail.ovh.net.
+syntheticswarm.ai.	1800	IN	MX	50 mx2.mail.ovh.net.
+syntheticswarm.ai.	1800	IN	MX	5 mx1.mail.ovh.net.
+
+$ dig +noall +answer syntheticswarm.ai TXT
+syntheticswarm.ai.	1800	IN	TXT	"v=spf1 include:mx.ovh.com ~all"
+
+$ dig +noall +answer _dmarc.syntheticswarm.ai TXT
+_dmarc.syntheticswarm.ai. 708	IN	TXT	"v=DMARC1; p=none;"
+
+$ dig +noall +answer +comments syntheticswarm.ai CAA
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50260
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+
+$ dig +noall +answer +comments www.syntheticswarm.ai CAA
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39843
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; ANSWER SECTION:
+www.syntheticswarm.ai.	1800	IN	CNAME	34480c0bd9eb3fd2.vercel-dns-017.com.
+34480c0bd9eb3fd2.vercel-dns-017.com. 3600 IN CAA 0 issue "letsencrypt.org"
+34480c0bd9eb3fd2.vercel-dns-017.com. 3600 IN CAA 0 issue "pki.goog"
+34480c0bd9eb3fd2.vercel-dns-017.com. 3600 IN CAA 0 issue "sectigo.com"
+34480c0bd9eb3fd2.vercel-dns-017.com. 3600 IN CAA 0 issue "globalsign.com"
+
+
+$ dig +noall +answer resend._domainkey.syntheticswarm.ai TXT
+resend._domainkey.syntheticswarm.ai. 1800 IN TXT "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDR7Gb2DQSCUs8tKQ3+JtH95y5VVfhnyfoNy+/+v1gnDLr3gkkFJkqFA8hvtiCvfx8mMOy11one5elCNbgALQQdsAmQIPT+VXqGYtqyEg4tFPa0TuSKB4WVPpKAlETpGiO8rCLkGjFUEZgYJvQV7YvkSMkfbfZu+ec00rT0bmwaTwIDAQAB"
+
+$ dig +noall +answer resend._domainkey.syntheticswarm.ai CNAME
+
+$ dig +noall +answer s1._domainkey.syntheticswarm.ai CNAME
+s1._domainkey.syntheticswarm.ai. 1800 IN CNAME	s1.domainkey.u97574019.wl020.sendgrid.net.
+
+$ dig +noall +answer s1._domainkey.syntheticswarm.ai TXT
+s1._domainkey.syntheticswarm.ai. 1800 IN CNAME	s1.domainkey.u97574019.wl020.sendgrid.net.
+s1.domainkey.u97574019.wl020.sendgrid.net. 1800	IN TXT "k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuUc8qvBq0i+x/ibpk5OiboJ9tcWnCxoc4InguMyeiX3/PmNHe4ENKHMEfXKDVFdr2kptVgPI9RJdq1PGjbfBiovDtWqedaQHtGMFVh9J6uRisOz4c6etRXVDCMzKNUst/NPb+g9Uyx9tlaXBOFana3fYbc/h4pj/sTD4F49ZUOPyzRQ+zyhMiI5usm6o8a1ZywkA2" "xqKDJ1D0ib6sqH2vmacFhBvF0M4vRSlDKTJmP9D2GiVVWyzAtCTfxGGyPmSsYzAfeIi2JqSMKBcMeVNz2aacXv2D8z4hYIrCvfaITvTQceL/1M6WD57CXLXdcpvFtosGYuQREB0rtIYxojBYQIDAQAB"
+
+$ dig +noall +answer s2._domainkey.syntheticswarm.ai CNAME
+s2._domainkey.syntheticswarm.ai. 1800 IN CNAME	s2.domainkey.u97574019.wl020.sendgrid.net.
+
+$ dig +noall +answer s2._domainkey.syntheticswarm.ai TXT
+s2._domainkey.syntheticswarm.ai. 1800 IN CNAME	s2.domainkey.u97574019.wl020.sendgrid.net.
+s2.domainkey.u97574019.wl020.sendgrid.net. 1800	IN TXT "k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyoSZgAr3JJyG2vFrCQAYZsIO3gbGHrOZPmElkBHjCThOa72g5m3pfO1OCkzbzIL5zOSqJN/Wu2oeIuEmSf3ponaJsDZ1wSCZoPq5q3iOzuvINQfo8NQYiWeZUnVp0Y8ASl0xnOtFkdOjbu9Yx0I1dFCfC8IP2JfYmB147khnQZenBVTmN3MLAHJbjF9x+KIjBdu1T" "CGcgWjpVmRuWv9f9Ab1OvK/yG0q8NU/2QieNSFY5ql3dnP0+OWKxcl8fGV7GP0tKFkp2cnXcaJE5f4Xtem04qzNtXdKsDkS3dE2LOw3i8nRUkoAEa4G01S/p3odLFp6s6u0tVPlP6twPb76SQIDAQAB"
+
+$ dig +noall +answer send.syntheticswarm.ai MX
+send.syntheticswarm.ai.	1800	IN	CNAME	send.forge.rmta.net.
+send.forge.rmta.net.	300	IN	MX	10 feedback.forge.rmta.net.
+
+$ dig +noall +answer send.syntheticswarm.ai TXT
+send.syntheticswarm.ai.	1800	IN	CNAME	send.forge.rmta.net.
+send.forge.rmta.net.	300	IN	TXT	"v=spf1 ip4:52.3.252.119 ip4:44.222.39.36 ip4:199.249.231.0/24 ~all"
+
+$ dig +noall +answer send.syntheticswarm.ai A
+send.syntheticswarm.ai.	1800	IN	CNAME	send.forge.rmta.net.
+
+$ dig +noall +answer +comments syntheticswarm.ai SOA
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 27132
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; ANSWER SECTION:
+syntheticswarm.ai.	1800	IN	SOA	launch1.spaceship.net. support.spaceship.com. 1789845229 43200 3600 604800 3600
+
+
+$ dig +noall +answer _mta-sts.syntheticswarm.ai TXT
+
+$ dig +noall +answer _smtp._tls.syntheticswarm.ai TXT
+
+$ dig +noall +answer default._domainkey.syntheticswarm.ai TXT
+
+$ dig +noall +answer ovh._domainkey.syntheticswarm.ai TXT
+
+$ dig +noall +answer google._domainkey.syntheticswarm.ai TXT
+
+$ dig +noall +answer syntheticswarm.ai DS
+syntheticswarm.ai.	3600	IN	DS	4005 13 2 E24D4FA08FA844DDADFD9973224F997B3B2ECD85649AD6D8037A817F 5CF930F7
+
+# Fin UTC : 2026-09-19T19:37:17Z

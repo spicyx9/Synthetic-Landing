@@ -1,0 +1,56 @@
+# Horodatage UTC : 2026-09-19T19:42:51Z
+$ curl -sS -I https://www.syntheticswarm.ai/assets/logo-black-narrow.png
+age: 1189
+cache-control: public, max-age=0, must-revalidate
+content-type: image/png
+etag: "55a430191b17a0e597bcb877750010cf"
+last-modified: Sat, 19 Sep 2026 19:23:03 GMT
+x-vercel-cache: HIT
+content-length: 124746
+
+$ curl -sS -I https://www.syntheticswarm.ai/styles.css
+age: 1186
+cache-control: public, max-age=0, must-revalidate
+content-type: text/css; charset=utf-8
+etag: "1e3329fef304be74db88fe84c22a3d55"
+last-modified: Sat, 19 Sep 2026 19:23:09 GMT
+x-vercel-cache: HIT
+content-length: 92495
+
+$ curl -sS -I https://www.syntheticswarm.ai/home.css
+age: 1013
+cache-control: public, max-age=0, must-revalidate
+content-type: text/css; charset=utf-8
+etag: "1aa76a29eab4acbdb87707acaf93d31e"
+last-modified: Sat, 19 Sep 2026 19:26:04 GMT
+x-vercel-cache: HIT
+content-length: 34379
+
+$ curl -sS -I https://www.syntheticswarm.ai/motion.js
+age: 1197
+cache-control: public, max-age=0, must-revalidate
+content-type: application/javascript; charset=utf-8
+etag: "17eedf54300dde8ba3ade2d34c47f07e"
+last-modified: Sat, 19 Sep 2026 19:23:03 GMT
+x-vercel-cache: HIT
+content-length: 6516
+
+$ curl -sS -I https://www.syntheticswarm.ai/
+age: 1018
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+etag: "fd674d25e682e899c88732db2bbc3823"
+last-modified: Sat, 19 Sep 2026 19:26:04 GMT
+x-vercel-cache: HIT
+content-length: 34369
+
+$ curl -sS -I https://www.syntheticswarm.ai/tarifs
+age: 1180
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+etag: "ac0fe4e0989fedb8543e38d111f6e913"
+last-modified: Sat, 19 Sep 2026 19:23:24 GMT
+x-vercel-cache: HIT
+content-length: 12260
+
+# Fin UTC : 2026-09-19T19:43:06Z

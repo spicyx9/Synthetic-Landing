@@ -1,0 +1,10 @@
+# Horodatage UTC : 2026-09-19T19:53Z (appel unique)
+$ curl -sS https://api.github.com/repos/spicyx9/Synthetic-Landing  (code 200)
+{
+ "full_name": "spicyx9/Synthetic-Landing",
+ "private": false,
+ "visibility": "public",
+ "default_branch": "main",
+ "pushed_at": "2026-09-19T19:38:56Z",
+ "html_url": "https://github.com/spicyx9/Synthetic-Landing"
+}

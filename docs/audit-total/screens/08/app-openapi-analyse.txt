@@ -1,0 +1,27 @@
+# Analyse locale de openapi.json téléchargé à 19:39 UTC
+openapi: 3.1.0 | titre: Synthetic Swarm | version: 0.1.0
+servers: None
+117 chemins, 134 opérations
+securitySchemes: {"OAuth2PasswordBearer": {"type": "oauth2", "flows": {"password": {"scopes": {}, "tokenUrl": "/api/v1/auth/login"}}}, "APIKeyHeader": {"type": "apiKey", "in": "header", "name": "X-API-Key"}}
+tags: {'auth': 14, 'prospects': 3, 'campaigns': 3, 'accounts': 9, 'enrollments': 11, 'conversations': 7, 'linkedin-templates': 13, 'prospection-templates': 11, 'leads': 4, 'sales-intel': 29, 'interventions': 5, 'billing': 12, 'admin': 3, 'webhooks': 1, '(sans tag)': 7, 'health': 2}
+chemins notables:
+   /api/v1/admin/orgs/{org_id}/feature-flags -> GET
+   /api/v1/admin/orgs/{org_id}/feature-flags/{flag_name} -> PUT
+   /api/v1/admin/orgs/{org_id}/unipile-usage -> GET
+   /api/v1/auth/resend-verification -> POST
+   /api/v1/billing/admin/complete-upgrade -> POST
+   /api/v1/billing/admin/grant-credit -> POST
+   /api/v1/linkedin-templates/{template_id}/leads/export -> GET
+   /api/v1/prospection-templates/{template_id}/leads/export -> GET
+   /api/v1/sales-intel/lead-bases/{base_id}/export.xlsx -> GET
+   /health -> GET
+   /health/external -> GET
+   /webhooks/resend -> POST
+opérations sans champ security déclaré : 19 (indicatif : FastAPI ne déclare security que si dépendance de sécurité OpenAPI)
+global security: None
+exemples de descriptions (5 premières):
+   POST /api/v1/auth/register | Register | 
+   POST /api/v1/auth/login | Login | 
+   GET /api/v1/auth/verify-email | Verify Email | 
+   POST /api/v1/auth/revert-email | Revert Email | Undo an email change, from the link sent to the address it replaced.  A POST from the app page, not 
+   POST /api/v1/auth/resend-verification | Resend Verification | 

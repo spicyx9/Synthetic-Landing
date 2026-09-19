@@ -1,0 +1,149 @@
+# Horodatage UTC : 2026-09-19T19:39:06Z
+$ curl -sS -D - -o /tmp/claude-0/-home-user-Synthetic-Landing/a8dff6ab-7fb4-5b32-93d4-94276e2a5aad/scratchpad/08/app-root.html -m 20 https://app.syntheticswarm.ai/
+
+HTTP/2 307 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+date: Sat, 19 Sep 2026 19:39:05 GMT
+location: /ui/
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 0
+
+-- corps (200 premiers octets) : 
+
+$ curl -sS -D - -o /tmp/claude-0/-home-user-Synthetic-Landing/a8dff6ab-7fb4-5b32-93d4-94276e2a5aad/scratchpad/08/openapi.json -m 30 https://app.syntheticswarm.ai/openapi.json
+
+HTTP/2 200 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:39:07 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 190125
+
+-- taille : 190125 octets
+
+$ curl -sS -D - -m 20 https://app.syntheticswarm.ai/health
+
+HTTP/2 200 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:39:10 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 59
+
+{"status":"ok","downstream":{"postgres":"ok","redis":"ok"}}
+
+$ curl -sS -D - -o /tmp/claude-0/-home-user-Synthetic-Landing/a8dff6ab-7fb4-5b32-93d4-94276e2a5aad/scratchpad/08/app-docs.html -m 20 https://app.syntheticswarm.ai/docs
+
+HTTP/2 404 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:39:12 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 22
+
+-- corps (300 premiers octets) : {"detail":"Not Found"}
+
+$ curl -sS -D - -o /tmp/claude-0/-home-user-Synthetic-Landing/a8dff6ab-7fb4-5b32-93d4-94276e2a5aad/scratchpad/08/app-redoc.html -m 20 https://app.syntheticswarm.ai/redoc
+
+HTTP/2 404 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:39:14 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 22
+
+-- corps (300 premiers octets) : {"detail":"Not Found"}
+
+# Fin UTC : 2026-09-19T19:39:15Z
+
+# Lot 2, horodatage UTC : 2026-09-19T19:50:10Z
+$ curl -sS -D - -o app-ui.html https://app.syntheticswarm.ai/ui/
+
+HTTP/2 200 
+accept-ranges: bytes
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: text/html; charset=utf-8
+date: Sat, 19 Sep 2026 19:50:12 GMT
+etag: "d5e3966d950c81d4543daf11cf477700"
+last-modified: Sat, 19 Sep 2026 15:48:22 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 925606
+
+-- taille : 925606 ; scripts et feuilles externes référencés :
+    https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.36.0/dist/tagify.css
+    https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.36.0/dist/tagify.min.js
+    https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js
+    https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js
+    https://fonts.googleapis.com
+    https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap
+    https://fonts.gstatic.com
+-- HSTS présent ? 0 occurrence(s) (0 = absent)
+
+$ curl -sS -D - https://app.syntheticswarm.ai/health/external
+
+HTTP/2 200 
+cache-control: no-cache
+content-type: application/json
+date: Sat, 19 Sep 2026 19:50:18 GMT
+content-length: 75
+
+{"status":"ok","dependencies":{"unipile":{"status":"ok","latency_ms":105}}}
+
+$ curl -sS -D - https://app.syntheticswarm.ai/metrics
+
+HTTP/2 404 
+cache-control: no-cache
+content-type: application/json
+date: Sat, 19 Sep 2026 19:50:20 GMT
+content-length: 22
+
+{"detail":"Not Found"}
+
+$ curl -sS -D - https://app.syntheticswarm.ai/api/v1/admin/orgs/1/feature-flags   (sans authentification, 401 attendu)
+
+HTTP/2 401 
+cache-control: no-cache
+content-type: application/json
+date: Sat, 19 Sep 2026 19:50:23 GMT
+www-authenticate: Bearer
+content-length: 37
+
+{"detail":"Invalid or expired token"}
+
+# Fin UTC : 2026-09-19T19:50:23Z

@@ -1,0 +1,95 @@
+# Horodatage UTC : 2026-09-19T19:43:30Z
+$ echo | openssl s_client -proxy 127.0.0.1:41841 -connect app.syntheticswarm.ai:443 -servername app.syntheticswarm.ai -showcerts
+depth=3 C = US, O = Internet Security Research Group, CN = ISRG Root X2
+depth=2 C = US, O = ISRG, CN = Root YE
+depth=1 C = US, O = Let's Encrypt, CN = YE2
+depth=0 CN = app.syntheticswarm.ai
+ 0 s:CN = app.syntheticswarm.ai
+ 1 s:C = US, O = Let's Encrypt, CN = YE2
+ 2 s:C = US, O = ISRG, CN = Root YE
+ 3 s:C = US, O = Internet Security Research Group, CN = ISRG Root X2
+Peer signing digest: SHA256
+Peer signature type: ECDSA
+SSL handshake has read 3814 bytes and written 463 bytes
+Verification: OK
+New, TLSv1.3, Cipher is TLS_AES_128_GCM_SHA256
+Server public key is 256 bit
+Verify return code: 0 (ok)
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_128_GCM_SHA256
+-- Détail des certificats de la chaîne :
+--- cert-app.syntheticswarm.ai-1.pem
+subject=CN = app.syntheticswarm.ai
+issuer=C = US, O = Let's Encrypt, CN = YE2
+notBefore=Aug 10 04:10:21 2026 GMT
+notAfter=Nov  8 04:10:20 2026 GMT
+serial=05EC3825107309ABC45ED5D1D35FC216958E
+X509v3 Subject Alternative Name: 
+    DNS:app.syntheticswarm.ai
+    algo : Signature Algorithm: ecdsa-with-SHA384 Public Key Algorithm: id-ecPublicKey 
+    empreinte SHA-256 : 70:55:30:71:03:5C:96:0A:E4:E5:34:1C:1B:FB:58:9D:F5:8F:FD:A3:0E:AE:8B:5B:77:16:95:F8:E2:82:91:EA
+--- cert-app.syntheticswarm.ai-2.pem
+No extensions in certificate
+subject=C = US, O = Let's Encrypt, CN = YE2
+issuer=C = US, O = ISRG, CN = Root YE
+notBefore=Sep  3 00:00:00 2025 GMT
+notAfter=Sep  2 23:59:59 2028 GMT
+serial=4DF3B15DD6C0784C507CD37B58E6F115
+    algo : Signature Algorithm: ecdsa-with-SHA384 Public Key Algorithm: id-ecPublicKey 
+    empreinte SHA-256 : 97:65:8D:E8:C6:8D:FA:98:AC:E1:E5:02:8A:63:D5:4A:1A:AE:91:1B:3E:21:47:10:76:C6:85:0C:D0:8C:BA:B4
+--- cert-app.syntheticswarm.ai-3.pem
+No extensions in certificate
+subject=C = US, O = ISRG, CN = Root YE
+issuer=C = US, O = Internet Security Research Group, CN = ISRG Root X2
+notBefore=May 13 00:00:00 2026 GMT
+notAfter=Sep  2 23:59:59 2032 GMT
+serial=872165FC34B6E5FBA8ADD5B3705FB53A
+    algo : Signature Algorithm: ecdsa-with-SHA384 Public Key Algorithm: id-ecPublicKey 
+    empreinte SHA-256 : 0F:C0:90:1C:CA:2B:AE:9E:9F:DB:B0:2D:50:D0:2F:10:94:F7:B3:66:72:08:69:91:B9:E8:97:62:6D:C4:85:F0
+--- cert-app.syntheticswarm.ai-4.pem
+No extensions in certificate
+subject=C = US, O = Internet Security Research Group, CN = ISRG Root X2
+issuer=C = US, O = Internet Security Research Group, CN = ISRG Root X1
+notBefore=May 13 00:00:00 2026 GMT
+notAfter=Sep  2 23:59:59 2032 GMT
+serial=6C8F1DC727C7117F7BAF853AC980F9CD
+    algo : Signature Algorithm: sha256WithRSAEncryption Public Key Algorithm: id-ecPublicKey 
+    empreinte SHA-256 : EE:5F:7A:BD:69:81:BB:02:55:63:2C:D8:F4:92:83:45:1B:4B:18:84:4D:12:04:0B:44:EE:00:F0:7B:8F:E2:C6
+-- Jours restants (feuille) :
+    notAfter=Nov  8 04:10:20 2026 GMT ; restants=49 jours
+$ echo | openssl s_client -proxy 127.0.0.1:41841 -connect app.syntheticswarm.ai:443 -servername app.syntheticswarm.ai -tls1 -brief
+    40074DD0BA7F0000:error:0A0000BF:SSL routines:tls_setup_handshake:no protocols available:../ssl/statem/statem_lib.c:104:
+$ echo | openssl s_client -proxy 127.0.0.1:41841 -connect app.syntheticswarm.ai:443 -servername app.syntheticswarm.ai -tls1_1 -brief
+    40A77B64BD7F0000:error:0A0000BF:SSL routines:tls_setup_handshake:no protocols available:../ssl/statem/statem_lib.c:104:
+$ echo | openssl s_client -proxy 127.0.0.1:41841 -connect app.syntheticswarm.ai:443 -servername app.syntheticswarm.ai -tls1_2 -brief
+    Protocol version: TLSv1.2
+    Ciphersuite: ECDHE-ECDSA-AES128-GCM-SHA256
+    Peer certificate: CN = app.syntheticswarm.ai
+    Hash used: SHA256
+    Signature type: ECDSA
+    Verification: OK
+    Server Temp Key: X25519, 253 bits
+$ echo | openssl s_client -proxy 127.0.0.1:41841 -connect app.syntheticswarm.ai:443 -servername app.syntheticswarm.ai -tls1_3 -brief
+    Protocol version: TLSv1.3
+    Ciphersuite: TLS_AES_128_GCM_SHA256
+    Peer certificate: CN = app.syntheticswarm.ai
+    Hash used: SHA256
+    Signature type: ECDSA
+    Verification: OK
+    Server Temp Key: X25519, 253 bits
+# Fin UTC : 2026-09-19T19:43:49Z
+
+# Retest TLS 1.0 et 1.1 avec MinProtocol abaissé, horodatage UTC : 2026-09-19T19:49:45Z
+$ OPENSSL_CONF=openssl-legacy.cnf (MinProtocol=TLSv1, SECLEVEL=0) echo | openssl s_client -proxy 127.0.0.1:41841 -connect app.syntheticswarm.ai:443 -servername app.syntheticswarm.ai -tls1 -cipher 'DEFAULT:@SECLEVEL=0' -brief
+    4027CFC6407F0000:error:0A00042E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:../ssl/record/rec_layer_s3.c:1599:SSL alert number 70
+$ OPENSSL_CONF=openssl-legacy.cnf (MinProtocol=TLSv1, SECLEVEL=0) echo | openssl s_client -proxy 127.0.0.1:41841 -connect app.syntheticswarm.ai:443 -servername app.syntheticswarm.ai -tls1_1 -cipher 'DEFAULT:@SECLEVEL=0' -brief
+    40975B8F1D7F0000:error:0A00042E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:../ssl/record/rec_layer_s3.c:1599:SSL alert number 70
+# Fin UTC : 2026-09-19T19:49:51Z
+
+# Section AIA (Authority Information Access) et CRL du certificat feuille, extrait de : openssl x509 -in cert-app.syntheticswarm.ai-1.pem -noout -text
+            Authority Information Access: 
+                CA Issuers - URI:http://ye2.i.lencr.org/
+--
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://ye2.c.lencr.org/15.crl

@@ -1,0 +1,72 @@
+# Horodatage UTC : 2026-09-19T19:49:15Z
+$ echo | openssl s_client -proxy 127.0.0.1:41841 -connect www.syntheticswarm.ai:443 -servername www.syntheticswarm.ai -showcerts -status
+depth=3 C = US, O = Internet Security Research Group, CN = ISRG Root X1
+depth=2 C = US, O = ISRG, CN = Root YR
+depth=1 C = US, O = Let's Encrypt, CN = YR1
+depth=0 CN = www.syntheticswarm.ai
+OCSP response: no response sent
+ 0 s:CN = www.syntheticswarm.ai
+ 1 s:C = US, O = Let's Encrypt, CN = YR1
+ 2 s:C = US, O = ISRG, CN = Root YR
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+SSL handshake has read 4656 bytes and written 472 bytes
+Verification: OK
+New, TLSv1.3, Cipher is TLS_AES_128_GCM_SHA256
+Server public key is 2048 bit
+Verify return code: 0 (ok)
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_128_GCM_SHA256
+-- Détail des certificats de la chaîne :
+--- cert-www.syntheticswarm.ai-1.pem
+subject=CN = www.syntheticswarm.ai
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Aug 14 16:34:17 2026 GMT
+notAfter=Nov 12 16:34:16 2026 GMT
+serial=06243B9C0F96380D18F9577CF705EBDB8517
+X509v3 Subject Alternative Name: 
+    DNS:www.syntheticswarm.ai
+    algo : Signature Algorithm: sha256WithRSAEncryption;Public Key Algorithm: rsaEncryption;
+    empreinte SHA-256 : 69:23:13:C4:DB:A6:E6:D2:AB:78:5E:25:7D:DE:44:77:6C:25:07:57:6E:AA:F9:CC:BD:FE:7D:42:FD:AA:CE:1B
+--- cert-www.syntheticswarm.ai-2.pem
+subject=C = US, O = Let's Encrypt, CN = YR1
+issuer=C = US, O = ISRG, CN = Root YR
+notBefore=Sep  3 00:00:00 2025 GMT
+notAfter=Sep  2 23:59:59 2028 GMT
+serial=A20253F15F2691C05DC1CE13B9BCCA4E
+    algo : Signature Algorithm: sha256WithRSAEncryption;Public Key Algorithm: rsaEncryption;
+    empreinte SHA-256 : 13:94:96:34:D9:9C:D6:FD:6A:A8:0B:C0:34:FE:FA:CC:EB:19:69:FE:EF:98:65:86:71:3E:CD:BB:05:75:8D:3F
+--- cert-www.syntheticswarm.ai-3.pem
+subject=C = US, O = ISRG, CN = Root YR
+issuer=C = US, O = Internet Security Research Group, CN = ISRG Root X1
+notBefore=May 13 00:00:00 2026 GMT
+notAfter=Sep  2 23:59:59 2032 GMT
+serial=F24B6D17F9D9AD7CB1C9FEA78782699F
+    algo : Signature Algorithm: sha256WithRSAEncryption;Public Key Algorithm: rsaEncryption;
+    empreinte SHA-256 : 07:26:39:D0:B1:40:D5:BF:FA:E1:6A:D9:C3:F6:CC:60:86:04:06:21:F5:1E:E6:1A:6D:46:A8:91:5C:07:CF:76
+-- Feuille : notAfter=Nov 12 16:34:16 2026 GMT ; restants=53 jours
+$ OPENSSL_CONF=openssl-legacy.cnf (MinProtocol=TLSv1, SECLEVEL=0) echo | openssl s_client -proxy 127.0.0.1:41841 -connect www.syntheticswarm.ai:443 -servername www.syntheticswarm.ai -tls1 -cipher 'DEFAULT:@SECLEVEL=0' -brief
+    40774AD8137F0000:error:0A00042E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:../ssl/record/rec_layer_s3.c:1599:SSL alert number 70
+$ OPENSSL_CONF=openssl-legacy.cnf (MinProtocol=TLSv1, SECLEVEL=0) echo | openssl s_client -proxy 127.0.0.1:41841 -connect www.syntheticswarm.ai:443 -servername www.syntheticswarm.ai -tls1_1 -cipher 'DEFAULT:@SECLEVEL=0' -brief
+    40C7FC1F917F0000:error:0A00042E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:../ssl/record/rec_layer_s3.c:1599:SSL alert number 70
+$ OPENSSL_CONF=openssl-legacy.cnf (MinProtocol=TLSv1, SECLEVEL=0) echo | openssl s_client -proxy 127.0.0.1:41841 -connect www.syntheticswarm.ai:443 -servername www.syntheticswarm.ai -tls1_2 -cipher 'DEFAULT:@SECLEVEL=0' -brief
+    Protocol version: TLSv1.2
+    Ciphersuite: ECDHE-RSA-AES128-GCM-SHA256
+    Peer certificate: CN = www.syntheticswarm.ai
+    Verification: OK
+    Server Temp Key: X25519, 253 bits
+$ OPENSSL_CONF=openssl-legacy.cnf (MinProtocol=TLSv1, SECLEVEL=0) echo | openssl s_client -proxy 127.0.0.1:41841 -connect www.syntheticswarm.ai:443 -servername www.syntheticswarm.ai -tls1_3 -cipher 'DEFAULT:@SECLEVEL=0' -brief
+    Protocol version: TLSv1.3
+    Ciphersuite: TLS_AES_128_GCM_SHA256
+    Peer certificate: CN = www.syntheticswarm.ai
+    Verification: OK
+    Server Temp Key: X25519, 253 bits
+# Fin UTC : 2026-09-19T19:49:37Z
+
+# Section AIA (Authority Information Access) et CRL du certificat feuille, extrait de : openssl x509 -in cert-www.syntheticswarm.ai-1.pem -noout -text
+            Authority Information Access: 
+                CA Issuers - URI:http://yr1.i.lencr.org/
+--
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://yr1.c.lencr.org/24.crl
