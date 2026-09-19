@@ -451,7 +451,7 @@
 }
 @media(max-width:700px) {
  .home .home-comparison { margin-bottom:6px; }
- .home-trust { margin-bottom:0; padding:22px 22px 24px; }
+ .home-trust { margin-bottom:0; padding:68px 22px 24px; }
  .home-trust h2 { font-size:11px; margin-bottom:20px; }
  .home-trust-logos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px 16px; }
  .home-trust-logo img { max-width:100%; }
