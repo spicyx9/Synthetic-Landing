@@ -329,9 +329,9 @@
 .home .solution-intro { color: #666; font-size: 15px; line-height: 1.65; margin-bottom: 32px; }
 /* Illustrative testimonials: equal cards, natural portraits, concise outcomes. */
 .home .home-customer-proof { padding-top: 32px; padding-bottom: 48px; }
-.home .home-customer-proof > h2 { max-width: 720px; font-size: clamp(24px,3vw,32px); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 28px; }
+.home .home-customer-proof > h2 { max-width: 720px; font-size: clamp(24px,3vw,32px); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 8px; }
 .home .home-customer-proof .customer-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; align-items: stretch; }
-.home .home-testimonial { min-width: 0; display: flex; flex-direction: column; padding: 26px; border: 1px solid #e8e5e0; border-radius: 16px; background: #fff; }
+.home .home-testimonial { min-width: 0; display: flex; flex-direction: column; padding: 26px 26px 18px; border: 1px solid #e8e5e0; border-radius: 16px; background: #fff; }
 .home .home-testimonial-person { display: flex; align-items: center; gap: 14px; }
 .home .home-testimonial-person img { display: block; flex: 0 0 64px; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
 .home .home-testimonial-person h3 { margin: 0 0 4px; color: #1a1a1a; font-size: 17px; font-weight: 600; line-height: 1.25; }
@@ -339,17 +339,16 @@
 .home .home-testimonial blockquote { flex: 1; margin: 24px 0; padding: 0; border: 0; }
 .home .home-testimonial blockquote p { margin: 0; color: #343434; font-size: 15px; line-height: 1.7; }
 .home .home-testimonial-bottom { border-top: 1px solid #e8e5e0; padding-top: 18px; }
-.home .home-testimonial-result { min-height: 2.8em; margin: 0; color: #0a66c2; font-size: 14px; font-weight: 600; line-height: 1.4; }
-.home .home-testimonial-label { margin: 14px 0 0; color: #76736d; font-size: 9px; font-weight: 500; line-height: 1.4; letter-spacing: .09em; }
+.home .home-testimonial-result { margin: 0; color: #0a66c2; font-size: 14px; font-weight: 600; line-height: 1.4; }
+.home .home-testimonial-disclosure { margin: 0 0 22px; color: #76736d; font-size: 11px; font-weight: 400; line-height: 1.5; }
 @media (max-width: 1100px) and (min-width: 701px) {
-  .home .home-testimonial { padding: 22px; }
+  .home .home-testimonial { padding: 22px 22px 18px; }
   .home .home-testimonial-person { gap: 10px; }
   .home .home-testimonial-person img { flex-basis: 52px; width: 52px; height: 52px; }
 }
 @media (max-width: 700px) {
   .home .home-customer-proof .customer-grid { grid-template-columns: 1fr; gap: 16px; }
-  .home .home-testimonial { padding: 24px; }
-  .home .home-testimonial-result { min-height: 0; }
+  .home .home-testimonial { padding: 24px 24px 18px; }
 }
 
 /* Keep price and objections together without another conversion block. */
