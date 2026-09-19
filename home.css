@@ -235,7 +235,7 @@
 .home-final-cta > p { color: #666; }
 
 /* One continuous canvas: fragmented research resolves into a connected output. */
-.home .home-comparison { position:relative; isolation:isolate; padding-block:14px; }
+.home .home-comparison { position:relative; isolation:isolate; padding-block:14px; margin-bottom:61px; }
 .home .home-comparison::before {
  content:''; position:absolute; z-index:-1; inset:0; pointer-events:none;
  background:radial-gradient(ellipse at 18% 48%,rgba(230,143,158,.045),transparent 44%),radial-gradient(ellipse at 82% 48%,rgba(10,102,194,.045),transparent 44%);
@@ -281,7 +281,7 @@
 .home .comparison-core-mark { display:grid; place-items:center; }
 .home .comparison-core-mark img { width:52px; height:62.4px; object-fit:contain; }
 @media(max-width:800px) {
- .home .home-comparison { padding-block:36px; }
+ .home .home-comparison { padding-block:36px; margin-bottom:39px; }
  .home .comparison-columns { display:flex; flex-direction:column; gap:20px; width:100%; max-width:440px; }
  .home .comparison-side { display:grid; grid-template-rows:auto auto auto; gap:16px; }
  .home .comparison-side h2 { text-align:center; padding:0; }
@@ -449,7 +449,8 @@
 }
 
 /* A quiet insurance-network label between the hero and comparison. */
-.home-trust { max-width:1120px; margin-inline:auto; padding:22px 32px 26px; }
+/* Visible desktop gaps include adjacent section padding: 26+60+14=100px. */
+.home-trust { max-width:1120px; margin-inline:auto; margin-bottom:60px; padding:22px 32px 26px; }
 .home-trust h2 { margin:0 0 20px; text-align:center; color:#74716d; font-size:12px; font-weight:500; letter-spacing:.08em; line-height:1.5; }
 .home-trust-logos { display:flex; justify-content:space-between; align-items:center; gap:24px; list-style:none; margin:0; padding:0; }
 .home-trust-logo { display:flex; align-items:center; justify-content:center; flex:1; min-width:0; height:42px; overflow:hidden; filter:grayscale(1); opacity:.63; transition:opacity 150ms ease; mix-blend-mode:multiply; }
@@ -458,8 +459,12 @@
 .home-trust-logo--allianz img { flex:none; max-width:128px; width:100%; height:auto; }
 .home-trust-logo--generali img,.home-trust-logo--swiss img { height:42px; }
 .home-trust-logo--abeille img { width:112px; height:auto; }
+@media(min-width:701px) and (max-width:800px) {
+ .home-trust { margin-bottom:38px; }
+}
 @media(max-width:700px) {
- .home-trust { padding:22px 22px 26px; }
+ .home .home-comparison { margin-bottom:6px; }
+ .home-trust { margin-bottom:0; padding:22px 22px 24px; }
  .home-trust h2 { font-size:11px; margin-bottom:20px; }
  .home-trust-logos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px 16px; }
  .home-trust-logo img { max-width:100%; }
@@ -470,13 +475,14 @@
 .home-trust-logo--france img { width:116px; height:auto; }
 
 /* Quiet, seamless chapter bridge. Each identical list occupies half the track. */
-.home-signals { max-width:1120px; margin-inline:auto; padding:20px 32px 24px; }
+/* Comparison: 14+61+20=95px. Solution: 24+59+32=115px. */
+.home-signals { max-width:1120px; margin-inline:auto; margin-bottom:59px; padding:20px 32px 24px; }
 .home-signals-heading { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:18px; }
 .home-signals h2 { margin:0; color:#74716d; font-size:11px; font-weight:500; letter-spacing:.08em; line-height:18px; }
 .home-signals-window { overflow:hidden; mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent); }
 .home-signals-track { display:flex; width:max-content; animation:detected-feed 30s linear infinite; }
-.home-signals-track ul { display:flex; align-items:center; gap:36px; flex:none; width:max-content; margin:0; padding:0 36px 0 0; list-style:none; }
-.home-signals-track li { display:flex; align-items:center; gap:10px; white-space:nowrap; font-size:14px; line-height:22px; color:#555; }
+.home-signals-track ul { display:flex; align-items:center; gap:48px; flex:none; width:max-content; margin:0; padding:0 48px 0 0; list-style:none; }
+.home-signals-track li { display:flex; align-items:center; gap:0; white-space:nowrap; font-size:14px; line-height:22px; color:#555; }
 .home-signals-pause { position:relative; display:grid; place-items:center; width:20px; height:20px; cursor:pointer; }
 .home-signals-pause input { position:absolute; inset:0; width:100%; height:100%; margin:0; appearance:none; border:0; background:transparent; cursor:pointer; }
 .home-signals-pause span { width:7px; height:9px; border-inline:2px solid #888; pointer-events:none; }
@@ -485,7 +491,7 @@
 .home-signals:hover .home-signals-track,.home-signals:focus-within .home-signals-track,.home-signals:has(input:checked) .home-signals-track { animation-play-state:paused; }
 @keyframes detected-feed { to { transform:translateX(-50%); } }
 @media(max-width:700px) {
- .home-signals { padding:18px 22px 22px; }
+ .home-signals { margin-bottom:16px; padding:18px 22px 22px; }
  .home-signals-track { animation-duration:35s; }
  .home-signals-track ul { gap:28px; padding-right:28px; }
  .home-signals-track li { font-size:13px; }
