@@ -124,7 +124,7 @@
 .story-thread--blue { background:linear-gradient(#93b7d9,transparent); }
 .story-progress { display:none; }
 @media(min-width:701px) and (min-height:600px) {
- .product-story { --progress-row-height:52px; --progress-top:76px; }
+ .product-story { --progress-row-height:52px; --progress-top:var(--site-header-offset,61px); }
  .story-progress-enabled .story-progress { display:block; position:sticky; top:var(--progress-top); height:0; z-index:10; }
  .story-progress-rows { transform:translateY(var(--progress-exit,0px)); }
  .story-progress-row { display:flex; align-items:center; gap:22px; height:var(--progress-row-height); min-height:var(--progress-row-height); max-height:var(--progress-row-height); box-sizing:border-box; flex:0 0 var(--progress-row-height); padding:0 24px; background:#fcfbf8; border-bottom:1px solid #e5e5e0; }

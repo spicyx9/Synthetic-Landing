@@ -5,6 +5,7 @@ const vm = require('node:vm');
 
 test('progress accumulates, reverses, exits and disables on narrow screens independently of motion', () => {
   let scroll = 0;
+  let headerBottom = 61;
   const events = {};
   const media = {matches:true, addEventListener(_, fn) { this.change = fn; }};
   const classes = () => ({toggle(name, value) { this[name] = value; }});
@@ -20,7 +21,7 @@ test('progress accumulates, reverses, exits and disables on narrow screens indep
   };
   const source = fs.readFileSync('solution-page.js','utf8').split('// One visual progression stack;')[1];
   vm.runInNewContext(source.slice(source.indexOf('(() =>')), {
-    document:{querySelector:selector => selector === '.product-story' ? story : {getBoundingClientRect:() => ({height:61})}},
+    document:{querySelector:selector => selector === '.product-story' ? story : {getBoundingClientRect:() => ({height:61, bottom:headerBottom})}},
     matchMedia:query => { assert.equal(query,'(min-width:701px) and (min-height:600px)'); return media; },
     getComputedStyle:() => ({getPropertyValue:() => '52px'}),
     addEventListener:(event,fn) => { events[event] = fn; },
@@ -31,7 +32,10 @@ test('progress accumulates, reverses, exits and disables on narrow screens indep
     scroll=y; events.scroll(); assert.equal(rows.filter(row=>!row.hidden).length,count);
     assert.equal(rows.filter(row=>row.classList['is-active']).length,1);
   }
-  scroll=3400; events.scroll(); assert.equal(progress.style['--progress-exit'],'-185px');
+  scroll=3400; events.scroll(); assert.equal(progress.style['--progress-exit'],'-169px');
+  headerBottom=85.4; events.resize();
+  assert.equal(story.style['--progress-top'],'85px');
+  headerBottom=61; events.resize();
   media.matches=false; media.change(); assert.equal(story.classList['story-progress-enabled'],false);
-  assert.equal(story.style['--progress-top'],'77px');
+  assert.equal(story.style['--progress-top'],'61px');
 });
