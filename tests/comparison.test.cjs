@@ -7,7 +7,7 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  const section=html.match(/<section id="comparison"[\s\S]*?<\/section>/)[0];
  assert.equal((section.match(/<li(?:\s[^>]*)?>/g)||[]).length,8);
  assert.doesNotMatch(section,/comparison-example|<dl>|<h3>|comparison-disclaimer/);
- const positions=['home-focused-hero','id="comparison"','id="solution-preview"','id="prospect-example"','id="customer-proof"','id="pricing"','id="faq"','id="newsletter"','<footer'].map(token=>html.indexOf(token));
+ const positions=['home-focused-hero','id="comparison"','id="solution-preview"','id="prospect-example"','id="customer-proof"','id="pricing"','id="faq"','<footer','id="newsletter"'].map(token=>html.indexOf(token));
  assert.ok(positions.every((n,i)=>n>=0&&(!i||n>positions[i-1])));
  assert.doesNotMatch(html,/id="signals"|home-final-cta/);
  assert.equal((html.match(/class="solution-output"/g)||[]).length,1);
