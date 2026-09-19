@@ -3,9 +3,9 @@
 .sp-wrap { max-width:1280px; margin:0 auto; padding:64px 48px; }
 .solution-page h1,.solution-page h2,.solution-page h3,.solution-page p { margin:0; }
 .solution-page h2 { font-size:clamp(32px,4vw,48px); line-height:1.12; letter-spacing:-.04em; font-weight:600; }
-.sp-hero { text-align:center; display:flex; flex-direction:column; justify-content:center; min-height:540px; padding-top:24px; padding-bottom:26px; }
+.sp-hero { text-align:center; display:flex; flex-direction:column; justify-content:center; min-height:0; padding-top:112px; padding-bottom:52px; position:relative; isolation:isolate; }
 .sp-hero h1 { max-width:1050px; margin:14px auto 24px; font-size:clamp(38px,4vw,56px); line-height:1.08; letter-spacing:-.045em; font-weight:600; }
-.sp-hero > p { max-width:820px; margin:0 auto; font-size:18px; line-height:1.65; color:#555; }
+.sp-hero > p { max-width:820px; margin:0 auto; font-size:17px; line-height:1.6; color:#71736f; }
 .solution-page .page-actions { justify-content:center; gap:12px; margin-top:32px; }
 .solution-page .page-actions > .demo-booking > .btn-get-started { padding:12px 22px; min-height:46px; border-radius:10px; font-size:14px; font-weight:600; }
 .solution-page .demo-booking-popover { z-index:60; text-align:left; }
@@ -14,24 +14,33 @@
 .solution-route .floating-demo .demo-booking-popover { top:auto; bottom:calc(100% + 12px); left:0; right:0; width:100%; max-width:100%; }
 .solution-page :where(a,button,summary):focus { scroll-margin-block:100px; }
 
-/* Editorial capabilities belong to the hero, above the chapter break. */
+/* Compact secondary band and a quiet atmospheric chapter break. */
+.sp-hero::before { content:''; position:absolute; z-index:-1; pointer-events:none; inset:40% -32px 0; background:radial-gradient(ellipse at 80% 25%,rgba(177,207,234,.07),transparent 65%),radial-gradient(ellipse at 50% 90%,rgba(232,196,207,.06),transparent 65%); }
 .sp-hero .page-actions { margin-top:28px; }
-.solution-capabilities { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); width:100%; max-width:960px; margin:48px auto 0; }
-.solution-capability { padding:0 22px; }
-.solution-capability + .solution-capability { border-left:1px solid #e3e1db; }
-.solution-page .solution-capability h2 { margin:0 0 10px; font-size:11px; line-height:1.4; letter-spacing:.08em; font-weight:600; color:#254b70; }
-.solution-capability p { font-size:14px; line-height:1.6; color:#686b65; }
-.capability-line { display:block; }
+.solution-capabilities { display:grid; grid-template-columns:27% 40% 33%; align-items:center; width:100%; max-width:960px; min-height:88px; margin:48px auto 0; padding:16px 0; border:1px solid rgba(225,229,232,.7); border-radius:13px; background:rgba(240,245,250,.65); }
+.solution-capability { position:relative; padding:0 16px; }
+.solution-capability + .solution-capability::before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:1px; height:36px; background:rgba(213,215,211,.6); }
+.solution-page .solution-capability h2 { margin:0 0 7px; font-size:10px; line-height:1.4; letter-spacing:.08em; font-weight:650; color:#0a66c2; }
+.solution-capability p { font-size:13px; line-height:1.4; color:#797d78; }
+.capability-line { display:inline; white-space:nowrap; }
+.capability-line::before { content:' · '; }
+.sp-hero + .product-story .story-target { border-top-color:rgba(232,229,224,.25); }
+@media(min-width:701px) {
+ .solution-route:lang(en) .solution-capabilities { grid-template-columns:34% 38% 28%; }
+}
+@media(min-width:701px) and (max-width:1100px) {
+ .solution-capabilities { grid-template-columns:28% 38% 34%; }
+ .solution-capability { padding-inline:12px; }
+}
 @media(max-width:700px) {
- .solution-capabilities { display:block; margin-top:32px; text-align:left; }
- .solution-capability { padding:16px 0; }
+ .sp-hero::before { inset:40% 0 0; }
+ .solution-capabilities { display:block; min-height:0; margin-top:32px; padding:18px; text-align:left; }
+ .solution-capability { padding:14px 0; }
  .solution-capability:first-child { padding-top:0; }
  .solution-capability:last-child { padding-bottom:0; }
- .solution-capability + .solution-capability { border-left:0; border-top:1px solid #e3e1db; }
+ .solution-capability + .solution-capability { border-top:1px solid rgba(213,215,211,.6); }
+ .solution-capability + .solution-capability::before { content:none; }
  .solution-page .solution-capability h2 { margin-bottom:6px; }
- .solution-capability p { font-size:13px; }
- .capability-line { display:inline; }
- .capability-line::before { content:' · '; }
 }
 
 /* One case, four centered product chapters. */
