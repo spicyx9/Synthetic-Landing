@@ -51,7 +51,8 @@
     queued = false;
     story.classList.toggle('story-progress-enabled', desktop.matches);
     if (!desktop.matches) return;
-    const top = (header?.getBoundingClientRect().height || 60) + 16;
+    const headerRect = header?.getBoundingClientRect();
+    const top = headerRect ? Math.round(headerRect.bottom) : 61;
     story.style.setProperty('--progress-top', `${top}px`);
     const rowHeight = parseFloat(getComputedStyle(story).getPropertyValue('--progress-row-height'));
     let active = 0;
