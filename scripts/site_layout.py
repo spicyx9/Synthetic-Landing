@@ -21,6 +21,8 @@ LABELS = {
 }
 def url(key, lang): return ROUTES[key][lang == 'fr']
 def booking(lang, prefix, label=None):
+ if prefix != "header":
+  return f'<div class="demo-booking"><a class="btn-get-started" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">{label or LABELS[lang]["demo"]}</a></div>'
  return f'''<div class="demo-booking">
   <button type="button" class="btn-get-started{' header-action' if prefix == 'header' else ''}" data-book-demo data-disclosure-trigger aria-expanded="false" aria-controls="{prefix}-demo-options">{label or LABELS[lang]['demo']}</button>
   <div class="demo-booking-popover" id="{prefix}-demo-options" data-disclosure-panel hidden>
