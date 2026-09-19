@@ -19,13 +19,18 @@ for (const name of pages) {
     const login = html.match(/<a\b[^>]*class="btn-login header-action"[^>]*>/)[0];
     for (const attr of ['href="https://app.syntheticswarm.ai/ui/"', 'target="_blank"', 'rel="noopener noreferrer"']) assert.ok(login.includes(attr));
     assert.match(html, /<button[^>]*data-book-demo[^>]*aria-expanded="false"/);
-    for (const calendar of ['91k1Mpontca7NGea6', 'AWQX2bxp8cnqtsaJ9']) {
+    for (const calendar of ['91k1Mpontca7NGea6']) {
       assert.match(html, new RegExp(`<a[^>]*href="https://calendar.app.google/${calendar}"[^>]*target="_blank"[^>]*rel="noopener noreferrer"`));
     }
     assert.match(html, /src="\/assets\/team\/axel-ceo.png"/);
     assert.match(html, /src="\/assets\/team\/ilan-cto.jpg"/);
     assert.doesNotMatch(html, />IS<\/span>/);
     assert.doesNotMatch(html, /avatars\.githubusercontent|heroEyebrowDate/);
+    const outsideHeader = html.replace(/<header[\s\S]*?<\/header>/, '');
+    assert.doesNotMatch(outsideHeader, /<button[^>]*data-book-demo/);
+    for (const cta of outsideHeader.matchAll(/<a[^>]*data-book-demo[^>]*>/g)) {
+      assert.ok(cta[0].includes('href="https://calendar.app.google/91k1Mpontca7NGea6"'));
+    }
     const header = html.match(/<header[\s\S]*?<\/header>/)[0];
     const chevrons = [...header.matchAll(/<svg class="dropdown-chevron"[\s\S]*?<\/svg>/g)].map(m => m[0]);
     assert.equal(chevrons.length, 2);

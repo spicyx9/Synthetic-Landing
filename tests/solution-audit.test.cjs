@@ -26,7 +26,7 @@ for (const file of pages) test(`${file}: continuous product story and approved h
  assert.equal((profile.match(/<li>/g)||[]).length,7);
  assert.match(profile,/Camille Exemple/);
  assert.match(html,/class="floating-demo demo-booking"[^>]+inert/);
- assert.match(html,/aria-controls="floating-demo-options"/);
+ assert.match(html,/<a class="floating-demo-button"[^>]*href="https:\/\/calendar.app.google\/91k1Mpontca7NGea6"/);
  const h1=html.match(/<h1>(.*?)<\/h1>/s)[1];
  assert.equal(h1,file.startsWith('notre')?'D’un changement de situation à votre prochain appel.':'From a business change to your next conversation.');
  assert.ok(html.includes(file.startsWith('notre')?'href="/tarifs"':'href="/pricing"'));
