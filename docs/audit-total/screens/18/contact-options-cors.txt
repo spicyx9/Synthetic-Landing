@@ -1,0 +1,51 @@
+### 2026-09-19T19:40:18Z OPTIONS (avec Origin evil)
+HTTP/1.1 200 Connection Established
+
+HTTP/2 405 
+allow: POST
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:40:18 GMT
+etag: W/"1d-0geMxcxvoN/hPybBOfieIdsh0M0"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::gh8nd-1789846818685-8a1d686e3635
+content-length: 29
+
+[http_code=405]
+======
+### 2026-09-19T19:40:21Z HEAD
+HTTP/1.1 200 Connection Established
+
+HTTP/2 405 
+age: 0
+allow: POST
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:40:22 GMT
+etag: W/"1d-0geMxcxvoN/hPybBOfieIdsh0M0"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::vh9tn-1789846822030-458c7e95384a
+content-length: 29
+
+[http_code=405]
+======
+### 2026-09-19T19:40:25Z POST valide-forme mais Origin evil -> voir ACAO (corps honeypot pour NE PAS envoyer d'email)
+HTTP/1.1 200 Connection Established
+
+HTTP/2 400 
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:40:25 GMT
+etag: W/"1e-R37eMQpQxrsRy5Vfadk1jzUqYgY"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::w9xvs-1789846825211-29d69a7fa8e6
+content-length: 30
+
+[http_code=400]
+======

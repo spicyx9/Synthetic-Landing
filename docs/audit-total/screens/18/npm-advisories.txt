@@ -1,0 +1,5 @@
+{}
+[http_code=200]
+  alpinejs latest=3.17.3
+  papaparse latest=5.7.0
+  @yaireo/tagify latest=4.38.0

@@ -1,0 +1,42 @@
+### 2026-09-19T19:48:52Z GET non authentifie /api/v1/admin/orgs/1/feature-flags -> attendu 401/403
+HTTP/1.1 200 Connection Established
+
+HTTP/2 401 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:48:52 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+www-authenticate: Bearer
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 37
+
+[http_code=401]
+---BODY---
+{"detail":"Invalid or expired token"}
+======
+### 2026-09-19T19:48:56Z GET non authentifie /api/v1/auth/users -> attendu 401/403
+HTTP/1.1 200 Connection Established
+
+HTTP/2 401 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:49:00 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+www-authenticate: Bearer
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 37
+
+[http_code=401]
+---BODY---
+{"detail":"Invalid or expired token"}
+======

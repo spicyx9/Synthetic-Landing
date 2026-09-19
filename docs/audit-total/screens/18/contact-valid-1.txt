@@ -1,0 +1,17 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/2 503 
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:41:55 GMT
+etag: W/"24-VlL4MSheBXgKk6QarXac8V2FJjs"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::fwglk-1789846915341-ce37a3818bb7
+content-length: 36
+
+
+[http_code=503]
+---BODY---
+{"ok":false,"error":"configuration"}ADRESSE_UTILISEE=contact+audit-sec-20260919T194154Z@syntheticswarm.ai

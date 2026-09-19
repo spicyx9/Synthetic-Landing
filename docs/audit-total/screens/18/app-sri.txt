@@ -1,0 +1,4 @@
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js">
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js">
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.36.0/dist/tagify.min.js">
+<link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.36.0/dist/tagify.css" rel="stylesheet">

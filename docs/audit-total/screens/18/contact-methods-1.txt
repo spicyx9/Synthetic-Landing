@@ -1,0 +1,61 @@
+### 2026-09-19T19:39:55Z GET https://www.syntheticswarm.ai/api/contact
+HTTP/1.1 200 Connection Established
+
+HTTP/2 405 
+age: 0
+allow: POST
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:39:55 GMT
+etag: W/"1d-0geMxcxvoN/hPybBOfieIdsh0M0"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::h7tbh-1789846795708-c74cfbec06a6
+content-length: 29
+
+
+[http_code=405]
+---BODY---
+{"ok":false,"error":"method"}
+======
+### 2026-09-19T19:39:58Z PUT https://www.syntheticswarm.ai/api/contact
+HTTP/1.1 200 Connection Established
+
+HTTP/2 405 
+allow: POST
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:39:58 GMT
+etag: W/"1d-0geMxcxvoN/hPybBOfieIdsh0M0"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::wsqnh-1789846798928-d84152fe9d9e
+content-length: 29
+
+
+[http_code=405]
+---BODY---
+{"ok":false,"error":"method"}
+======
+### 2026-09-19T19:40:01Z DELETE https://www.syntheticswarm.ai/api/contact
+HTTP/1.1 200 Connection Established
+
+HTTP/2 405 
+allow: POST
+cache-control: no-store
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:40:02 GMT
+etag: W/"1d-0geMxcxvoN/hPybBOfieIdsh0M0"
+server: Vercel
+strict-transport-security: max-age=63072000
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::zr9z6-1789846802102-263bcab3cf0d
+content-length: 29
+
+
+[http_code=405]
+---BODY---
+{"ok":false,"error":"method"}
+======

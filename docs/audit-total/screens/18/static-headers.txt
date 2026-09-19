@@ -1,0 +1,5 @@
+HTTP/1.1 200 Connection Established
+HTTP/2 200 
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+strict-transport-security: max-age=63072000

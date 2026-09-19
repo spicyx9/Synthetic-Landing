@@ -1,0 +1,29 @@
+openapi: 3.1.0
+title: Synthetic Swarm
+version: 0.1.0
+description: B2B outreach automation engine
+nb paths: 117
+
+--- endpoints admin ---
+  /api/v1/admin/orgs/{org_id}/feature-flags ['get']
+  /api/v1/admin/orgs/{org_id}/feature-flags/{flag_name} ['put']
+  /api/v1/admin/orgs/{org_id}/unipile-usage ['get']
+  /api/v1/billing/admin/complete-upgrade ['post']
+  /api/v1/billing/admin/grant-credit ['post']
+
+--- endpoints auth ---
+  /api/v1/auth/change-password ['post']
+  /api/v1/auth/forgot-password ['post']
+  /api/v1/auth/login ['post']
+  /api/v1/auth/logout ['post']
+  /api/v1/auth/me ['get', 'patch']
+  /api/v1/auth/refresh ['post']
+  /api/v1/auth/register ['post']
+  /api/v1/auth/resend-verification ['post']
+  /api/v1/auth/reset-password ['post']
+  /api/v1/auth/revert-email ['post']
+  /api/v1/auth/users ['get']
+  /api/v1/auth/users/{user_id}/role ['patch']
+  /api/v1/auth/verify-email ['get']
+MENTION: /Users/
+MENTION: redis

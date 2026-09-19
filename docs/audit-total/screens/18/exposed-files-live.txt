@@ -1,0 +1,8 @@
+### 2026-09-19T19:54:13Z GET /.claude/launch.json (fuite chemin macOS)
+http=200 type=application/json; charset=utf-8
+extrait: /Users/ilansainte-agathe/Desktop/Synthetic-Landing
+### 2026-09-19T19:54:20Z GET /scripts/site_layout.py (code source servi)
+http=200 type=application/octet-stream taille=13471
+1ere ligne: """Shared static layout. Run python3 scripts/site_layout.py after editing navigation.
+### 2026-09-19T19:54:25Z GET /tests/contact.test.cjs (test interne servi)
+http=200 type=application/node

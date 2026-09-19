@@ -1,0 +1,9 @@
+### 2026-09-19T19:43:10Z email avec <> -> attendu 400
+  -> 400 body={"ok":false}
+### 2026-09-19T19:43:14Z corps > 2048 octets -> attendu 413
+  -> 413 body={"ok":false}
+### 2026-09-19T19:43:18Z lang invalide (de) -> attendu 400
+  -> 000 body=
+### 2026-09-19T19:43:22Z honeypot company_website rempli -> attendu 200 ok:true silencieux (aucun envoi)
+  -> 200 body={"ok":true}
+### RETRY 2026-09-19T19:43:52Z lang invalide (de) -> 400

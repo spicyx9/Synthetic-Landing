@@ -1,0 +1,8 @@
+### 2026-09-19T19:40:43Z empty body, app/json
+  -> 400 body={"ok":false,"error":"validation","fields":{"firstName":"invalid","lastName":"invalid","email":"invalid","subject":"invalid","message":"invalid"}}
+### 2026-09-19T19:40:46Z JSON malforme
+  -> 400 body={"ok":false,"error":"invalid"}
+### 2026-09-19T19:40:49Z text/plain
+  -> 415 body={"ok":false,"error":"content_type"}
+### 2026-09-19T19:40:53Z tableau JSON []
+  -> 400 body={"ok":false,"error":"invalid"}

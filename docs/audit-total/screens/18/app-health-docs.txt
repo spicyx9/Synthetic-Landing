@@ -1,0 +1,56 @@
+### 2026-09-19T19:45:36Z GET /health
+HTTP/1.1 200 Connection Established
+
+HTTP/2 200 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:45:37 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 59
+
+[http_code=200]
+---BODY /health---
+{"status":"ok","downstream":{"postgres":"ok","redis":"ok"}}
+======
+### 2026-09-19T19:45:41Z HEAD /docs
+HTTP/1.1 200 Connection Established
+
+HTTP/2 404 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:45:44 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 22
+
+[http_code=404]
+======
+### 2026-09-19T19:45:48Z GET /openapi.json (entetes seules ici)
+HTTP/1.1 200 Connection Established
+
+HTTP/2 200 
+alt-svc: h3=":443"; ma=2592000
+cache-control: no-cache
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws: wss:; frame-ancestors 'none'
+content-type: application/json
+date: Sat, 19 Sep 2026 19:45:50 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 190125
+
+[http_code=200] size=190125
+======

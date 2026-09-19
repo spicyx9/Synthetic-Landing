@@ -1,0 +1,9 @@
+### 2026-09-19T19:42:32Z GET -> 405+Allow
+  -> 405 | allow=allow: POST
+ body={"ok":false}
+### 2026-09-19T19:42:35Z text/plain -> 415
+  -> 415 | allow= body={"ok":false}
+### 2026-09-19T19:42:39Z JSON malforme -> 400
+  -> 400 | allow= body={"ok":false}
+### 2026-09-19T19:42:43Z tableau [] -> 400
+  -> 400 | allow= body={"ok":false}

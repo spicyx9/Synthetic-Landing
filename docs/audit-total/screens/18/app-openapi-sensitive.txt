@@ -1,0 +1,25 @@
+      1 API-Key
+    116 APIKeyHeader
+     10 Password
+      1 Password Api V1 Auth Forgot Password Post
+      1 Password Api V1 Auth Reset Password Post
+    116 PasswordBearer
+      3 PasswordChangeRequest
+      6 PasswordRequest
+      6 Token
+      1 Token Type
+      6 TokenResponse
+      1 apiKey
+     16 password
+      1 password (the change requires it), so\nrestoring the addre
+      1 password and end every other session.\n\nReturns a fresh t
+      1 password, then\nsends a reset link to the restored address
+      1 password_api_v1_auth_change_password_post
+      1 password_api_v1_auth_forgot_password_post
+      1 password_api_v1_auth_reset_password_post
+      1 password_reset_password_get
+     11 token
+      1 token.
+      1 tokenUrl
+      1 token_type
+      1 tokens predate the new cutoff, so without these it woul

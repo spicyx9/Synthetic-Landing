@@ -1,0 +1,8 @@
+### 2026-09-19T19:41:22Z champ 100000 car (message) -> attendu 413 size
+  -> 413 body={"ok":false,"error":"size"}
+### 2026-09-19T19:41:25Z injection en-tete via email (\n Bcc) -> attendu 400 fields.email
+  -> 400 body={"ok":false,"error":"validation","fields":{"email":"invalid"}}
+### 2026-09-19T19:41:28Z injection via subject (\r\n) -> attendu 400 fields.subject
+  -> 400 body={"ok":false,"error":"validation","fields":{"subject":"invalid"}}
+### 2026-09-19T19:41:32Z objet imbrique (firstName objet) -> attendu 400
+  -> 400 body={"ok":false,"error":"validation","fields":{"firstName":"invalid"}}
