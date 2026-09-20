@@ -65,6 +65,7 @@ for (const lang of ['en', 'fr']) {
     assert.equal([...html.matchAll(/class="pricing-config-card"/g)].length, 1);
     assert.match(html, /data-pricing-range[^>]*value="1"/);
     assert.doesNotMatch(html, /quand disponibles|when available|location\.replace/);
+    assert.doesNotMatch(html, /data-price=|[?&]price=/);
     assert.equal([...html.matchAll(/<details class="pricing-faq-item">/g)].length, 3);
     assert.doesNotMatch(html, /<details[^>]*\bopen\b/);
     const element = () => ({ textContent: '', dataset: {}, attrs: {}, events: {}, style: { setProperty() {} }, classList: { toggle() {} }, setAttribute(k, v) { this.attrs[k] = v; }, addEventListener(k, v) { this.events[k] = v; } });
@@ -90,7 +91,8 @@ for (const lang of ['en', 'fr']) {
       assert.equal(amount.textContent.replace(/[^0-9]/g, ''), String(prices[i]));
       assert.ok(counters.every(c => c.textContent === String(leads[i])));
       assert.equal(badge.hidden, i !== 1);
-      assert.equal(checkout.dataset.price, String(prices[i]));
+      assert.equal(checkout.dataset.price, undefined);
+      assert.doesNotMatch(checkout.attrs.href, /price=/);
       assert.equal(checkout.attrs.href, `https://app.syntheticswarm.ai/ui/?leads=${leads[i]}&lang=${lang}`);
       assert.equal(steps[i].attrs['aria-pressed'], 'true');
     }
