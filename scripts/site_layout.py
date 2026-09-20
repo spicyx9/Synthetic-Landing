@@ -118,6 +118,8 @@ def page(key,lang,title,description,body):
   <link rel="alternate" hreflang="fr" href="https://www.syntheticswarm.ai{url(key,'fr')}">
   <link rel="alternate" hreflang="x-default" href="https://www.syntheticswarm.ai{url(key,'en')}">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
