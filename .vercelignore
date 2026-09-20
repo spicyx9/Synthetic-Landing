@@ -1,0 +1,12 @@
+# Internal development material: never deployed by Vercel (gitignore syntax).
+# Runtime files (api/, HTML, CSS, JS, assets/ images and assets/data JSON) stay deployed.
+.claude/
+docs/
+scripts/
+tests/
+*.md
+.gitignore
+.vercelignore
+# Runtime-type files referenced by no public page (verified by grep on *.html, *.css, *.js, scripts/, tests/ on 2026-09-20).
+leadgen.css
+demo.js
