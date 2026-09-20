@@ -41,7 +41,7 @@ for (const pair of pairs) for (const [i, route] of pair.entries()) test(`legal p
  const main=html.match(/<main[\s\S]*?<\/main>/)[0];
  assert.equal((main.match(/<h1>/g)||[]).length,1);
  assert.doesNotMatch(main,/<form|<input|<fieldset|aria-disabled|<table/i);
- const count=pair[0]==='conditions'?21:pair[0]==='confidentialite'?6:0;
+ const count=pair[0]==='conditions'?21:pair[0]==='confidentialite'?7:0;
  assert.equal((main.match(/<h2>/g)||[]).length,count);
  for(const href of [...html.matchAll(/href="(\/[^"]*)"/g)].map(x=>x[1])) {
   const target=href.split(/[?#]/)[0];
@@ -58,5 +58,30 @@ for (const pair of pairs) for (const [i, route] of pair.entries()) test(`legal p
   const url=new URL(match[1].replaceAll('&amp;','&'));
   assert.equal(url.pathname,'contact@syntheticswarm.ai');
   assert.ok(!/%[0-9a-f]{2}/i.test(url.searchParams.get('body')||''),'no double encoding');
+ }
+});
+
+test('GDPR FAQ answers match their indexable structured data in both languages',()=>{
+ for(const [file,privacy] of [['faq-fr.html','confidentialite'],['faq.html','privacy']]){
+  const html=read(file);
+  const schema=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  const items=[...html.matchAll(/<details class="site-faq">([\s\S]*?)<\/details>/g)];
+  assert.equal(items.length,11);
+  assert.equal(schema.mainEntity.length,items.length);
+  for(const [i,item] of items.entries()){
+   const question=item[1].match(/<br>(.*?)<\/span>/)[1];
+   const answer=item[1].match(/<p>([\s\S]*?)<\/p>/)[1].replace(/<[^>]+>/g,'');
+   assert.equal(schema.mainEntity[i].name,question);
+   assert.equal(schema.mainEntity[i].acceptedAnswer.text,answer);
+  }
+  assert.match(items.at(-1)[1],new RegExp(`href="/${privacy}"`));
+ }
+});
+test('privacy positioning links to opt-out without public source wording',()=>{
+ for(const [file,route,terms] of [['confidentialite.html','opposition',['RGPD','prospection commerciale B2B','minimisation des données','droit d’opposition']],['privacy.html','opt-out',['GDPR','B2B commercial prospecting','data minimisation','right to object']]]){
+  const main=read(file).match(/<main[\s\S]*?<\/main>/)[0];
+  for(const term of terms) assert.ok(main.includes(term));
+  assert.ok(main.includes(`href="/${route}"`));
+  assert.doesNotMatch(main,/sources publiques|public (?:and professional )?sources|100%|fully GDPR compliant|guaranteed compliant/i);
  }
 });
