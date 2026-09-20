@@ -44,8 +44,10 @@
       checkout.dataset.leads = String(plan.leads);
       checkout.setAttribute('href', 'https://app.syntheticswarm.ai/ui/?leads=' + plan.leads + '&lang=' + (isFr ? 'fr' : 'en'));
       // Closing the custom selector also prevents stale focusable calendar links.
-      customBooking.querySelector('[data-disclosure-panel]').hidden = true;
-      customBooking.querySelector('[data-book-demo]').setAttribute('aria-expanded', 'false');
+      const bookingPanel = customBooking.querySelector('[data-disclosure-panel]');
+      if (bookingPanel) bookingPanel.hidden = true;
+      const bookingTrigger = customBooking.querySelector('[data-book-demo]');
+      if (bookingTrigger) bookingTrigger.setAttribute('aria-expanded', 'false');
     }
   }
   steps.forEach((step, index) => step.addEventListener('click', () => {
