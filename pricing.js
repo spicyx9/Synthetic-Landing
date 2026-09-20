@@ -40,11 +40,9 @@
     checkout.hidden = custom;
     if (custom) {
       delete checkout.dataset.leads;
-      delete checkout.dataset.price;
     } else {
       checkout.dataset.leads = String(plan.leads);
       checkout.setAttribute('href', 'https://app.syntheticswarm.ai/ui/?leads=' + plan.leads + '&lang=' + (isFr ? 'fr' : 'en'));
-      checkout.dataset.price = String(plan.price);
       // Closing the custom selector also prevents stale focusable calendar links.
       customBooking.querySelector('[data-disclosure-panel]').hidden = true;
       customBooking.querySelector('[data-book-demo]').setAttribute('aria-expanded', 'false');
