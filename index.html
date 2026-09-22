@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/styles.css?v=global-atmosphere-1">
   <link rel="stylesheet" href="/demo.css">
   <link rel="stylesheet" href="/floating-demo.css?v=main-audit-1">
-  <link rel="stylesheet" href="/home.css?v=testimonial-carousel-4">
+  <link rel="stylesheet" href="/home.css?v=home-refresh-20260922">
   <link rel="stylesheet" href="/pricing-interactive.css?v=starter-default-3">
   <link rel="stylesheet" href="/site-pages.css?v=brand-close-1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/customers.css">
   <link rel="stylesheet" href="/motion.css?v=3">
   <script src="/motion.js?v=main-audit-1" defer></script>
-  <script src="/home-motion.js?v=why-now-preview-1" defer></script>
+  <script src="/home-motion.js?v=home-refresh-20260922" defer></script>
   <script src="/page-motion.js?v=2" defer></script>
   <script type="application/ld+json">
 {
@@ -47,6 +47,11 @@
   ]
 }
   </script>
+  <link rel="stylesheet" href="/assets/vendor/maplibre/maplibre-gl.css">
+  <link rel="stylesheet" href="/home-radar.css?v=1">
+  <script src="/home-radar-map.js?v=1" defer></script>
+  <script src="/home-radar.js?v=1" defer></script>
+  <script src="/home-signals.js?v=1" defer></script>
 </head>
 <body class="home">
   <a href="#main" class="skip-link">Skip to content</a>
@@ -87,14 +92,18 @@
  <img src="/assets/decor-2.png" alt="" class="hero-decor hero-decor--sparkles-lg" aria-hidden="true">
  <img src="/assets/decor-3.png" alt="" class="hero-decor hero-decor--rocket" aria-hidden="true">
  <div class="hero-content"><div class="demo-hero"><div class="demo-hero__inner">
- <div class="demo-hero__eyebrow"><span class="hero-eyebrow-meta"><span class="hero-eyebrow-badge">BREAKING NEWS</span> <span class="hero-eyebrow-separator" aria-hidden="true">·</span> <time class="hero-eyebrow-date" datetime="2026-09-17"><span class="hero-date-desktop">SEPTEMBER 17, 2026</span><span class="hero-date-mobile">Sep 17</span></time></span> <span class="hero-eyebrow-separator" aria-hidden="true">·</span> <span class="hero-eyebrow-news">Synthetic Swarm moves to San Francisco.</span></div>
+ <div class="demo-hero__eyebrow"><span class="hero-eyebrow-badge">BREAKING NEWS</span><span class="hero-eyebrow-news">We’re moving to San Francisco</span></div>
  <h1 class="demo-hero__headline"><span class="motion-headline-part">Know who to call.</span> <span class="hl hero-word-highlight">At the right time.</span></h1><p class="demo-hero__subtitle">Synthetic Swarm detects the changes that create insurance needs and provides you with qualified prospects, their contact details, and a clear reason to reach out at the right time.</p>
  <div class="page-actions home-actions"><div class="demo-booking">
   <a class="btn-get-started" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">Book a demo</a>
 </div><a class="page-button page-button--secondary" href="/our-solution">Discover our solution</a></div>
  </div></div></div>
  </section></div><section class="home-trust" aria-labelledby="trust-title">
-  <h2 id="trust-title">TRUSTED BY INSURANCE AGENTS AND BROKERS</h2>
+  <div class="home-trust-heading">
+    <h2 id="trust-title">TRUSTED BY INSURANCE AGENTS AND BROKERS</h2>
+  </div>
+  <div class="home-trust-window">
+    <div class="home-trust-track">
   <ul class="home-trust-logos">
     <li class="home-trust-logo home-trust-logo--axa"><img src="/assets/trust/axa.webp" alt="AXA" loading="lazy" decoding="async"></li>
     <li class="home-trust-logo home-trust-logo--allianz"><img src="/assets/trust/allianz.png" alt="Allianz" loading="lazy" decoding="async"></li>
@@ -103,133 +112,115 @@
     <li class="home-trust-logo home-trust-logo--abeille"><img src="/assets/trust/abeille-assurances.svg" alt="Abeille Assurances" loading="lazy" decoding="async"></li>
     <li class="home-trust-logo home-trust-logo--france"><img src="/assets/trust/france-assurance.png" alt="France Assurance" loading="lazy" decoding="async"></li>
   </ul>
-</section><section id="comparison" class="content-page home-comparison" aria-label="The Synthetic Swarm difference">
-  <div class="comparison-columns">
-    <div class="comparison-side comparison-side--before">
-      <h2>Without Synthetic Swarm</h2>
-      <ul><li class="comparison-task comparison-task--search"><div class="comparison-task-meta"><span class="comparison-search-glyph" aria-hidden="true"></span><span>247 results</span><span class="comparison-result-lines" aria-hidden="true"></span></div><span class="comparison-task-copy">Hundreds of possible prospects</span></li><li class="comparison-task comparison-task--contact"><div class="comparison-task-meta"><span class="comparison-person-glyph" aria-hidden="true"></span><span>Executive</span><span class="comparison-missing">Phone <i aria-hidden="true">···</i></span></div><span class="comparison-task-copy">You search for the right contact details</span></li><li class="comparison-task comparison-task--filter"><div class="comparison-task-meta comparison-filter-tools"><span>Relevance ↓</span><span>Region</span><span>Size</span></div><span class="comparison-task-copy">You still have to sort and prioritize</span></li><li class="comparison-task comparison-task--note"><div class="comparison-task-meta"><span>Why now?</span><span class="comparison-note-line" aria-hidden="true"></span></div><span class="comparison-task-copy">You look for a credible reason to reach out</span></li></ul>
-      <p class="comparison-conclusion">Time lost before the first call even starts.</p>
-    </div>
-    <svg class="comparison-flow-lines" viewBox="0 0 1000 254" preserveAspectRatio="none" fill="none" aria-hidden="true" focusable="false">
-      <g stroke="#c9c5bf" stroke-width="1" stroke-linecap="round"><path d="M343.2 28C422 28 432 127 474 127"/><path d="M390 94C435 94 448 127 474 127"/><path d="M335.4 160C422 160 440 127 474 127"/><path d="M390 226C435 226 440 127 474 127"/></g>
-      <path class="comparison-output-line" d="M526 127H610" stroke="#0a66c2" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-    <div class="comparison-convergence" aria-hidden="true"><div class="comparison-core"><span class="comparison-core-mark"><img src="/assets/logo-black-narrow.png" alt="" width="40" height="48"></span></div></div>
-    <div class="comparison-side comparison-side--after">
-      <h2>With Synthetic Swarm</h2>
-      <div class="comparison-output-flow"><span class="comparison-rail" aria-hidden="true"></span><ul><li>Prospects already selected</li><li>Contact details ready to use</li><li>The right timing identified</li><li>A clear reason to reach out</li></ul></div>
-      <p class="comparison-conclusion">You spend your time <span class="comparison-highlight">calling</span>, not searching.</p>
+  <ul class="home-trust-logos" aria-hidden="true">
+    <li class="home-trust-logo home-trust-logo--axa"><img src="/assets/trust/axa.webp" alt="" loading="lazy" decoding="async"></li>
+    <li class="home-trust-logo home-trust-logo--allianz"><img src="/assets/trust/allianz.png" alt="" loading="lazy" decoding="async"></li>
+    <li class="home-trust-logo home-trust-logo--generali"><img src="/assets/trust/generali.jpg" alt="" loading="lazy" decoding="async"></li>
+    <li class="home-trust-logo home-trust-logo--swiss"><img src="/assets/trust/swiss-life.svg" alt="" loading="lazy" decoding="async"></li>
+    <li class="home-trust-logo home-trust-logo--abeille"><img src="/assets/trust/abeille-assurances.svg" alt="" loading="lazy" decoding="async"></li>
+    <li class="home-trust-logo home-trust-logo--france"><img src="/assets/trust/france-assurance.png" alt="" loading="lazy" decoding="async"></li>
+  </ul>
     </div>
   </div>
-</section><section class="home-signals" aria-labelledby="signals-title">
-  <div class="home-signals-heading"><h2 id="signals-title">DETECTED CHANGES</h2><label class="home-signals-pause"><input type="checkbox" aria-label="Pause scrolling"><span aria-hidden="true"></span></label></div>
-  <div class="home-signals-window"><div class="home-signals-track"><ul><li>First hire</li><li>Company creation</li><li>Executive change</li><li>New establishment</li><li>Legal structure change</li><li>Team growth</li><li>Restructuring</li><li>Status change</li><li>New location</li><li>Governance change</li></ul><ul aria-hidden="true"><li>First hire</li><li>Company creation</li><li>Executive change</li><li>New establishment</li><li>Legal structure change</li><li>Team growth</li><li>Restructuring</li><li>Status change</li><li>New location</li><li>Governance change</li></ul></div></div>
-</section><section id="solution-preview" class="content-page home-solution-preview" aria-labelledby="solution-title">
-  <span class="page-kicker">Our solution</span>
-  <h2 id="solution-title">From your target to your next call.</h2>
-  <p class="solution-intro">You define who you are looking for. Synthetic Swarm does the rest.</p>
-  <div class="home-prospect-preview">
-<div class="prospect-list"><p class="prospect-list-title">QUALIFIED PROSPECTS</p><p class="prospect-list-count">10 profiles this week</p><ul><li><button type="button" class="prospect-choice" data-prospect="camille" aria-pressed="true" aria-controls="profile-camille"><span class="prospect-choice-top"><strong>Camille R.</strong><time datetime="2026-09-15">Sep 15</time></span><span class="prospect-choice-sector">Architecture firm</span><span class="prospect-choice-signal">First hire</span></button></li><li><button type="button" class="prospect-choice" data-prospect="thomas" aria-pressed="false" aria-controls="profile-thomas"><span class="prospect-choice-top"><strong>Thomas B.</strong><time datetime="2026-09-14">Sep 14</time></span><span class="prospect-choice-sector">Dental practice</span><span class="prospect-choice-signal">Conversion to SELARL</span></button></li><li><button type="button" class="prospect-choice" data-prospect="sonia" aria-pressed="false" aria-controls="profile-sonia"><span class="prospect-choice-top"><strong>Sonia M.</strong><time datetime="2026-09-13">Sep 13</time></span><span class="prospect-choice-sector">Pharmacy</span><span class="prospect-choice-signal">New partner</span></button></li><li><button type="button" class="prospect-choice" data-prospect="julien" aria-pressed="false" aria-controls="profile-julien"><span class="prospect-choice-top"><strong>Julien D.</strong><time datetime="2026-09-12">Sep 12</time></span><span class="prospect-choice-sector">Construction company</span><span class="prospect-choice-signal">Operations resumed</span></button></li><li><button type="button" class="prospect-choice" data-prospect="elodie" aria-pressed="false" aria-controls="profile-elodie"><span class="prospect-choice-top"><strong>Élodie P.</strong><time datetime="2026-09-11">Sep 11</time></span><span class="prospect-choice-sector">Accounting firm</span><span class="prospect-choice-signal">Holding company created</span></button></li><li><button type="button" class="prospect-choice" data-prospect="marc" aria-pressed="false" aria-controls="profile-marc"><span class="prospect-choice-top"><strong>Marc L.</strong><time datetime="2026-09-10">Sep 10</time></span><span class="prospect-choice-sector">Law firm</span><span class="prospect-choice-signal">Ownership transfer initiated</span></button></li><li><button type="button" class="prospect-choice" data-prospect="sarah" aria-pressed="false" aria-controls="profile-sarah"><span class="prospect-choice-top"><strong>Sarah V.</strong><time datetime="2026-09-09">Sep 9</time></span><span class="prospect-choice-sector">Veterinary clinic</span><span class="prospect-choice-signal">New establishment</span></button></li><li><button type="button" class="prospect-choice" data-prospect="nicolas" aria-pressed="false" aria-controls="profile-nicolas"><span class="prospect-choice-top"><strong>Nicolas G.</strong><time datetime="2026-09-08">Sep 8</time></span><span class="prospect-choice-sector">Auto repair shop</span><span class="prospect-choice-signal">New company leader</span></button></li><li><button type="button" class="prospect-choice" data-prospect="claire" aria-pressed="false" aria-controls="profile-claire"><span class="prospect-choice-top"><strong>Claire T.</strong><time datetime="2026-09-07">Sep 7</time></span><span class="prospect-choice-sector">Real estate agency</span><span class="prospect-choice-signal">SCI created</span></button></li><li><button type="button" class="prospect-choice" data-prospect="antoine" aria-pressed="false" aria-controls="profile-antoine"><span class="prospect-choice-top"><strong>Antoine F.</strong><time datetime="2026-09-06">Sep 6</time></span><span class="prospect-choice-sector">Specialist retailer</span><span class="prospect-choice-signal">Growth + hiring</span></button></li></ul></div>
-<div class="prospect-detail-area" id="prospect-example"><article class="prospect-detail" id="profile-camille" aria-labelledby="name-camille">
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">First hire</p><p class="prospect-date"><time datetime="2026-09-15">Sep 15 2026</time></p><p class="prospect-consequence">The first hire is a reason to review employee benefits and the responsibilities that come with becoming an employer.</p></div>
-<div class="prospect-identity"><h4 id="name-camille">Camille R.</h4><p>Company leader · Ateliers R.</p></div>
-<p class="prospect-phone">06 73 54 26 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>camille@ateliers-r.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-thomas" aria-labelledby="name-thomas" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">Conversion to SELARL</p><p class="prospect-date"><time datetime="2026-09-14">Sep 14 2026</time></p><p class="prospect-consequence">The move to a SELARL is a reason to review the company leader’s protection and policies held by the business.</p></div>
-<div class="prospect-identity"><h4 id="name-thomas">Thomas B.</h4><p>Company leader · Cabinet B.</p></div>
-<p class="prospect-phone">06 42 85 19 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>thomas@cabinet-b.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-sonia" aria-labelledby="name-sonia" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">New partner</p><p class="prospect-date"><time datetime="2026-09-13">Sep 13 2026</time></p><p class="prospect-consequence">A new partner is a reason to review protection between partners and business continuity arrangements.</p></div>
-<div class="prospect-identity"><h4 id="name-sonia">Sonia M.</h4><p>Company leader · Pharmacie M.</p></div>
-<p class="prospect-phone">06 18 42 73 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>sonia@pharmacie-m.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-julien" aria-labelledby="name-julien" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">Operations resumed</p><p class="prospect-date"><time datetime="2026-09-12">Sep 12 2026</time></p><p class="prospect-consequence">Resuming operations is a reason to review cover for current projects, teams and equipment.</p></div>
-<div class="prospect-identity"><h4 id="name-julien">Julien D.</h4><p>Company leader · Bâtiment D.</p></div>
-<p class="prospect-phone">06 52 31 84 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>julien@batiment-d.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-elodie" aria-labelledby="name-elodie" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">Holding company created</p><p class="prospect-date"><time datetime="2026-09-11">Sep 11 2026</time></p><p class="prospect-consequence">The new holding company is a reason to review directors’ responsibilities and how policies are allocated across the group.</p></div>
-<div class="prospect-identity"><h4 id="name-elodie">Élodie P.</h4><p>Company leader · Cabinet P.</p></div>
-<p class="prospect-phone">06 24 68 51 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>elodie@cabinet-p.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-marc" aria-labelledby="name-marc" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">Ownership transfer initiated</p><p class="prospect-date"><time datetime="2026-09-10">Sep 10 2026</time></p><p class="prospect-consequence">The planned ownership transfer is a reason to review continuity of cover and protection for the partners.</p></div>
-<div class="prospect-identity"><h4 id="name-marc">Marc L.</h4><p>Company leader · Cabinet L.</p></div>
-<p class="prospect-phone">06 81 35 47 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>marc@cabinet-l.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-sarah" aria-labelledby="name-sarah" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">New establishment</p><p class="prospect-date"><time datetime="2026-09-09">Sep 9 2026</time></p><p class="prospect-consequence">A new establishment is a reason to review cover for premises, medical equipment and business operations.</p></div>
-<div class="prospect-identity"><h4 id="name-sarah">Sarah V.</h4><p>Company leader · Clinique V.</p></div>
-<p class="prospect-phone">06 39 72 16 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>sarah@clinique-v.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-nicolas" aria-labelledby="name-nicolas" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">New company leader</p><p class="prospect-date"><time datetime="2026-09-08">Sep 8 2026</time></p><p class="prospect-consequence">A change of company leader creates a context to review personal protection and the business’s existing cover.</p></div>
-<div class="prospect-identity"><h4 id="name-nicolas">Nicolas G.</h4><p>Company leader · Garage G.</p></div>
-<p class="prospect-phone">06 65 28 43 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>nicolas@garage-g.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-claire" aria-labelledby="name-claire" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">SCI created</p><p class="prospect-date"><time datetime="2026-09-07">Sep 7 2026</time></p><p class="prospect-consequence">The new property holding company is a reason to review property cover and the entity’s responsibilities.</p></div>
-<div class="prospect-identity"><h4 id="name-claire">Claire T.</h4><p>Company leader · Agence T.</p></div>
-<p class="prospect-phone">06 47 93 12 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>claire@agence-t.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article><article class="prospect-detail" id="profile-antoine" aria-labelledby="name-antoine" hidden>
-<p class="prospect-ready">READY TO CALL</p>
-<div class="prospect-why"><h3>WHY NOW?</h3><p class="prospect-event">Growth + hiring</p><p class="prospect-date"><time datetime="2026-09-06">Sep 6 2026</time></p><p class="prospect-consequence">Growth and hiring are reasons to reassess cover for employees, stock and business operations.</p></div>
-<div class="prospect-identity"><h4 id="name-antoine">Antoine F.</h4><p>Company leader · Commerce F.</p></div>
-<p class="prospect-phone">06 92 16 58 ••<span>Verified mobile</span></p>
-<div class="prospect-channels"><span>antoine@commerce-f.fr</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-</article></div>
-</div>
-  <a class="prospect-preview-link" href="/our-solution">Learn more →</a>
+</section><section class="home-radar" id="radar-preview" aria-labelledby="radar-title" data-phase="complete">
+  <div class="radar-section-heading"><h2 id="radar-title">Your area. Your next clients.</h2><p>Tell us who you’re looking for. See where they are and why to call.</p></div>
+  <div class="radar-demo">
+    <div class="radar-stage">
+      <div class="radar-map-window"><div class="radar-world"><svg class="radar-country" viewBox="0 0 1000 570" preserveAspectRatio="none" aria-hidden="true"><use href="/assets/radar/france-map.svg#country"/><use class="radar-country-labels" href="/assets/radar/france-map.svg#labels"/></svg><img class="radar-basemap" src="/assets/radar/lyon-map.svg" alt="" width="1000" height="570"><img class="radar-territory" src="/assets/radar/territory.svg" alt="" width="1000" height="570"><div class="radar-pins"><button type="button" class="radar-pin" style="--pin-x:57%;--pin-y:58.5%;--arrival:0ms" data-radar-profile="0" aria-label="Atelier des Pentes" aria-pressed="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg><span class="radar-pin-name">Atelier des Pentes</span></button><button type="button" class="radar-pin" style="--pin-x:54.3%;--pin-y:56.5%;--arrival:65ms" data-radar-profile="1" aria-label="Maison &amp; Bois" aria-pressed="false"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg><span class="radar-pin-name">Maison &amp; Bois</span></button><button type="button" class="radar-pin" style="--pin-x:61.1%;--pin-y:57.4%;--arrival:130ms" data-radar-profile="2" aria-label="Bâti Lumière" aria-pressed="false"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg><span class="radar-pin-name">Bâti Lumière</span></button><span class="radar-pin" style="--pin-x:40%;--pin-y:30%;--arrival:195ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span><span class="radar-pin" style="--pin-x:34%;--pin-y:44%;--arrival:260ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span><span class="radar-pin" style="--pin-x:50%;--pin-y:69%;--arrival:325ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span><span class="radar-pin" style="--pin-x:30%;--pin-y:57%;--arrival:390ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span><span class="radar-pin" style="--pin-x:59%;--pin-y:26%;--arrival:455ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span><span class="radar-pin" style="--pin-x:38%;--pin-y:66%;--arrival:520ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span><span class="radar-pin" style="--pin-x:46%;--pin-y:36%;--arrival:585ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span><span class="radar-pin" style="--pin-x:67%;--pin-y:70%;--arrival:650ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span><span class="radar-pin" style="--pin-x:27%;--pin-y:31%;--arrival:715ms" data-radar-extra aria-hidden="true"><span class="radar-pin-face"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><svg class="radar-pin-orbit" viewBox="0 0 38 38" aria-hidden="true"><rect class="light-bloom" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-halo" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-trail" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/><rect class="light-core" x="2" y="2" width="34" height="34" rx="12" pathLength="100"/></svg></span></div></div></div>
+      <div class="radar-veil" aria-hidden="true"></div>
+      <div class="radar-composer"><label class="radar-composer-label" for="radar-query">Your offer, your target, your area</label><div class="radar-composer-field"><textarea id="radar-query" readonly rows="3" aria-label="Example search" tabindex="-1" title="Newly self-employed tradespeople in the Rhône who may need income protection.">Income protection · Building trades · Rhône</textarea><span class="radar-send" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></span></div></div>
+      <span class="radar-zone"><span aria-hidden="true">⌖</span>Lyon and the Rhône</span>
+      <div class="radar-status" role="status" aria-live="polite"><span class="radar-status-dot"></span><span data-radar-status>3 profiles ready to explore</span></div>
+      <aside class="radar-results" aria-label="Prospect profiles"><div class="radar-results-heading"><span class="radar-result-count">3</span><div><h3>Your prospects</h3><p>Matched to your offer</p></div></div><article class="radar-card" data-profile-card="0">
+<button type="button" class="radar-card-select" data-radar-profile="0" aria-expanded="true" aria-controls="radar-detail-0"><span class="radar-card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><span><strong>Atelier des Pentes</strong><span class="radar-card-caption">Lyon 4e · Renovation</span></span><span class="radar-card-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="m3 4.5 3 3 3-3"/></svg></span></button>
+<div class="radar-card-detail" id="radar-detail-0"><span class="radar-signal"><svg class="radar-signal-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><span class="radar-signal-copy"><span class="radar-signal-label">Detected signal</span><span class="radar-signal-value">Started 2 months ago</span></span></span><p class="radar-reason-label">Why reach out</p><p class="radar-reason">Julien is newly self-employed. A timely conversation about protecting his income.</p><div class="radar-contact"><span class="radar-avatar">J</span><span><strong>Julien M.</strong><span>Owner</span></span><span class="radar-phone">06 73 54 26 ••</span></div></div></article><article class="radar-card" data-profile-card="1">
+<button type="button" class="radar-card-select" data-radar-profile="1" aria-expanded="false" aria-controls="radar-detail-1"><span class="radar-card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><span><strong>Maison &amp; Bois</strong><span class="radar-card-caption">Écully · Carpentry</span></span><span class="radar-card-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="m3 4.5 3 3 3-3"/></svg></span></button>
+<div class="radar-card-detail" id="radar-detail-1" hidden><span class="radar-signal"><svg class="radar-signal-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><span class="radar-signal-copy"><span class="radar-signal-label">Detected signal</span><span class="radar-signal-value">Newly self-employed</span></span></span><p class="radar-reason-label">Why reach out</p><p class="radar-reason">Camille is moving from employment to self-employment. A reason to review her personal protection.</p><div class="radar-contact"><span class="radar-avatar">C</span><span><strong>Camille R.</strong><span>Owner</span></span><span class="radar-phone">06 82 31 47 ••</span></div></div></article><article class="radar-card" data-profile-card="2">
+<button type="button" class="radar-card-select" data-radar-profile="2" aria-expanded="false" aria-controls="radar-detail-2"><span class="radar-card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><span><strong>Bâti Lumière</strong><span class="radar-card-caption">Villeurbanne · Construction</span></span><span class="radar-card-chevron" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="m3 4.5 3 3 3-3"/></svg></span></button>
+<div class="radar-card-detail" id="radar-detail-2" hidden><span class="radar-signal"><svg class="radar-signal-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><span class="radar-signal-copy"><span class="radar-signal-label">Detected signal</span><span class="radar-signal-value">Recent business takeover</span></span></span><p class="radar-reason-label">Why reach out</p><p class="radar-reason">Thomas has taken over the business. A new responsibility and a reason to review his income protection.</p><div class="radar-contact"><span class="radar-avatar">T</span><span><strong>Thomas B.</strong><span>Owner</span></span><span class="radar-phone">06 61 42 85 ••</span></div></div></article></aside>
+      <span class="radar-map-credit">Etalab / IGN</span>
+    </div>
+    <div class="radar-steps" aria-label="Demo steps"><button type="button" data-radar-step="0" aria-pressed="false"><span>01</span>Your target</button><button type="button" data-radar-step="1" aria-pressed="false"><span>02</span>Your area</button><button type="button" data-radar-step="2" aria-pressed="false"><span>03</span>The companies</button><button type="button" data-radar-step="3" aria-pressed="true"><span>04</span>Your prospects</button></div>
+  </div>
+</section><section id="detected-changes" class="home-signals" aria-labelledby="signals-title">
+  <div class="signals-composition">
+    <div class="signals-editorial">
+      <header class="home-signals-heading"><p class="home-signals-eyebrow">Detected changes</p><h2 id="signals-title">Spot the right moment to call.</h2><p class="signals-intro">Signals relevant to your offer. A concrete reason to start a conversation.</p></header>
+      <ul class="signals-controls" aria-label="Explore detected changes">
+        <li><button type="button" data-signal-choice="0" aria-pressed="true" aria-controls="signal-example-0"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m3-13v6m-3-3h6"/></svg><span>First hire</span></button></li>
+        <li><button type="button" data-signal-choice="1" aria-pressed="false" aria-controls="signal-example-1"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V5l8-3v19M4 21h16V10l-8-3M8 7v1m0 4v1m0 4v1m8-5v1m0 4v1M2 21h20"/></svg><span>Company creation</span></button></li>
+        <li><button type="button" data-signal-choice="2" aria-pressed="false" aria-controls="signal-example-2"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M6 19v-1a6 6 0 0 1 12 0v1M4 4H1v3m19 13h3v-3M1 7a11 11 0 0 1 17-5m5 15a11 11 0 0 1-17 5"/></svg><span>New company leader</span></button></li>
+        <li><button type="button" data-signal-choice="3" aria-pressed="false" aria-controls="signal-example-3"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10h18l-2-6H5l-2 6Zm1 0v10h16V10M9 20v-6h6v6M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/></svg><span>New premises</span></button></li>
+        <li><button type="button" data-signal-choice="4" aria-pressed="false" aria-controls="signal-example-4"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m1-15a3 3 0 0 1 0 6m3 9v-2a6 6 0 0 0-3-5"/></svg><span>Team growth</span></button></li>
+        <li><button type="button" data-signal-choice="5" aria-pressed="false" aria-controls="signal-example-5"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"/></svg><span>Legal structure</span></button></li>
+      </ul>
+      <p class="signals-examples-note">And many more.</p>
+    </div>
+    <div class="signals-scene">
+      <div class="signals-dossier">
+        <article class="signal-example" id="signal-example-0" data-signal-panel="0" aria-labelledby="signal-name-0">
+          <div class="signal-company"><span class="signal-company-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><div><strong>Atelier des Pentes</strong><span>Lyon · Renovation</span></div><svg class="signal-record-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"/></svg></div>
+          <div class="signal-change"><p class="signal-field">Reported headcount</p><div class="signal-values"><div class="signal-before"><span>Before</span><strong>0</strong></div><svg class="signal-change-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><div class="signal-after"><span>Now</span><strong>1</strong></div></div><p class="signal-unit">employee</p><span class="signal-scan" aria-hidden="true"></span></div>
+          <div class="signal-context"><div class="signal-context-heading"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><h3 id="signal-name-0">First hire</h3></div><p>Discuss group health insurance when the first employee joins.</p></div>
+        </article>
+        <article class="signal-example" id="signal-example-1" data-signal-panel="1" aria-labelledby="signal-name-1" hidden>
+          <div class="signal-company"><span class="signal-company-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><div><strong>Maison &amp; Bois</strong><span>Écully · Carpentry</span></div><svg class="signal-record-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"/></svg></div>
+          <div class="signal-change signals-change--text"><p class="signal-field">Company status</p><div class="signal-values"><div class="signal-before"><span>Before</span><strong>Planned</strong></div><svg class="signal-change-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><div class="signal-after"><span>Now</span><strong>Created</strong></div></div><p class="signal-unit">&#160;</p><span class="signal-scan" aria-hidden="true"></span></div>
+          <div class="signal-context"><div class="signal-context-heading"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><h3 id="signal-name-1">Company creation</h3></div><p>Identify professional liability and business insurance needs.</p></div>
+        </article>
+        <article class="signal-example" id="signal-example-2" data-signal-panel="2" aria-labelledby="signal-name-2" hidden>
+          <div class="signal-company"><span class="signal-company-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><div><strong>Bâti Lumière</strong><span>Villeurbanne · Construction</span></div><svg class="signal-record-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"/></svg></div>
+          <div class="signal-change signals-change--text"><p class="signal-field">Company leader</p><div class="signal-values"><div class="signal-before"><span>Before</span><strong>Paul R.</strong></div><svg class="signal-change-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><div class="signal-after"><span>Now</span><strong>Thomas B.</strong></div></div><p class="signal-unit">&#160;</p><span class="signal-scan" aria-hidden="true"></span></div>
+          <div class="signal-context"><div class="signal-context-heading"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><h3 id="signal-name-2">New company leader</h3></div><p>Understand their plans and reassess the company’s existing policies.</p></div>
+        </article>
+        <article class="signal-example" id="signal-example-3" data-signal-panel="3" aria-labelledby="signal-name-3" hidden>
+          <div class="signal-company"><span class="signal-company-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><div><strong>Atelier des Pentes</strong><span>Lyon · Renovation</span></div><svg class="signal-record-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"/></svg></div>
+          <div class="signal-change"><p class="signal-field">Establishments</p><div class="signal-values"><div class="signal-before"><span>Before</span><strong>1</strong></div><svg class="signal-change-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><div class="signal-after"><span>Now</span><strong>2</strong></div></div><p class="signal-unit">locations</p><span class="signal-scan" aria-hidden="true"></span></div>
+          <div class="signal-context"><div class="signal-context-heading"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><h3 id="signal-name-3">New premises</h3></div><p>Revisit cover for the premises, equipment and business activity.</p></div>
+        </article>
+        <article class="signal-example" id="signal-example-4" data-signal-panel="4" aria-labelledby="signal-name-4" hidden>
+          <div class="signal-company"><span class="signal-company-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><div><strong>Maison &amp; Bois</strong><span>Écully · Carpentry</span></div><svg class="signal-record-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"/></svg></div>
+          <div class="signal-change"><p class="signal-field">Reported headcount</p><div class="signal-values"><div class="signal-before"><span>Before</span><strong>4</strong></div><svg class="signal-change-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><div class="signal-after"><span>Now</span><strong>9</strong></div></div><p class="signal-unit">employees</p><span class="signal-scan" aria-hidden="true"></span></div>
+          <div class="signal-context"><div class="signal-context-heading"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><h3 id="signal-name-4">Team growth</h3></div><p>Review employee benefits as the team grows.</p></div>
+        </article>
+        <article class="signal-example" id="signal-example-5" data-signal-panel="5" aria-labelledby="signal-name-5" hidden>
+          <div class="signal-company"><span class="signal-company-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16m-9 0v3h2v-3"/></svg></span><div><strong>Bâti Lumière</strong><span>Villeurbanne · Construction</span></div><svg class="signal-record-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Zm8 0v5h4M9 12h6m-6 4h6"/></svg></div>
+          <div class="signal-change signals-change--text"><p class="signal-field">Legal structure</p><div class="signal-values"><div class="signal-before"><span>Before</span><strong>SARL</strong></div><svg class="signal-change-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><div class="signal-after"><span>Now</span><strong>SAS</strong></div></div><p class="signal-unit">&#160;</p><span class="signal-scan" aria-hidden="true"></span></div>
+          <div class="signal-context"><div class="signal-context-heading"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.3 8.5a9 9 0 1 1-4.8-4.8M16.4 10.4a4.7 4.7 0 1 1-2.8-2.8M12 12l8-8"/></svg><h3 id="signal-name-5">Legal structure</h3></div><p>Reassess existing policies in light of the company’s new status.</p></div>
+        </article>
+        <button type="button" class="signal-next" aria-label="Show the next signal" title="Show the next signal"></button>
+      </div>
+    </div>
+  </div>
 </section>
 <section id="customer-proof" class="content-page home-customer-proof" aria-labelledby="customer-preview-title">
-  <h2 id="customer-preview-title">Our clients say it best.</h2>
-  <div class="testimonial-carousel" data-testimonial-carousel>
-  <div class="customer-grid testimonial-track" id="testimonial-track" tabindex="0" role="group" aria-label="Customer reviews">
-    <article class="home-testimonial">
-      <div class="home-testimonial-person">
-        <img src="/assets/customers/illustrative-claire.jpg" alt="" width="64" height="64" loading="lazy" decoding="async">
-        <div><h3>Claire</h3><p>Insurance agent</p></div>
-      </div>
+  <header class="testimonial-heading"><p class="testimonial-eyebrow">Customer stories</p><h2 id="customer-preview-title">Our clients say it best.</h2></header>
+  <div class="testimonial-grid">
+    <article class="home-testimonial" aria-labelledby="review-person-0">
+      <span class="testimonial-quote-mark" aria-hidden="true">“</span>
       <blockquote><p>What surprised me most was the quality of the prospects. The companies genuinely match our criteria, and the proportion of relevant profiles is far higher than what I used to get.</p></blockquote>
-      <div class="home-testimonial-bottom">
-        <p class="home-testimonial-result">Truly qualified prospects.</p>
+      <div class="testimonial-author">
+        <img src="/assets/customers/illustrative-claire.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+        <div><h3 id="review-person-0">Claire</h3><p>Insurance agent</p></div>
       </div>
     </article>
-    <article class="home-testimonial">
-      <div class="home-testimonial-person">
-        <img src="/assets/customers/illustrative-thomas.jpg" alt="" width="64" height="64" loading="lazy" decoding="async">
-        <div><h3>Thomas</h3><p>Independent broker</p></div>
-      </div>
+    <article class="home-testimonial" aria-labelledby="review-person-1">
+      <span class="testimonial-quote-mark" aria-hidden="true">“</span>
       <blockquote><p>I no longer contact business owners at random. I know what has just changed in their company and why it makes sense to call now.</p></blockquote>
-      <div class="home-testimonial-bottom">
-        <p class="home-testimonial-result">The right contact, at the right time.</p>
+      <div class="testimonial-author">
+        <img src="/assets/customers/illustrative-thomas.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+        <div><h3 id="review-person-1">Thomas</h3><p>Independent broker</p></div>
       </div>
     </article>
-    <article class="home-testimonial">
-      <div class="home-testimonial-person">
-        <img src="/assets/customers/illustrative-sonia.jpg" alt="" width="64" height="64" loading="lazy" decoding="async">
-        <div><h3>Sonia</h3><p>Insurance broker</p></div>
-      </div>
+    <article class="home-testimonial" aria-labelledby="review-person-2">
+      <span class="testimonial-quote-mark" aria-hidden="true">“</span>
       <blockquote><p>I’ve handed over much of my prospecting to Synthetic Swarm. I receive profiles that are ready to use, so I can focus on meetings.</p></blockquote>
-      <div class="home-testimonial-bottom">
-        <p class="home-testimonial-result">More time for conversations.</p>
+      <div class="testimonial-author">
+        <img src="/assets/customers/illustrative-sonia.jpg" alt="" width="44" height="44" loading="lazy" decoding="async">
+        <div><h3 id="review-person-2">Sonia</h3><p>Insurance broker</p></div>
       </div>
     </article>
   </div>
-<div class="testimonial-controls"><button type="button" data-testimonial-prev aria-controls="testimonial-track" aria-label="Previous review" disabled><span aria-hidden="true">←</span></button><button type="button" data-testimonial-next aria-controls="testimonial-track" aria-label="Next review"><span aria-hidden="true">→</span></button></div></div>
 </section>
 <!-- SHARED PRICING START --><section id="pricing" class="pricing-section"><h2 class="reveal">Choose the volume that fits you.</h2>
     <p class="pricing-subtitle reveal">One plan. Simply adjust how many qualified leads you want to receive every week.</p>
@@ -323,6 +314,5 @@
 <div class="floating-demo" data-floating-demo inert aria-hidden="true"><a class="floating-demo-button" href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer"><span class="floating-demo-avatars" aria-hidden="true"><img src="/assets/team/axel-ceo.png" alt="" width="44" height="44"><img src="/assets/team/ilan-cto.jpg" alt="" width="44" height="44"></span><span class="floating-demo-copy"><strong>Book a demo</strong><span>15 min with the team</span></span><span class="floating-demo-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
   <script src="/floating-demo.js?v=home-restore-1"></script>
   <script src="/newsletter.js" defer></script>
-<script src="/testimonials.js" defer></script>
 </body>
 </html>
