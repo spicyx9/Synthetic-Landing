@@ -52,9 +52,9 @@
   max-width: 780px;
 }
 .home .demo-wrapper .demo-hero__headline .hl { color: var(--hs-blue); }
-/* Two-line signature: strong sans, expressive display serif. */
-.home .demo-hero__headline .motion-headline-part { display:block; font-weight:800; color:#1a1a1a; }
-.hero-word-highlight { font-family:"DM Serif Display",Georgia,serif; font-weight:400; font-style:italic; font-synthesis:none; letter-spacing:-.035em; }
+/* Two-line signature: the footer's lighter sans, expressive display serif. */
+.home .demo-hero__headline .motion-headline-part { display:block; font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; font-weight:600; color:#1a1a1a; }
+.hero-word-highlight { font-family:"Cormorant Garamond",Georgia,serif; font-weight:700; font-style:italic; font-synthesis:none; letter-spacing:-.035em; }
 .home .demo-hero__headline .hero-word-highlight { display:block; margin-top:2px; font-size:84px; line-height:1.03; }
 
 /* A light sweep stays inside the blue lettering. */
