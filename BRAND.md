@@ -282,3 +282,7 @@ A later safe migration should use non-colliding `--ss-public-*` names, replace o
 ## Future design rule
 
 All future sections, pages and components must follow this design system, including homepage, Our Solution, Pricing, FAQ, About, Careers, Media, Contact, Customers, Newsletter and demo booking dropdown. Do not introduce arbitrary colors, radii, shadows or button styles without a clear reason. Record a deliberate exception here with its scope. Reuse current components first; resolve documented inconsistencies in separately reviewed changes, never through an incidental redesign.
+
+## Homepage radar preview (September 2026)
+
+The `.home-radar` product demonstration uses neutral white/gray surfaces, the app’s OpenFreeMap Bright basemap, charcoal pins and white contact cards. Green is reserved for the geographic selection, detected signals and analysis motion, with brand blue for the active step. These colors and the 14–19px component radii are scoped to this product preview. See `docs/radar-preview.md` for source references, fictional data handling and motion behavior.
