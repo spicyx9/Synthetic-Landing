@@ -118,3 +118,14 @@ test('.vercelignore excludes internal material only, never a runtime file refere
   }
   for (const file of ['api/contact.js', 'api/newsletter.js']) assert.ok(fs.existsSync(path.join(root, file)));
 });
+
+
+test('radar CSP permits public tiles and local image/worker decoding without remote scripts', () => {
+  const config = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
+  const csp = config.headers.find(rule => rule.source === '/(.*)').headers.find(h => h.key === 'Content-Security-Policy').value;
+  const directives = Object.fromEntries(csp.split(';').map(part => part.trim().split(/\s+/)).filter(parts => parts[0]).map(([key, ...values]) => [key, values]));
+  assert.deepEqual(directives['connect-src'], ["'self'", 'https://tiles.openfreemap.org']);
+  assert.ok(directives['img-src'].includes('blob:'));
+  assert.deepEqual(directives['worker-src'], ["'self'", 'blob:']);
+  assert.deepEqual(directives['script-src'], ["'self'"]);
+});

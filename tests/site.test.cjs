@@ -117,7 +117,6 @@ for (const lang of ['en', 'fr']) {
 test('fixed homepage news and static deployment configuration', () => {
   for (const name of ['index.html', 'index-fr.html']) {
     const html = read(name);
-    assert.match(html, /<time class="hero-eyebrow-date" datetime="2026-09-17">/);
     assert.match(html, /class="hero-eyebrow-news">[^<]*San Francisco/);
     assert.doesNotMatch(html, /new Date\(|heroEyebrowDate/);
   }

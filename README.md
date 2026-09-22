@@ -44,7 +44,7 @@ The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CS
 
 ## Customer stories
 
-`/clients` and `/customers` read `assets/data/customers.json` through the shared `customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `assets/data/README.md`. No build is required. The homepage shows three static gray placeholders until three verified testimonials exist for its language; the shared renderer then replaces the placeholders. Fetch failures retain the placeholders. Statistic cards require an enabled flag and a real value.
+`/clients` and `/customers` read `assets/data/customers.json` through the shared `customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `assets/data/README.md`. No build is required. The homepage independently displays its three existing testimonials as static cards, with the full quote, portrait, name and role. Dedicated customer pages still use the shared verified-data renderer; statistic cards require an enabled flag and a real value.
 
 ## Automatic language
 
@@ -59,3 +59,7 @@ The shared footer generator supplies an editable FR/EN form and `newsletter.js` 
 `motion.js` owns one observer, once-only entrances, pause lifecycle, focus fallback and reduced-motion handling. `motion.css` defines shared tokens. Page choreography lives in `home-motion.js`, `solution-motion.js`, `editorial-motion.js` and `page-motion.js`. Shared layout generation includes these assets. Product timeline time is linear; easing applies within individual steps so story milestones retain their scheduled times. Content is visible by default without JavaScript.
 
 Work directly on main for the current audit/fix/deploy workflow. Parked copy changes remain out of scope until explicitly released.
+
+## Homepage product demonstration
+
+The FR/EN homepages include an animated radar and selectable detected-change records. See `docs/radar-preview.md` for runtime assets, attribution, reduced-motion behavior and validation.
