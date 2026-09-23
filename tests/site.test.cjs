@@ -63,7 +63,7 @@ for (const lang of ['en', 'fr']) {
   test(`${lang}: pricing defaults and every interactive tier`, () => {
     const html = read(lang === 'fr' ? 'tarifs.html' : 'pricing.html');
     assert.equal([...html.matchAll(/class="pricing-config-card"/g)].length, 1);
-    assert.match(html, /data-pricing-range[^>]*value="1"/);
+    assert.match(html, /data-pricing-range[^>]*value="2"/);
     assert.doesNotMatch(html, /quand disponibles|when available|location\.replace/);
     assert.doesNotMatch(html, /data-price=|[?&]price=/);
     assert.equal([...html.matchAll(/<details class="pricing-faq-item">/g)].length, 3);
@@ -73,29 +73,61 @@ for (const lang of ['en', 'fr']) {
     range.value = '4'; // Simulate a browser restoring an old selection.
     const counters = [element(), element()], steps = Array.from({ length: 6 }, element);
     const period = element(), summary = element(), customCopy = element(), customBooking = element();
+    const discoveryCopy = element(), volume = element(), discoveryCta = element();
+    const label = kind => ({ dataset: { checkoutLabel: kind }, inactive: kind === 'discovery', classList: { toggle(name, on) { if (name === 'is-inactive') label.owner[kind].inactive = on; } } });
+    label.owner = { plan: label('plan'), discovery: label('discovery') };
+    checkout.querySelectorAll = () => [label.owner.plan, label.owner.discovery];
+    const activeLabel = () => (label.owner.plan.inactive ? 'discovery' : 'plan');
     const panel = element(), trigger = element();
     customBooking.querySelector = selector => selector === '[data-disclosure-panel]' ? panel : trigger;
-    const selectors = { '[data-pricing-range]': range, '[data-pricing-amount]': amount, '[data-pricing-checkout]': checkout, '.pricing-config-badge': badge, '[data-pricing-period]': period, '[data-pricing-summary]': summary, '[data-pricing-custom-copy]': customCopy, '[data-pricing-custom-booking]': customBooking };
+    const selectors = { '[data-pricing-range]': range, '[data-pricing-amount]': amount, '[data-pricing-checkout]': checkout, '.pricing-config-badge': badge, '[data-pricing-period]': period, '[data-pricing-summary]': summary, '[data-pricing-custom-copy]': customCopy, '[data-pricing-custom-booking]': customBooking, '[data-pricing-discovery-copy]': discoveryCopy, '[data-pricing-volume]': volume, '[data-pricing-discovery-cta]': discoveryCta };
     vm.runInNewContext(read('pricing.js'), { Intl, document: { documentElement: { lang }, querySelector: s => selectors[s], querySelectorAll: s => s === '[data-pricing-leads]' ? counters : steps } });
-    assert.equal(range.value, '1');
+    assert.equal(range.value, '2');
     assert.equal(amount.textContent, '169 €');
     assert.equal(badge.hidden, false);
     assert.equal(checkout.attrs.href, `https://app.syntheticswarm.ai/ui/?leads=20&lang=${lang}`);
     assert.match(html, /data-pricing-amount>169 €/);
     assert.match(html, /data-pricing-step class="is-active">20/);
-    assert.doesNotMatch(html, /data-plan-index="1" hidden/);
-    const leads = [10, 20, 50, 100, 200], prices = [89, 169, 399, 789, 1499];
-    for (const i of [0, 1, 2, 3, 4, 2]) {
+    assert.doesNotMatch(html, /data-plan-index="2" hidden/);
+    assert.match(html, /data-pricing-step>(?:Découverte|Discovery)<\/button>\s*<button type="button" data-pricing-step>10<\/button>/);
+    assert.doesNotMatch(html, /data-pricing-step>(?:200|200\+|300)</);
+    assert.doesNotMatch(read('pricing.js'), /1499|200\+/);
+    const leads = [null, 10, 20, 50, 100], prices = [null, 89, 169, 399, 789];
+    for (const i of [1, 2, 3, 4, 2]) {
       steps[i].events.click();
       assert.equal(range.value, String(i));
       assert.equal(amount.textContent.replace(/[^0-9]/g, ''), String(prices[i]));
       assert.ok(counters.every(c => c.textContent === String(leads[i])));
-      assert.equal(badge.hidden, i !== 1);
+      assert.equal(badge.hidden, i !== 2);
+      assert.equal(volume.textContent, `${leads[i]} leads`);
+      assert.equal(discoveryCopy.hidden, true);
+      assert.equal(activeLabel(), 'plan');
+      assert.equal(label.owner.discovery.inactive, true);
       assert.equal(checkout.dataset.price, undefined);
       assert.doesNotMatch(checkout.attrs.href, /price=/);
       assert.equal(checkout.attrs.href, `https://app.syntheticswarm.ai/ui/?leads=${leads[i]}&lang=${lang}`);
       assert.equal(steps[i].attrs['aria-pressed'], 'true');
     }
+    steps[0].events.click();
+    assert.equal(range.value, '0');
+    assert.equal(amount.textContent, lang === 'fr' ? 'Découverte' : 'Discovery');
+    assert.equal(volume.textContent, lang === 'fr' ? 'Découverte' : 'Discovery');
+    assert.equal(period.hidden, true);
+    assert.equal(summary.hidden, true);
+    assert.equal(discoveryCopy.hidden, false);
+    assert.equal(customBooking.hidden, true);
+    assert.equal(checkout.hidden, false);
+    assert.equal(checkout.dataset.leads, undefined);
+    assert.equal(checkout.attrs.href, `https://app.syntheticswarm.ai/ui/?offer=discovery&lang=${lang}`);
+    assert.equal(activeLabel(), 'discovery');
+    assert.equal(label.owner.plan.inactive, true);
+    assert.match(html, lang === 'fr'
+      ? /data-checkout-label="plan">Choisir ce forfait<\/span><span class="pricing-config-btn-label is-inactive" data-checkout-label="discovery">Activer le mode découverte</
+      : /data-checkout-label="plan">Choose this plan<\/span><span class="pricing-config-btn-label is-inactive" data-checkout-label="discovery">Activate discovery mode</);
+    assert.equal(badge.hidden, true);
+    const copy = html.match(/<p class="pricing-config-summary pricing-discovery-copy" data-pricing-discovery-copy hidden>([^<]*(?:<br>[^<]*)*)<\/p>/);
+    assert.ok(copy);
+    for (const text of lang === 'fr' ? ['10 prospects à l’activation', '+ 10 nouveaux prospects&nbsp;/&nbsp;mois', 'Accès pendant 60 jours'] : ['10 prospects on activation', '+ 10 new prospects&nbsp;/&nbsp;month', 'Access for 60 days']) assert.ok(copy[1].includes(text), text);
     steps[5].events.click();
     assert.equal(amount.textContent, lang === 'fr' ? 'Sur mesure' : 'Custom');
     assert.equal(period.hidden, true);
@@ -105,12 +137,20 @@ for (const lang of ['en', 'fr']) {
     assert.equal(checkout.hidden, true);
     assert.equal(badge.hidden, true);
     assert.deepEqual(checkout.dataset, {});
-    assert.equal(counters[0].textContent, '200+');
-    range.value = '0'; range.events.input();
+    assert.equal(counters[0].textContent, '100+');
+    assert.equal(volume.textContent, '100+ leads');
+    range.value = '1'; range.events.input();
     assert.equal(customBooking.hidden, true);
     assert.equal(checkout.hidden, false);
     assert.equal(period.hidden, false);
     assert.equal(amount.textContent, '89 €');
+    steps[5].events.click();
+    range.value = '0'; range.events.input();
+    assert.equal(customBooking.hidden, true);
+    assert.equal(customCopy.hidden, true);
+    assert.equal(discoveryCopy.hidden, false);
+    assert.equal(checkout.hidden, false);
+    assert.equal(checkout.attrs.href, `https://app.syntheticswarm.ai/ui/?offer=discovery&lang=${lang}`);
   });
 }
 

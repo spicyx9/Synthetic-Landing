@@ -94,7 +94,7 @@
 }
 
 .pricing-range {
-  --progress: 20%;
+  --progress: 40%;
   display: block;
   padding: 0;
   border: 0;
@@ -375,4 +375,17 @@
   /* No badge on the discovery card: drop the top space reserved for it. */
   .pricing-discovery-card { margin-top: 16px; padding-top: 26px; }
   .pricing-discovery-title { font-size: 21px; margin-bottom: 18px; }
+}
+
+/* Discovery is the first stop: the checkout swaps its label, and both labels
+   share one cell so the button keeps the height of the longer one. */
+.pricing-config-actions > .pricing-config-btn,
+.pricing-config-actions > .pricing-config-btn[hidden],
+.pricing-config-actions .pricing-custom-booking > .pricing-config-btn { display: grid; align-items: center; }
+.pricing-config-btn-label { grid-area: 1 / 1; }
+.pricing-config-btn-label.is-inactive { visibility: hidden; }
+.pricing-range-steps button, .pricing-volume-label { white-space: nowrap; }
+@media (max-width: 360px) {
+  .pricing-range-steps { font-size: 10px; }
+  .pricing-range-steps button:last-child { white-space: normal; line-height: 1.15; }
 }
