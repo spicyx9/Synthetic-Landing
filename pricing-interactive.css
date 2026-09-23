@@ -378,3 +378,9 @@
   font-size: 14px;
   line-height: 1.6;
 }
+
+@media (max-width: 600px) {
+  /* No badge on the discovery card: drop the top space reserved for it. */
+  .pricing-discovery-card { margin-top: 16px; padding-top: 26px; }
+  .pricing-discovery-title { font-size: 21px; margin-bottom: 18px; }
+}

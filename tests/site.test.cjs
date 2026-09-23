@@ -133,8 +133,8 @@ test('all shared JavaScript parses', () => {
 for (const [lang, file, home] of [['fr', 'tarifs.html', 'index-fr.html'], ['en', 'pricing.html', 'index.html']]) {
   test(`${lang}: discovery offer card`, () => {
     const copy = lang === 'fr'
-      ? ['Mode découverte', '10 prospects à l’activation', '+ 10 nouveaux prospects / mois', 'Accès pendant 60 jours', 'Activer le mode découverte']
-      : ['Discovery mode', '10 prospects on activation', '+ 10 new prospects / month', 'Access for 60 days', 'Activate discovery mode'];
+      ? ['Mode découverte', '10 prospects à l’activation', '+ 10 nouveaux prospects&nbsp;/&nbsp;mois', 'Accès pendant 60 jours', 'Activer le mode découverte']
+      : ['Discovery mode', '10 prospects on activation', '+ 10 new prospects&nbsp;/&nbsp;month', 'Access for 60 days', 'Activate discovery mode'];
     for (const name of [file, home]) {
       const html = read(name);
       const card = html.match(/<div class="pricing-config-card pricing-discovery-card"[\s\S]*?<\/a>\s*<\/div>/);
