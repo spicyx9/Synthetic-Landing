@@ -1,11 +1,9 @@
 (function () {
   const isFr = document.documentElement.lang === 'fr';
-  // Discovery entry offer: 10 prospects on activation, 10 more each month,
+  // Discovery entry offer: 10 prospects on activation, 10 more after 30 days,
   // access limited to 60 days. Quotas and expiry are enforced by the app.
-  const discovery = { offer: 'discovery', initialLeads: 10, monthlyLeads: 10, accessDays: 60 };
+  const discovery = { offer: 'discovery', initialLeads: 10, secondLeads: 10, secondAfterDays: 30, accessDays: 60 };
   const discoveryHref = 'https://app.syntheticswarm.ai/ui/?offer=' + discovery.offer + '&lang=' + (isFr ? 'fr' : 'en');
-  const discoveryCta = document.querySelector('[data-pricing-discovery-cta]');
-  if (discoveryCta) discoveryCta.setAttribute('href', discoveryHref);
 
   const range = document.querySelector('[data-pricing-range]');
   if (!range) return;
@@ -18,11 +16,12 @@
     { leads: '100+', price: null }
   ];
   const labels = isFr
-    ? { discovery: 'Découverte', discoveryText: 'Découverte, 10 prospects à l’activation puis 10 par mois pendant 60 jours', custom: 'Sur mesure', perWeek: ' leads par semaine' }
-    : { discovery: 'Discovery', discoveryText: 'Discovery, 10 prospects on activation then 10 per month for 60 days', custom: 'Custom', perWeek: ' leads per week' };
+    ? { discovery: 'Découverte', title: 'Mode découverte', discoveryText: 'Mode découverte, 10 prospects à l’activation puis 10 après 30 jours, accès pendant 60 jours', custom: 'Sur mesure', perWeek: ' leads par semaine' }
+    : { discovery: 'Discovery', title: 'Discovery mode', discoveryText: 'Discovery mode, 10 prospects on activation then 10 after 30 days, access for 60 days', custom: 'Custom', perWeek: ' leads per week' };
   const amount = document.querySelector('[data-pricing-amount]');
   const period = document.querySelector('[data-pricing-period]');
   const summary = document.querySelector('[data-pricing-summary]');
+  const features = document.querySelector('[data-pricing-features]');
   const discoveryCopy = document.querySelector('[data-pricing-discovery-copy]');
   const customCopy = document.querySelector('[data-pricing-custom-copy]');
   const customBooking = document.querySelector('[data-pricing-custom-booking]');
@@ -40,10 +39,11 @@
     const custom = plan.price === null;
     range.style.setProperty('--progress', (index / (plans.length - 1)) * 100 + '%');
     range.setAttribute('aria-valuetext', isDiscovery ? labels.discoveryText : plan.leads + labels.perWeek + (custom ? ', ' + labels.custom.toLowerCase() : ''));
-    amount.textContent = isDiscovery ? labels.discovery : custom ? labels.custom : new Intl.NumberFormat(isFr ? 'fr-FR' : 'en-US').format(plan.price) + ' €';
+    amount.textContent = isDiscovery ? labels.title : custom ? labels.custom : new Intl.NumberFormat(isFr ? 'fr-FR' : 'en-US').format(plan.price) + ' €';
     period.hidden = custom || isDiscovery;
     summary.hidden = custom || isDiscovery;
-    if (discoveryCopy) discoveryCopy.hidden = !isDiscovery;
+    features.hidden = isDiscovery;
+    discoveryCopy.hidden = !isDiscovery;
     customCopy.hidden = !custom;
     customBooking.hidden = !custom;
     if (volume) volume.textContent = isDiscovery ? labels.discovery : plan.leads + ' leads';

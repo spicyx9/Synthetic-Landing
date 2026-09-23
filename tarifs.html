@@ -28,7 +28,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/styles.css?v=global-atmosphere-1">
-  <link rel="stylesheet" href="pricing-interactive.css?v=discovery-2">
+  <link rel="stylesheet" href="pricing-interactive.css?v=discovery-3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&amp;family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -85,13 +85,12 @@
         <div class="pricing-config-state">
           <div class="pricing-config-price">
           <span class="pricing-config-price-reserve" aria-hidden="true">Sur mesure</span>
-          <span class="pricing-config-price-reserve" aria-hidden="true">Découverte</span>
+          <span class="pricing-config-price-reserve" aria-hidden="true">Mode découverte</span>
           <span class="pricing-config-price-value">
           <span class="pricing-config-amount" data-pricing-amount>169 €</span>
           <span class="pricing-config-period" data-pricing-period>/mois</span></span>
           </div>
           <p class="pricing-config-summary" data-pricing-summary><strong data-pricing-leads>20</strong> leads qualifiés par semaine</p>
-          <p class="pricing-config-summary pricing-discovery-copy" data-pricing-discovery-copy hidden>10 prospects à l’activation<br>+ 10 nouveaux prospects&nbsp;/&nbsp;mois<br>Accès pendant 60 jours</p>
           <div class="pricing-custom-copy" data-pricing-custom-copy hidden><h2>Besoin de plus de 100 leads par semaine ?</h2><p>Parlons de votre volume et construisons une offre sur mesure.</p></div>
         </div>
 
@@ -110,28 +109,25 @@
         </div>
 
         <div class="pricing-config-divider"></div>
-        <ul class="pricing-config-features">
+        <div class="pricing-config-feature-slot">
+        <ul class="pricing-config-features" data-pricing-features>
           <li><span class="pricing-config-check">✓</span><span>Fiches vérifiées livrées chaque semaine</span></li>
           <li><span class="pricing-config-check">✓</span><span>Signal daté expliquant pourquoi appeler maintenant</span></li>
           <li><span class="pricing-config-check">✓</span><span>Téléphone, email et profil LinkedIn</span></li>
           <li><span class="pricing-config-check">✓</span><span>Ciblage selon vos critères : métier, taille et zone géographique</span></li>
         </ul>
+        <ul class="pricing-config-features" data-pricing-discovery-copy hidden>
+          <li><span class="pricing-config-check">✓</span><span>10 prospects à l’activation</span></li>
+          <li><span class="pricing-config-check">✓</span><span>+ 10 prospects après 30 jours</span></li>
+          <li><span class="pricing-config-check">✓</span><span>Accès pendant 60 jours</span></li>
+        </ul>
+        </div>
         <div class="pricing-config-actions">
         <a href="https://app.syntheticswarm.ai/ui/?leads=20&amp;lang=fr" class="pricing-config-btn" data-pricing-checkout data-leads="20"><span class="pricing-config-btn-label" data-checkout-label="plan">Choisir ce forfait</span><span class="pricing-config-btn-label is-inactive" data-checkout-label="discovery">Activer le mode découverte</span></a>
         <div class="demo-booking pricing-custom-booking" data-pricing-custom-booking hidden>
   <a class="btn-get-started pricing-config-btn" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">Réserver un rendez-vous</a>
 </div>
         </div>
-      </div>
-
-      <div class="pricing-config-card pricing-discovery-card" data-pricing-discovery>
-        <h2 class="pricing-discovery-title">Mode découverte</h2>
-        <ul class="pricing-config-features pricing-discovery-terms">
-          <li><span class="pricing-config-check">✓</span><span>10 prospects à l’activation</span></li>
-          <li><span class="pricing-config-check">✓</span><span>+ 10 nouveaux prospects&nbsp;/&nbsp;mois</span></li>
-          <li><span class="pricing-config-check">✓</span><span>Accès pendant 60 jours</span></li>
-        </ul>
-        <a href="https://app.syntheticswarm.ai/ui/?offer=discovery&amp;lang=fr" class="pricing-config-btn" data-pricing-discovery-cta>Activer le mode découverte</a>
       </div>
     </div>
 
@@ -181,7 +177,7 @@
   </div>
 </footer>
 
-  <script src="pricing.js?v=discovery-2"></script>
+  <script src="pricing.js?v=discovery-3"></script>
   <script src="/mobile-menu.js?v=motion-1"></script>
   <script src="/newsletter.js" defer></script>
 </body>
