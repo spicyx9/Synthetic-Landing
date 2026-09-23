@@ -30,8 +30,13 @@ test('no price metadata remains and checkout links transmit only volume and lang
   const checkouts = pages.flatMap(name => [...read(name).matchAll(/href="(https:\/\/app\.syntheticswarm\.ai\/ui\/\?[^"]*)"/g)].map(m => m[1].replace(/&amp;/g, '&')));
   assert.ok(checkouts.length >= 4);
   for (const url of checkouts) {
-    const params = [...new URL(url).searchParams.keys()].sort();
-    assert.deepEqual(params, ['lang', 'leads'], url);
+    const search = new URL(url).searchParams;
+    const params = [...search.keys()].sort();
+    // The discovery entry offer is the only checkout without a weekly volume.
+    if (search.has('offer')) {
+      assert.deepEqual(params, ['lang', 'offer'], url);
+      assert.equal(search.get('offer'), 'discovery', url);
+    } else assert.deepEqual(params, ['lang', 'leads'], url);
   }
   assert.match(read('pricing.js'), /\?leads=' \+ plan\.leads \+ '&lang='/);
 });

@@ -129,3 +129,23 @@ test('fixed homepage news and static deployment configuration', () => {
 test('all shared JavaScript parses', () => {
   for (const name of fs.readdirSync(root).filter(name => name.endsWith('.js'))) new vm.Script(read(name));
 });
+
+for (const [lang, file, home] of [['fr', 'tarifs.html', 'index-fr.html'], ['en', 'pricing.html', 'index.html']]) {
+  test(`${lang}: discovery offer card`, () => {
+    const copy = lang === 'fr'
+      ? ['Mode découverte', '10 prospects à l’activation', '+ 10 nouveaux prospects / mois', 'Accès pendant 60 jours', 'Activer le mode découverte']
+      : ['Discovery mode', '10 prospects on activation', '+ 10 new prospects / month', 'Access for 60 days', 'Activate discovery mode'];
+    for (const name of [file, home]) {
+      const html = read(name);
+      const card = html.match(/<div class="pricing-config-card pricing-discovery-card"[\s\S]*?<\/a>\s*<\/div>/);
+      assert.ok(card, name);
+      for (const text of copy) assert.ok(card[0].includes(text), `${name}: ${text}`);
+      assert.doesNotMatch(card[0], /gratuit|free|offert|\b0\s*€|<s>|<del>|line-through/i, name);
+      assert.match(card[0], new RegExp(`href="https://app\\.syntheticswarm\\.ai/ui/\\?offer=discovery&amp;lang=${lang}"`));
+      assert.ok(html.indexOf('pricing-discovery-card') > html.indexOf('class="pricing-config-card"'), name);
+    }
+    const cta = { attrs: {}, setAttribute(k, v) { this.attrs[k] = v; } };
+    vm.runInNewContext(read('pricing.js'), { document: { documentElement: { lang }, querySelector: s => s === '[data-pricing-discovery-cta]' ? cta : null } });
+    assert.equal(cta.attrs.href, `https://app.syntheticswarm.ai/ui/?offer=discovery&lang=${lang}`);
+  });
+}
