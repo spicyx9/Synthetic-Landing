@@ -1,62 +1,97 @@
-/* Interactive single-plan pricing */
+/* Pricing configurator: one card, one segmented choice, one call to action. */
 .pricing-configurator {
-  max-width: 720px;
+  max-width: 640px;
   margin: 0 auto;
   text-align: left;
 }
 
 .pricing-config-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 560px;
   background: #fff;
-  border: 2px solid #1a1a1a;
+  border: 1px solid #dfdbd6;
   border-radius: 20px;
-  padding: 38px 40px 36px;
-  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.08);
+  padding: 28px 32px 32px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-.pricing-config-badge {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  display: inline-flex;
+.pricing-config-head {
+  display: flex;
   align-items: center;
-  background: #1a1a1a;
-  color: #fff;
-  border-radius: 999px;
-  padding: 7px 12px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 26px;
 }
-
-.pricing-config-badge[hidden] { display: none; }
-.pricing-config-badge-slot, .pricing-config-price-value { display:contents; }
-.pricing-config-price-reserve { display:none; }
 
 .pricing-config-kicker {
-  margin: 0 0 10px;
+  margin: 0;
   color: #777;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
-.pricing-config-price {
+.pricing-config-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border: 1px solid #e8e5e0;
+  border-radius: 999px;
+  background: #f7f5f1;
+  color: #1a1a1a;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.pricing-config-badge[hidden] { display: none; }
+
+/* Segmented control. */
+.pricing-options {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(max-content, 1fr));
+  gap: 2px;
+  margin: 16px 0 28px;
+  padding: 3px;
+  background: #f5f3ef;
+  border: 1px solid #ebe8e3;
+  border-radius: 12px;
+}
+
+.pricing-options button {
+  min-width: 0;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #555;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.pricing-options button:hover { color: #1a1a1a; background: rgba(0, 0, 0, 0.04); }
+.pricing-options button[aria-checked="true"] { background: #1a1a1a; color: #fff; }
+.pricing-options button:focus-visible { outline: 2px solid #0a66c2; outline-offset: 2px; }
+
+/* Selected offer. */
+.pricing-panel[hidden] { display: none; }
+
+.pricing-panel-price {
   display: flex;
   align-items: baseline;
   gap: 6px;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .pricing-config-amount {
-  font-size: 50px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: -0.045em;
   color: #1a1a1a;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
 
 .pricing-config-period {
@@ -65,126 +100,50 @@
   font-weight: 500;
 }
 
-.pricing-config-summary {
-  margin: 0 0 34px;
+.pricing-panel-title {
+  margin: 0;
+  color: #1a1a1a;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.pricing-panel-lede {
+  margin: 10px 0 0;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.pricing-panel-lede strong { color: #1a1a1a; font-weight: 700; }
+
+.pricing-panel-note {
+  margin: 4px 0 0;
   color: #666;
   font-size: 15px;
+  line-height: 1.5;
 }
 
-.pricing-volume-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: auto;
-  margin-bottom: 15px;
-}
-
-.pricing-volume-label {
-  font-size: 14px;
-  font-weight: 700;
+.pricing-discovery-grants {
+  display: grid;
+  gap: 4px;
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  background: #f7f5f1;
+  border-radius: 12px;
   color: #1a1a1a;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
 }
-
-.pricing-volume-current {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a1a;
-  white-space: nowrap;
-}
-
-.pricing-range {
-  --progress: 40%;
-  display: block;
-  padding: 0;
-  border: 0;
-  width: 100%;
-  height: 8px;
-  margin: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  border-radius: 999px;
-  background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a var(--progress), #e7e4df var(--progress), #e7e4df 100%);
-  outline: none;
-  cursor: pointer;
-}
-
-.pricing-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #fff;
-  border: 7px solid #1a1a1a;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  cursor: grab;
-}
-
-.pricing-range::-moz-range-thumb {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #fff;
-  border: 7px solid #1a1a1a;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  cursor: grab;
-}
-
-.pricing-range:active::-webkit-slider-thumb { cursor: grabbing; }
-.pricing-range:active::-moz-range-thumb { cursor: grabbing; }
-
-/* Native thumb centers travel from 12px to width - 12px. The label rail
-   shares those exact endpoints; every stop uses the same centered anchor. */
-.pricing-range-steps {
-  position: relative;
-  height: 36px;
-  margin: 8px 12px 0;
-  color: #777;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.pricing-range-steps button {
-  position: absolute;
-  top: 0;
-  transform: translateX(-50%);
-  min-width: 32px;
-  min-height: 36px;
-  padding: 6px 0;
-  color: inherit;
-  background: transparent;
-  border: 0;
-  font: inherit;
-  text-align: center;
-  cursor: pointer;
-}
-.pricing-range-steps button:nth-child(1) { left: 0%; }
-.pricing-range-steps button:nth-child(2) { left: 20%; }
-.pricing-range-steps button:nth-child(3) { left: 40%; }
-.pricing-range-steps button:nth-child(4) { left: 60%; }
-.pricing-range-steps button:nth-child(5) { left: 80%; }
-.pricing-range-steps button:nth-child(6) { left: 100%; }
-.pricing-range-steps .is-active { color: #1a1a1a; font-weight: 800; }
-.pricing-range:focus-visible,
-.pricing-range-steps button:focus-visible {
-  outline: 2px solid #0a66c2;
-  outline-offset: 5px;
-  border-radius: 4px;
-}
-
-.pricing-config-divider {
-  height: 1px;
-  margin: 32px 0 26px;
-  background: rgba(0,0,0,0.07);
-}
+.pricing-discovery-grants strong { font-weight: 800; }
 
 .pricing-config-features {
   display: grid;
-  gap: 13px;
-  margin: 0 0 28px;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .pricing-config-features li {
@@ -194,18 +153,19 @@
   color: #333;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.45;
 }
 
 .pricing-config-check {
   color: #22c55e;
   font-weight: 800;
-  line-height: 1.35;
 }
 
 .pricing-config-btn {
   display: block;
   width: 100%;
-  padding: 14px 24px;
+  margin-top: 24px;
+  padding: 13px 20px;
   border-radius: 11px;
   background: #1a1a1a;
   color: #fff;
@@ -214,9 +174,35 @@
   font-weight: 700;
   transition: background 0.15s, transform 0.1s;
 }
-
 .pricing-config-btn:hover { background: #303030; }
 .pricing-config-btn:active { transform: scale(0.99); }
+.pricing-config-btn:focus-visible { outline: 2px solid #0a66c2; outline-offset: 3px; }
+.pricing-custom-booking .pricing-config-btn { box-sizing: border-box; }
+
+@media (min-width: 601px) {
+  .pricing-config-features { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  .pricing-config-card { padding: 20px 18px 22px; border-radius: 16px; }
+  .pricing-config-amount { font-size: 40px; }
+  .pricing-panel-title { font-size: 30px; }
+  .pricing-objections { margin-top: 42px; }
+  .pricing-objections h3 { font-size: 21px; }
+}
+
+/* Six choices do not fit one row on phones: two rows of three, same control. */
+@media (max-width: 480px) {
+  .pricing-options { grid-template-columns: repeat(3, 1fr); }
+  .pricing-options button { padding: 9px 4px; }
+}
+
+@media (max-width: 360px) {
+  .pricing-panel-title { font-size: 27px; }
+  .pricing-options button { padding: 9px 2px; font-size: 12px; }
+  .pricing-config-head { gap: 8px; }
+  .pricing-config-badge { padding: 3px 8px; font-size: 10px; }
+}
 
 .pricing-objections {
   max-width: 720px;
@@ -269,103 +255,3 @@
   line-height: 1.65;
 }
 
-@media (max-width: 600px) {
-  .pricing-config-card {
-    display: block;
-    min-height: 0;
-    padding: 76px 22px 26px;
-    border-radius: 17px;
-  }
-
-  .pricing-volume-row { margin-top: 0; }
-
-  .pricing-config-badge {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    margin: 0;
-  }
-
-  /* Dedicated pricing pages reserve the badge even when it is hidden. */
-  .pricing-config-badge-slot { display:contents; }
-  .pricing-config-badge-slot .pricing-config-badge { margin:0; }
-
-  .pricing-config-amount { font-size: 44px; }
-  .pricing-volume-row { align-items: flex-end; }
-  .pricing-range-steps { font-size: 11px; }
-  .pricing-objections { margin-top: 42px; }
-  .pricing-objections h3 { font-size: 21px; }
-}
-
-.pricing-config-btn[hidden], .pricing-custom-booking[hidden],
-.pricing-custom-copy[hidden], .pricing-config-summary[hidden],
-.pricing-config-period[hidden] { display: none; }
-.pricing-custom-copy { margin: 14px 0 30px; }
-.pricing-custom-copy h2 { font-size: 19px; line-height: 1.4; margin-bottom: 8px; }
-.pricing-custom-copy p { color: #666; font-size: 15px; line-height: 1.6; }
-.pricing-custom-booking .demo-booking-popover { top: auto; bottom: calc(100% + 10px); }
-.pricing-custom-booking .pricing-config-btn { text-align: center; }
-
-/* Both states share one intrinsic slot. Hidden copy still contributes
-   its dimensions, so translated/wrapped text reserves exactly the space needed. */
-@media (min-width: 601px) {
-  .pricing-config-state { display: grid; }
-  .pricing-config-state > .pricing-config-price { grid-area: 1 / 1; }
-  .pricing-config-state > .pricing-config-summary,
-  .pricing-config-state > .pricing-custom-copy { grid-area: 2 / 1; }
-  .pricing-config-state > .pricing-config-summary[hidden],
-  .pricing-config-state > .pricing-custom-copy[hidden] {
-    display: block;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
-
-@media (min-width: 601px) {
-  .pricing-config-actions { display: grid; }
-  .pricing-config-actions > * { grid-area: 1 / 1; }
-  .pricing-config-actions > [hidden] {
-    display: block;
-    visibility: hidden;
-    pointer-events: none;
-  }
-  .pricing-config-actions .pricing-custom-booking > .pricing-config-btn { height: 100%; }
-}
-
-/* Mobile uses the same intrinsic slots, scoped away from homepage pricing. */
-@media (max-width:600px) {
-  .pricing-config-price:has(.pricing-config-price-reserve) { display:grid; }
-  .pricing-config-price-value { display:flex; align-items:baseline; gap:6px; grid-area:1 / 1; }
-  .pricing-config-price-reserve { display:block; visibility:hidden; grid-area:1 / 1; font-size:44px; line-height:1; font-weight:800; letter-spacing:-.045em; }
-  .pricing-config-state,
-  .pricing-config-actions { display:grid; }
-  .pricing-config-state > .pricing-config-price,
-  .pricing-config-actions > * { grid-area:1 / 1; }
-  .pricing-config-state > .pricing-config-summary,
-  .pricing-config-state > .pricing-custom-copy { grid-area:2 / 1; }
-  .pricing-config-state > .pricing-config-summary[hidden],
-  .pricing-config-state > .pricing-custom-copy[hidden],
-  .pricing-config-actions > [hidden] {
-    display:block;
-    visibility:hidden;
-    pointer-events:none;
-  }
-  .pricing-config-actions .pricing-custom-booking > .pricing-config-btn { height:100%; }
-}
-
-/* Discovery is the first stop: the checkout swaps its label, and both labels
-   share one cell so the button keeps the height of the longer one. */
-.pricing-config-actions > .pricing-config-btn,
-.pricing-config-actions > .pricing-config-btn[hidden],
-.pricing-config-actions .pricing-custom-booking > .pricing-config-btn { display: grid; align-items: center; }
-.pricing-config-btn-label { grid-area: 1 / 1; }
-.pricing-config-btn-label.is-inactive { visibility: hidden; }
-.pricing-range-steps button, .pricing-volume-label { white-space: nowrap; }
-/* Classic plan features and the discovery terms occupy the same cell. */
-.pricing-config-feature-slot { display: grid; }
-.pricing-config-feature-slot > .pricing-config-features { grid-area: 1 / 1; align-content: start; }
-.pricing-config-feature-slot > [hidden] { display: grid; visibility: hidden; pointer-events: none; }
-@media (max-width: 360px) {
-  .pricing-range-steps { font-size: 10px; }
-  .pricing-range-steps button:last-child { white-space: normal; line-height: 1.15; }
-}

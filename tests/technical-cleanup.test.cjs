@@ -38,7 +38,7 @@ test('no price metadata remains and checkout links transmit only volume and lang
       assert.equal(search.get('offer'), 'discovery', url);
     } else assert.deepEqual(params, ['lang', 'leads'], url);
   }
-  assert.match(read('pricing.js'), /\?leads=' \+ plan\.leads \+ '&lang='/);
+  assert.match(read('pricing.js'), /\?leads=' \+ key \+ '&lang=' \+ lang\)/);
 });
 
 test('branded 404 page exists, is noindex and reuses the shared assets', () => {
