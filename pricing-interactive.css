@@ -352,3 +352,29 @@
   }
   .pricing-config-actions .pricing-custom-booking > .pricing-config-btn { height:100%; }
 }
+
+/* Discovery entry offer: same card system, lighter frame than the main plan. */
+.pricing-discovery-card {
+  min-height: 0;
+  margin-top: 20px;
+  border: 1px solid #dfdbd6;
+  box-shadow: none;
+}
+
+.pricing-discovery-title {
+  margin: 0 0 22px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.pricing-discovery-terms { margin-bottom: 18px; }
+
+.pricing-discovery-note {
+  margin: 0 0 28px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
