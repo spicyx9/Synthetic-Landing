@@ -1,6 +1,25 @@
-/* Pricing configurator: one card, one segmented choice, one call to action. */
+/* Pricing configurator: one card, one segmented choice, one call to action.
+   One type scale and one spacing scale for every state and for the FAQ below.
+   Colors: #1a1a1a titles, prices, active control; #333 body; #6b6b6b secondary;
+   #dfdbd6 borders. Inter comes from the page. */
+.pricing-configurator,
+.pricing-objections {
+  --pc-title: 56px;
+  --pc-price: 64px;
+  --pc-subtitle: 24px;
+  --pc-text: 18px;
+  --pc-control: 16px;
+  --pc-button: 18px;
+  --pc-faq-title: 42px;
+  --pc-gap-control: 32px;   /* segmented control -> title or price */
+  --pc-gap-title: 12px;     /* title or price -> subtitle */
+  --pc-gap-block: 28px;     /* subtitle -> discovery lines -> features */
+  --pc-gap-cta: 32px;       /* features -> call to action */
+  --pc-gap-faq: 72px;       /* card -> FAQ */
+}
+
 .pricing-configurator {
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
   text-align: left;
 }
@@ -9,7 +28,7 @@
   background: #fff;
   border: 1px solid #dfdbd6;
   border-radius: 20px;
-  padding: 24px 32px 26px;
+  padding: 28px 36px 32px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
@@ -25,12 +44,12 @@
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
-  border: 1px solid #e8e5e0;
+  border: 1px solid #dfdbd6;
   border-radius: 999px;
   background: #f7f5f1;
   color: #1a1a1a;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   line-height: 1.4;
   white-space: nowrap;
 }
@@ -41,22 +60,22 @@
   display: grid;
   grid-template-columns: repeat(6, minmax(max-content, 1fr));
   gap: 2px;
-  margin: 0 0 26px;
+  margin: 0 0 var(--pc-gap-control);
   padding: 3px;
   background: #f5f3ef;
-  border: 1px solid #ebe8e3;
+  border: 1px solid #dfdbd6;
   border-radius: 12px;
 }
 
 .pricing-options button {
   min-width: 0;
-  padding: 8px 10px;
+  padding: 10px 12px;
   border: 0;
   border-radius: 9px;
   background: transparent;
-  color: #555;
+  color: #6b6b6b;
   font: inherit;
-  font-size: 13px;
+  font-size: var(--pc-control);
   font-weight: 600;
   line-height: 1.2;
   white-space: nowrap;
@@ -67,71 +86,76 @@
 .pricing-options button[aria-checked="true"] { background: #1a1a1a; color: #fff; }
 .pricing-options button:focus-visible { outline: 2px solid #0a66c2; outline-offset: 2px; }
 
-/* Selected offer. */
+/* Selected offer: the title (Mode découverte, Sur mesure) and the price share
+   one display style, so every state opens the same way. */
 .pricing-panel[hidden] { display: none; }
 
 .pricing-panel-price {
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: 8px;
   margin: 0;
 }
 
-.pricing-config-amount {
-  color: #1a1a1a;
-  font-size: 44px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.045em;
-}
-
-.pricing-config-period {
-  color: #888;
-  font-size: 15px;
-  font-weight: 500;
-}
-
+.pricing-config-amount,
 .pricing-panel-title {
-  margin: 0;
   color: #1a1a1a;
-  font-size: 36px;
-  font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.04em;
 }
 
+.pricing-config-amount {
+  font-size: var(--pc-price);
+  font-weight: 800;
+}
+
+.pricing-panel-title {
+  margin: 0;
+  font-size: var(--pc-title);
+  font-weight: 700;
+}
+
+.pricing-config-period {
+  color: #6b6b6b;
+  font-size: var(--pc-text);
+  font-weight: 500;
+}
+
 .pricing-panel-lede {
-  margin: 10px 0 0;
-  color: #555;
-  font-size: 15px;
-  line-height: 1.5;
+  margin: var(--pc-gap-title) 0 0;
+  color: #333;
+  font-size: var(--pc-subtitle);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
 }
 .pricing-panel-lede strong { color: #1a1a1a; font-weight: 700; }
 
 .pricing-panel-note {
-  margin: 4px 0 0;
-  color: #666;
-  font-size: 15px;
+  margin: 8px 0 0;
+  color: #6b6b6b;
+  font-size: var(--pc-text);
+  font-weight: 400;
   line-height: 1.5;
 }
 
 .pricing-discovery-grants {
   display: grid;
-  gap: 4px;
-  margin: 16px 0 0;
-  color: #1a1a1a;
-  font-size: 16px;
-  font-weight: 500;
+  gap: 6px;
+  margin: var(--pc-gap-block) 0 0;
+  color: #333;
+  font-size: var(--pc-text);
+  font-weight: 400;
   line-height: 1.4;
 }
-.pricing-discovery-grants strong { font-weight: 800; }
+.pricing-discovery-grants strong { color: #1a1a1a; font-weight: 700; }
 
 .pricing-config-features {
   display: grid;
-  gap: 10px;
-  margin: 22px 0 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  gap: 12px;
+  margin: var(--pc-gap-block) 0 0;
+  padding-top: var(--pc-gap-block);
+  border-top: 1px solid #dfdbd6;
 }
 
 .pricing-config-features li {
@@ -139,8 +163,8 @@
   align-items: flex-start;
   gap: 10px;
   color: #333;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: var(--pc-text);
+  font-weight: 400;
   line-height: 1.45;
 }
 
@@ -152,14 +176,15 @@
 .pricing-config-btn {
   display: block;
   width: 100%;
-  margin-top: 24px;
-  padding: 13px 20px;
-  border-radius: 11px;
+  margin-top: var(--pc-gap-cta);
+  padding: 16px 24px;
+  border-radius: 12px;
   background: #1a1a1a;
   color: #fff;
   text-align: center;
-  font-size: 15px;
+  font-size: var(--pc-button);
   font-weight: 700;
+  line-height: 1.3;
   transition: background 0.15s, transform 0.1s;
 }
 .pricing-config-btn:hover { background: #303030; }
@@ -168,49 +193,71 @@
 .pricing-custom-booking .pricing-config-btn { box-sizing: border-box; }
 
 @media (min-width: 601px) {
-  .pricing-config-features { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+  .pricing-config-features { grid-template-columns: 1fr 1fr; column-gap: 28px; }
 }
 
 @media (max-width: 600px) {
+  .pricing-configurator,
+  .pricing-objections {
+    --pc-title: 38px;
+    --pc-price: 44px;
+    --pc-subtitle: 20px;
+    --pc-text: 16px;
+    --pc-control: 14px;
+    --pc-button: 16px;
+    --pc-faq-title: 32px;
+    --pc-gap-control: 24px;
+    --pc-gap-title: 10px;
+    --pc-gap-block: 22px;
+    --pc-gap-cta: 24px;
+    --pc-gap-faq: 48px;
+  }
   .pricing-config-card { padding: 20px 18px 22px; border-radius: 16px; }
-  .pricing-config-amount { font-size: 40px; }
-  .pricing-panel-title { font-size: 30px; }
-  .pricing-objections { margin-top: 42px; }
-  .pricing-objections h3 { font-size: 21px; }
+  .pricing-config-btn { padding: 14px 20px; }
 }
 
 /* Six choices do not fit one row on phones: two rows of three, same control. */
 @media (max-width: 480px) {
-  .pricing-options { grid-template-columns: repeat(3, 1fr); }
-  .pricing-options button { padding: 9px 4px; }
+  .pricing-options { grid-template-columns: repeat(3, minmax(max-content, 1fr)); }
+  .pricing-options button { padding: 10px 4px; }
 }
 
 @media (max-width: 360px) {
-  .pricing-panel-title { font-size: 27px; }
-  .pricing-options button { padding: 9px 2px; font-size: 12px; }
-  .pricing-config-badge { padding: 3px 8px; font-size: 10px; }
+  .pricing-options button { padding: 10px 2px; }
+  .pricing-config-badge { padding: 3px 8px; font-size: 11px; }
 }
 
+/* Purchase FAQ, on the pricing pages (h3) and on the home page (h2). */
 .pricing-objections {
   max-width: 720px;
-  margin: 54px auto 0;
+  margin: var(--pc-gap-faq) auto 0;
   text-align: left;
 }
+/* On the home page the FAQ is its own section after the pricing section's
+   bottom padding; together they make the same card -> FAQ gap. */
+.home .pricing-objections.home-purchase-faq {
+  margin-top: calc(var(--pc-gap-faq) - var(--home-section-gap-sm));
+}
 
-.pricing-objections h3 {
-  margin: 0 0 18px;
+.pricing-objections > h2,
+.pricing-objections > h3,
+.home .pricing-objections.home-purchase-faq > h2 {
+  margin: 0 0 24px;
   text-align: center;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  color: #1a1a1a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: var(--pc-faq-title);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 .pricing-faq-item {
-  border-top: 1px solid rgba(0,0,0,0.09);
+  border-top: 1px solid #dfdbd6;
 }
 
 .pricing-faq-item:last-child {
-  border-bottom: 1px solid rgba(0,0,0,0.09);
+  border-bottom: 1px solid #dfdbd6;
 }
 
 .pricing-faq-item summary {
@@ -221,24 +268,25 @@
   padding: 20px 2px;
   cursor: pointer;
   list-style: none;
-  font-size: 15px;
-  font-weight: 700;
   color: #1a1a1a;
+  font-size: var(--pc-text);
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .pricing-faq-item summary::-webkit-details-marker { display: none; }
 .pricing-faq-item summary::after {
   content: '+';
-  color: #777;
-  font-size: 21px;
+  color: #6b6b6b;
+  font-size: 22px;
   font-weight: 400;
 }
 .pricing-faq-item[open] summary::after { content: '−'; }
 
 .pricing-faq-item p {
   margin: -4px 0 20px;
-  color: #5f5f5f;
-  font-size: 14px;
-  line-height: 1.65;
+  color: #333;
+  font-size: var(--pc-text);
+  font-weight: 400;
+  line-height: 1.6;
 }
-
