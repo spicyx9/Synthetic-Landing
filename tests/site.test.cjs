@@ -73,14 +73,14 @@ for (const lang of ['en', 'fr']) {
     range.value = '4'; // Simulate a browser restoring an old selection.
     const counters = [element(), element()], steps = Array.from({ length: 6 }, element);
     const period = element(), summary = element(), customCopy = element(), customBooking = element();
-    const discoveryCopy = element(), volume = element(), discoveryCta = element();
+    const discoveryCopy = element(), volume = element(), features = element();
     const label = kind => ({ dataset: { checkoutLabel: kind }, inactive: kind === 'discovery', classList: { toggle(name, on) { if (name === 'is-inactive') label.owner[kind].inactive = on; } } });
     label.owner = { plan: label('plan'), discovery: label('discovery') };
     checkout.querySelectorAll = () => [label.owner.plan, label.owner.discovery];
     const activeLabel = () => (label.owner.plan.inactive ? 'discovery' : 'plan');
     const panel = element(), trigger = element();
     customBooking.querySelector = selector => selector === '[data-disclosure-panel]' ? panel : trigger;
-    const selectors = { '[data-pricing-range]': range, '[data-pricing-amount]': amount, '[data-pricing-checkout]': checkout, '.pricing-config-badge': badge, '[data-pricing-period]': period, '[data-pricing-summary]': summary, '[data-pricing-custom-copy]': customCopy, '[data-pricing-custom-booking]': customBooking, '[data-pricing-discovery-copy]': discoveryCopy, '[data-pricing-volume]': volume, '[data-pricing-discovery-cta]': discoveryCta };
+    const selectors = { '[data-pricing-range]': range, '[data-pricing-amount]': amount, '[data-pricing-checkout]': checkout, '.pricing-config-badge': badge, '[data-pricing-period]': period, '[data-pricing-summary]': summary, '[data-pricing-custom-copy]': customCopy, '[data-pricing-custom-booking]': customBooking, '[data-pricing-discovery-copy]': discoveryCopy, '[data-pricing-volume]': volume, '[data-pricing-features]': features };
     vm.runInNewContext(read('pricing.js'), { Intl, document: { documentElement: { lang }, querySelector: s => selectors[s], querySelectorAll: s => s === '[data-pricing-leads]' ? counters : steps } });
     assert.equal(range.value, '2');
     assert.equal(amount.textContent, '169 €');
@@ -101,6 +101,7 @@ for (const lang of ['en', 'fr']) {
       assert.equal(badge.hidden, i !== 2);
       assert.equal(volume.textContent, `${leads[i]} leads`);
       assert.equal(discoveryCopy.hidden, true);
+      assert.equal(features.hidden, false);
       assert.equal(activeLabel(), 'plan');
       assert.equal(label.owner.discovery.inactive, true);
       assert.equal(checkout.dataset.price, undefined);
@@ -110,7 +111,8 @@ for (const lang of ['en', 'fr']) {
     }
     steps[0].events.click();
     assert.equal(range.value, '0');
-    assert.equal(amount.textContent, lang === 'fr' ? 'Découverte' : 'Discovery');
+    assert.equal(amount.textContent, lang === 'fr' ? 'Mode découverte' : 'Discovery mode');
+    assert.equal(features.hidden, true);
     assert.equal(volume.textContent, lang === 'fr' ? 'Découverte' : 'Discovery');
     assert.equal(period.hidden, true);
     assert.equal(summary.hidden, true);
@@ -125,9 +127,17 @@ for (const lang of ['en', 'fr']) {
       ? /data-checkout-label="plan">Choisir ce forfait<\/span><span class="pricing-config-btn-label is-inactive" data-checkout-label="discovery">Activer le mode découverte</
       : /data-checkout-label="plan">Choose this plan<\/span><span class="pricing-config-btn-label is-inactive" data-checkout-label="discovery">Activate discovery mode</);
     assert.equal(badge.hidden, true);
-    const copy = html.match(/<p class="pricing-config-summary pricing-discovery-copy" data-pricing-discovery-copy hidden>([^<]*(?:<br>[^<]*)*)<\/p>/);
+    const copy = html.match(/<ul class="pricing-config-features" data-pricing-discovery-copy hidden>([\s\S]*?)<\/ul>/);
     assert.ok(copy);
-    for (const text of lang === 'fr' ? ['10 prospects à l’activation', '+ 10 nouveaux prospects&nbsp;/&nbsp;mois', 'Accès pendant 60 jours'] : ['10 prospects on activation', '+ 10 new prospects&nbsp;/&nbsp;month', 'Access for 60 days']) assert.ok(copy[1].includes(text), text);
+    const terms = [...copy[1].matchAll(/<li><span class="pricing-config-check">✓<\/span><span>([^<]*)<\/span><\/li>/g)].map(m => m[1]);
+    assert.deepEqual(terms, lang === 'fr' ? ['10 prospects à l’activation', '+ 10 prospects après 30 jours', 'Accès pendant 60 jours'] : ['10 prospects on activation', '+ 10 prospects after 30 days', 'Access for 60 days']);
+    assert.match(html, /<ul class="pricing-config-features" data-pricing-features>\s*<li><span class="pricing-config-check">✓<\/span><span>(?:Fiches vérifiées livrées chaque semaine|Verified prospect profiles delivered every week)</);
+    assert.doesNotMatch(html, /pricing-discovery-card|data-pricing-discovery-cta/);
+    for (const name of lang === 'fr' ? ['tarifs.html', 'index-fr.html'] : ['pricing.html', 'index.html']) {
+      const page = read(name);
+      assert.equal((page.match(/Activer le mode découverte|Activate discovery mode/g) || []).length, 1, name);
+      assert.doesNotMatch(page, /gratuit|\bfree\b|offert/i, name);
+    }
     steps[5].events.click();
     assert.equal(amount.textContent, lang === 'fr' ? 'Sur mesure' : 'Custom');
     assert.equal(period.hidden, true);
@@ -169,23 +179,3 @@ test('fixed homepage news and static deployment configuration', () => {
 test('all shared JavaScript parses', () => {
   for (const name of fs.readdirSync(root).filter(name => name.endsWith('.js'))) new vm.Script(read(name));
 });
-
-for (const [lang, file, home] of [['fr', 'tarifs.html', 'index-fr.html'], ['en', 'pricing.html', 'index.html']]) {
-  test(`${lang}: discovery offer card`, () => {
-    const copy = lang === 'fr'
-      ? ['Mode découverte', '10 prospects à l’activation', '+ 10 nouveaux prospects&nbsp;/&nbsp;mois', 'Accès pendant 60 jours', 'Activer le mode découverte']
-      : ['Discovery mode', '10 prospects on activation', '+ 10 new prospects&nbsp;/&nbsp;month', 'Access for 60 days', 'Activate discovery mode'];
-    for (const name of [file, home]) {
-      const html = read(name);
-      const card = html.match(/<div class="pricing-config-card pricing-discovery-card"[\s\S]*?<\/a>\s*<\/div>/);
-      assert.ok(card, name);
-      for (const text of copy) assert.ok(card[0].includes(text), `${name}: ${text}`);
-      assert.doesNotMatch(card[0], /gratuit|free|offert|\b0\s*€|<s>|<del>|line-through/i, name);
-      assert.match(card[0], new RegExp(`href="https://app\\.syntheticswarm\\.ai/ui/\\?offer=discovery&amp;lang=${lang}"`));
-      assert.ok(html.indexOf('pricing-discovery-card') > html.indexOf('class="pricing-config-card"'), name);
-    }
-    const cta = { attrs: {}, setAttribute(k, v) { this.attrs[k] = v; } };
-    vm.runInNewContext(read('pricing.js'), { document: { documentElement: { lang }, querySelector: s => s === '[data-pricing-discovery-cta]' ? cta : null } });
-    assert.equal(cta.attrs.href, `https://app.syntheticswarm.ai/ui/?offer=discovery&lang=${lang}`);
-  });
-}

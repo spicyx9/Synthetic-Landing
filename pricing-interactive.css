@@ -353,30 +353,6 @@
   .pricing-config-actions .pricing-custom-booking > .pricing-config-btn { height:100%; }
 }
 
-/* Discovery entry offer: same card system, lighter frame than the main plan. */
-.pricing-discovery-card {
-  min-height: 0;
-  margin-top: 20px;
-  border: 1px solid #dfdbd6;
-  box-shadow: none;
-}
-
-.pricing-discovery-title {
-  margin: 0 0 22px;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-  color: #1a1a1a;
-}
-
-
-@media (max-width: 600px) {
-  /* No badge on the discovery card: drop the top space reserved for it. */
-  .pricing-discovery-card { margin-top: 16px; padding-top: 26px; }
-  .pricing-discovery-title { font-size: 21px; margin-bottom: 18px; }
-}
-
 /* Discovery is the first stop: the checkout swaps its label, and both labels
    share one cell so the button keeps the height of the longer one. */
 .pricing-config-actions > .pricing-config-btn,
@@ -385,6 +361,10 @@
 .pricing-config-btn-label { grid-area: 1 / 1; }
 .pricing-config-btn-label.is-inactive { visibility: hidden; }
 .pricing-range-steps button, .pricing-volume-label { white-space: nowrap; }
+/* Classic plan features and the discovery terms occupy the same cell. */
+.pricing-config-feature-slot { display: grid; }
+.pricing-config-feature-slot > .pricing-config-features { grid-area: 1 / 1; align-content: start; }
+.pricing-config-feature-slot > [hidden] { display: grid; visibility: hidden; pointer-events: none; }
 @media (max-width: 360px) {
   .pricing-range-steps { font-size: 10px; }
   .pricing-range-steps button:last-child { white-space: normal; line-height: 1.15; }
