@@ -28,14 +28,14 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/styles.css?v=global-atmosphere-1">
-  <link rel="stylesheet" href="pricing-interactive.css?v=discovery-3">
+  <link rel="stylesheet" href="pricing-interactive.css?v=configurator-1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&amp;family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/site-pages.css?v=brand-close-1">
   <link rel="stylesheet" href="/motion.css?v=3">
   <script src="/motion.js?v=main-audit-1" defer></script>
-  <script src="/page-motion.js?v=2" defer></script>
+  <script src="/page-motion.js?v=3" defer></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Aller au contenu</a>
@@ -80,53 +80,53 @@
 
     <div class="pricing-configurator reveal reveal-delay-1">
       <div class="pricing-config-card">
-        <div class="pricing-config-badge-slot"><div class="pricing-config-badge" data-plan-index="2">Idéal pour démarrer</div></div>
-        <p class="pricing-config-kicker">Synthetic Swarm</p>
-        <div class="pricing-config-state">
-          <div class="pricing-config-price">
-          <span class="pricing-config-price-reserve" aria-hidden="true">Sur mesure</span>
-          <span class="pricing-config-price-reserve" aria-hidden="true">Mode découverte</span>
-          <span class="pricing-config-price-value">
-          <span class="pricing-config-amount" data-pricing-amount>169 €</span>
-          <span class="pricing-config-period" data-pricing-period>/mois</span></span>
+        <div class="pricing-config-head">
+          <p class="pricing-config-kicker">Synthetic Swarm</p>
+          <span class="pricing-config-badge" data-pricing-badge>Idéal pour démarrer</span>
+        </div>
+        <div class="pricing-options" role="radiogroup" aria-label="Choisir une offre">
+          <button type="button" role="radio" aria-checked="false" tabindex="-1" data-pricing-option="discovery">Découverte</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1" data-pricing-option="10">10</button>
+          <button type="button" role="radio" aria-checked="true" tabindex="0" data-pricing-option="20">20</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1" data-pricing-option="50">50</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1" data-pricing-option="100">100</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1" data-pricing-option="custom">Sur mesure</button>
+        </div>
+
+        <div class="pricing-panel" data-pricing-panel="discovery" hidden>
+          <h2 class="pricing-panel-title">Mode découverte</h2>
+          <p class="pricing-panel-lede">Essayez Synthetic Swarm pendant 60 jours.</p>
+          <ul class="pricing-discovery-grants">
+            <li><strong>10 prospects</strong> à l’activation</li>
+            <li><strong>+10 prospects</strong> après 30 jours</li>
+          </ul>
+          <ul class="pricing-config-features">
+            <li><span class="pricing-config-check" aria-hidden="true">✓</span><span>Signal daté et raison d’appeler</span></li>
+            <li><span class="pricing-config-check" aria-hidden="true">✓</span><span>Téléphone, email et profil LinkedIn</span></li>
+            <li><span class="pricing-config-check" aria-hidden="true">✓</span><span>Ciblage selon vos critères</span></li>
+          </ul>
+          <a class="pricing-config-btn" data-pricing-discovery-cta href="https://app.syntheticswarm.ai/ui/?offer=discovery&amp;lang=fr">Activer le mode découverte</a>
+        </div>
+
+        <div class="pricing-panel" data-pricing-panel="plan">
+          <p class="pricing-panel-price"><span class="pricing-config-amount" data-pricing-amount>169 €</span><span class="pricing-config-period">/mois</span></p>
+          <p class="pricing-panel-lede"><strong data-pricing-leads>20</strong> prospects par semaine</p>
+          <ul class="pricing-config-features">
+            <li><span class="pricing-config-check" aria-hidden="true">✓</span><span>Fiches vérifiées livrées chaque semaine</span></li>
+            <li><span class="pricing-config-check" aria-hidden="true">✓</span><span>Signal daté expliquant pourquoi appeler maintenant</span></li>
+            <li><span class="pricing-config-check" aria-hidden="true">✓</span><span>Téléphone, email et profil LinkedIn</span></li>
+            <li><span class="pricing-config-check" aria-hidden="true">✓</span><span>Ciblage selon vos critères</span></li>
+          </ul>
+          <a class="pricing-config-btn" data-pricing-checkout data-leads="20" href="https://app.syntheticswarm.ai/ui/?leads=20&amp;lang=fr">Choisir ce forfait</a>
+        </div>
+
+        <div class="pricing-panel" data-pricing-panel="custom" hidden>
+          <h2 class="pricing-panel-title">Sur mesure</h2>
+          <p class="pricing-panel-lede"><strong>Plus de 100 prospects par semaine ?</strong></p>
+          <p class="pricing-panel-note">Construisons une offre adaptée à votre volume.</p>
+          <div class="demo-booking pricing-custom-booking">
+            <a class="btn-get-started pricing-config-btn" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">Réserver un rendez-vous</a>
           </div>
-          <p class="pricing-config-summary" data-pricing-summary><strong data-pricing-leads>20</strong> leads qualifiés par semaine</p>
-          <div class="pricing-custom-copy" data-pricing-custom-copy hidden><h2>Besoin de plus de 100 leads par semaine ?</h2><p>Parlons de votre volume et construisons une offre sur mesure.</p></div>
-        </div>
-
-        <div class="pricing-volume-row">
-          <span class="pricing-volume-label">Leads par semaine</span>
-          <span class="pricing-volume-current" data-pricing-volume>20 leads</span>
-        </div>
-        <input class="pricing-range" data-pricing-range type="range" min="0" max="5" step="1" value="2" aria-valuetext="20 leads par semaine" aria-label="Leads par semaine">
-        <div class="pricing-range-steps" role="group" aria-label="Leads par semaine">
-          <button type="button" data-pricing-step>Découverte</button>
-          <button type="button" data-pricing-step>10</button>
-          <button type="button" data-pricing-step class="is-active">20</button>
-          <button type="button" data-pricing-step>50</button>
-          <button type="button" data-pricing-step>100</button>
-          <button type="button" data-pricing-step>Sur mesure</button>
-        </div>
-
-        <div class="pricing-config-divider"></div>
-        <div class="pricing-config-feature-slot">
-        <ul class="pricing-config-features" data-pricing-features>
-          <li><span class="pricing-config-check">✓</span><span>Fiches vérifiées livrées chaque semaine</span></li>
-          <li><span class="pricing-config-check">✓</span><span>Signal daté expliquant pourquoi appeler maintenant</span></li>
-          <li><span class="pricing-config-check">✓</span><span>Téléphone, email et profil LinkedIn</span></li>
-          <li><span class="pricing-config-check">✓</span><span>Ciblage selon vos critères : métier, taille et zone géographique</span></li>
-        </ul>
-        <ul class="pricing-config-features" data-pricing-discovery-copy hidden>
-          <li><span class="pricing-config-check">✓</span><span>10 prospects à l’activation</span></li>
-          <li><span class="pricing-config-check">✓</span><span>+ 10 prospects après 30 jours</span></li>
-          <li><span class="pricing-config-check">✓</span><span>Accès pendant 60 jours</span></li>
-        </ul>
-        </div>
-        <div class="pricing-config-actions">
-        <a href="https://app.syntheticswarm.ai/ui/?leads=20&amp;lang=fr" class="pricing-config-btn" data-pricing-checkout data-leads="20"><span class="pricing-config-btn-label" data-checkout-label="plan">Choisir ce forfait</span><span class="pricing-config-btn-label is-inactive" data-checkout-label="discovery">Activer le mode découverte</span></a>
-        <div class="demo-booking pricing-custom-booking" data-pricing-custom-booking hidden>
-  <a class="btn-get-started pricing-config-btn" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">Réserver un rendez-vous</a>
-</div>
         </div>
       </div>
     </div>
@@ -177,7 +177,7 @@
   </div>
 </footer>
 
-  <script src="pricing.js?v=discovery-3"></script>
+  <script src="pricing.js?v=configurator-1"></script>
   <script src="/mobile-menu.js?v=motion-1"></script>
   <script src="/newsletter.js" defer></script>
 </body>
