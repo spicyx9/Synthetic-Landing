@@ -94,7 +94,7 @@
 }
 
 .pricing-range {
-  --progress: 20%;
+  --progress: 40%;
   display: block;
   padding: 0;
   border: 0;
@@ -351,4 +351,21 @@
     pointer-events:none;
   }
   .pricing-config-actions .pricing-custom-booking > .pricing-config-btn { height:100%; }
+}
+
+/* Discovery is the first stop: the checkout swaps its label, and both labels
+   share one cell so the button keeps the height of the longer one. */
+.pricing-config-actions > .pricing-config-btn,
+.pricing-config-actions > .pricing-config-btn[hidden],
+.pricing-config-actions .pricing-custom-booking > .pricing-config-btn { display: grid; align-items: center; }
+.pricing-config-btn-label { grid-area: 1 / 1; }
+.pricing-config-btn-label.is-inactive { visibility: hidden; }
+.pricing-range-steps button, .pricing-volume-label { white-space: nowrap; }
+/* Classic plan features and the discovery terms occupy the same cell. */
+.pricing-config-feature-slot { display: grid; }
+.pricing-config-feature-slot > .pricing-config-features { grid-area: 1 / 1; align-content: start; }
+.pricing-config-feature-slot > [hidden] { display: grid; visibility: hidden; pointer-events: none; }
+@media (max-width: 360px) {
+  .pricing-range-steps { font-size: 10px; }
+  .pricing-range-steps button:last-child { white-space: normal; line-height: 1.15; }
 }

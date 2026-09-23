@@ -24,7 +24,7 @@ for(const file of ['index.html','index-fr.html'])test(`${file}: compact conversi
  assert.match(hero,file==='index-fr.html' ? /Nous emménageons à San Francisco/ : /We’re moving to San Francisco/);
  assert.equal((html.match(/<details class="pricing-faq-item">/g)||[]).length,3);
  assert.doesNotMatch(html,/<details[^>]*\bopen\b/);
- assert.match(html,/data-pricing-range[^>]*value="1"/);
+ assert.match(html,/data-pricing-range[^>]*value="2"/);
  const newsletter=html.match(/<section id="newsletter"[\s\S]*?<\/section>/)[0];
  assert.doesNotMatch(newsletter,/<fieldset[^>]*disabled/);
  assert.match(newsletter,/data-newsletter-form/);

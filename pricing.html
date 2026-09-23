@@ -16,7 +16,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/styles.css?v=global-atmosphere-1">
-  <link rel="stylesheet" href="pricing-interactive.css?v=starter-default-3">
+  <link rel="stylesheet" href="pricing-interactive.css?v=discovery-3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&amp;family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -68,42 +68,50 @@
 
     <div class="pricing-configurator reveal reveal-delay-1">
       <div class="pricing-config-card">
-        <div class="pricing-config-badge-slot"><div class="pricing-config-badge" data-plan-index="1">Best to start</div></div>
+        <div class="pricing-config-badge-slot"><div class="pricing-config-badge" data-plan-index="2">Best to start</div></div>
         <p class="pricing-config-kicker">Synthetic Swarm</p>
         <div class="pricing-config-state">
           <div class="pricing-config-price">
           <span class="pricing-config-price-reserve" aria-hidden="true">Custom</span>
+          <span class="pricing-config-price-reserve" aria-hidden="true">Discovery mode</span>
           <span class="pricing-config-price-value">
           <span class="pricing-config-amount" data-pricing-amount>169 €</span>
           <span class="pricing-config-period" data-pricing-period>/month</span></span>
           </div>
           <p class="pricing-config-summary" data-pricing-summary><strong data-pricing-leads>20</strong> qualified leads per week</p>
-          <div class="pricing-custom-copy" data-pricing-custom-copy hidden><h2>Need more than 200 leads per week?</h2><p>Let's discuss your volume and build a custom plan.</p></div>
+          <div class="pricing-custom-copy" data-pricing-custom-copy hidden><h2>Need more than 100 leads per week?</h2><p>Let's discuss your volume and build a custom plan.</p></div>
         </div>
 
         <div class="pricing-volume-row">
           <span class="pricing-volume-label">Leads per week</span>
-          <span class="pricing-volume-current"><span data-pricing-leads>20</span> leads</span>
+          <span class="pricing-volume-current" data-pricing-volume>20 leads</span>
         </div>
-        <input class="pricing-range" data-pricing-range type="range" min="0" max="5" step="1" value="1" aria-valuetext="20 leads per week" aria-label="Leads per week">
+        <input class="pricing-range" data-pricing-range type="range" min="0" max="5" step="1" value="2" aria-valuetext="20 leads per week" aria-label="Leads per week">
         <div class="pricing-range-steps" role="group" aria-label="Leads per week">
+          <button type="button" data-pricing-step>Discovery</button>
           <button type="button" data-pricing-step>10</button>
           <button type="button" data-pricing-step class="is-active">20</button>
           <button type="button" data-pricing-step>50</button>
           <button type="button" data-pricing-step>100</button>
-          <button type="button" data-pricing-step class="is-active">200</button>
-          <button type="button" data-pricing-step class="is-active">200+</button>
+          <button type="button" data-pricing-step>Custom</button>
         </div>
 
         <div class="pricing-config-divider"></div>
-        <ul class="pricing-config-features">
+        <div class="pricing-config-feature-slot">
+        <ul class="pricing-config-features" data-pricing-features>
           <li><span class="pricing-config-check">✓</span><span>Verified prospect profiles delivered every week</span></li>
           <li><span class="pricing-config-check">✓</span><span>A dated signal explaining why to call now</span></li>
           <li><span class="pricing-config-check">✓</span><span>Phone, email and LinkedIn profile</span></li>
           <li><span class="pricing-config-check">✓</span><span>Targeting based on your criteria: profession, company size and location</span></li>
         </ul>
+        <ul class="pricing-config-features" data-pricing-discovery-copy hidden>
+          <li><span class="pricing-config-check">✓</span><span>10 prospects on activation</span></li>
+          <li><span class="pricing-config-check">✓</span><span>+ 10 prospects after 30 days</span></li>
+          <li><span class="pricing-config-check">✓</span><span>Access for 60 days</span></li>
+        </ul>
+        </div>
         <div class="pricing-config-actions">
-        <a href="https://app.syntheticswarm.ai/ui/?leads=20&amp;lang=en" class="pricing-config-btn" data-pricing-checkout data-leads="20">Choose this plan</a>
+        <a href="https://app.syntheticswarm.ai/ui/?leads=20&amp;lang=en" class="pricing-config-btn" data-pricing-checkout data-leads="20"><span class="pricing-config-btn-label" data-checkout-label="plan">Choose this plan</span><span class="pricing-config-btn-label is-inactive" data-checkout-label="discovery">Activate discovery mode</span></a>
         <div class="demo-booking pricing-custom-booking" data-pricing-custom-booking hidden>
   <a class="btn-get-started pricing-config-btn" data-book-demo href="https://calendar.app.google/91k1Mpontca7NGea6" target="_blank" rel="noopener noreferrer">Book a call</a>
 </div>
@@ -157,7 +165,7 @@
   </div>
 </footer>
 
-  <script src="pricing.js?v=starter-default-2"></script>
+  <script src="pricing.js?v=discovery-3"></script>
   <script src="/mobile-menu.js?v=motion-1"></script>
   <script src="/newsletter.js" defer></script>
 </body>
