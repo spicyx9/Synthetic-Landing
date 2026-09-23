@@ -1,4 +1,12 @@
 (function () {
+  // Discovery entry offer: 10 prospects on activation, 10 more each month,
+  // access limited to 60 days. Quotas and expiry are enforced by the app.
+  const discovery = { offer: 'discovery', initialLeads: 10, monthlyLeads: 10, accessDays: 60 };
+  const discoveryCta = document.querySelector('[data-pricing-discovery-cta]');
+  if (discoveryCta) {
+    discoveryCta.setAttribute('href', 'https://app.syntheticswarm.ai/ui/?offer=' + discovery.offer + '&lang=' + (document.documentElement.lang === 'fr' ? 'fr' : 'en'));
+  }
+
   const range = document.querySelector('[data-pricing-range]');
   if (!range) return;
   const isFr = document.documentElement.lang === 'fr';
