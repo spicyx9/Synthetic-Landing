@@ -186,7 +186,7 @@ Aurora: four blurred radial blue/rose blobs, 80px blur, .6 element opacity, grad
 
 Breaking news has three separate pieces: badge, date, announcement. It uses a dark translucent glass base `rgba(22,22,24,.4)`, a white highlight gradient, blur 22px / saturation 180%, 1px white .16 border and inset specular highlights. At ≤1000px, news text moves to a second grid row and radius becomes 20px. Avoid recreating this glass effect on every card.
 
-The active decorative asset is the iridescent sparkle `assets/img/decor-2.png`. Use decorative images with empty alt/hidden semantics and pointer-events disabled; never use them as product evidence. Lavender/pink reflections are permitted inside these accents, not as a new purple interface theme.
+The active decorative asset is the iridescent sparkle `assets/img/decor-sparkles.png`. Use decorative images with empty alt/hidden semantics and pointer-events disabled; never use them as product evidence. Lavender/pink reflections are permitted inside these accents, not as a new purple interface theme.
 
 ## Forms
 
