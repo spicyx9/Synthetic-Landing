@@ -1,15 +1,46 @@
 # Synthetic Swarm public website
 
-Static HTML, CSS and JavaScript. Vercel serves the repository root with clean URLs; there is no framework build or package-install step. Do not point the output directory at a stale generated folder.
+Marketing site of Synthetic Swarm, served at https://www.syntheticswarm.ai. Static HTML, CSS and JavaScript deployed by Vercel from the repository root with clean URLs (`/pricing` serves `pricing.html`). There is no framework, no build step and no package install. Two Vercel functions in `api/` handle the contact form and the newsletter.
 
-## Editing and validation
+Repository conventions and working rules for contributors and agents are in `CLAUDE.md`.
 
-- Page content lives in the root HTML files.
-- Shared header/footer markup lives in `scripts/site_layout.py`. Run `python3 scripts/site_layout.py` after changing it to synchronize every public page. It also copies pricing and the purchase FAQ from the dedicated pricing pages into the homepage, so the conversion sections stay consistent.
-- `js/mobile-menu.js` provides About/demo disclosures and the mobile menu; it does not replace page content.
-- `js/pages/pricing.js` owns the five fixed prices and the sixth custom state. Default: index 2, 50 leads/week, 399 €/month. The custom state removes checkout pricing data and exposes calendar booking.
-- Run `node --test tests/*.test.cjs` for content, links, syntax, route configuration and pricing interaction checks. No dependencies are required.
-- Browser regression: test 320, 390, 768, 1024 and 1440px widths, all six pricing stops, closed FAQ defaults, About/demo keyboard controls, mobile menu and footer. Native slider thumb centers and label centers share an inset of 12px.
+## Tree
+
+```
+/                     one HTML file per public URL, plus robots.txt, sitemap.xml,
+                      vercel.json, favicon.ico and apple-touch-icon.png
+css/                  shared stylesheets: styles, site-pages, motion, floating-demo
+css/pages/            page-specific stylesheets (home-*, solution-*, pricing-*, ...)
+js/                   shared scripts: motion, page-motion, mobile-menu, newsletter,
+                      editorial-motion (about and careers)
+js/pages/             page-specific scripts (home-*, solution-*, pricing, contact, ...)
+assets/img/           logos, favicon, decorative images
+assets/team/          founder portraits
+assets/careers/       careers page photos
+assets/radar/         homepage radar maps (SVG, GeoJSON)
+assets/trust/         insurer logos of the homepage trust band
+assets/customers/     customer photos (approved only)
+assets/data/          customers.json, read by the customer pages
+assets/vendor/        vendored MapLibre GL JS and its license
+assets/og-image.png   social preview, kept here because og:image uses its absolute URL
+assets/logo-black.png structured-data logo, kept here because JSON-LD uses its absolute URL
+api/                  Vercel functions: contact.js, newsletter.js
+scripts/              site_layout.py, the shared header/footer generator
+tests/                node:test suites, no dependencies
+docs/                 internal documentation (brand, audits, setup notes), never deployed
+```
+
+`.vercelignore` keeps `.claude/`, `docs/`, `scripts/`, `tests/` and every `*.md` out of the deployment.
+
+## Commands
+
+| Task | Command |
+| --- | --- |
+| Sync shared header, footer, pricing and purchase FAQ into every page | `python3 scripts/site_layout.py` |
+| Run all tests (content, links, routes, pricing, motion, API handlers) | `node --test tests/*.test.cjs` |
+| Local preview with clean URLs | `npx serve .` |
+
+Run the layout script after editing `scripts/site_layout.py`, then the tests before every push. The layout script also copies pricing and the purchase FAQ from `pricing.html` and `tarifs.html` into the homepages.
 
 ## Permanent public-site content rule
 
@@ -26,40 +57,19 @@ Never expose data-source infrastructure in marketing or product-preview UI: no s
 | About | `/about` | `/a-propos` |
 | Careers | `/careers` | `/recrutement` |
 | Media | `/media` | `/medias` |
+| Customers | `/customers` | `/clients` |
 | Contact | `/contact` | `/contact-fr` |
+| Legal notice | `/legal-notice` | `/mentions-legales` |
 | Privacy | `/privacy` | `/confidentialite` |
 | Terms | `/terms` | `/conditions` |
+| Opt out | `/opt-out` | `/opposition` |
 
-Legacy `/lead-magnets` and `/lead-magnets-fr` redirect to the matching solution pages in `vercel.json`. Explicit language URLs stay in the selected language; language preferences never silently redirect a requested page.
+Redirects in `vercel.json`: `/pricing-fr` to `/tarifs`, `/lead-magnets` to `/our-solution` and `/lead-magnets-fr` to `/notre-solution` (permanent). On `/`, the `ss-language` cookie or Vercel's `x-vercel-ip-country` header (`FR`) sends visitors to `/index-fr` with a temporary redirect; explicit language URLs never redirect. `404.html` is the branded not-found page. Only the four French pages listed in `sitemap.xml` are indexable; every other page carries `noindex,follow`.
 
-## Content awaiting verified details
+## Notes
 
-Careers and Media intentionally have empty states. The media pages include an inert `media-item-template` with publication, logo, title, date, excerpt, type and external URL fields. Populate it only with verified coverage.
-
-Legal pages contain the supplied short policies and contact links. Preserve the approved wording; do not restore old placeholders. Demo CTAs use the supplied team calendars.
-
-Signal scenarios and prospect examples are clearly illustrative. Confirm supported signal coverage before publishing a supported-signals catalog. Do not substitute real personal contact data in illustrative examples.
-
-The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CSS controls its circular crop. The supplied Axel portrait is stored unchanged at `assets/team/axel-ceo.png` and uses the same CSS dimensions.
-
-## Customer stories
-
-`/clients` and `/customers` read `assets/data/customers.json` through the shared `js/pages/customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `docs/customer-data.md`. No build is required. The homepage independently displays its three existing testimonials as static cards, with the full quote, portrait, name and role. Dedicated customer pages still use the shared verified-data renderer; statistic cards require an enabled flag and a real value.
-
-## Automatic language
-
-On `/`, Vercel's trusted `x-vercel-ip-country` header selects French for `FR`; all other or unknown countries keep English. Temporary redirects avoid permanently caching a visitor's location. Explicit language URLs remain accessible worldwide. The EN/FR switch sets a first-party `ss-language` cookie for one year, so manual choice overrides automatic detection. No external geolocation service or browser-language heuristic is used.
-
-## Homepage newsletter
-
-The shared footer generator supplies an editable FR/EN form and `js/newsletter.js` submits JSON to `/api/newsletter`. The server normalizes and validates email, caps payloads at 2 KB, ignores honeypot submissions, and creates or resubscribes Resend Contacts. Configure `RESEND_API_KEY` with Contacts permissions on Vercel; sending-only keys are insufficient. The key never reaches the browser. Existing contacts are updated by email, with a create fallback for missing contacts. Success is shown only after the API confirms it; failures use translated inline feedback. Tests mock Resend and do not create real subscribers. No newsletter email is sent by this endpoint.
-
-## Shared motion
-
-`js/motion.js` owns one observer, once-only entrances, pause lifecycle, focus fallback and reduced-motion handling. `css/motion.css` defines shared tokens. Page choreography lives in `js/pages/home-motion.js`, `js/pages/solution-motion.js`, `js/editorial-motion.js` and `js/page-motion.js`. Shared layout generation includes these assets. Product timeline time is linear; easing applies within individual steps so story milestones retain their scheduled times. Content is visible by default without JavaScript.
-
-Work directly on main for the current audit/fix/deploy workflow. Parked copy changes remain out of scope until explicitly released.
-
-## Homepage product demonstration
-
-The FR/EN homepages include an animated radar and selectable detected-change records. See `docs/radar-preview.md` for runtime assets, attribution, reduced-motion behavior and validation.
+- Media and customer pages are intentionally empty and disabled in the navigation until verified content exists. Customer pages render `assets/data/customers.json` through `js/pages/customers.js`; field documentation is in `docs/customer-data.md`. The homepage testimonials are static cards.
+- The newsletter form posts to `/api/newsletter`, which creates or resubscribes Resend Contacts. The contact form posts to `/api/contact` (see `docs/CONTACT_SETUP.md`). Configure `RESEND_API_KEY` on Vercel with Contacts permissions; keys never reach the browser and tests mock Resend.
+- `js/motion.js` owns reveal and reduced-motion handling, with page choreography in `js/pages/home-motion.js`, `js/pages/solution-motion.js`, `js/editorial-motion.js` and `js/page-motion.js`. Content stays visible without JavaScript.
+- The homepage radar demonstration is documented in `docs/radar-preview.md`; brand tokens and components in `docs/BRAND.md`.
+- Examples and signal scenarios are illustrative. Never substitute real personal contact data.
