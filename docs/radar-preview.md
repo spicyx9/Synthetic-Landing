@@ -4,13 +4,6 @@ The FR and EN homepages place this illustrative product story immediately after 
 
 The preview uses fictional companies, abbreviated people and masked phone numbers. It makes no search, contact or application API requests. The query field is a read-only demonstration. The live basemap uses the same OpenFreeMap Bright style and MapLibre GL JS 5.6.1 as the app. Public map tiles are loaded from tiles.openfreemap.org; vendor code is served locally. The schematic SVG map remains an offline/no-JavaScript fallback.
 
-Visual reference: `spicyx9/synthetic-swarm`, commit `f14bd5c38c983bc30607cf444a339ed386220254` (GitHub `main`, inspected 2026-09-22):
-
-- `synthetic_swarm/api/static/ui/lead-radar.css`: cream composer, charcoal send control, map reveal and result rail.
-- `synthetic_swarm/api/static/ui/radar-map.css`: charcoal business pins, contact cards, green scan and travelling border light.
-- `synthetic_swarm/api/static/ui/prospect-map.js`: briefcase SVG and territory hatch treatment.
-- `synthetic_swarm/api/static/ui/radar-departments.geojson`: departmental geometry projected into the local SVG assets under `assets/radar/`. The app attributes contours to Etalab / IGN (2025); that credit remains visible in the preview.
-
 Surfaces use the landing page's neutral whites and grays. The geographic selection, detected signals and analysis animation retain green; the active step uses the brand blue. The live map keeps its original cartographic colors. Territory layers reproduce the app’s fill, hatch, glow and outline. DOM pins are projected from longitude/latitude and retain their size throughout the camera movement.
 
 Validation: `node --test tests/*.test.cjs`. Radar tests cover automatic progression, step navigation, background pause/resume, offscreen and hidden-tab lifecycle, linked pin/card selection, replay, reduced motion and French copy.
