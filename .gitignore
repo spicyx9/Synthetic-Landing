@@ -22,3 +22,7 @@ node_modules/
 # Python layout tooling
 __pycache__/
 *.pyc
+
+# Internal material kept outside this public repository
+docs/
+.claude/
