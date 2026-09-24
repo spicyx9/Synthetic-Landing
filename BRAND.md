@@ -14,9 +14,9 @@ All seven root CSS files were inspected:
 
 | File | Role and current usage |
 | --- | --- |
-| `css/styles.css` | Global reset, Inter body, sticky header, base buttons, hero/aurora, mobile menu and booking; also substantial older landing-page/widget rules. Loaded on all public pages. |
+| `css/styles.css` | Global reset, Inter body, sticky header, base buttons, hero/aurora, mobile menu and booking. Loaded on all public pages. |
 | `css/site-pages.css` | Current corporate pages, common cards, footer, FAQ, focus treatment, language selector, header/mobile overrides. Loaded on all public pages. |
-| `css/pages/home.css` | Scoped `.home` tokens, hero/news, current before/after section and homepage spacing; some older `.hs-*` patterns remain. |
+| `css/pages/home.css` | Scoped `.home` tokens, hero/news, current before/after section and homepage spacing. |
 | `css/pages/home-demo.css` | Scoped `.demo-wrapper` Apple font/tokens and glass news pill. Loaded on both homepages. |
 | `css/pages/pricing-interactive.css` | Single-plan pricing, range, preferred badge, custom state and purchase FAQ. Loaded on pricing and homepages. |
 | `css/pages/customers.css` | Customer mosaic, identities, stats and empty state. Loaded on customer pages and homepages. |
@@ -237,10 +237,10 @@ Inventory checked against root HTML/CSS/JS references; unreferenced means not fo
 | Asset family | Files / current status | Appropriate use |
 | --- | --- | --- |
 | Active logo | `assets/img/logo-black-narrow.png` | Header mark next to live text wordmark; preserve aspect ratio |
-| Structured-data logo | `logo-black.png` | Organization logo in the homepage JSON-LD |
-| Favicon | `favicon.png` | Browser identity |
-| Team | `team/axel-ceo.png`, `team/ilan-cto.jpg` | Original user-supplied portraits; no retouch; circular CSS crop, object-fit cover, centered; 38px booking and 56px team |
-| Active 3D hero decoration | `decor-2.png`, `decor-3.png` | Iridescent sparkle and rocket motifs in the homepage hero; small atmospheric accents |
+| Structured-data logo | `assets/logo-black.png` (kept at this absolute URL) | Organization logo in the homepage JSON-LD |
+| Favicon | `assets/img/favicon.png` | Browser identity |
+| Team | `assets/team/axel-ceo.png`, `assets/team/ilan-cto.jpg` | Original user-supplied portraits; no retouch; circular CSS crop, object-fit cover, centered; 38px booking and 56px team |
+| Active 3D hero decoration | `assets/img/decor-sparkles.png`, `assets/img/decor-rocket.png` | Iridescent sparkle and rocket motifs in the homepage hero; small atmospheric accents |
 | Future customers | `assets/customers/` currently contains instructions, no customer photos | Add only explicitly supplied and approved photos; 48px circular lazy-loaded portraits, meaningful alt text |
 | Customer data | `assets/data/customers.json` and README | Empty customer list and disabled statistics; not an asset license or endorsement source |
 
@@ -248,7 +248,7 @@ Icons use minimal inline stroked SVG (for example hamburger), simple chevrons/ar
 
 ## Inconsistencies and deferred work
 
-1. Three token namespaces coexist: `.home --hs-*`, `.demo-wrapper --apple-*`, `.lg-scope --ss-*`, plus hardcoded public styles. `--ss-surface` already means cream in leadgen, so globally redefining it as white would be misleading.
+1. Two token namespaces coexist: `.home --hs-*` and `.demo-wrapper --apple-*`, plus hardcoded public styles.
 2. Blue `#0a66c2` coexists with demo `#0071e3`, contextual `#254b70` and aurora colors. Only the first is the general accent; migration would need visual review.
 3. Success greens and red/attention colors differ across pricing, home and demo. No uniform semantic status component exists.
 4. Buttons vary in typography, border thickness, padding and radius. Header equal dimensions are not implemented. This is the next separately requested visual task.
@@ -257,7 +257,7 @@ Icons use minimal inline stroked SVG (for example hamburger), simple chevrons/ar
 7. Similar shadows have .06/.08/.10/.12/.14 opacity variants. Most customer/corporate cards have none, so adding a common shadow changes appearance.
 8. Containers are 1280/1200/1120/840/780/720px and section spacing has multiple scales. Some differences are intentional role distinctions.
 9. Borders mix warm hex neutrals and alpha black/blue. These are not interchangeable over tinted surfaces.
-10. Base CSS still contains old mega-menu, letter, product/mockup and iridescent-list patterns; `.hs-*` and leadgen reference styles are not all represented in current markup. Do not delete them based only on naming or a text search.
+10. Dead legacy rules (mega-menu, letter, product/mockup, iridescent list, `.hs-*` sections, leadgen) were removed on 2026-09-24 after a selector-level usage check and a computed-style comparison of every page at nine widths.
 11. Mobile base button rules contain `!important` and full-width styling; scoped overrides require checking the cloned booking wrapper.
 12. FAQ purchase/dedicated typography differs; footer/header action labels differ intentionally. Generic page-button hover/active styles and form validation are not centralized.
 13. Fine print grays and glass-pill text need contextual contrast review; this audit does not certify WCAG compliance.
