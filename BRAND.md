@@ -20,7 +20,6 @@ All seven root CSS files were inspected:
 | `demo.css` | Scoped `.demo-wrapper` Apple font/tokens and glass news pill. Loaded on both homepages. |
 | `pricing-interactive.css` | Single-plan pricing, range, preferred badge, custom state and purchase FAQ. Loaded on pricing and homepages. |
 | `customers.css` | Customer mosaic, identities, stats and empty state. Loaded on customer pages and homepages. |
-| `leadgen.css` | Scoped `.lg-scope` app-style composer and targeting chips. No current root HTML page links this stylesheet. Reference material, not the public-page default. |
 
 Homepage load order: `styles.css`, `demo.css`, `home.css`, `pricing-interactive.css`, `site-pages.css`, `customers.css`. Corporate pages use the base plus site-pages; customer pages append customers. Pricing uses base, pricing-interactive, then site-pages. Later matching rules and selector specificity both matter. Do not infer current appearance from the first declaration alone.
 

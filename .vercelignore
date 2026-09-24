@@ -7,6 +7,3 @@ tests/
 *.md
 .gitignore
 .vercelignore
-# Runtime-type files referenced by no public page (verified by grep on *.html, *.css, *.js, scripts/, tests/ on 2026-09-20).
-leadgen.css
-demo.js
