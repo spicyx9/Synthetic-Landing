@@ -41,9 +41,9 @@
 }
 
 /* =========================================================================
-   HERO — CTA + surcharges (le reste vient de styles.css + demo.css)
+   HERO — CTA + surcharges (le reste vient de css/styles.css + css/demo.css)
    ========================================================================= */
-/* titre : plus petit + plus tranchant que le défaut demo.css */
+/* titre : plus petit + plus tranchant que le défaut css/demo.css */
 .home .demo-wrapper .demo-hero__headline {
   font-size: 66px;
   line-height: 1;

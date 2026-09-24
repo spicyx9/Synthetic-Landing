@@ -88,7 +88,7 @@ Layout geometry was checked; no field CLS metric or Lighthouse performance score
 - `medias.html`
 - `mentions-legales.html`
 - `mobile-menu.js`
-- `motion.css`
+- `css/motion.css`
 - `motion.js`
 - `notre-solution.html`
 - `opposition.html`
@@ -101,7 +101,7 @@ Layout geometry was checked; no field CLS metric or Lighthouse performance score
 - `recrutement.html`
 - `solution-motion.js`
 - `solution-page.js`
-- `styles.css`
+- `css/styles.css`
 - `terms.html`
 - `tests/motion.test.cjs`
 - `docs/motion-qa.md`

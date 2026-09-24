@@ -56,7 +56,7 @@ The shared footer generator supplies an editable FR/EN form and `newsletter.js` 
 
 ## Shared motion
 
-`motion.js` owns one observer, once-only entrances, pause lifecycle, focus fallback and reduced-motion handling. `motion.css` defines shared tokens. Page choreography lives in `home-motion.js`, `solution-motion.js`, `editorial-motion.js` and `page-motion.js`. Shared layout generation includes these assets. Product timeline time is linear; easing applies within individual steps so story milestones retain their scheduled times. Content is visible by default without JavaScript.
+`motion.js` owns one observer, once-only entrances, pause lifecycle, focus fallback and reduced-motion handling. `css/motion.css` defines shared tokens. Page choreography lives in `home-motion.js`, `solution-motion.js`, `editorial-motion.js` and `page-motion.js`. Shared layout generation includes these assets. Product timeline time is linear; easing applies within individual steps so story milestones retain their scheduled times. Content is visible by default without JavaScript.
 
 Work directly on main for the current audit/fix/deploy workflow. Parked copy changes remain out of scope until explicitly released.
 

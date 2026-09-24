@@ -35,7 +35,7 @@ FR and EN have the same eight-part journey: hero, targeting, engine, moments, co
 
 ## Global motion audit
 
-Code inspected: motion.js/css, all four choreography modules, homepage and Solution HTML/CSS/JS, mobile-menu.js, floating-demo.css/js, shared layout generator, README, BRAND.md and tests.
+Code inspected: motion.js/css, all four choreography modules, homepage and Solution HTML/CSS/JS, mobile-menu.js, css/floating-demo.css/js, shared layout generator, README, BRAND.md and tests.
 
 One shared IntersectionObserver handles staged groups. Three distinct levels exist: page entrances, section entrances, and multi-step product timelines. Standard content plays once. Loops pause offscreen, while the document is hidden, and via user controls. Focus reveals content immediately. No new animation dependencies, scroll snapping, custom scroll speed or scroll-jacking. The mobile navigation temporarily locks background scrolling only while its dialog is open.
 
@@ -87,7 +87,7 @@ Push the audited main commits and verify the production deployment and public ro
 - `customers.html`
 - `faq-fr.html`
 - `faq.html`
-- `floating-demo.css`
+- `css/floating-demo.css`
 - `index-fr.html`
 - `index.html`
 - `lead-magnets-fr.html`
@@ -107,7 +107,7 @@ Push the audited main commits and verify the production deployment and public ro
 - `recrutement.html`
 - `scripts/site_layout.py`
 - `solution-motion.js`
-- `solution-page.css`
+- `css/solution-page.css`
 - `solution-page.js`
 - `terms.html`
 - `tests/motion.test.cjs`

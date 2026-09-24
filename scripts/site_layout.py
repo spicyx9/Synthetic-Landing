@@ -97,7 +97,7 @@ def footer(lang):
 </footer>'''
 def motion_assets(key):
  module = {'home': 'home-motion', 'solution': 'solution-motion', 'about': 'editorial-motion', 'careers': 'editorial-motion'}.get(key)
- assets = ['  <link rel="stylesheet" href="/motion.css?v=3">', '  <script src="/motion.js?v=main-audit-1" defer></script>']
+ assets = ['  <link rel="stylesheet" href="/css/motion.css?v=3">', '  <script src="/motion.js?v=main-audit-1" defer></script>']
  if module: assets.append(f'  <script src="/{module}.js?v={"main-audit-1" if module == "solution-motion" else "home-refresh-20260922" if module == "home-motion" else "1"}" defer></script>')
  assets.append('  <script src="/page-motion.js?v=2" defer></script>')
  return '\n'.join(assets)
@@ -119,8 +119,8 @@ def page(key,lang,title,description,body):
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/site-pages.css?v=header-actions-2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -149,9 +149,9 @@ def sync(headers=True,footers=True):
     s=re.sub(r'<section id="newsletter" class="prefooter-signup.*?</section>', '', s, flags=re.S)
    if footers:
     s=s.replace('family=Inter:', 'family=DM+Serif+Display:ital@1&amp;family=Inter:') if 'family=DM+Serif+Display' not in s else s
-    s=re.sub(r'/site-pages.css(?:\?[^"\s]*)?', '/site-pages.css?v=brand-close-1', s)
+    s=re.sub(r'/css/site-pages.css(?:\?[^"\s]*)?', '/css/site-pages.css?v=brand-close-1', s)
    if footers:s=re.sub(r'<footer class="footer[^\"]*">.*?</footer>',lambda _:footer(lang),s,flags=re.S)
-   if '/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/site-pages.css?v=header-actions-2">\n</head>')
+   if '/css/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/css/site-pages.css?v=header-actions-2">\n</head>')
    if '/motion.js' not in s:s=s.replace('</head>',motion_assets(key)+'\n</head>')
    if 'data-newsletter-form' in s and '/newsletter.js' not in s:s=s.replace('</body>','  <script src="/newsletter.js" defer></script>\n</body>')
    p.write_text(s)
