@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const { findForbidden, LEGACY_PLAN_HASHES } = require('./helpers/forbidden-terms.cjs');
 const root = path.resolve(__dirname, '..');
 const read = name => fs.readFileSync(path.join(root, name), 'utf8');
 const pages = fs.readdirSync(root).filter(name => name.endsWith('.html'));
@@ -10,7 +11,8 @@ const pages = fs.readdirSync(root).filter(name => name.endsWith('.html'));
 for (const name of pages) {
   test(`${name}: source content, shared header and local assets`, () => {
     const html = read(name);
-    assert.doesNotMatch(html, /Pro Solo|Pro Studio|\b(?:49|149)\s*€/i);
+    assert.doesNotMatch(html, /\b(?:49|149)\s*€/i);
+    assert.deepEqual(findForbidden(html, LEGACY_PLAN_HASHES), []);
     if (!["about.html", "a-propos.html"].includes(name)) assert.doesNotMatch(html, /hyperstack/i);
     else {
       assert.equal((html.match(/Hyperstack/g) || []).length, 1);
