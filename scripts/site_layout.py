@@ -14,8 +14,7 @@ ROUTES = {
  'media': ('/media', '/medias'), 'contact': ('/contact', '/contact-fr'),
  'privacy': ('/privacy', '/confidentialite'), 'terms': ('/terms', '/conditions'),
  'notice': ('/legal-notice', '/mentions-legales'), 'opposition': ('/opt-out', '/opposition'),
- 'customers': ('/customers', '/clients'),
- 'legacy': ('/lead-magnets', '/lead-magnets-fr')
+ 'customers': ('/customers', '/clients')
 }
 LABELS = {
  'en': dict(notice='Legal Notice',opposition='Opt out',customers='Customers',solution='Our solution',pricing='Pricing',faq='FAQ',about='About',careers='Careers',media='Media',contact='Contact',privacy='Privacy',terms='Terms',login='Log in',demo='Book a demo',who='Who we are'),
