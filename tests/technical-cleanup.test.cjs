@@ -46,8 +46,8 @@ test('branded 404 page exists, is noindex and reuses the shared assets', () => {
   assert.match(html, /<meta name="robots" content="noindex">/);
   assert.match(html, /<h1>Page introuvable<\/h1>/);
   for (const href of ['/index-fr', '/notre-solution', '/tarifs', '/faq-fr']) assert.ok(html.includes(`href="${href}"`), href);
-  assert.match(html, /href="\/styles\.css/);
-  assert.match(html, /href="\/site-pages\.css/);
+  assert.match(html, /href="\/css\/styles\.css/);
+  assert.match(html, /href="\/css\/site-pages\.css/);
   assert.doesNotMatch(html, /<link rel="canonical"|hreflang|data-newsletter-form/);
 });
 
@@ -112,10 +112,10 @@ test('favicon and Apple touch icon exist and are referenced by every page and th
 test('.vercelignore excludes internal material only, never a runtime file referenced by a page', () => {
   const ignore = read('.vercelignore').split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'));
   for (const required of ['.claude/', 'docs/', 'scripts/', 'tests/', '*.md', '.gitignore']) assert.ok(ignore.includes(required), required);
-  assert.ok(!ignore.some(l => l.startsWith('api') || l.startsWith('assets') || l === '*.css' || l === '*.js' || l === '*.html'));
+  assert.ok(!ignore.some(l => l.startsWith('api') || l.startsWith('assets') || l.startsWith('css') || l.startsWith('js') || l === '*.css' || l === '*.js' || l === '*.html'));
   const referenced = new Set();
   for (const name of pages) for (const [, url] of read(name).matchAll(/(?:src|href)="(\/[^"?#]+)/g)) referenced.add(url.slice(1));
-  for (const css of fs.readdirSync(root).filter(n => n.endsWith('.css'))) for (const [, url] of read(css).matchAll(/url\(["']?\/([^"')?#]+)/g)) referenced.add(url);
+  for (const css of fs.readdirSync(path.join(root, 'css'), { recursive: true }).filter(n => n.endsWith('.css')).map(n => `css/${n}`)) for (const [, url] of read(css).matchAll(/url\(["']?\/([^"')?#]+)/g)) referenced.add(url);
   for (const line of ignore) {
     if (line.endsWith('/') || line.startsWith('*') || line.startsWith('.')) continue;
     assert.ok(!referenced.has(line), `${line} is referenced by a public page and must not be ignored`);

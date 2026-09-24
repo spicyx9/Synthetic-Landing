@@ -49,5 +49,5 @@ test('every public HTML page loads one shared motion runtime with visible defaul
   assert.equal((html.match(/src="\/page-motion.js\?/g)||[]).length,1,file);
  }
  const menu=fs.readFileSync('mobile-menu.js','utf8');assert.doesNotMatch(menu,/IntersectionObserver/);
- const css=fs.readFileSync('motion.css','utf8');assert.match(css,/\.reveal, \.reveal.visible \{ opacity: 1/);
+ const css=fs.readFileSync('css/motion.css','utf8');assert.match(css,/\.reveal, \.reveal.visible \{ opacity: 1/);
 });
