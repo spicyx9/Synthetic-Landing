@@ -238,14 +238,10 @@ Inventory checked against root HTML/CSS/JS references; unreferenced means not fo
 | Asset family | Files / current status | Appropriate use |
 | --- | --- | --- |
 | Active logo | `assets/logo-black-narrow.png` | Header mark next to live text wordmark; preserve aspect ratio |
-| Logo variants | `logo.png`, `logo-2x.png`, `logo-black.png`, `logo-black-2x.png`, `logo-white.png`, `logo-white-2x.png` | Existing light/dark variants; not currently referenced by root pages |
+| Structured-data logo | `logo-black.png` | Organization logo in the homepage JSON-LD |
 | Favicon | `favicon.png` | Browser identity |
 | Team | `team/axel-ceo.png`, `team/ilan-cto.jpg` | Original user-supplied portraits; no retouch; circular CSS crop, object-fit cover, centered; 38px booking and 56px team |
-| Active 3D hero decoration | `decor-2.png` | Visually inspected iridescent sparkle motif; small atmospheric accent |
-| Other decoration | `decor-1.png`, `decor-3.png`, `decor-5.png`, `decor-6.png`, `decor-7.png`, `40612c4abf743aacd69ec8b9755a5d2e.png` | Archived decoration family; the hash-named file was visually inspected as an iridescent bell; review individual assets before reuse |
-| Character / campaign assets | `femme-letter-2.png`, `femme-pouce-rouge.png`, `homme-couper.png`, `licorne-explosion.png`, `licorne-letter-2.png`, `memoji-reflecting.png`, `memoji-wishing.png`, `gift-emoji.png` | Not referenced by current root pages; historical illustrations, not default new-page motifs |
-| Historical proof / profiles | `Louis-adam.jpeg`, `dory-pic.png`, `louis-content.png`, `proof-post-2.png`, `proof-post-3.png`, `follower-growth.png` | Not currently rendered; do not republish as verified evidence without checking permission, claims and embedded content |
-| Historical company marks | `itec-logo.png`, `lutecienne-logo.png` | Presence in repo is not authorization to present as current customers |
+| Active 3D hero decoration | `decor-2.png`, `decor-3.png` | Iridescent sparkle and rocket motifs in the homepage hero; small atmospheric accents |
 | Future customers | `assets/customers/` currently contains instructions, no customer photos | Add only explicitly supplied and approved photos; 48px circular lazy-loaded portraits, meaningful alt text |
 | Customer data | `assets/data/customers.json` and README | Empty customer list and disabled statistics; not an asset license or endorsement source |
 
