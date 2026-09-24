@@ -44,7 +44,7 @@ The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CS
 
 ## Customer stories
 
-`/clients` and `/customers` read `assets/data/customers.json` through the shared `js/pages/customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `assets/data/README.md`. No build is required. The homepage independently displays its three existing testimonials as static cards, with the full quote, portrait, name and role. Dedicated customer pages still use the shared verified-data renderer; statistic cards require an enabled flag and a real value.
+`/clients` and `/customers` read `assets/data/customers.json` through the shared `js/pages/customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `docs/customer-data.md`. No build is required. The homepage independently displays its three existing testimonials as static cards, with the full quote, portrait, name and role. Dedicated customer pages still use the shared verified-data renderer; statistic cards require an enabled flag and a real value.
 
 ## Automatic language
 

@@ -1,6 +1,6 @@
 # Customer stories
 
-Edit `customers.json`. Keep `customers` empty until real, approved customer feedback is supplied.
+Edit `assets/data/customers.json`. Keep `customers` empty until real, approved customer feedback is supplied.
 One customer requires one supplied photo (optional) and one object. No HTML edits are needed.
 
 Fields:
