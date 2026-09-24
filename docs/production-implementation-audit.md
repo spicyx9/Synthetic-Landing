@@ -107,7 +107,7 @@ Push the audited main commits and verify the production deployment and public ro
 - `recrutement.html`
 - `scripts/site_layout.py`
 - `js/solution-motion.js`
-- `css/solution-page.css`
+- `css/pages/solution-page.css`
 - `js/solution-page.js`
 - `terms.html`
 - `tests/motion.test.cjs`

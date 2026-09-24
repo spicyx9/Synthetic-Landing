@@ -16,12 +16,12 @@ All seven root CSS files were inspected:
 | --- | --- |
 | `css/styles.css` | Global reset, Inter body, sticky header, base buttons, hero/aurora, mobile menu and booking; also substantial older landing-page/widget rules. Loaded on all public pages. |
 | `css/site-pages.css` | Current corporate pages, common cards, footer, FAQ, focus treatment, language selector, header/mobile overrides. Loaded on all public pages. |
-| `css/home.css` | Scoped `.home` tokens, hero/news, current before/after section and homepage spacing; some older `.hs-*` patterns remain. |
-| `css/demo.css` | Scoped `.demo-wrapper` Apple font/tokens and glass news pill. Loaded on both homepages. |
-| `css/pricing-interactive.css` | Single-plan pricing, range, preferred badge, custom state and purchase FAQ. Loaded on pricing and homepages. |
-| `css/customers.css` | Customer mosaic, identities, stats and empty state. Loaded on customer pages and homepages. |
+| `css/pages/home.css` | Scoped `.home` tokens, hero/news, current before/after section and homepage spacing; some older `.hs-*` patterns remain. |
+| `css/pages/home-demo.css` | Scoped `.demo-wrapper` Apple font/tokens and glass news pill. Loaded on both homepages. |
+| `css/pages/pricing-interactive.css` | Single-plan pricing, range, preferred badge, custom state and purchase FAQ. Loaded on pricing and homepages. |
+| `css/pages/customers.css` | Customer mosaic, identities, stats and empty state. Loaded on customer pages and homepages. |
 
-Homepage load order: `css/styles.css`, `css/demo.css`, `css/home.css`, `css/pricing-interactive.css`, `css/site-pages.css`, `css/customers.css`. Corporate pages use the base plus site-pages; customer pages append customers. Pricing uses base, pricing-interactive, then site-pages. Later matching rules and selector specificity both matter. Do not infer current appearance from the first declaration alone.
+Homepage load order: `css/styles.css`, `css/pages/home-demo.css`, `css/pages/home.css`, `css/pages/pricing-interactive.css`, `css/site-pages.css`, `css/pages/customers.css`. Corporate pages use the base plus site-pages; customer pages append customers. Pricing uses base, pricing-interactive, then site-pages. Later matching rules and selector specificity both matter. Do not infer current appearance from the first declaration alone.
 
 ## Typography
 
