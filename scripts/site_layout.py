@@ -96,9 +96,9 @@ def footer(lang):
   </div>
 </footer>'''
 def motion_assets(key):
- module = {'home': 'home-motion', 'solution': 'solution-motion', 'about': 'editorial-motion', 'careers': 'editorial-motion'}.get(key)
+ module = {'home': 'pages/home-motion', 'solution': 'pages/solution-motion', 'about': 'editorial-motion', 'careers': 'editorial-motion'}.get(key)
  assets = ['  <link rel="stylesheet" href="/css/motion.css?v=3">', '  <script src="/js/motion.js?v=main-audit-1" defer></script>']
- if module: assets.append(f'  <script src="/js/{module}.js?v={"main-audit-1" if module == "solution-motion" else "home-refresh-20260922" if module == "home-motion" else "1"}" defer></script>')
+ if module: assets.append(f'  <script src="/js/{module}.js?v={"main-audit-1" if module == "pages/solution-motion" else "home-refresh-20260922" if module == "pages/home-motion" else "1"}" defer></script>')
  assets.append('  <script src="/js/page-motion.js?v=2" defer></script>')
  return '\n'.join(assets)
 

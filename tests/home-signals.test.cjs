@@ -2,7 +2,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const vm=require('node:vm');
 const fs=require('node:fs');
-const source=fs.readFileSync('js/home-signals.js','utf8');
+const source=fs.readFileSync('js/pages/home-signals.js','utf8');
 function setup(reduced=false){
   const choices=Array.from({length:6},()=>({attrs:{},setAttribute(k,v){this.attrs[k]=v;},addEventListener(k,fn){this[k]=fn;}}));
   const next={addEventListener(k,fn){this[k]=fn;}};

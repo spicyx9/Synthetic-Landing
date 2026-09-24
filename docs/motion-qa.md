@@ -78,7 +78,7 @@ Layout geometry was checked; no field CLS metric or Lighthouse performance score
 - `js/editorial-motion.js`
 - `faq-fr.html`
 - `faq.html`
-- `js/home-motion.js`
+- `js/pages/home-motion.js`
 - `index-fr.html`
 - `index.html`
 - `lead-magnets-fr.html`
@@ -99,8 +99,8 @@ Layout geometry was checked; no field CLS metric or Lighthouse performance score
 - `pricing.html`
 - `privacy.html`
 - `recrutement.html`
-- `js/solution-motion.js`
-- `js/solution-page.js`
+- `js/pages/solution-motion.js`
+- `js/pages/solution-page.js`
 - `css/styles.css`
 - `terms.html`
 - `tests/motion.test.cjs`
