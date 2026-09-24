@@ -1,6 +1,17 @@
 # macOS
 .DS_Store
 
+# Dependencies and local tooling
+node_modules/
+.vercel/
+
+# Environment files and secrets
+.env*
+
+# Logs and scratch output
+*.log
+/tmp/
+
 # Claude Code local config
 .claude/settings.local.json
 .claude/worktrees/
