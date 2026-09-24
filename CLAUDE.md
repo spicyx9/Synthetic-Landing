@@ -49,3 +49,11 @@ npx serve .                      # aperçu local avec clean URLs
 - Commits atomiques et fréquents : un commit par changement logique, message court en anglais.
 - `python3 scripts/site_layout.py` puis `node --test tests/*.test.cjs` avant chaque push. Aucun push avec un test rouge.
 - Jamais de tiret cadratin ni de demi-cadratin, ni dans le code, ni dans les textes, ni dans les messages, ni dans les rapports.
+
+## Repo public
+
+- Ce repo est PUBLIC. Aucun audit, rapport, capture d'écran, doc interne, analyse concurrentielle ou note de stratégie ne doit être commité. Ils vont dans ~/Synthetic-Swarm-internal ou dans Notion.
+- Aucun nom de fournisseur, de source de données, d'infrastructure de l'app, d'IP, de route d'API ni de référence au repo de l'app, ni dans les fichiers ni dans les messages de commit.
+- Messages de commit neutres et techniques : ce qui change dans le code, jamais la raison business, juridique ou stratégique.
+- Aucune branche d'audit poussée. Aucun lien de session claude.ai dans les messages de commit.
+- Emails de commit : adresses GitHub noreply uniquement.
