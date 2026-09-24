@@ -101,11 +101,11 @@ test('the four indexable pages carry coherent Open Graph and Twitter metadata', 
 });
 
 test('favicon and Apple touch icon exist and are referenced by every page and the generator', () => {
-  for (const file of ['favicon.ico', 'apple-touch-icon.png', 'assets/favicon.png']) assert.ok(fs.existsSync(path.join(root, file)), file);
+  for (const file of ['favicon.ico', 'apple-touch-icon.png', 'assets/img/favicon.png']) assert.ok(fs.existsSync(path.join(root, file)), file);
   const apple = fs.readFileSync(path.join(root, 'apple-touch-icon.png'));
   assert.equal(apple.readUInt32BE(16), 180);
   assert.equal(apple.readUInt32BE(20), 180);
-  const links = ['<link rel="icon" href="/assets/favicon.png" type="image/png">', '<link rel="icon" href="/favicon.ico" sizes="any">', '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">'];
+  const links = ['<link rel="icon" href="/assets/img/favicon.png" type="image/png">', '<link rel="icon" href="/favicon.ico" sizes="any">', '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">'];
   for (const name of [...pages, 'scripts/site_layout.py']) for (const link of links) assert.ok(read(name).includes(link), `${name}: ${link}`);
 });
 
