@@ -4,7 +4,7 @@
     {
       "name": "lovable-preview",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "/Users/ilansainte-agathe/Desktop/Synthetic-Landing"],
+      "runtimeArgs": ["serve", "."],
       "port": 3457,
       "autoPort": true
     }
