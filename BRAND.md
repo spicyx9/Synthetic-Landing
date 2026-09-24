@@ -186,7 +186,7 @@ Aurora: four blurred radial blue/rose blobs, 80px blur, .6 element opacity, grad
 
 Breaking news has three separate pieces: badge, date, announcement. It uses a dark translucent glass base `rgba(22,22,24,.4)`, a white highlight gradient, blur 22px / saturation 180%, 1px white .16 border and inset specular highlights. At ≤1000px, news text moves to a second grid row and radius becomes 20px. Avoid recreating this glass effect on every card.
 
-The active decorative asset is the iridescent sparkle `assets/decor-2.png`. Use decorative images with empty alt/hidden semantics and pointer-events disabled; never use them as product evidence. Lavender/pink reflections are permitted inside these accents, not as a new purple interface theme.
+The active decorative asset is the iridescent sparkle `assets/img/decor-2.png`. Use decorative images with empty alt/hidden semantics and pointer-events disabled; never use them as product evidence. Lavender/pink reflections are permitted inside these accents, not as a new purple interface theme.
 
 ## Forms
 
@@ -236,7 +236,7 @@ Inventory checked against root HTML/CSS/JS references; unreferenced means not fo
 
 | Asset family | Files / current status | Appropriate use |
 | --- | --- | --- |
-| Active logo | `assets/logo-black-narrow.png` | Header mark next to live text wordmark; preserve aspect ratio |
+| Active logo | `assets/img/logo-black-narrow.png` | Header mark next to live text wordmark; preserve aspect ratio |
 | Structured-data logo | `logo-black.png` | Organization logo in the homepage JSON-LD |
 | Favicon | `favicon.png` | Browser identity |
 | Team | `team/axel-ceo.png`, `team/ilan-cto.jpg` | Original user-supplied portraits; no retouch; circular CSS crop, object-fit cover, centered; 38px booking and 56px team |

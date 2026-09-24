@@ -42,7 +42,7 @@ def header(lang,key):
  about='\n'.join(company_link(k,lang,t["who"] if k=="about" else t[k]) for k in ['about','careers','media'])
  return f'''<header class="header">
   <div class="header-inner">
-    <a href="{url('home',lang)}" class="logo"><img src="/assets/logo-black-narrow.png" alt="" class="logo-icon" width="20" height="20">Synthetic Swarm</a>
+    <a href="{url('home',lang)}" class="logo"><img src="/assets/img/logo-black-narrow.png" alt="" class="logo-icon" width="20" height="20">Synthetic Swarm</a>
     <nav class="nav-links" aria-label="{'Navigation principale' if lang=='fr' else 'Main navigation'}">
       {links}
       <div class="about-menu">
@@ -89,7 +89,7 @@ def footer(lang):
       </div>
     </div>
     <div class="brand-close-navigation">
-      <div class="brand-close-identity"><a href="{url('home',lang)}" class="logo"><img src="/assets/logo-black-narrow.png" alt="" width="23" height="28">Synthetic Swarm</a><p>{'Sachez qui appeler. Au bon moment.' if fr else 'Know who to call. At the right time.'}</p><a class="brand-close-login" href="https://app.syntheticswarm.ai/ui/" target="_blank" rel="noopener noreferrer">{t['login']}</a></div>
+      <div class="brand-close-identity"><a href="{url('home',lang)}" class="logo"><img src="/assets/img/logo-black-narrow.png" alt="" width="23" height="28">Synthetic Swarm</a><p>{'Sachez qui appeler. Au bon moment.' if fr else 'Know who to call. At the right time.'}</p><a class="brand-close-login" href="https://app.syntheticswarm.ai/ui/" target="_blank" rel="noopener noreferrer">{t['login']}</a></div>
       <nav class="site-footer-columns" aria-label="{'Pied de page' if fr else 'Footer'}">{columns}</nav>
     </div>
     <div class="brand-close-bottom"><p>© 2026 Synthetic Swarm. {'Tous droits réservés.' if fr else 'All rights reserved.'}</p></div>
@@ -116,7 +116,7 @@ def page(key,lang,title,description,body):
   <link rel="alternate" hreflang="en" href="https://www.syntheticswarm.ai{url(key,'en')}">
   <link rel="alternate" hreflang="fr" href="https://www.syntheticswarm.ai{url(key,'fr')}">
   <link rel="alternate" hreflang="x-default" href="https://www.syntheticswarm.ai{url(key,'en')}">
-  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/styles.css">
