@@ -40,7 +40,6 @@
  .home { --home-section-gap-lg:84px; --home-section-gap-md:68px; --home-section-gap-sm:40px; --home-trust-top:68px; --home-trust-bottom:24px; --home-signals-top:18px; --home-signals-bottom:22px; --home-close-tail:24px; }
 }
 
-
 /* =========================================================================
    HERO — CTA + surcharges (le reste vient de styles.css + demo.css)
    ========================================================================= */
@@ -108,164 +107,11 @@
 .home .demo-wrapper .demo-hero__inner { max-width: 960px; }
 .home .demo-wrapper .demo-hero__headline { margin-left: auto; margin-right: auto; }
 
-
-.home .home-hero-cta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 22px;
-}
-
-.home .hs-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #1a1a1a;
-  color: #fff;
-  font-size: 15.5px;
-  font-weight: 600;
-  padding: 14px 26px;
-  border-radius: 14px;
-  transition: background .15s, transform .15s, box-shadow .15s;
-  box-shadow: 0 8px 22px rgba(0,0,0,.18);
-}
-.home .hs-btn-primary:hover {
-  background: #333;
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(0,0,0,.22);
-}
-.home .hs-btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--hs-ink);
-  font-size: 15.5px;
-  font-weight: 600;
-  padding: 14px 22px;
-  border-radius: 14px;
-  border: 1.5px solid var(--hs-line);
-  background: rgba(255,255,255,.6);
-  transition: border-color .15s, background .15s;
-}
-.home .hs-btn-ghost:hover { border-color: rgba(26,26,46,.24); background:#fff; }
-
-/* équilibre l'espace input → social proof (au-dessus est géré par la marge du widget) */
-.home .hero-social-proof { margin-top: 4px; }
-
-/* =========================================================================
-   SECTION RHYTHM (varié — reprend le ton chaleureux du lead magnet)
-   ========================================================================= */
-.home .hs-section {
-  position: relative;
-  padding: 104px 0;
-}
-.home .hs-container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-.home .hs-container--narrow { max-width: 860px; }
-
-.home .hs-kicker {
-  display: inline-block;
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--hs-blue);
-}
-.home .hs-h2 {
-  font-family: 'Inter', -apple-system, sans-serif;
-  font-size: clamp(30px, 3.6vw, 46px);
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--hs-ink);
-  letter-spacing: -.028em;
-  margin-top: 16px;
-}
-.home .hs-h2 .accent { color: var(--hs-blue); }
-.home .hs-lead {
-  font-size: clamp(17px, 1.7vw, 20px);
-  line-height: 1.55;
-  color: var(--hs-muted);
-  max-width: 640px;
-  margin-top: 16px;
-}
-.home .hs-closer {
-  font-size: clamp(18px, 2vw, 23px);
-  line-height: 1.4;
-  color: var(--hs-ink);
-  font-weight: 600;
-}
-.home .hs-closer strong { color: var(--hs-blue); font-weight: 700; }
-
-/* alternance de fonds pour le relief */
-.home .hs-section--tint { background: linear-gradient(180deg, #f6f4ef 0%, #fcfbf8 100%); }
-.home .hs-section--dark  { background: #14141f; }
-.home .hs-section--dark .hs-h2 { color: #fff; }
-.home .hs-section--dark .hs-lead { color: rgba(255,255,255,.7); }
-.home .hs-section--dark .hs-kicker { color: #6ea8ff; }
-
-/* =========================================================================
-   PLACEHOLDER WIREFRAME (skeleton — remplacé section par section)
-   ========================================================================= */
-.home .hs-wire {
-  margin-top: 30px;
-  border: 1.6px dashed rgba(26,26,46,.2);
-  border-radius: 16px;
-  background: repeating-linear-gradient(135deg, rgba(26,26,46,.015) 0 12px, transparent 12px 24px);
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  text-align: center;
-  padding: 32px;
-  color: var(--hs-muted);
-}
-.home .hs-section--dark .hs-wire { border-color: rgba(255,255,255,.22); color: rgba(255,255,255,.6); }
-.home .hs-wire-tag {
-  font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--hs-blue);
-}
-.home .hs-section--dark .hs-wire-tag { color: #6ea8ff; }
-.home .hs-wire-name { font-size: 16px; font-weight: 600; color: var(--hs-ink); }
-.home .hs-section--dark .hs-wire-name { color: #fff; }
-.home .hs-wire-desc { font-size: 13.5px; max-width: 460px; }
-
-/* =========================================================================
-   RESPONSIVE
-   ========================================================================= */
-@media (max-width: 900px) {
-  .home .hs-section { padding: 72px 0; }
-}
-@media (max-width: 560px) {
-  .home .home-hero-cta { flex-direction: column; gap: 10px; width: 100%; }
-  .home .hs-btn-primary, .home .hs-btn-ghost { width: 100%; justify-content: center; }
-}
-
 /* Focused insurance homepage, retaining the existing aurora and typography. */
 .home .home-focused-hero { padding-bottom: 56px; }
 .home .home-actions { justify-content: center; }
-.home .home-product-example { position: relative; z-index: 2; margin: 44px auto 0; width: min(680px,100%); }
-.home-product-example h2 { font-size: 24px; letter-spacing: -.025em; }
-.home-product-example > p:not(.signal-reason) { color: #777; }
-.home .home-difference { padding-top: 64px; padding-bottom: 76px; }
-.home-difference > h2 { font-size: clamp(28px,4vw,38px); letter-spacing: -.03em; margin-bottom: 28px; }
-@media (max-width:700px) {
-  .home .home-product-example { margin-top: 32px; }
-  .home .home-difference { padding-top: 44px; }
-}
-
-.home-final-cta > h2 { font-size: clamp(28px,3.5vw,38px); line-height: 1.2; letter-spacing: -.03em; margin-bottom: 28px; }
 .home .home-purchase-faq { max-width:720px; margin:0 auto; padding:0 24px var(--home-close-tail); }
 .home-purchase-faq > h2 { text-align:center; margin:0 0 28px; }
-.home-final-cta { text-align: center; }
-.home-final-cta .page-actions { justify-content: center; }
-.home-final-cta > p { color: #666; }
 
 /* Let section spacing, rather than viewport filler, separate hero and trust. */
 .home .home-focused-hero { min-height: auto; }
@@ -329,29 +175,6 @@
 
 /* Keep price and objections together without another conversion block. */
 .home .pricing-section { padding-top:calc(var(--home-section-gap-lg) / 2); padding-bottom:var(--home-section-gap-sm); }
-
-/* Compact final CTA band. Controls remain inert until delivery is connected. */
-.home .home-newsletter { max-width: none; margin: 0; padding: 72px 32px; background: transparent; }
-.home .newsletter-band { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,420px); align-items: center; gap: 48px; max-width: 1136px; margin-inline: auto; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
-.home .newsletter-copy h2 { font-size: clamp(26px,3vw,32px); letter-spacing: -.03em; line-height: 1.2; margin-bottom: 14px; }
-.home .newsletter-copy p { max-width: 440px; font-size: 15px; line-height: 1.6; color: #666; }
-.home .newsletter-band form, .home .newsletter-band fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
-.home .newsletter-controls { display: flex; gap: 12px; }
-.home .newsletter-controls input { flex: 1; min-width: 0; width: 100%; height: 48px; padding: 12px 16px; border: 1px solid #dfdbd6; border-radius: 10px; background: #fcfbf8; color: #555; font: inherit; font-size: 14px; opacity: 1; }
-.home .newsletter-controls input::placeholder { color: #666; opacity: 1; }
-.home .newsletter-controls button { min-height: 48px; white-space: nowrap; }
-.home .newsletter-controls :disabled { cursor: default; }
-.home .newsletter-controls input:focus-visible { outline: 2px solid #0a66c2; outline-offset: 4px; }
-.home .newsletter-microcopy { margin-top: 8px; font-size: 12px; line-height: 1.5; color: #777; }
-@media (max-width: 1000px) {
-  .home .newsletter-band { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 32px; }
-}
-@media (max-width: 700px) {
-  .home .home-newsletter { padding: 48px 22px; }
-  .home .newsletter-band { grid-template-columns: 1fr; gap: 24px; }
-  .home .newsletter-controls { flex-direction: column; }
-  .home .newsletter-controls input { flex: auto; }
-}
 
 /* Wide desktop copy, with comfortable space between headline, copy and actions. */
 @media (min-width: 1001px) {
