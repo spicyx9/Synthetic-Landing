@@ -1,6 +1,6 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { render, safeUrl } = require('../customers.js');
+const { render, safeUrl } = require('../js/customers.js');
 const data = require('../assets/data/customers.json');
 // Synthetic fixtures exercise components only; no fixtures are included in public data.
 const record = changes => ({name:'Test Person',role:'Test role',company:'Test company',verified:true,testimonialFr:'Citation de test.',testimonialEn:'Test quote.',...changes});

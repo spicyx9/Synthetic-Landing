@@ -103,7 +103,7 @@ for (const lang of ['en', 'fr']) {
     const amount = el(), leads = el(), checkout = el(), discoveryCta = el(), badge = el();
     const group = { querySelectorAll: () => options };
     const one = { '.pricing-options': group, '[data-pricing-amount]': amount, '[data-pricing-leads]': leads, '[data-pricing-checkout]': checkout, '[data-pricing-discovery-cta]': discoveryCta, '[data-pricing-badge]': badge };
-    vm.runInNewContext(read('pricing.js'), { Intl, document: { documentElement: { lang }, querySelector: s => one[s], querySelectorAll: s => s === '[data-pricing-panel]' ? panels : [] } });
+    vm.runInNewContext(read('js/pricing.js'), { Intl, document: { documentElement: { lang }, querySelector: s => one[s], querySelectorAll: s => s === '[data-pricing-panel]' ? panels : [] } });
     const visible = () => panels.filter(p => !p.hidden).map(p => p.dataset.pricingPanel);
     const checked = () => options.filter(o => o.attrs['aria-checked'] === 'true').map(o => o.dataset.pricingOption);
     assert.deepEqual(checked(), ['20']);
@@ -150,5 +150,5 @@ test('fixed homepage news and static deployment configuration', () => {
 });
 
 test('all shared JavaScript parses', () => {
-  for (const name of fs.readdirSync(root).filter(name => name.endsWith('.js'))) new vm.Script(read(name));
+  for (const name of fs.readdirSync(path.join(root, 'js'), { recursive: true }).filter(name => name.endsWith('.js'))) new vm.Script(read(`js/${name}`));
 });

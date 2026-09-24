@@ -1,6 +1,6 @@
 # Homepage radar preview
 
-The FR and EN homepages place this illustrative product story immediately after the trust logos. `home-radar.js` plays once on entering the viewport: type a sample target, reveal the territory, show companies, animate their analysis, then retain three explorable prospect cards. Step selection continues playback. The first step restarts it; hidden tabs and offscreen states preserve elapsed time. Reduced motion and absent JavaScript leave readable completed content.
+The FR and EN homepages place this illustrative product story immediately after the trust logos. `js/home-radar.js` plays once on entering the viewport: type a sample target, reveal the territory, show companies, animate their analysis, then retain three explorable prospect cards. Step selection continues playback. The first step restarts it; hidden tabs and offscreen states preserve elapsed time. Reduced motion and absent JavaScript leave readable completed content.
 
 The preview uses fictional companies, abbreviated people and masked phone numbers. It makes no search, contact or application API requests. The query field is a read-only demonstration. The live basemap uses the same OpenFreeMap Bright style and MapLibre GL JS 5.6.1 as the app. Public map tiles are loaded from tiles.openfreemap.org; vendor code is served locally. The schematic SVG map remains an offline/no-JavaScript fallback.
 
@@ -18,7 +18,7 @@ The final camera destination is captured once. The WebGL canvas retains its full
 
 ## Detected changes
 
-The following section uses six selectable company records instead of a text grid. Each illustrative record shows a before/after change, the green scan treatment and a reason to contact the company. `home-signals.js` advances once through the six examples while the record is in view; clicking a selector keeps that example open. Clicking the record advances to the next example, wrapping after the last; each newly selected example replays the scan. Keyboard focus pauses progression, hidden/offscreen pages preserve progress, and reduced motion leaves a static manually selectable record. No external business data is requested.
+The following section uses six selectable company records instead of a text grid. Each illustrative record shows a before/after change, the green scan treatment and a reason to contact the company. `js/home-signals.js` advances once through the six examples while the record is in view; clicking a selector keeps that example open. Clicking the record advances to the next example, wrapping after the last; each newly selected example replays the scan. Keyboard focus pauses progression, hidden/offscreen pages preserve progress, and reduced motion leaves a static manually selectable record. No external business data is requested.
 
 ## Homepage presentation
 

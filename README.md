@@ -6,8 +6,8 @@ Static HTML, CSS and JavaScript. Vercel serves the repository root with clean UR
 
 - Page content lives in the root HTML files.
 - Shared header/footer markup lives in `scripts/site_layout.py`. Run `python3 scripts/site_layout.py` after changing it to synchronize every public page. It also copies pricing and the purchase FAQ from the dedicated pricing pages into the homepage, so the conversion sections stay consistent.
-- `mobile-menu.js` provides About/demo disclosures and the mobile menu; it does not replace page content.
-- `pricing.js` owns the five fixed prices and the sixth custom state. Default: index 2, 50 leads/week, 399 €/month. The custom state removes checkout pricing data and exposes calendar booking.
+- `js/mobile-menu.js` provides About/demo disclosures and the mobile menu; it does not replace page content.
+- `js/pricing.js` owns the five fixed prices and the sixth custom state. Default: index 2, 50 leads/week, 399 €/month. The custom state removes checkout pricing data and exposes calendar booking.
 - Run `node --test tests/*.test.cjs` for content, links, syntax, route configuration and pricing interaction checks. No dependencies are required.
 - Browser regression: test 320, 390, 768, 1024 and 1440px widths, all six pricing stops, closed FAQ defaults, About/demo keyboard controls, mobile menu and footer. Native slider thumb centers and label centers share an inset of 12px.
 
@@ -44,7 +44,7 @@ The supplied Ilan portrait is stored unchanged at `assets/team/ilan-cto.jpg`; CS
 
 ## Customer stories
 
-`/clients` and `/customers` read `assets/data/customers.json` through the shared `customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `assets/data/README.md`. No build is required. The homepage independently displays its three existing testimonials as static cards, with the full quote, portrait, name and role. Dedicated customer pages still use the shared verified-data renderer; statistic cards require an enabled flag and a real value.
+`/clients` and `/customers` read `assets/data/customers.json` through the shared `js/customers.js` renderer. Add only approved real records and supplied photos under `assets/customers/`. Field documentation is in `assets/data/README.md`. No build is required. The homepage independently displays its three existing testimonials as static cards, with the full quote, portrait, name and role. Dedicated customer pages still use the shared verified-data renderer; statistic cards require an enabled flag and a real value.
 
 ## Automatic language
 
@@ -52,11 +52,11 @@ On `/`, Vercel's trusted `x-vercel-ip-country` header selects French for `FR`; a
 
 ## Homepage newsletter
 
-The shared footer generator supplies an editable FR/EN form and `newsletter.js` submits JSON to `/api/newsletter`. The server normalizes and validates email, caps payloads at 2 KB, ignores honeypot submissions, and creates or resubscribes Resend Contacts. Configure `RESEND_API_KEY` with Contacts permissions on Vercel; sending-only keys are insufficient. The key never reaches the browser. Existing contacts are updated by email, with a create fallback for missing contacts. Success is shown only after the API confirms it; failures use translated inline feedback. Tests mock Resend and do not create real subscribers. No newsletter email is sent by this endpoint.
+The shared footer generator supplies an editable FR/EN form and `js/newsletter.js` submits JSON to `/api/newsletter`. The server normalizes and validates email, caps payloads at 2 KB, ignores honeypot submissions, and creates or resubscribes Resend Contacts. Configure `RESEND_API_KEY` with Contacts permissions on Vercel; sending-only keys are insufficient. The key never reaches the browser. Existing contacts are updated by email, with a create fallback for missing contacts. Success is shown only after the API confirms it; failures use translated inline feedback. Tests mock Resend and do not create real subscribers. No newsletter email is sent by this endpoint.
 
 ## Shared motion
 
-`motion.js` owns one observer, once-only entrances, pause lifecycle, focus fallback and reduced-motion handling. `css/motion.css` defines shared tokens. Page choreography lives in `home-motion.js`, `solution-motion.js`, `editorial-motion.js` and `page-motion.js`. Shared layout generation includes these assets. Product timeline time is linear; easing applies within individual steps so story milestones retain their scheduled times. Content is visible by default without JavaScript.
+`js/motion.js` owns one observer, once-only entrances, pause lifecycle, focus fallback and reduced-motion handling. `css/motion.css` defines shared tokens. Page choreography lives in `js/home-motion.js`, `js/solution-motion.js`, `js/editorial-motion.js` and `js/page-motion.js`. Shared layout generation includes these assets. Product timeline time is linear; easing applies within individual steps so story milestones retain their scheduled times. Content is visible by default without JavaScript.
 
 Work directly on main for the current audit/fix/deploy workflow. Parked copy changes remain out of scope until explicitly released.
 
