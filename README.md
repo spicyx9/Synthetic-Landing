@@ -27,10 +27,9 @@ assets/logo-black.png structured-data logo, kept here because JSON-LD uses its a
 api/                  Vercel functions: contact.js, newsletter.js
 scripts/              site_layout.py, the shared header/footer generator
 tests/                node:test suites, no dependencies
-docs/                 internal documentation (brand, audits, setup notes), never deployed
 ```
 
-`.vercelignore` keeps `.claude/`, `docs/`, `scripts/`, `tests/` and every `*.md` out of the deployment.
+`.vercelignore` keeps local tooling (`.claude/`, `scripts/`, `tests/`) and every `*.md` out of the deployment.
 
 ## Commands
 
@@ -68,8 +67,7 @@ Redirects in `vercel.json`: `/pricing-fr` to `/tarifs`, `/lead-magnets` to `/our
 
 ## Notes
 
-- Media and customer pages are intentionally empty and disabled in the navigation until verified content exists. Customer pages render `assets/data/customers.json` through `js/pages/customers.js`; field documentation is in `docs/customer-data.md`. The homepage testimonials are static cards.
-- The newsletter form posts to `/api/newsletter`, which creates or resubscribes Resend Contacts. The contact form posts to `/api/contact` (see `docs/CONTACT_SETUP.md`). Configure `RESEND_API_KEY` on Vercel with Contacts permissions; keys never reach the browser and tests mock Resend.
+- Media and customer pages are intentionally empty and disabled in the navigation until verified content exists. Customer pages render `assets/data/customers.json` through `js/pages/customers.js`. The homepage testimonials are static cards.
+- The newsletter form posts to `/api/newsletter`, which creates or resubscribes Resend Contacts. The contact form posts to `/api/contact`. Configure `RESEND_API_KEY` on Vercel with Contacts permissions; keys never reach the browser and tests mock Resend.
 - `js/motion.js` owns reveal and reduced-motion handling, with page choreography in `js/pages/home-motion.js`, `js/pages/solution-motion.js`, `js/editorial-motion.js` and `js/page-motion.js`. Content stays visible without JavaScript.
-- The homepage radar demonstration is documented in `docs/radar-preview.md`; brand tokens and components in `docs/BRAND.md`.
 - Examples and signal scenarios are illustrative. Never substitute real personal contact data.

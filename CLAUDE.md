@@ -17,7 +17,6 @@ Site vitrine statique de Synthetic Swarm (https://www.syntheticswarm.ai). HTML, 
 | `api/` | Fonctions Vercel : `contact.js`, `newsletter.js` |
 | `scripts/` | `site_layout.py`, générateur du header, du footer, des tarifs et de la FAQ d'achat partagés |
 | `tests/` | Suites `node:test` (`*.test.cjs`) |
-| `docs/` | Documentation interne (charte, audits, notes de configuration). Jamais déployée |
 
 ## Règles du repo
 
@@ -26,7 +25,7 @@ Site vitrine statique de Synthetic Swarm (https://www.syntheticswarm.ai). HTML, 
 - Images dans `assets/img/` ou dans le sous-dossier dédié d'`assets/`.
 - Noms de fichiers en kebab-case minuscule dans `css/`, `js/` et `assets/`. Pas de majuscules, pas d'underscores, pas de noms hachés. Seules exceptions : `README.md` et `LICENSE.txt`.
 - Aucun fichier en vrac à la racine en dehors des pages HTML et des fichiers de plateforme listés plus haut.
-- Documentation interne dans `docs/` uniquement (seule exception : `assets/customers/README.md`).
+- Aucune documentation interne dans ce repo (voir « Repo public ») ; seule exception : `assets/customers/README.md`.
 - Chaque nouveau chemin se référence en absolu depuis la racine (`/css/...`, `/js/...`, `/assets/...`). Après tout déplacement : mettre à jour les HTML, `scripts/site_layout.py`, les tests et `vercel.json`, puis vérifier que chaque `src` et chaque `href` locaux répondent 200.
 - Pas de branche laissée ouverte après un merge : une branche fusionnée est supprimée.
 - Ne jamais committer de secret ni de fichier `.env`. Les clés vivent dans les variables d'environnement Vercel.
