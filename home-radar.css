@@ -163,7 +163,7 @@ button.radar-pin { cursor:pointer; }
 .home-radar[data-phase=query] .radar-send { align-self:flex-end; }
 @media(max-width:700px) { .home-radar[data-phase=query] .radar-composer textarea { height:84px; font-size:13px; line-height:1.6; } }
 
-/* Exact production pin effect, checked against /ui/ui/radar-map.css on 2026-09-22. */
+/* Pin scan and travelling light effect. */
 .home-radar[data-phase=analyze] .radar-pin-face{position:relative;overflow:hidden;border-color:#ffffff38;background:linear-gradient(145deg,#363a37,#242725);color:#f5f6f2;box-shadow:0 0 0 1px #22222218,0 2px 3px #0000000c,0 5px 12px #0000001c,inset 0 1px 0 #ffffff12}
 .home-radar[data-phase=analyze] .radar-pin-face:before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,transparent 0%,#81dfad08 56%,#81dfad24 88%,#b8f4cfb0 96%,transparent 100%);transform:translateY(-105%);animation:radar-pin-scan 1.1s cubic-bezier(.3,0,.2,1) .15s 1 both;pointer-events:none;z-index:2}
 .radar-pin-orbit rect{fill:none;stroke-linecap:round;stroke-dasharray:.12 99.88}

@@ -1,4 +1,4 @@
-/* The same MapLibre version, OpenFreeMap style and territory layers as the app.
+/* Live MapLibre basemap with the OpenFreeMap style and local territory layers.
    Only public map tiles are requested; the companies remain illustrative. */
 (() => {
   'use strict';
