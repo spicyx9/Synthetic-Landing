@@ -45,9 +45,9 @@ for (const file of pages) test(`${file}: continuous product story and approved h
 test('every public HTML page loads one shared motion runtime with visible default reveals',()=>{
  for(const file of fs.readdirSync('.').filter(file=>file.endsWith('.html'))){
   const html=fs.readFileSync(file,'utf8');
-  assert.equal((html.match(/src="\/motion.js\?/g)||[]).length,1,file);
-  assert.equal((html.match(/src="\/page-motion.js\?/g)||[]).length,1,file);
+  assert.equal((html.match(/src="\/js\/motion.js\?/g)||[]).length,1,file);
+  assert.equal((html.match(/src="\/js\/page-motion.js\?/g)||[]).length,1,file);
  }
- const menu=fs.readFileSync('mobile-menu.js','utf8');assert.doesNotMatch(menu,/IntersectionObserver/);
+ const menu=fs.readFileSync('js/mobile-menu.js','utf8');assert.doesNotMatch(menu,/IntersectionObserver/);
  const css=fs.readFileSync('css/motion.css','utf8');assert.match(css,/\.reveal, \.reveal.visible \{ opacity: 1/);
 });

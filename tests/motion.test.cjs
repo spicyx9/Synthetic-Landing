@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
-const source = fs.readFileSync('motion.js', 'utf8');
+const source = fs.readFileSync('js/motion.js', 'utf8');
 function setup({reduced=false, support=true}={}) {
   const events={}, mediaEvents={}, observers=[];
   const media={matches:reduced,addEventListener:(name,cb)=>mediaEvents[name]=cb};

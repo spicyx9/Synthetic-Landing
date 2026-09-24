@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
-const source = fs.readFileSync('home-radar.js', 'utf8');
+const source = fs.readFileSync('js/home-radar.js', 'utf8');
 function setup({reduced=false, support=true, lang='en', mapAdapter}={}) {
   class Element {
     constructor(dataset={}, classes=[]) { this.dataset=dataset; this.attrs={}; this.events={}; this.hidden=false; this.textContent=''; this.classes=new Set(classes); this.classList={contains:c=>this.classes.has(c),toggle:(c,on)=>on?this.classes.add(c):this.classes.delete(c)}; }

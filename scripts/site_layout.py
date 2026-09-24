@@ -97,9 +97,9 @@ def footer(lang):
 </footer>'''
 def motion_assets(key):
  module = {'home': 'home-motion', 'solution': 'solution-motion', 'about': 'editorial-motion', 'careers': 'editorial-motion'}.get(key)
- assets = ['  <link rel="stylesheet" href="/css/motion.css?v=3">', '  <script src="/motion.js?v=main-audit-1" defer></script>']
- if module: assets.append(f'  <script src="/{module}.js?v={"main-audit-1" if module == "solution-motion" else "home-refresh-20260922" if module == "home-motion" else "1"}" defer></script>')
- assets.append('  <script src="/page-motion.js?v=2" defer></script>')
+ assets = ['  <link rel="stylesheet" href="/css/motion.css?v=3">', '  <script src="/js/motion.js?v=main-audit-1" defer></script>']
+ if module: assets.append(f'  <script src="/js/{module}.js?v={"main-audit-1" if module == "solution-motion" else "home-refresh-20260922" if module == "home-motion" else "1"}" defer></script>')
+ assets.append('  <script src="/js/page-motion.js?v=2" defer></script>')
  return '\n'.join(assets)
 
 def page(key,lang,title,description,body):
@@ -131,8 +131,8 @@ def page(key,lang,title,description,body):
   {header(lang,key)}
   <main id="main" class="content-page">{body}</main>
   {footer(lang)}
-  <script src="/mobile-menu.js"></script>
-  <script src="/newsletter.js" defer></script>
+  <script src="/js/mobile-menu.js"></script>
+  <script src="/js/newsletter.js" defer></script>
 </body>
 </html>
 '''
@@ -152,8 +152,8 @@ def sync(headers=True,footers=True):
     s=re.sub(r'/css/site-pages.css(?:\?[^"\s]*)?', '/css/site-pages.css?v=brand-close-1', s)
    if footers:s=re.sub(r'<footer class="footer[^\"]*">.*?</footer>',lambda _:footer(lang),s,flags=re.S)
    if '/css/site-pages.css' not in s:s=s.replace('</head>','  <link rel="stylesheet" href="/css/site-pages.css?v=header-actions-2">\n</head>')
-   if '/motion.js' not in s:s=s.replace('</head>',motion_assets(key)+'\n</head>')
-   if 'data-newsletter-form' in s and '/newsletter.js' not in s:s=s.replace('</body>','  <script src="/newsletter.js" defer></script>\n</body>')
+   if '/js/motion.js' not in s:s=s.replace('</head>',motion_assets(key)+'\n</head>')
+   if 'data-newsletter-form' in s and '/js/newsletter.js' not in s:s=s.replace('</body>','  <script src="/js/newsletter.js" defer></script>\n</body>')
    p.write_text(s)
 def sync_conversion():
  # Dedicated pricing HTML is the source for homepage pricing and purchase FAQ.

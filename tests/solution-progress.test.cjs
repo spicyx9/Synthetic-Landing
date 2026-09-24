@@ -19,7 +19,7 @@ test('progress accumulates, reverses, exits and disables on narrow screens indep
     querySelectorAll:selector => selector === '.story-chapter' ? chapters : rows,
     getBoundingClientRect:() => ({bottom:3500-scroll})
   };
-  const source = fs.readFileSync('solution-page.js','utf8').split('// One visual progression stack;')[1];
+  const source = fs.readFileSync('js/solution-page.js','utf8').split('// One visual progression stack;')[1];
   vm.runInNewContext(source.slice(source.indexOf('(() =>')), {
     document:{querySelector:selector => selector === '.product-story' ? story : {getBoundingClientRect:() => ({height:61, bottom:headerBottom})}},
     innerHeight:900,

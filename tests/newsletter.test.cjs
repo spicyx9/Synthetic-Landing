@@ -51,7 +51,7 @@ test('all generated newsletters are editable and load the shared script once',()
   assert.match(form,/name="email" required maxlength="254"/);
   assert.match(form,/name="company_website" tabindex="-1"/);
   assert.match(form,/aria-live="polite"/);
-  assert.equal((html.match(/src="\/newsletter.js"/g)||[]).length,1);
+  assert.equal((html.match(/src="\/js\/newsletter.js"/g)||[]).length,1);
  }
  assert.equal(count,26);
 });
@@ -60,7 +60,7 @@ for(const lang of ['fr','en']) test(`newsletter ${lang}: loading, confirmed succ
  let valid=true,resolve;
  const form={elements:{email,company_website:{value:''}},querySelector:s=>s.startsWith('button')?button:status,reportValidity:()=>valid,setAttribute(){},removeAttribute(){},addEventListener:(event,fn)=>listeners[event]=fn};
  const context={document:{documentElement:{lang},querySelectorAll:()=>[form]},AbortController,setTimeout,clearTimeout,fetch:()=>new Promise(r=>resolve=r)};
- vm.runInNewContext(fs.readFileSync('newsletter.js','utf8'),context);
+ vm.runInNewContext(fs.readFileSync('js/newsletter.js','utf8'),context);
  valid=false;await listeners.submit({preventDefault(){}});assert.equal(button.disabled,false);
  valid=true;let pending=listeners.submit({preventDefault(){}});assert.equal(button.disabled,true);
  assert.equal(button.textContent,lang==='fr'?'Inscription…':'Subscribing…');

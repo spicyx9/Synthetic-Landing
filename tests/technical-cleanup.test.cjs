@@ -24,7 +24,7 @@ test('only the four sitemap pages are indexable; every other page carries noinde
 });
 
 test('no price metadata remains and checkout links transmit only volume and language', () => {
-  for (const name of [...pages, ...fs.readdirSync(root).filter(n => n.endsWith('.js'))]) {
+  for (const name of [...pages, ...fs.readdirSync(path.join(root, 'js'), { recursive: true }).filter(n => n.endsWith('.js')).map(n => `js/${n}`)]) {
     assert.doesNotMatch(read(name), /data-price=|[?&]price=|dataset\.price/, name);
   }
   const checkouts = pages.flatMap(name => [...read(name).matchAll(/href="(https:\/\/app\.syntheticswarm\.ai\/ui\/\?[^"]*)"/g)].map(m => m[1].replace(/&amp;/g, '&')));
@@ -38,7 +38,7 @@ test('no price metadata remains and checkout links transmit only volume and lang
       assert.equal(search.get('offer'), 'discovery', url);
     } else assert.deepEqual(params, ['lang', 'leads'], url);
   }
-  assert.match(read('pricing.js'), /\?leads=' \+ key \+ '&lang=' \+ lang\)/);
+  assert.match(read('js/pricing.js'), /\?leads=' \+ key \+ '&lang=' \+ lang\)/);
 });
 
 test('branded 404 page exists, is noindex and reuses the shared assets', () => {
