@@ -1,6 +1,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
+const { findForbidden, SOURCE_HASHES } = require('./helpers/forbidden-terms.cjs');
 const pages=['notre-solution.html','our-solution.html'];
 const order=['data-demo-hero','id="targeting"','id="moments"','id="qualification"','id="prospect"','data-demo-end'];
 for (const file of pages) test(`${file}: continuous product story and approved headline`,()=>{
@@ -26,9 +27,11 @@ for (const file of pages) test(`${file}: continuous product story and approved h
  assert.doesNotMatch(changes,/95|Mandataires|Insurance agents|story-sources/);
  assert.match(changes,/Atelier R\./);
  assert.match(changes,/Île-de-France · 2–20/);
- assert.doesNotMatch(html,/Six official sources|Six sources officielles|Cinq familles|Five kinds|Aucun fichier acheté|No purchased lists|REDACTED|confirmed need/i);
+ assert.doesNotMatch(html,/Six official sources|Six sources officielles|Cinq familles|Five kinds|Aucun fichier acheté|No purchased lists|confirmed need/i);
+ assert.deepEqual(findForbidden(html, SOURCE_HASHES), []);
  const profile=html.match(/<article class="story-surface story-profile">([\s\S]*?)<\/article>/)[1];
- assert.doesNotMatch(profile,/REDACTED|REDACTED|sp-profile-source|sp-company-details/);
+ assert.doesNotMatch(profile,/sp-profile-source|sp-company-details/);
+ assert.deepEqual(findForbidden(profile, SOURCE_HASHES), []);
  assert.equal((profile.match(/<li>/g)||[]).length,4);
  assert.match(profile,/Camille R\./);
  assert.match(profile,/06 73 54 26 ••/);
